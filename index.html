@@ -230,6 +230,15 @@ section { padding: 6rem 2rem; }
 .problem .section-title { color: var(--linen); }
 .problem .section-title em { color: var(--almond); }
 .problem .section-sub { color: rgba(232,225,213,0.65); margin: 0 auto; }
+.problem-image {
+  max-width: min(100%, 700px);
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto 2.5rem;
+  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  opacity: 0.85;
+}
 .problem-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 4rem; max-width: 900px; margin-left: auto; margin-right: auto; }
 .stat { padding: 2rem 1rem; }
 .stat-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 300; color: var(--almond); display: block; }
@@ -467,6 +476,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 <!-- ===== PROBLEM ===== -->
 <section class="problem">
   <div class="container center">
+    <img src="images/ch4-digital-defence-2.png" alt="Digital self-defence — your phone tracks you 800 times a day" class="problem-image" loading="lazy">
     <div class="section-label">The Gap</div>
     <h2 class="section-title">We've given them screens.<br>We haven't given them <em>roots.</em></h2>
     <p class="section-sub">Young people today are more connected, more informed, and more anxious than any generation before them. They can access the world — but they can't sit in silence, fix a tap, or name a neighbour who'd show up at 2am.</p>
