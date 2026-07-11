@@ -123,13 +123,45 @@ nav.scrolled { background: rgba(232,225,213,0.95); backdrop-filter: blur(12px); 
     right: .5rem; 
     transform: translateY(-50%);
   }
-  .nav-toggle span {
-    width: 24px; height: 2px; background: var(--ink); border-radius: 2px;
-    transition: transform .3s, opacity .3s;
+  .nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: var(--ink);
   }
-  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hamburger-svg {
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .h-line {
+    transition: d 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.3s ease;
+    transform-origin: center;
+  }
+  .h-dot, .h-dot-inner {
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-origin: center;
+  }
+  /* When open: lines fold into an X with middle bar forming a brief 8 */
+  .nav-toggle.open .hamburger-svg { transform: rotate(90deg); }
+  .nav-toggle.open .h-line-1 {
+    d: path("M4,6 L24,22");
+    transform: rotate(0deg);
+  }
+  .nav-toggle.open .h-line-2 {
+    d: path("M4,14 L24,14");
+    transform: scaleX(0.3);
+    opacity: 0.6;
+  }
+  .nav-toggle.open .h-line-3 {
+    d: path("M4,22 L24,6");
+    transform: rotate(0deg);
+  }
+  .nav-toggle.open .h-dot { opacity: 1; transform: scale(1); }
+  .nav-toggle.open .h-dot-inner { opacity: 1; transform: scale(1); }
   .nav-links {
     position: fixed !important; 
     top: 0; 
@@ -480,9 +512,16 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 <!-- ===== NAV ===== -->
 <nav id="nav">
   <a href="#" class="nav-logo">one <em style="font-style:italic;font-weight:300;color:var(--terracotta);">to</em> eight</a>
-  <!-- <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button> -->
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <svg class="hamburger-svg" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
+      <path class="h-line h-line-1" d="M4,8 L24,8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="h-line h-line-2" d="M4,14 L24,14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="h-line h-line-3" d="M4,20 L24,20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <!-- Hidden 8-dot appears on open -->
+      <circle class="h-dot" cx="14" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0"/>
+      <circle class="h-dot-inner" cx="14" cy="14" r="2" fill="currentColor" opacity="0"/>
+    </svg>
+  </button>
   <div class="nav-links">
     <a href="#pillars">The Eight</a>
     <a href="#guide">The Guide</a>
@@ -939,23 +978,24 @@ function toggleFaq(el) {
   if (!wasOpen) item.classList.add('open');
 }
 
-/* Mobile menu toggle — commented out
+// Mobile menu toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', navToggle.classList.contains('open'));
-});
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    navLinks.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navToggle.classList.contains('open'));
   });
-});
-*/
+  // Close menu when a link is clicked
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 </script>
 
