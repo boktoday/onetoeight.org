@@ -357,6 +357,12 @@ section { padding: 6rem 2rem; }
 .book-label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--almond); font-weight: 600; }
 .book-title { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--linen); line-height: 1.2; font-weight: 400; }
 .book-sub { font-size: .8rem; color: rgba(232,225,213,0.5); }
+.book-logo {
+  width: 44px;
+  height: 88px;
+  margin: 0.6rem auto 1.2rem;
+  opacity: 0.7;
+}
 .book-spine-lines { position: absolute; right: 1rem; top: 2rem; bottom: 2rem; width: 1px; display: flex; flex-direction: column; justify-content: space-between; }
 .book-spine-lines span { display: block; width: 1px; height: 30px; background: rgba(206,181,158,0.2); }
 
@@ -707,6 +713,15 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
         <div class="book-3d">
           <div>
             <div class="book-label">1 → 8</div>
+            <div class="book-logo">
+              <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill="none" stroke="#CEB59E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M100,25 L100,360"/>
+                <path fill="none" stroke="#CEB59E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M68,55 L100,15"/>
+                <path fill="none" stroke="#CEB59E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M38,120 C55,117 75,119 100,119 C125,119 145,117 162,120"/>
+                <path fill="none" stroke="#CEB59E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" d="M100,118 C140,118 165,155 160,190 C156,222 130,245 100,245 C70,245 44,222 40,190 C35,155 60,118 100,118"/>
+                <path fill="none" stroke="#CEB59E" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" d="M100,245 C135,245 155,280 150,315 C146,345 125,360 100,360 C75,360 54,345 50,315 C45,280 65,245 100,245"/>
+              </svg>
+            </div>
             <div class="book-title">Eight Essentials<br>for a Life<br>That Holds</div>
           </div>
           <div class="book-sub">A Practical Guide for Young People</div>
