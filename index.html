@@ -387,6 +387,8 @@ section { padding: 6rem 2rem; }
 .book-3d::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: linear-gradient(90deg, rgba(0,0,0,0.2), transparent); border-radius: 4px 0 0 4px; }
 .book-3d::after { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.1); }
 .book-label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--almond); font-weight: 600; }
+.book-label-w { color: var(--almond); font-weight: 600; }
+.book-label-to { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; color: rgba(206,181,158,0.7); letter-spacing: 0.1em; }
 .book-title { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--linen); line-height: 1.2; font-weight: 400; }
 .book-sub { font-size: .8rem; color: rgba(232,225,213,0.5); }
 .book-logo {
@@ -751,7 +753,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
       <div class="guide-book">
         <div class="book-3d">
           <div>
-            <div class="book-label">1 → 8</div>
+            <div class="book-label"><span class="book-label-w">one</span> <span class="book-label-to">to</span> <span class="book-label-w">eight</span></div>
             <div class="book-logo">
               <svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path fill="none" stroke="#CEB59E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M100,25 L100,360"/>
