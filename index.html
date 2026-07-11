@@ -179,12 +179,22 @@ nav.scrolled { background: rgba(232,225,213,0.95); backdrop-filter: blur(12px); 
 .hero-badge .dot { width: 8px; height: 8px; background: var(--terracotta); border-radius: 50%; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
 
-.hero h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; color: var(--umber); letter-spacing: -.04em; margin-bottom: 1.5rem; line-height: 1.1; font-family: 'Fraunces', serif; }
+.hero h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; color: var(--umber); letter-spacing: -.04em; margin-bottom: 1rem; line-height: 1.1; font-family: 'Fraunces', serif; }
 .hero h1 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
 .hero h1.wordmark { display: block; }
 .hero h1.wordmark em { color: var(--terracotta); font-style: italic; }
 .hero h1 .arrow { font-family: 'Inter', sans-serif; font-weight: 200; color: var(--terracotta); font-size: .55em; opacity: .8; }
-.hero-tagline { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; color: var(--terracotta); font-size: clamp(1.1rem, 2vw, 1.35rem); margin-top: -0.6rem; margin-bottom: 1.8rem; letter-spacing: .01em; }
+.hero-logo {
+  width: clamp(120px, 20vw, 220px);
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+  opacity: 0.85;
+  filter: drop-shadow(0 4px 12px rgba(76,54,45,0.08));
+  transition: opacity .3s ease, transform .3s ease;
+}
+.hero-logo:hover { opacity: 1; transform: scale(1.02); }
+.hero-tagline { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; color: var(--terracotta); font-size: clamp(1.1rem, 2vw, 1.35rem); margin-top: -0.4rem; margin-bottom: 1.8rem; letter-spacing: .01em; }
 .hero p.sub { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted); line-height: 1.7; max-width: 620px; margin: 0 auto 2.5rem; }
 
 .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -423,6 +433,22 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-content">
+    <svg class="hero-logo" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-label="one to eight logo">
+      <path fill="none" stroke="#4C362D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M100,25 L100,360"/>
+      <path fill="none" stroke="#4C362D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M68,55 L100,15"/>
+      <!-- crossbar -->
+      <path fill="none" stroke="#4C362D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M38,120 C55,117 75,119 100,119 C125,119 145,117 162,120"/>
+      <!-- 8 top loop -->
+      <path fill="none" stroke="#4C362D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" d="M100,118 C140,118 165,155 160,190 C156,222 130,245 100,245 C70,245 44,222 40,190 C35,155 60,118 100,118"/>
+      <!-- 8 bottom loop -->
+      <path fill="none" stroke="#4C362D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" d="M100,245 C135,245 155,280 150,315 C146,345 125,360 100,360 C75,360 54,345 50,315 C45,280 65,245 100,245"/>
+      <!-- scratch details -->
+      <path fill="none" stroke="#4C362D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" d="M32,118 C35,122 38,123 38,120"/>
+      <path fill="none" stroke="#4C362D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" d="M162,120 C162,123 165,122 168,118"/>
+      <path fill="none" stroke="#4C362D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" d="M100,118 C115,135 120,160 110,185 C105,200 95,200 100,200"/>
+      <path fill="none" stroke="#4C362D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.55" d="M100,245 C115,265 120,295 110,320 C105,335 95,335 100,335"/>
+      <path fill="none" stroke="#4C362D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" d="M100,360 C102,370 101,378 98,383"/>
+    </svg>
     <h1 class="wordmark">one <em>to</em> eight</h1>
     <p class="hero-tagline">eight essentials for a screen-born generation</p>
     <p class="sub">A practical guide and weekly meetup that equips young people with the depth, skills, digital self-defence, financial literacy, community, knowledge, body, nature, and convictions they'll need when the noise fades and real life begins.</p>
