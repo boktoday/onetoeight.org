@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      .bg { fill: #E8E1D5; }
+      .umber { fill: #4C362D; }
+      .terracotta { fill: #A46447; }
+      .almond { fill: #CEB59E; }
+      .sage { fill: #88937B; }
+      .muted { fill: #7A6657; }
+      .wordmark { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+      .italic { font-style: italic; font-weight: 300; }
+      .tagline { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 300; }
+    </style>
+    <radialGradient id="glow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#f0e8da" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#E8E1D5" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Subtle decorative circle in upper right (terracotta) -->
+  <circle cx="1080" cy="80" r="120" fill="#A46447" fill-opacity="0.08"/>
+  <circle cx="80" cy="560" r="160" fill="#88937B" fill-opacity="0.07"/>
+
+  <!-- Main wordmark -->
+  <text class="wordmark umber" x="600" y="290" text-anchor="middle" font-size="148" letter-spacing="-4">one <tspan class="italic terracotta">to</tspan> eight</text>
+
+  <!-- Tagline -->
+  <text class="tagline muted" x="600" y="360" text-anchor="middle" font-size="32">eight essentials for a screen-born generation</text>
+
+  <!-- Subtle horizontal rule -->
+  <line x1="450" y1="430" x2="750" y2="430" stroke="#CEB59E" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Bottom line: site URL -->
+  <text class="muted" x="600" y="500" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="3">ONETOEIGHT.ORG</text>
+
+  <!-- Small essential dots row (subtle visual signature) -->
+  <g transform="translate(420, 550)">
+    <circle cx="0" cy="0" r="6" fill="#88937B"/>
+    <circle cx="40" cy="0" r="6" fill="#A46447"/>
+    <circle cx="80" cy="0" r="6" fill="#CEB59E"/>
+    <circle cx="120" cy="0" r="6" fill="#88937B"/>
+    <circle cx="160" cy="0" r="6" fill="#4C362D"/>
+    <circle cx="200" cy="0" r="6" fill="#A46447"/>
+    <circle cx="240" cy="0" r="6" fill="#88937B"/>
+    <circle cx="280" cy="0" r="6" fill="#CEB59E"/>
+    <circle cx="320" cy="0" r="6" fill="#A46447"/>
+  </g>
+</svg>
