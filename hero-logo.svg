@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400">
+  <!-- Hand-drawn SVG recreation of: 
+       - a '1' at top with diagonal stroke and crossbar
+       - an '8' wrapping below the same vertical line -->
+  
+  <style>
+    .stroke {
+      fill: none;
+      stroke: #4C362D;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .stroke-thin {
+      fill: none;
+      stroke: #4C362D;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  </style>
+
+  <!-- ==============================================
+       VERTICAL STROKE (the shared stem of 1 and 8)
+       ============================================== -->
+  <path
+    class="stroke"
+    d="M100,25 L100,360"
+    stroke-width="6"
+  />
+
+  <!-- ==============================================
+       THE "1" — diagonal top stroke
+       ============================================== -->
+  <path
+    class="stroke"
+    d="M68,55 L100,15"
+    stroke-width="6"
+  />
+
+  <!-- ==============================================
+       HORIZONTAL CROSSBAR
+       ============================================== -->
+  <path
+    class="stroke"
+    d="M38,120 C55,117 75,119 100,119 C125,119 145,117 162,120"
+    stroke-width="6"
+  />
+
+  <!-- ==============================================
+       THE "8" — upper loop wrapping around vertical
+       ============================================== -->
+  <path
+    class="stroke"
+    d="M100,118 
+       C140,118 165,155 160,190 
+       C156,222 130,245 100,245 
+       C70,245 44,222 40,190 
+       C35,155 60,118 100,118"
+    stroke-width="5.5"
+  />
+
+  <!-- ==============================================
+       THE "8" — lower loop wrapping around vertical
+       ============================================== -->
+  <path
+    class="stroke"
+    d="M100,245 
+       C135,245 155,280 150,315 
+       C146,345 125,360 100,360 
+       C75,360 54,345 50,315 
+       C45,280 65,245 100,245"
+    stroke-width="5.5"
+  />
+
+  <!-- ==============================================
+       HAND-DRAWN "SCRATCH" DETAILS (the little lines
+       that make it feel like ink on paper)
+       ============================================== -->
+  
+  <!-- Extra sweep on crossbar left -->
+  <path
+    class="stroke-thin"
+    d="M32,118 C35,122 38,123 38,120"
+    stroke-width="3"
+    opacity="0.7"
+  />
+  
+  <!-- Extra sweep on crossbar right -->
+  <path
+    class="stroke-thin"
+    d="M162,120 C162,123 165,122 168,118"
+    stroke-width="3"
+    opacity="0.7"
+  />
+
+  <!-- Extra line inside top loop (where pen doubled back) -->
+  <path
+    class="stroke-thin"
+    d="M100,118 C115,135 120,160 110,185 C105,200 95,200 100,200"
+    stroke-width="3.2"
+    opacity="0.55"
+  />
+
+  <!-- Extra line inside bottom loop -->
+  <path
+    class="stroke-thin"
+    d="M100,245 C115,265 120,295 110,320 C105,335 95,335 100,335"
+    stroke-width="3.2"
+    opacity="0.55"
+  />
+
+  <!-- Little tail at bottom of stem (ink bleed) -->
+  <path
+    class="stroke-thin"
+    d="M100,360 C102,370 101,378 98,383"
+    stroke-width="3"
+    opacity="0.6"
+  />
+
+</svg>
