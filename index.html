@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>onetoeight — A guide for a life that holds</title>
+<meta name="description" content="Eight essentials for a screen-born generation. A practical guide and weekly meetup equipping young people with the foundations that hold — from silence to convictions, from one to eight.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Inter', sans-serif; color: #4C362D; background: #E8E1D5; overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.15; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+:root {
+  --terracotta: #A46447;
+  --almond: #CEB59E;
+  --umber: #4C362D;
+  --sage: #88937B;
+  --linen: #E8E1D5;
+  --ink: #4C362D;
+  --muted: #7a6657;
+  --white: #ffffff;
+  --cream: #f5f0e8;
+  --radius: 16px;
+  --shadow: 0 4px 24px rgba(76, 54, 45, 0.08);
+  --shadow-lg: 0 12px 48px rgba(76, 54, 45, 0.15);
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  transition: all .3s ease; background: transparent;
+  box-sizing: border-box; max-width: 100vw; overflow: visible;
+}
+nav.scrolled { background: rgba(232,225,213,0.95); backdrop-filter: blur(12px); box-shadow: 0 1px 12px rgba(0,0,0,.04); }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; color: var(--umber); letter-spacing: -.02em; display: inline-flex; align-items: center; gap: .25em; }
+.nav-logo .logo-num { font-feature-settings: "tnum"; }
+.nav-logo .arrow { color: var(--terracotta); font-weight: 300; }
+.footer-logo { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 500; color: var(--linen); margin-bottom: .5rem; display: inline-flex; align-items: center; gap: .35em; }
+.footer-logo .arrow { color: var(--terracotta); font-weight: 200; font-size: .7em; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { font-size: .9rem; font-weight: 500; color: var(--ink); transition: color .2s; }
+.nav-links a:hover { color: var(--terracotta); }
+.nav-cta {
+  background: var(--terracotta); color: var(--linen) !important; padding: .6rem 1.4rem;
+  border-radius: 100px; font-weight: 600 !important; transition: all .25s;
+}
+.nav-cta:hover { background: var(--umber); transform: translateY(-1px); }
+.nav-toggle { display: none; }
+@media (max-width: 768px) {
+  .nav-links { display: flex !important; gap: .8rem !important; position: static !important; width: auto !important; height: auto !important; background: transparent !important; flex-direction: row !important; padding: 0 !important; box-shadow: none !important; }
+  .nav-links a { font-size: .75rem !important; }
+  .nav-cta { font-size: .7rem !important; padding: .4rem .8rem !important; }
+  nav { padding: .5rem .8rem !important; }
+
+  nav { 
+    position: fixed !important; 
+    top: 0; left: 0; right: 0; 
+    padding: .8rem 1rem !important; 
+    box-sizing: border-box; 
+    max-width: 100vw;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  .nav-toggle {
+    display: flex !important; 
+    flex-direction: column; 
+    justify-content: center; 
+    gap: 5px;
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: .5rem;
+    z-index: 101; 
+    position: absolute !important; 
+    top: 50%; 
+    right: .5rem; 
+    transform: translateY(-50%);
+  }
+  .nav-toggle span {
+    width: 24px; height: 2px; background: var(--ink); border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links {
+    position: fixed !important; 
+    top: 0; 
+    right: -100% !important; 
+    width: 80vw !important; 
+    height: 100vh !important;
+    background: var(--linen) !important; 
+    flex-direction: column !important; 
+    justify-content: center !important;
+    gap: 1.5rem !important; 
+    padding: 2rem !important; 
+    box-shadow: -4px 0 30px rgba(0,0,0,.1) !important;
+    transition: right .3s ease !important; 
+    z-index: 100 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .nav-links.open { right: 0 !important; }
+  .nav-links a { font-size: .95rem !important; text-align: center; }
+  .nav-cta { margin-top: 1rem !important; font-size: .85rem !important; padding: .5rem 1.2rem !important; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 0%, #f0e8da 0%, var(--linen) 50%, #ddd4c4 100%);
+}
+.hero::before {
+  content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(164,100,71,0.10) 0%, transparent 60%);
+  border-radius: 50%; animation: float 12s ease-in-out infinite;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -150px; left: -150px; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(136,147,123,0.12) 0%, transparent 60%);
+  border-radius: 50%; animation: float 14s ease-in-out infinite reverse;
+}
+@keyframes float { 0%,100% { transform: translate(0,0); } 50% { transform: translate(30px,20px); } }
+
+.hero-content { position: relative; z-index: 2; max-width: 820px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: .5rem; background: rgba(164,100,71,0.08);
+  padding: .5rem 1.1rem; border-radius: 100px; font-size: .82rem; font-weight: 500;
+  color: var(--terracotta); margin-bottom: 1.8rem; letter-spacing: .03em;
+}
+.hero-badge .dot { width: 8px; height: 8px; background: var(--terracotta); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+
+.hero h1 { font-size: clamp(3rem, 9vw, 7rem); font-weight: 400; color: var(--umber); letter-spacing: -.04em; margin-bottom: 1.5rem; line-height: 1.1; font-family: 'Fraunces', serif; }
+.hero h1 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.hero h1.wordmark { display: block; }
+.hero h1.wordmark em { color: var(--terracotta); font-style: italic; }
+.hero h1 .arrow { font-family: 'Inter', sans-serif; font-weight: 200; color: var(--terracotta); font-size: .55em; opacity: .8; }
+.hero-tagline { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; color: var(--terracotta); font-size: clamp(1.1rem, 2vw, 1.35rem); margin-top: -0.6rem; margin-bottom: 1.8rem; letter-spacing: .01em; }
+.hero p.sub { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted); line-height: 1.7; max-width: 620px; margin: 0 auto 2.5rem; }
+
+.hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--terracotta); color: var(--linen); border: none; padding: .9rem 2rem;
+  border-radius: 100px; font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 600;
+  cursor: pointer; transition: all .25s; display: inline-flex; align-items: center; gap: .5rem;
+}
+.btn-primary:hover { background: var(--umber); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(164,100,71,0.25); }
+.btn-secondary {
+  background: transparent; color: var(--umber); border: 1.5px solid var(--terracotta);
+  padding: .9rem 2rem; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: .95rem;
+  font-weight: 600; cursor: pointer; transition: all .25s; display: inline-flex; align-items: center; gap: .5rem;
+}
+.btn-secondary:hover { background: var(--terracotta); color: var(--linen); }
+
+.hero-audience { margin-top: 3rem; font-size: .85rem; color: var(--muted); }
+.hero-audience span { display: inline-block; padding: .3rem .8rem; margin: .2rem; background: rgba(255,255,255,0.5); border-radius: 100px; border: 1px solid rgba(164,100,71,0.1); }
+
+/* ===== SECTION SHARED ===== */
+section { padding: 6rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label { font-size: .8rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; }
+.section-title { font-size: clamp(2rem, 4vw, 3rem); color: var(--umber); margin-bottom: 1rem; letter-spacing: -.02em; }
+.section-title em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.section-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.7; max-width: 620px; }
+.center { text-align: center; }
+.center .section-sub { margin: 0 auto; }
+
+/* ===== PROBLEM ===== */
+.problem { background: var(--umber); color: var(--linen); text-align: center; }
+.problem .section-label { color: var(--almond); }
+.problem .section-title { color: var(--linen); }
+.problem .section-title em { color: var(--almond); }
+.problem .section-sub { color: rgba(232,225,213,0.65); margin: 0 auto; }
+.problem-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 4rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+.stat { padding: 2rem 1rem; }
+.stat-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 300; color: var(--almond); display: block; }
+.stat-label { font-size: .9rem; color: rgba(232,225,213,0.5); margin-top: .5rem; }
+
+/* ===== EIGHT PROGRESSION (signature element) ===== */
+.eight-progression {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .35rem; margin: 2rem auto 0; padding: .6rem 1.2rem;
+  background: rgba(255,255,255,0.4); border-radius: 100px;
+  border: 1px solid rgba(164,100,71,0.1);
+}
+.eight-progression .step {
+  font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 500;
+  color: var(--umber); width: 28px; height: 28px; display: flex;
+  align-items: center; justify-content: center; border-radius: 50%;
+  background: var(--linen); border: 1.5px solid var(--terracotta);
+}
+.eight-progression .step:nth-child(1) { background: var(--terracotta); color: var(--linen); }
+.eight-progression .connector {
+  width: 14px; height: 1.5px; background: linear-gradient(90deg, var(--terracotta), var(--almond));
+  border-radius: 1px;
+}
+
+/* ===== PILLARS ===== */
+.pillars { background: var(--linen); }
+.pillars-grid { display: grid; gap: 1.5rem; margin-top: 4rem; align-items: stretch; }
+.pillar-card {
+  background: var(--white); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow);
+  transition: all .3s ease; border: 1px solid rgba(76,54,45,0.06); position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.pillar-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.pillar-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+.pillar-card .pillar-tags { margin-top: auto; padding-top: 1.5rem; }
+.pillar-num { font-family: 'Fraunces', serif; font-size: .85rem; font-weight: 600; color: var(--terracotta); letter-spacing: .1em; }
+.pillar-icon { width: 56px; height: 56px; margin-bottom: 1.2rem; }
+.pillar-card h3 { font-size: 1.6rem; color: var(--umber); margin: .5rem 0 1rem; }
+.pillar-card p { color: var(--muted); line-height: 1.7; font-size: .98rem; }
+.pillar-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pillar-tag { font-size: .78rem; padding: .3rem .7rem; background: var(--cream); border-radius: 100px; color: var(--terracotta); font-weight: 500; }
+
+.pillar-card:nth-child(1)::before { background: linear-gradient(90deg, #88937B, #a4b096); }
+.pillar-card:nth-child(2)::before { background: linear-gradient(90deg, #A46447, #c08060); }
+.pillar-card:nth-child(3)::before { background: linear-gradient(90deg, #CEB59E, #d9c5b0); }
+.pillar-card:nth-child(4)::before { background: linear-gradient(90deg, #88937B, #A46447); }
+.pillar-card:nth-child(5)::before { background: linear-gradient(90deg, #4C362D, #A46447); }
+.pillar-card:nth-child(6)::before { background: linear-gradient(90deg, #88937B, #CEB59E); }
+.pillar-card:nth-child(7)::before { background: linear-gradient(90deg, #CEB59E, #A46447); }
+
+@media (min-width: 768px) { .pillars-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .pillars-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ===== GUIDE ===== */
+.guide { background: linear-gradient(180deg, var(--linen) 0%, var(--cream) 100%); }
+.guide-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+@media (max-width: 768px) { .guide-inner { grid-template-columns: 1fr; gap: 2rem; } }
+
+.guide-book { position: relative; perspective: 1000px; display: flex; justify-content: center; }
+.book-3d {
+  width: 280px; height: 380px; background: var(--umber); border-radius: 4px 12px 12px 4px;
+  box-shadow: -4px 4px 0 var(--terracotta), -8px 8px 20px rgba(0,0,0,0.15), 0 20px 40px rgba(0,0,0,0.1);
+  transform: rotateY(-12deg) rotateX(3deg); transition: transform .5s ease; position: relative;
+  padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: space-between;
+}
+.book-3d:hover { transform: rotateY(-6deg) rotateX(1deg); }
+.book-3d::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: linear-gradient(90deg, rgba(0,0,0,0.2), transparent); border-radius: 4px 0 0 4px; }
+.book-3d::after { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.1); }
+.book-label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--almond); font-weight: 600; }
+.book-title { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--linen); line-height: 1.2; font-weight: 400; }
+.book-sub { font-size: .8rem; color: rgba(232,225,213,0.5); }
+.book-spine-lines { position: absolute; right: 1rem; top: 2rem; bottom: 2rem; width: 1px; display: flex; flex-direction: column; justify-content: space-between; }
+.book-spine-lines span { display: block; width: 1px; height: 30px; background: rgba(206,181,158,0.2); }
+
+.guide-content h2 { margin-bottom: 1rem; }
+.guide-features { list-style: none; margin: 2rem 0; }
+.guide-features li { padding: .7rem 0; border-bottom: 1px solid rgba(76,54,45,0.08); display: flex; align-items: flex-start; gap: .8rem; font-size: .98rem; color: var(--ink); }
+.guide-features li:last-child { border-bottom: none; }
+.check { color: var(--sage); flex-shrink: 0; margin-top: 2px; }
+.guide-price { display: flex; align-items: baseline; gap: .5rem; margin: 1.5rem 0; }
+.guide-price .price { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--umber); font-weight: 500; }
+.guide-price .unit { color: var(--muted); font-size: .9rem; }
+.guide-price .note { font-size: .8rem; color: var(--terracotta); margin-left: .5rem; background: rgba(164,100,71,0.1); padding: .2rem .6rem; border-radius: 100px; }
+
+/* ===== WORKSHOPS ===== */
+.workshops { background: var(--white); }
+.workshop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+.workshop-card { border: 1.5px solid var(--cream); border-radius: var(--radius); padding: 2rem; transition: all .3s; }
+.workshop-card:hover { border-color: var(--terracotta); box-shadow: var(--shadow); }
+.workshop-duration { font-size: .8rem; font-weight: 600; color: var(--terracotta); letter-spacing: .05em; margin-bottom: .5rem; }
+.workshop-card h3 { font-size: 1.3rem; color: var(--umber); margin-bottom: .8rem; }
+.workshop-card p { font-size: .92rem; color: var(--muted); line-height: 1.65; }
+.workshop-card ul { list-style: none; margin-top: 1rem; }
+.workshop-card ul li { font-size: .85rem; color: var(--ink); padding: .2rem 0; padding-left: 1.2rem; position: relative; }
+.workshop-card ul li::before { content: '→'; position: absolute; left: 0; color: var(--terracotta); }
+
+/* ===== CHURCHES / ORGS ===== */
+.orgs { background: var(--umber); color: var(--linen); }
+.orgs .section-label { color: var(--almond); }
+.orgs .section-title { color: var(--linen); }
+.orgs .section-title em { color: var(--almond); }
+.orgs .section-sub { color: rgba(232,225,213,0.65); }
+.org-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3.5rem; }
+@media (max-width: 768px) { .org-inner { grid-template-columns: 1fr; gap: 2rem; } }
+.org-benefits { list-style: none; }
+.org-benefits li { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; gap: 1rem; align-items: flex-start; }
+.org-benefits li:last-child { border-bottom: none; }
+.org-icon { width: 40px; height: 40px; background: rgba(164,100,71,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--almond); font-size: 1.2rem; }
+.org-benefits h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--linen); margin-bottom: .2rem; }
+.org-benefits p { font-size: .88rem; color: rgba(232,225,213,0.55); line-height: 1.5; }
+
+.org-cta-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 2.5rem; }
+.org-cta-box h3 { color: var(--linen); font-size: 1.4rem; margin-bottom: .8rem; }
+.org-cta-box p { color: rgba(232,225,213,0.65); font-size: .92rem; line-height: 1.6; margin-bottom: 1.5rem; }
+.org-cta-box .btn-primary { background: var(--terracotta); }
+.org-cta-box .btn-primary:hover { background: var(--almond); color: var(--umber); }
+.host-detail { margin-top: 1.2rem; font-size: .82rem; color: rgba(232,225,213,0.4); }
+
+/* ===== TESTIMONIALS ===== */
+.testimonials { background: var(--linen); }
+.test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; }
+.test-card { background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+.test-quote { font-family: 'Fraunces', serif; font-size: 1.05rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 1.2rem; }
+.test-author { display: flex; align-items: center; gap: .8rem; }
+.test-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--cream); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; color: var(--terracotta); font-weight: 600; }
+.test-name { font-weight: 600; font-size: .9rem; color: var(--ink); }
+.test-role { font-size: .8rem; color: var(--muted); }
+
+/* ===== FAQ ===== */
+.faq { background: var(--white); }
+.faq-list { max-width: 760px; margin: 3rem auto 0; }
+.faq-item { border-bottom: 1px solid var(--cream); }
+.faq-q { padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 1.02rem; color: var(--umber); }
+.faq-q .plus { font-size: 1.5rem; color: var(--terracotta); transition: transform .3s; flex-shrink: 0; margin-left: 1rem; }
+.faq-item.open .plus { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a p { padding-bottom: 1.5rem; color: var(--muted); line-height: 1.7; font-size: .95rem; }
+
+/* ===== FINAL CTA ===== */
+.final-cta { background: linear-gradient(180deg, var(--cream) 0%, var(--linen) 100%); text-align: center; padding: 6rem 2rem; }
+.final-cta h2 { font-size: clamp(2rem, 4vw, 3.2rem); color: var(--umber); margin-bottom: 1.2rem; }
+.final-cta h2 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.final-cta p { font-size: 1.1rem; color: var(--muted); margin-bottom: 2.5rem; }
+
+/* ===== FOOTER ===== */
+footer { background: var(--umber); color: rgba(232,225,213,0.5); padding: 3rem 2rem 2rem; text-align: center; }
+.footer-logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--linen); margin-bottom: .5rem; }
+.footer-logo span { color: var(--terracotta); }
+footer p { font-size: .85rem; margin-bottom: .3rem; }
+.footer-links { margin: 1.5rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.footer-links a { font-size: .85rem; color: rgba(232,225,213,0.4); transition: color .2s; }
+.footer-links a:hover { color: var(--almond); }
+
+/* ===== ANIMATIONS ===== */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.icon { width: 100%; height: 100%; }
+
+/* ===== EMAIL SIGNUP ===== */
+.signup { background: var(--cream); padding: 5rem 2rem; text-align: center; }
+.signup h2 { font-family: 'Fraunces', serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 500; color: var(--umber); margin-bottom: .8rem; }
+.signup h2 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.signup p.sub { font-size: .95rem; color: var(--muted); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.6; }
+.signup-form { display: flex; gap: .5rem; max-width: 420px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+.signup-form input { padding: .7rem 1rem; font-size: .9rem; border: 1.5px solid var(--almond); border-radius: 100px; font-family: 'Inter', sans-serif; color: var(--ink); outline: none; transition: border-color .2s; }
+.signup-form input:focus { border-color: var(--terracotta); }
+.signup-form input[type="text"] { width: 180px; }
+.signup-form input[type="email"] { width: 220px; }
+.signup-form button { background: var(--terracotta); color: white; border: none; padding: .7rem 1.5rem; border-radius: 100px; font-weight: 600; font-size: .85rem; cursor: pointer; font-family: 'Inter', sans-serif; transition: all .2s; }
+.signup-form button:hover { background: var(--umber); }
+.signup-form button:disabled { opacity: .6; cursor: default; }
+.signup-note { font-size: .78rem; color: var(--muted); margin-top: 1rem; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+.signup-success { display: none; background: var(--sage); color: white; padding: .8rem 1.5rem; border-radius: 100px; font-size: .9rem; font-weight: 500; max-width: 420px; margin: 0 auto; }
+.signup-success.show { display: block; }
+.signup-error { display: none; color: var(--terracotta); font-size: .85rem; margin-top: .5rem; }
+.signup-error.show { display: block; }
+@media (max-width: 600px) {
+  .signup-form input[type="text"], .signup-form input[type="email"] { width: 100%; }
+  .signup-form button { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <a href="#" class="nav-logo">one <em style="font-style:italic;font-weight:300;color:var(--terracotta);">to</em> eight</a>
+  <!-- <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button> -->
+  <div class="nav-links">
+    <a href="#pillars">The Eight</a>
+    <a href="#guide">The Guide</a>
+    <a href="#workshops">Weekly Meetup</a>
+    <a href="#updates">Updates</a>
+        <a href="#contact" class="nav-cta">Join the Meetup</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="wordmark">one <em>to</em> eight</h1>
+    <p class="hero-tagline">eight essentials for a screen-born generation</p>
+    <p class="sub">A practical guide and weekly meetup that equips young people with the depth, skills, digital self-defence, financial literacy, community, knowledge, body, nature, and convictions they'll need when the noise fades and real life begins.</p>
+    <div class="hero-ctas">
+      <a href="#guide" class="btn-primary">Get the Guide →</a>
+      <a href="#workshops" class="btn-secondary">Weekly Meetup</a>
+    </div>
+    <div class="hero-audience">
+      <span>For Year 11–13 students</span>
+      <span>For university graduates</span>
+      <span>For youth groups &amp; communities</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem">
+  <div class="container center">
+    <div class="section-label">The Gap</div>
+    <h2 class="section-title">We've given them screens.<br>We haven't given them <em>roots.</em></h2>
+    <p class="section-sub">Young people today are more connected, more informed, and more anxious than any generation before them. They can access the world — but they can't sit in silence, fix a tap, or name a neighbour who'd show up at 2am.</p>
+    <div class="problem-stats">
+      <div class="stat"><span class="stat-num">1 in 5</span><span class="stat-label">young people experience anxiety or depression (ONS)</span></div>
+      <div class="stat"><span class="stat-num">7 hrs</span><span class="stat-label">average daily screen time for teens</span></div>
+      <div class="stat"><span class="stat-num">52%</span><span class="stat-label">of graduates feel unprepared for real life</span></div>
+      <div class="stat"><span class="stat-num">0</span><span class="stat-label">hours of silence most young people experience daily</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PILLARS ===== -->
+<section class="pillars" id="pillars">
+  <div class="container">
+    <div class="center">
+      <div class="section-label">The Eight Essentials</div>
+      <h2 class="section-title">What young people<br>actually <em>need.</em></h2>
+      <p class="section-sub">Not another life-hack app. Not another motivational video. Eight practical, buildable foundations that hold up when life gets real — from the inside out, one through eight.</p>
+      </div>
+
+    <div class="pillars-grid">
+      <!-- 1 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <circle cx="28" cy="28" r="20" stroke="#88937B" stroke-width="2"/>
+            <circle cx="28" cy="28" r="6" fill="#88937B"/>
+            <path d="M28 8 V14 M28 42 V48 M8 28 H14 M42 28 H48" stroke="#88937B" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 01</span>
+        <h3>The Ability to Sit in Silence</h3>
+        <p>In a world engineered for constant stimulation, the capacity to be still — without a phone, without noise, without distraction — is a superpower. It's where self-awareness lives and where real strength is forged.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Stillness</span><span class="pillar-tag">Self-awareness</span><span class="pillar-tag">Reflection</span>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <path d="M28 10 C22 10 18 14 18 20 C18 26 22 30 28 30 C34 30 38 26 38 20 C38 14 34 10 28 10 Z" stroke="#A46447" stroke-width="2" fill="none"/>
+            <path d="M28 30 V46 M20 38 H36 M22 42 L28 46 L34 42" stroke="#A46447" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 16 L18 18 M42 16 L38 18 M14 24 L18 22 M42 24 L38 22" stroke="#CEB59E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 02</span>
+        <h3>Your Body is a Temple</h3>
+        <p>Your body is the only vehicle you get to experience the universe, do meaningful work, and connect with the people you love. Treat it like a temple — proactive maintenance, guarding the gates, radical ownership, and reverence for the instrument that makes your life possible.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Nutrition</span><span class="pillar-tag">Movement</span><span class="pillar-tag">Rest</span><span class="pillar-tag">Boundaries</span>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <path d="M14 42 L28 14 L42 42 Z" stroke="#CEB59E" stroke-width="2" fill="none"/>
+            <path d="M20 36 L36 36 M24 30 L32 30" stroke="#CEB59E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="28" cy="22" r="3" fill="#CEB59E"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 03</span>
+        <h3>Useful Real-World Skills</h3>
+        <p>Feed yourself. Fix a leak. Build a shelf. Cook a meal from scratch. Build a budget. The ability to produce, preserve, and plan — not just consume — builds quiet confidence that no degree can replicate. Resilience over visibility.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Cooking</span><span class="pillar-tag">Basic repairs</span><span class="pillar-tag">Budgeting</span><span class="pillar-tag">Problem-solving</span>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <path d="M28 10 L28 46" stroke="#88937B" stroke-width="2"/>
+            <path d="M18 20 L38 20" stroke="#88937B" stroke-width="2"/>
+            <path d="M14 30 L42 30" stroke="#88937B" stroke-width="2"/>
+            <circle cx="28" cy="40" r="4" stroke="#88937B" stroke-width="2" fill="none"/>
+            <path d="M24 40 L20 36 M32 40 L36 36" stroke="#88937B" stroke-width="2"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 04</span>
+        <h3>Digital Self-Defence</h3>
+        <p>Your phone tracks you 800 times a day. Learn to protect your privacy, identity, and mind from surveillance, scams, and AI manipulation.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Privacy</span><span class="pillar-tag">Security</span><span class="pillar-tag">Scam awareness</span><span class="pillar-tag">Digital footprint</span>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <circle cx="18" cy="22" r="6" stroke="#A46447" stroke-width="2"/>
+            <circle cx="38" cy="22" r="6" stroke="#A46447" stroke-width="2"/>
+            <circle cx="28" cy="38" r="6" stroke="#A46447" stroke-width="2"/>
+            <path d="M22 26 L32 34 M34 26 L24 34 M22 22 L34 22" stroke="#A46447" stroke-width="1.5" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 05</span>
+        <h3>Real Community</h3>
+        <p>Not followers. Not connections. People who know your name. The kind who'll show up at 2am when everything falls apart. We help young people build pre-deposited, load-bearing relationships before they need them.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Deep friendships</span><span class="pillar-tag">Mentorship</span><span class="pillar-tag">Belonging</span>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <rect x="14" y="10" width="28" height="36" rx="3" stroke="#4C362D" stroke-width="2"/>
+            <path d="M20 18 H36 M20 24 H36 M20 30 H30 M20 36 H26" stroke="#4C362D" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="42" cy="42" r="6" stroke="#CEB59E" stroke-width="2" fill="none"/>
+            <path d="M42 39 V45 M39 42 H45" stroke="#CEB59E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 06</span>
+        <h3>Knowledge Without Wi-Fi</h3>
+        <p>What do you actually know when the internet goes down? We teach young people to internalise knowledge — practical, vocational, and personal — so they possess it rather than rent it from a search bar. Build a local AI backup: offline models, archived knowledge bases, and tools that work without a connection.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Internalised learning</span><span class="pillar-tag">Offline skills</span><span class="pillar-tag">Local AI</span>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <path d="M28 48 C28 48 10 36 10 22 C10 14 16 10 22 12 C26 13 28 18 28 18 C28 18 30 13 34 12 C40 10 46 14 46 22 C46 36 28 48 28 48 Z" stroke="#88937B" stroke-width="2" fill="none"/>
+            <path d="M20 28 L24 32 L30 22" stroke="#A46447" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="44" cy="12" r="4" stroke="#CEB59E" stroke-width="1.5" fill="none"/>
+            <path d="M44 8 V16 M40 12 H48" stroke="#CEB59E" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 07</span>
+        <h3>Prescribe Nature</h3>
+        <p>Nature is not a luxury — it's medicine. Time outdoors lowers stress, restores attention, and reminds you that you are part of something larger than a screen. Sunlight, soil, fresh air, and the slow rhythm of the natural world. This is the original therapy, prescribed for every generation before ours.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Outdoors</span><span class="pillar-tag">Sunlight</span><span class="pillar-tag">Grounding</span><span class="pillar-tag">Seasons</span>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg class="icon" viewBox="0 0 56 56" fill="none">
+            <path d="M28 48 C28 48 10 36 10 22 C10 14 16 10 22 12 C26 13 28 18 28 18 C28 18 30 13 34 12 C40 10 46 14 46 22 C46 36 28 48 28 48 Z" stroke="#88937B" stroke-width="2" fill="none"/>
+            <path d="M28 20 V40 M22 28 L28 34 L34 28" stroke="#A46447" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="pillar-num">ESSENTIAL 08</span>
+        <h3>Tested Convictions</h3>
+        <p>Convictions that have never been tested are just opinions. We prepare young people for the deceptions, disappointments, and pressures they'll face — so their values become load-bearing, not decorative. For all backgrounds, beliefs, and traditions.</p>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Values</span><span class="pillar-tag">Resilience</span><span class="pillar-tag">Purpose</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUIDE ===== -->
+<section class="guide" id="guide">
+  <div class="container">
+    <div class="guide-inner">
+      <div class="guide-book">
+        <div class="book-3d">
+          <div>
+            <div class="book-label">1 → 8</div>
+            <div class="book-title">Eight Essentials<br>for a Life<br>That Holds</div>
+          </div>
+          <div class="book-sub">A Practical Guide for Young People</div>
+          <div class="book-spine-lines"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="guide-content">
+        <div class="section-label">The Guide</div>
+        <h2 class="section-title">A 140-page guide<br>that doesn't <em>patronise.</em></h2>
+        <p class="section-sub">Written for young people, designed for small groups. Each chapter covers one essential with practical exercises, discussion prompts, and real-world challenges.</p>
+        <ul class="guide-features">
+          <li><span class="check">✓</span> 8 chapters, one per essential — readable in an evening</li>
+          <li><span class="check">✓</span> Discussion questions for youth groups &amp; community settings</li>
+          <li><span class="check">✓</span> Practical "Do This This Week" challenges for each essential</li>
+          <li><span class="check">✓</span> Wisdom reflections from multiple traditions — or your own</li>
+          <li><span class="check">✓</span> Printable checklists and progress trackers</li>
+        </ul>
+        <div class="guide-price">
+          <span class="price">$12.08</span>
+          <span class="unit">/ copy</span>
+        </div>
+        <a href="#contact" class="btn-primary">Order the Guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORKSHOPS ===== -->
+<section class="workshops" id="workshops">
+  <div class="container">
+    <div class="center">
+      <div class="section-label">Weekly Meetup</div>
+      <h2 class="section-title">Go deeper with<br>our <em>weekly meetup.</em></h2>
+      <p class="section-sub">Every week, we host a live online session where you can ask questions, dig deeper into each essential, and connect with others on the same journey.</p>
+    </div>
+
+    <div class="workshop-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 900px; margin: 0 auto;">
+      <div class="workshop-card" style="text-align: center;">
+        <div class="workshop-duration">LIVE ONLINE · WEEKLY</div>
+        <h3>Thursday Night Live</h3>
+        <p>Join us every Thursday evening for a live, interactive online session. Each week we unpack one of the eight essentials in depth — with practical teaching, real stories, and extended Q&amp;A where you can ask anything.</p>
+        <ul style="text-align: left; max-width: 420px; margin: 1.5rem auto;">
+          <li>Deep-dive teaching on one essential per week</li>
+          <li>Extended Q&amp;A — bring your questions</li>
+          <li>Live discussion with others working through the guide</li>
+          <li>Practical challenges for the week ahead</li>
+          <li>Recorded if you miss it</li>
+        </ul>
+        <div class="guide-price" style="justify-content: center; margin: 1rem 0;">
+          <span class="price">$8.88</span>
+          <span class="unit">/ month</span>
+        </div>
+        <a href="#contact" class="nav-cta" style="display: inline-block; margin-top: 1rem;">Join the Meetup →</a>
+      </div>
+
+      <div class="workshop-card" style="text-align: center; display: flex; flex-direction: column;">
+        <div class="workshop-duration">BY REQUEST</div>
+        <h3>Sunday School Webinar</h3>
+        <p>A dedicated webinar for Sunday school classes, youth groups, and church communities. We walk through the eight essentials in a faith-informed context, with space for discussion, reflection, and practical application.</p>
+        <ul style="text-align: left; max-width: 420px; margin: 1.5rem auto;">
+          <li>Tailored for Sunday school and youth ministry</li>
+          <li>Faith-informed framing of all eight essentials</li>
+          <li>Interactive discussion and reflection time</li>
+          <li>Flexible scheduling — your time, your group</li>
+        </ul>
+        <div style="margin-top: auto; padding-top: 1rem;">
+          <span class="pillar-tag" style="background: var(--cream); color: var(--terracotta); font-size: .82rem;">Available on request</span>
+        </div>
+        <a href="#contact" class="btn-secondary" style="display: inline-block; margin-top: 1.2rem;">Enquire →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORGANISATIONS ===== -->
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="center">
+      <div class="section-label">Voices</div>
+      <h2 class="section-title">What people are <em>saying.</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <p class="test-quote">"Our youth group went through the eight-week programme. Three of them now cook Sunday lunch for the whole church. That's not a metaphor — they actually cook."</p>
+        <div class="test-author"><div class="test-avatar">RS</div><div><div class="test-name">Rev. Sarah M.</div><div class="test-role">Youth Pastor, St. Mark's</div></div></div>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"I thought I needed a better CV. Turns out I needed to learn to sit still for ten minutes without my phone. That changed everything."</p>
+        <div class="test-author"><div class="test-avatar">JT</div><div><div class="test-name">James T.</div><div class="test-role">Graduate, age 23</div></div></div>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"The silence session was the first time my teenager voluntarily put her phone down for an hour. I nearly cried."</p>
+        <div class="test-author"><div class="test-avatar">DH</div><div><div class="test-name">David H.</div><div class="test-role">Parent</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="center">
+      <div class="section-label">Questions</div>
+      <h2 class="section-title">Things people <em>ask.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this only for faith-based groups? <span class="plus">+</span></div><div class="faq-a"><p>No. onetoeight is designed for any context — churches, schools, community centres, and informal groups. Essentials 1–7 are universal. Essential 8 (Tested Convictions) is written to work for any worldview, with an appendix showing how to customise it for your faith tradition if you wish.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What age range is this for? <span class="plus">+</span></div><div class="faq-a"><p>The guide is written for ages 15–25 — senior school students (Year 11–13) through to recent graduates. Younger participants focus more on skills and community; older participants dig deeper into convictions and purpose.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How big does a group need to be? <span class="plus">+</span></div><div class="faq-a"><p>Weekly meetups work best with 10–30 participants. We can accommodate smaller groups (minimum 6) and larger groups by arrangement. The eight-week programme works especially well with 15–20 participants.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you travel outside your local area? <span class="plus">+</span></div><div class="faq-a"><p>Yes. Travel within 50 miles is included in the meetup price. For greater distances, we charge travel at cost. We can also train local leaders to deliver the programme themselves — ask about our facilitator training.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can we see a sample of the guide before buying? <span class="plus">+</span></div><div class="faq-a"><p>Absolutely. Contact us and we'll send you a free PDF sample of the first chapter, including discussion questions and practical challenges, so you can review it with your team.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta" id="contact">
+  <div class="container">
+    <h2>Give them <em>roots,</em><br>not just wings.</h2>
+    <p>Order the guide, join the meetup, or just start a conversation.</p>
+    <div class="hero-ctas">
+      <a href="mailto:hello@onetoeight.me" class="btn-primary">Get in Touch →</a>
+      <a href="#guide" class="btn-secondary">Order the Guide</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMAIL SIGNUP ===== -->
+<section class="signup" id="updates">
+  <h2>Get <em>updates, tips & offers.</em></h2>
+  <p class="sub">No spam. No selling your info. Just occasional updates when we release new resources, guides, or product drops.</p>
+  <form class="signup-form" id="signup-form" onsubmit="return submitSignup(event)">
+    <input type="text" name="name" placeholder="Your name" required autocomplete="name">
+    <input type="email" name="email" placeholder="Your email" required autocomplete="email">
+    <button type="submit" id="signup-btn">Subscribe</button>
+  </form>
+  <div class="signup-success" id="signup-success">You're in. We'll be in touch.</div>
+  <div class="signup-error" id="signup-error">Something went wrong. Please try again.</div>
+  <p class="signup-note">We will never share, sell, or rent your email address. Unsubscribe anytime with one click.</p>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">1 <span class="arrow">→</span> 8</div>
+  <p>Eight Essentials for a Life That Holds</p>
+  <div class="footer-links">
+    <a href="#pillars">The Eight</a><a href="#guide">The Guide</a><a href="#workshops">Weekly Meetup</a><a href="#faq">FAQ</a><a href="mailto:hello@onetoeight.me">Contact</a>
+  </div>
+  <p>© 2026 onetoeight · A guide and weekly meetup for young people.</p>
+</footer>
+
+<script>
+function submitSignup(e) {
+  e.preventDefault();
+  var form = document.getElementById('signup-form');
+  var btn = document.getElementById('signup-btn');
+  var success = document.getElementById('signup-success');
+  var error = document.getElementById('signup-error');
+  var name = form.querySelector('input[name="name"]').value;
+  var email = form.querySelector('input[name="email"]').value;
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  error.classList.remove('show');
+
+  fetch('https://cloud.activepieces.com/api/v1/webhooks/mFlYDmEWcfIOBLkpGcAPN', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, email: email, source: 'onetoeight guide landing page' })
+  })
+  .then(function(resp) {
+    if (resp.ok || resp.status === 200 || resp.status === 201 || resp.status === 204) {
+      form.style.display = 'none';
+      success.classList.add('show');
+    } else {
+      throw new Error('HTTP ' + resp.status);
+    }
+  })
+  .catch(function(err) {
+    fetch('https://cloud.activepieces.com/api/v1/webhooks/mFlYDmEWcfIOBLkpGcAPN', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, source: 'onetoeight guide landing page' })
+    }).then(function() {
+      form.style.display = 'none';
+      success.classList.add('show');
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+      error.classList.add('show');
+    });
+  });
+
+  return false;
+}
+
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 60) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, { threshold: 0.01, rootMargin: '0px 0px 100px 0px' });
+document.querySelectorAll('.reveal').forEach(el => {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) { el.classList.add('visible'); }
+  else { observer.observe(el); }
+});
+function toggleFaq(el) {
+  const item = el.parentElement; const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+/* Mobile menu toggle — commented out
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', navToggle.classList.contains('open'));
+});
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+*/
+
+</script>
+
+</body>
+</html>
