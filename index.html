@@ -248,6 +248,44 @@ section { padding: 6rem 2rem; }
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
   opacity: 0.9;
 }
+.wisdom {
+  background: linear-gradient(180deg, var(--linen) 0%, var(--cream) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.wisdom blockquote {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.wisdom-quote {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--umber);
+  line-height: 1.8;
+  letter-spacing: .01em;
+}
+.wisdom-quote::before {
+  content: '\201C';
+  display: block;
+  font-size: 3rem;
+  color: var(--terracotta);
+  font-family: 'Fraunces', serif;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  opacity: 0.6;
+}
+.wisdom-ref {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: 'Fraunces', serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--terracotta);
+  font-style: italic;
+  letter-spacing: .02em;
+}
 .problem-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 4rem; max-width: 900px; margin-left: auto; margin-right: auto; }
 .stat { padding: 2rem 1rem; }
 .stat-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 300; color: var(--almond); display: block; }
@@ -648,6 +686,16 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ===== SCRIPTURE WISDOM ===== -->
+<section class="wisdom">
+  <div class="container center">
+    <blockquote>
+      <p class="wisdom-quote">Go to the ant, you sluggard;<br>consider its ways and be wise!<br>It has no commander,<br>no overseer or ruler,<br>yet it stores its provisions in summer<br>and gathers its food at harvest.</p>
+      <cite class="wisdom-ref">— Proverbs 6:6–8</cite>
+    </blockquote>
   </div>
 </section>
 
