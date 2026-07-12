@@ -227,6 +227,69 @@ nav.scrolled { background: rgba(232,225,213,0.95); backdrop-filter: blur(12px); 
 }
 .hero-logo:hover { opacity: 1; transform: scale(1.02); }
 .hero-tagline { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; color: var(--terracotta); font-size: clamp(1.1rem, 2vw, 1.35rem); margin-top: -0.4rem; margin-bottom: 1.8rem; letter-spacing: .01em; }
+.hero-audio {
+  margin: 0 auto 2rem;
+  max-width: 340px;
+}
+.audio-btn {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+  padding: .7rem 1.2rem;
+  background: var(--cream);
+  border: 1.5px solid var(--terracotta);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .25s;
+  font-family: 'Inter', sans-serif;
+  font-size: .9rem;
+  color: var(--umber);
+}
+.audio-btn:hover { background: var(--terracotta); color: var(--linen); }
+.audio-btn:hover .audio-icon { color: var(--linen); }
+.audio-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--terracotta);
+  color: var(--linen);
+  border-radius: 50%;
+  font-size: .8rem;
+  flex-shrink: 0;
+  transition: background .25s;
+}
+.audio-btn:hover .audio-icon { background: var(--linen); color: var(--terracotta); }
+.audio-label { flex: 1; text-align: left; font-weight: 500; }
+.audio-duration { font-size: .8rem; color: var(--muted); font-weight: 400; }
+.audio-btn:hover .audio-duration { color: rgba(255,255,255,0.7); }
+.audio-wave {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 20px;
+  margin-top: .5rem;
+}
+.audio-wave.active { display: flex; }
+.audio-wave span {
+  display: block;
+  width: 3px;
+  height: 4px;
+  background: var(--terracotta);
+  border-radius: 2px;
+  animation: wave 1.2s ease-in-out infinite;
+}
+.audio-wave span:nth-child(2) { animation-delay: .15s; height: 8px; }
+.audio-wave span:nth-child(3) { animation-delay: .3s; height: 14px; }
+.audio-wave span:nth-child(4) { animation-delay: .45s; height: 8px; }
+.audio-wave span:nth-child(5) { animation-delay: .6s; height: 4px; }
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.5); opacity: .4; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
 .hero p.sub { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted); line-height: 1.7; max-width: 620px; margin: 0 auto 2.5rem; }
 
 .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -572,6 +635,17 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     </svg>
     <h1 class="wordmark">one <em>to</em> eight</h1>
     <p class="hero-tagline">eight essentials for a screen-born generation</p>
+    <div class="hero-audio">
+      <audio id="promo-audio" preload="none">
+        <source src="audio/promo-overview.ogg" type="audio/ogg">
+      </audio>
+      <button class="audio-btn" onclick="toggleAudio()" aria-label="Play promo">
+        <span class="audio-icon">&#9654;</span>
+        <span class="audio-label">Listen: 60-second overview</span>
+        <span class="audio-duration">1:00</span>
+      </button>
+      <div class="audio-wave" id="audio-wave"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
     <p class="sub">A practical guide and weekly meetup that equips young people with the depth, skills, digital self-defence, financial literacy, community, knowledge, body, nature, and convictions they'll need when the noise fades and real life begins.</p>
     <div class="hero-ctas">
       <a href="#guide" class="btn-primary">Get the Guide →</a>
@@ -1005,6 +1079,30 @@ function toggleFaq(el) {
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!wasOpen) item.classList.add('open');
 }
+
+// Audio player toggle
+let audioPlayer = document.getElementById('promo-audio');
+let audioBtn = document.querySelector('.audio-btn');
+let audioWave = document.getElementById('audio-wave');
+function toggleAudio() {
+  if (audioPlayer.paused) {
+    audioPlayer.play();
+    audioBtn.querySelector('.audio-icon').innerHTML = '&#9646;&#9646;';
+    audioBtn.querySelector('.audio-label').textContent = 'Playing...';
+    audioWave.classList.add('active');
+  } else {
+    audioPlayer.pause();
+    audioPlayer.currentTime = 0;
+    audioBtn.querySelector('.audio-icon').innerHTML = '&#9654;';
+    audioBtn.querySelector('.audio-label').textContent = 'Listen: 60-second overview';
+    audioWave.classList.remove('active');
+  }
+}
+audioPlayer.addEventListener('ended', function() {
+  audioBtn.querySelector('.audio-icon').innerHTML = '&#9654;';
+  audioBtn.querySelector('.audio-label').textContent = 'Listen: 60-second overview';
+  audioWave.classList.remove('active');
+});
 
 // Mobile menu toggle
 const navToggle = document.querySelector('.nav-toggle');
