@@ -49,6 +49,21 @@ nav {
 .nav-links a { font-size: .9rem; font-weight: 500; color: var(--ink); transition: color .2s; }
 .nav-links a:hover { color: var(--terracotta); }
 
+/* ===== PHOTO ===== */
+.about-photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.about-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--cream);
+  box-shadow: 0 4px 20px rgba(76,54,45,0.15);
+}
+
 /* ===== HERO ===== */
 .about-hero {
   padding: 8rem 2rem 4rem;
@@ -161,6 +176,9 @@ footer a { color: var(--almond); }
 
 <!-- ===== HERO ===== -->
 <section class="about-hero">
+  <div class="about-photo-wrap">
+    <img src="images/brendan-okeefe.jpg" alt="Brendan O'Keefe — founder of one to eight" class="about-photo" loading="eager">
+  </div>
   <h1>Why I wrote <em>one to eight.</em></h1>
   <p>The unlikely story of how a technologist in his late 50s walked away from AI to teach young people the eight essentials for a life that holds.</p>
 </section>
