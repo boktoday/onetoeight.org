@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#E8E1D5">
+<meta name="color-scheme" content="light">
+<title>Scripture — one to eight</title>
+<meta name="description" content="The Bible study database for one to eight. Scripture, reading plans, and discussion questions for each of the eight essentials.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onetoeight.org/scripture">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;color:#4C362D;background:#E8E1D5;overflow-x:hidden;line-height:1.7}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:400;line-height:1.2}
+:root{--terracotta:#A46447;--almond:#CEB59E;--umber:#4C362D;--sage:#88937B;--linen:#E8E1D5;--cream:#f5f0e8;--ink:#4C362D;--muted:#7a6657}
+a{color:var(--terracotta);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(232,225,213,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(76,54,45,.06)}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:.25em}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--ink);transition:color .2s}
+.nav-links a:hover{color:var(--terracotta);text-decoration:none}
+
+/* ===== HERO ===== */
+.hero{padding:7rem 2rem 3rem;text-align:center;background:radial-gradient(ellipse at 50% 0%,#f0e8da 0%,var(--linen) 50%,#ddd4c4 100%)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--umber);letter-spacing:-.03em;margin-bottom:.8rem}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--terracotta)}
+.hero p{max-width:600px;margin:0 auto;color:var(--muted);font-size:clamp(1rem,2vw,1.1rem)}
+
+/* ===== SEARCH ===== */
+.search-wrap{max-width:500px;margin:-1.5rem auto 3rem;padding:0 1.5rem;position:relative;z-index:10}
+.search-wrap input{width:100%;padding:.9rem 1.2rem;border:2px solid var(--almond);border-radius:100px;font-family:'Inter',sans-serif;font-size:.95rem;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s}
+.search-wrap input:focus{border-color:var(--terracotta)}
+
+/* ===== ESSENTIALS GRID ===== */
+.essentials{max-width:1100px;margin:0 auto;padding:0 1.5rem 3rem}
+.essentials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.ess-card{background:var(--cream);border-radius:14px;padding:1.5rem;cursor:pointer;transition:all .3s;border:1.5px solid transparent}
+.ess-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(76,54,45,.1)}
+.ess-card.active{border-color:var(--terracotta);box-shadow:0 4px 16px rgba(164,100,71,.15)}
+.ess-num{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.3rem}
+.ess-card h3{font-size:1.2rem;color:var(--umber);margin-bottom:.5rem}
+.ess-ref{font-size:.85rem;color:var(--muted);font-style:italic}
+
+/* ===== DETAIL VIEW ===== */
+.detail{display:none;max-width:760px;margin:2rem auto;padding:0 1.5rem 4rem}
+.detail.visible{display:block}
+.detail-header{margin-bottom:2rem}
+.detail-num{font-size:.8rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--terracotta)}
+.detail h2{font-size:1.8rem;color:var(--umber);margin:.3rem 0 .5rem;letter-spacing:-.01em}
+.detail .memory{background:var(--umber);color:var(--linen);border-radius:12px;padding:1.5rem;margin-bottom:2rem}
+.detail .memory-label{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--almond);font-weight:600;margin-bottom:.5rem}
+.detail .memory-text{font-family:'Fraunces',serif;font-size:1.2rem;font-style:italic;line-height:1.6;margin-bottom:.5rem}
+.detail .memory-ref{font-size:.85rem;color:rgba(206,181,158,.7)}
+
+/* ===== TABS ===== */
+.tabs{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{padding:.5rem 1.2rem;border-radius:100px;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .2s;background:var(--cream);color:var(--muted);border:1.5px solid transparent}
+.tab:hover{background:var(--linen);color:var(--umber)}
+.tab.active{background:var(--terracotta);color:var(--linen);border-color:var(--terracotta)}
+
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* ===== VERSES ===== */
+.verse-card{background:var(--cream);border-radius:12px;padding:1.2rem 1.5rem;margin-bottom:.8rem;border-left:4px solid var(--sage)}
+.verse-ref{font-weight:600;color:var(--terracotta);font-size:.9rem;margin-bottom:.2rem}
+.verse-text{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--umber);line-height:1.7;font-style:italic;margin-bottom:.3rem}
+.verse-context{font-size:.85rem;color:var(--muted);line-height:1.5}
+.verse-theme{display:inline-block;font-size:.72rem;padding:.2rem .6rem;background:var(--linen);border-radius:100px;color:var(--terracotta);font-weight:500;margin-top:.3rem}
+
+/* ===== READING PLAN ===== */
+.day-card{background:var(--cream);border-radius:12px;padding:1.2rem 1.5rem;margin-bottom:.8rem}
+.day-num{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.2rem}
+.day-ref{font-size:.9rem;font-weight:600;color:var(--umber)}
+.day-prompt{font-size:.92rem;color:var(--muted);line-height:1.6;margin-top:.3rem}
+
+/* ===== DISCUSSION ===== */
+.discuss-item{background:var(--cream);border-radius:12px;padding:1rem 1.5rem;margin-bottom:.5rem;display:flex;gap:.8rem;align-items:flex-start;font-size:.95rem;color:var(--umber)}
+.discuss-item::before{content:'\u2192';color:var(--terracotta);font-weight:700;flex-shrink:0}
+
+/* ===== PRINT ===== */
+.print-btn{background:var(--umber);color:var(--linen);border:none;padding:.6rem 1.4rem;border-radius:100px;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem}
+.print-btn:hover{background:var(--terracotta)}
+
+/* ===== NO RESULTS ===== */
+.no-results{text-align:center;padding:4rem 2rem;color:var(--muted);display:none}
+.no-results p{font-size:1.1rem}
+
+/* ===== BACK BUTTON ===== */
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:500;color:var(--muted);cursor:pointer;margin-bottom:1.5rem;border:none;background:none;font-family:'Inter',sans-serif;padding:0}
+.back-btn:hover{color:var(--terracotta)}
+
+/* ===== MOBILE MENU ===== */
+.nav-toggle{display:none}
+@media(max-width:768px){
+  nav{padding:.8rem 1rem!important}
+  nav{position:fixed!important;top:0;left:0;right:0;padding:.8rem 1rem!important;box-sizing:border-box;max-width:100vw;display:flex!important;justify-content:space-between!important;align-items:center!important}
+  .nav-toggle{display:flex!important;align-items:center;justify-content:center;width:44px;height:44px;color:var(--ink);background:none;border:none;cursor:pointer;padding:.5rem;z-index:101;position:absolute!important;top:50%;right:.5rem;transform:translateY(-50%)}
+  .hamburger-svg{display:block;transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1)}
+  .h-line{transition:d 0.4s cubic-bezier(0.34,1.56,0.64,1),transform 0.4s cubic-bezier(0.34,1.56,0.64,1),opacity 0.3s ease;transform-origin:center}
+  .h-dot,.h-dot-inner{transition:opacity 0.3s ease,transform 0.4s cubic-bezier(0.34,1.56,0.64,1);transform-origin:center}
+  .nav-toggle.open .hamburger-svg{transform:rotate(90deg)}
+  .nav-toggle.open .h-line-1{d:path("M4,6 L24,22");transform:rotate(0deg)}
+  .nav-toggle.open .h-line-2{d:path("M4,14 L24,14");transform:scaleX(0.3);opacity:0.6}
+  .nav-toggle.open .h-line-3{d:path("M4,22 L24,6");transform:rotate(0deg)}
+  .nav-toggle.open .h-dot{opacity:1;transform:scale(1)}
+  .nav-toggle.open .h-dot-inner{opacity:1;transform:scale(1)}
+  .nav-links{position:fixed!important;top:0;right:-100%!important;width:80vw!important;height:100vh!important;background:var(--linen)!important;flex-direction:column!important;justify-content:center!important;gap:1.5rem!important;padding:2rem!important;box-shadow:-4px 0 30px rgba(0,0,0,.1)!important;transition:right .3s ease!important;z-index:100!important;display:flex!important;align-items:center!important}
+  .nav-links.open{right:0!important}
+  .nav-links a{font-size:.95rem!important;text-align:center}
+}
+
+/* ===== FOOTER ===== */
+footer{background:var(--umber);color:rgba(232,225,213,.5);padding:2rem;text-align:center;font-size:.85rem}
+footer a{color:var(--almond)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  nav{padding:.8rem 1rem}
+  .nav-links{gap:1rem}
+  .nav-links a{font-size:.8rem}
+  .hero{padding:6rem 1rem 2rem}
+  .essentials-grid{grid-template-columns:1fr}
+}
+
+/* Print styles */
+@media print{
+  nav,.search-wrap,.tabs,.back-btn,.print-btn,footer{display:none!important}
+  .detail{display:block!important;margin:0;padding:0}
+  .verse-card{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">one <em style="font-style:italic;font-weight:300;color:var(--terracotta)">to</em> eight</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <svg class="hamburger-svg" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
+      <path class="h-line h-line-1" d="M4,8 L24,8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="h-line h-line-2" d="M4,14 L24,14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="h-line h-line-3" d="M4,20 L24,20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle class="h-dot" cx="14" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0"/>
+      <circle class="h-dot-inner" cx="14" cy="14" r="2" fill="currentColor" opacity="0"/>
+    </svg>
+  </button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#guide">The Guide</a>
+    <a href="/#workshops">Meetup</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Scripture <em>Database</em></h1>
+  <p>Every essential from the guide, anchored in the Bible. Search verses, follow reading plans, and go deeper with discussion questions.</p>
+</section>
+
+<div class="search-wrap">
+  <input type="text" id="search" placeholder="Search all Scripture..." oninput="searchVerses(this.value)">
+</div>
+
+<section class="essentials" id="essentialsGrid">
+  <div class="essentials-grid" id="essGrid"></div>
+</section>
+
+<div class="no-results" id="noResults">
+  <p>No verses found. Try a different search term.</p>
+</div>
+
+<section class="detail" id="detailView">
+  <button class="back-btn" onclick="backToGrid()">&larr; Back to all essentials</button>
+  <div id="detailContent"></div>
+</section>
+
+<footer>
+  <p><a href="/">one to eight</a> &middot; Scripture Database &middot; V.3.0.0</p>
+  <p style="margin-top:.5rem;">All Scripture from the Holy Bible, unless otherwise noted.</p>
+</footer>
+
+<script>
+// Mobile menu toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navToggle.classList.contains('open'));
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+let data = [];
+let essentials = [];
+
+fetch('data.json').then(r=>r.json()).then(d=>{
+  data = d;
+  renderGrid();
+  if(window.location.hash){
+    const id = window.location.hash.replace('#','');
+    openDetail(id);
+  }
+});
+
+function renderGrid(filter){
+  const grid = document.getElementById('essGrid');
+  let items = data;
+  if(filter){
+    const f = filter.toLowerCase();
+    items = items.filter(ess => {
+      const inVerses = ess.verses.some(v => v.text.toLowerCase().includes(f) || v.ref.toLowerCase().includes(f) || v.theme.toLowerCase().includes(f));
+      return ess.title.toLowerCase().includes(f) || inVerses;
+    });
+  }
+  if(items.length === 0){
+    document.getElementById('noResults').style.display = 'block';
+    grid.innerHTML = '';
+    return;
+  }
+  document.getElementById('noResults').style.display = 'none';
+  grid.innerHTML = items.map(ess => `
+    <div class="ess-card" onclick="openDetail('${ess.id}')">
+      <div class="ess-num">Essential ${String(ess.num).padStart(2,'0')}</div>
+      <h3>${ess.title}</h3>
+      <div class="ess-ref">${ess.verses.length} passages &middot; 7-day plan</div>
+    </div>
+  `).join('');
+}
+
+function openDetail(id){
+  const ess = data.find(e => e.id === id);
+  if(!ess) return;
+  window.location.hash = id;
+  document.getElementById('essentialsGrid').style.display = 'none';
+  document.getElementById('noResults').style.display = 'none';
+  const detail = document.getElementById('detailView');
+  detail.classList.add('visible');
+  document.getElementById('detailContent').innerHTML = `
+    <div class="detail-header">
+      <div class="detail-num">Essential ${String(ess.num).padStart(2,'0')}</div>
+      <h2>${ess.title}</h2>
+    </div>
+
+    <div class="memory">
+      <div class="memory-label">Memory Verse</div>
+      <div class="memory-text">"${ess.memoryVerse.text}"</div>
+      <div class="memory-ref">— ${ess.memoryVerse.ref}</div>
+    </div>
+
+    <div class="tabs">
+      <span class="tab active" onclick="switchTab(this,'verses')">Passages (${ess.verses.length})</span>
+      <span class="tab" onclick="switchTab(this,'plan')">7-Day Plan</span>
+      <span class="tab" onclick="switchTab(this,'discuss')">Discussion</span>
+    </div>
+
+    <div class="tab-content active" id="tab-verses">
+      ${ess.verses.map(v => `
+        <div class="verse-card">
+          <div class="verse-ref">${v.ref}</div>
+          <div class="verse-text">"${v.text}"</div>
+          <div class="verse-context">${v.context}</div>
+          <span class="verse-theme">${v.theme}</span>
+        </div>
+      `).join('')}
+      <button class="print-btn" onclick="window.print()">\u{1F5A8} Print All Passages</button>
+    </div>
+
+    <div class="tab-content" id="tab-plan">
+      <p style="margin-bottom:1rem;color:var(--muted);font-size:.9rem">${ess.readingPlan.title}</p>
+      ${ess.readingPlan.days.map(d => `
+        <div class="day-card">
+          <div class="day-num">Day ${d.day}</div>
+          <div class="day-ref">${d.ref}</div>
+          <div class="day-prompt">${d.prompt}</div>
+        </div>
+      `).join('')}
+      <button class="print-btn" onclick="window.print()">\u{1F5A8} Print Reading Plan</button>
+    </div>
+
+    <div class="tab-content" id="tab-discuss">
+      ${ess.discussion.map(q => `
+        <div class="discuss-item">${q}</div>
+      `).join('')}
+      <button class="print-btn" onclick="window.print()">\u{1F5A8} Print Discussion Questions</button>
+    </div>
+  `;
+}
+
+function switchTab(el, tabId){
+  const parent = el.parentElement;
+  parent.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  parent.parentElement.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+}
+
+function backToGrid(){
+  document.getElementById('detailView').classList.remove('visible');
+  document.getElementById('essentialsGrid').style.display = 'block';
+  window.location.hash = '';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function searchVerses(query){
+  if(document.getElementById('detailView').classList.contains('visible')){
+    backToGrid();
+  }
+  renderGrid(query);
+}
+</script>
+</body>
+</html>
