@@ -642,7 +642,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
       <button class="audio-btn" onclick="toggleAudio()" aria-label="Play promo">
         <span class="audio-icon">&#9654;</span>
         <span class="audio-label">Listen: 60-second overview</span>
-        <span class="audio-duration">1:00</span>
+        <span class="audio-duration" id="audio-time">0:00</span>
       </button>
       <div class="audio-wave" id="audio-wave"><span></span><span></span><span></span><span></span><span></span></div>
     </div>
@@ -1084,6 +1084,23 @@ function toggleFaq(el) {
 let audioPlayer = document.getElementById('promo-audio');
 let audioBtn = document.querySelector('.audio-btn');
 let audioWave = document.getElementById('audio-wave');
+let audioTime = document.getElementById('audio-time');
+
+function formatTime(seconds) {
+  if (isNaN(seconds) || !isFinite(seconds)) return '0:00';
+  let m = Math.floor(seconds / 60);
+  let s = Math.floor(seconds % 60);
+  return m + ':' + (s < 10 ? '0' : '') + s;
+}
+
+audioPlayer.addEventListener('loadedmetadata', function() {
+  audioTime.textContent = formatTime(audioPlayer.duration);
+});
+
+audioPlayer.addEventListener('timeupdate', function() {
+  audioTime.textContent = formatTime(audioPlayer.currentTime);
+});
+
 function toggleAudio() {
   if (audioPlayer.paused) {
     audioPlayer.play();
@@ -1094,13 +1111,13 @@ function toggleAudio() {
     audioPlayer.pause();
     audioPlayer.currentTime = 0;
     audioBtn.querySelector('.audio-icon').innerHTML = '&#9654;';
-    audioBtn.querySelector('.audio-label').textContent = 'Listen: 60-second overview';
+    audioBtn.querySelector('.audio-label').textContent = 'Listen: promo';
     audioWave.classList.remove('active');
   }
 }
 audioPlayer.addEventListener('ended', function() {
   audioBtn.querySelector('.audio-icon').innerHTML = '&#9654;';
-  audioBtn.querySelector('.audio-label').textContent = 'Listen: 60-second overview';
+  audioBtn.querySelector('.audio-label').textContent = 'Listen: promo';
   audioWave.classList.remove('active');
 });
 
