@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#E8E1D5">
+<meta name="color-scheme" content="light">
+<title>About — one to eight</title>
+<meta name="description" content="The origin story behind one to eight: why a man in his late 50s walked away from AI as his central topic to teach young people the eight essentials for a life that holds.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://onetoeight.org/about">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: #4C362D;
+  background: #E8E1D5;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+:root {
+  --terracotta: #A46447;
+  --almond: #CEB59E;
+  --umber: #4C362D;
+  --sage: #88937B;
+  --linen: #E8E1D5;
+  --cream: #f5f0e8;
+  --ink: #4C362D;
+  --muted: #7a6657;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  background: rgba(232,225,213,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(76,54,45,0.06);
+}
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { font-size: .9rem; font-weight: 500; color: var(--ink); transition: color .2s; }
+.nav-links a:hover { color: var(--terracotta); }
+
+/* ===== HERO ===== */
+.about-hero {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 0%, #f0e8da 0%, var(--linen) 50%, #ddd4c4 100%);
+}
+.about-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--umber);
+  letter-spacing: -.03em;
+  margin-bottom: 1rem;
+}
+.about-hero h1 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.about-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+/* ===== STORY ===== */
+.story {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+  font-size: 1.08rem;
+  color: var(--ink);
+  line-height: 1.8;
+}
+.story p { margin-bottom: 1.5rem; }
+.story .lead-in {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--terracotta);
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--cream);
+  border-radius: 12px;
+  border-left: 4px solid var(--terracotta);
+}
+.story h2 {
+  font-size: 1.6rem;
+  color: var(--umber);
+  margin: 3rem 0 1rem;
+  letter-spacing: -.01em;
+}
+.story h2 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.story blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: var(--cream);
+  border-left: 4px solid var(--sage);
+  border-radius: 0 12px 12px 0;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--umber);
+  line-height: 1.6;
+}
+.story blockquote cite {
+  display: block;
+  margin-top: .8rem;
+  font-size: .85rem;
+  color: var(--muted);
+  font-style: normal;
+}
+.story .sign-off {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--almond);
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--umber);
+  color: rgba(232,225,213,0.5);
+  padding: 2rem;
+  text-align: center;
+  font-size: .85rem;
+}
+footer a { color: var(--almond); }
+
+@media (max-width: 768px) {
+  nav { padding: .8rem 1rem; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: .8rem; }
+  .story { padding: 2rem 1.2rem 4rem; font-size: 1rem; }
+  .story .lead-in { font-size: 1.2rem; padding: 1rem 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="/" class="nav-logo">one <em style="font-style:italic;font-weight:300;color:var(--terracotta);">to</em> eight</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/#pillars">The Eight</a>
+    <a href="/#guide">The Guide</a>
+    <a href="/#workshops">Meetup</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="about-hero">
+  <h1>Why I wrote <em>one to eight.</em></h1>
+  <p>The unlikely story of how a technologist in his late 50s walked away from AI to teach young people the eight essentials for a life that holds.</p>
+</section>
+
+<!-- ===== STORY ===== -->
+<section class="story">
+
+  <div class="lead-in">
+    I changed my mind about a lot of things in my late 50s. This is the story of what changed — and where it led.
+  </div>
+
+  <p>I spent most of my career in technology. I was an early adopter of everything — the internet, e-learning, data analytics, and eventually AI. By the time ChatGPT landed, I was already deep in the space. I became what people call an <em>AI expert</em>. I wrote courses, built tools, and taught professionals how to survive the AI revolution.</p>
+
+  <p>And I was good at it. I genuinely believed I was helping people.</p>
+
+  <p>But somewhere along the way, something shifted. I started watching how technology — especially the always-on, algorithm-driven kind — was affecting my own children. The same tools I'd spent years championing were quietly reshaping their minds, their relationships, their attention, and their sense of what matters. And I wasn't sure the benefits outweighed the damage anymore.</p>
+
+  <p>The more I watched, the more I saw it everywhere. Young people who couldn't sit in silence for five minutes. Teenagers with thousands of followers and not one friend who'd show up at 2am. Graduates with degrees who couldn't cook a meal, fix a tap, or name what they actually believed. A generation swimming in information and starving for wisdom.</p>
+
+  <h2>The <em>darkness</em> I couldn't ignore</h2>
+
+  <p>I don't say this lightly, but the closer I looked at the direction of things, the darker it felt. Not in a dramatic way — in a quiet, creeping way. The surveillance, the manipulation, the addiction-by-design, the loneliness masquerading as connection. The feeling that we'd built a world that was optimised for everything except human flourishing.</p>
+
+  <p>And in the middle of all that, something unexpected happened. My interest in Jesus — in God — started growing. Not because I was looking for it. More like it found me. The more I saw the darkness, the more I wanted the light. Not as a posture or a brand. As a real, honest, daily choice. I chose the good side. And I keep choosing it.</p>
+
+  <blockquote>
+    The more I saw the darkness, the more I wanted the light. Not as a posture or a brand. As a real, honest, daily choice.
+  </blockquote>
+
+  <h2>Letting go of <em>AI</em></h2>
+
+  <p>This is the part that surprised me most. I am an expert in AI. I have the credentials, the courses, the track record. But the more my faith grew, the more I felt God gently — and then not so gently — pushing me away from AI as my central topic.</p>
+
+  <p>Not because AI is evil. It's a tool. But it wasn't meant to be my message. My message was supposed to be about something older, deeper, and more essential: the things a young person needs to actually survive and thrive as a human being. The things no app can give them.</p>
+
+  <p>So I walked away from the topic that had built my career. Not out of bitterness or burnout. Out of obedience, honestly. And I started writing.</p>
+
+  <h2>The eight <em>essentials</em></h2>
+
+  <p>I didn't start with eight. I started with a question: <em>what does a young person actually need to live well — not just economically, but as a whole person?</em></p>
+
+  <p>The answer came slowly, shaped by Scripture, by experience, by watching my own kids grow up, and by listening to parents and youth leaders who were desperate for something real. It came down to eight things. Not a curriculum. Not a programme. Eight human essentials.</p>
+
+  <ul style="padding-left: 1.5rem; margin: 1.5rem 0; list-style: none;">
+    <li style="margin-bottom: .5rem;">01 — The ability to sit in silence</li>
+    <li style="margin-bottom: .5rem;">02 — Your body as a temple</li>
+    <li style="margin-bottom: .5rem;">03 — Useful real-world skills</li>
+    <li style="margin-bottom: .5rem;">04 — Digital self-defence</li>
+    <li style="margin-bottom: .5rem;">05 — Real community</li>
+    <li style="margin-bottom: .5rem;">06 — Knowledge without Wi-Fi</li>
+    <li style="margin-bottom: .5rem;">07 — Prescribe nature</li>
+    <li style="margin-bottom: .5rem;">08 — Tested convictions</li>
+  </ul>
+
+  <p>I'm a Christian. These eight essentials come from a Christian worldview — unapologetically. But I believe they're good for everyone, because they're about what it means to be a fully alive human being, not just a productive one.</p>
+
+  <h2>What I'm <em>doing now</em></h2>
+
+  <p>I teach young people the skills they need to survive well in the age of AI — not by being better at AI, but by being more fully human. Real skills. Real community. Real purpose. The kind of life that has meaning, not just momentum.</p>
+
+  <p>This is one to eight. A guide, a weekly meetup, and a community for anyone who wants more for the next generation than what the screens are selling them.</p>
+
+  <p>If you've read this far, you're probably feeling some of the same things I felt. That's okay. That's the start.</p>
+
+  <div class="sign-off">
+    — Brendan O'Keefe<br>
+    <span style="font-size: .9rem; color: var(--muted);">onetoeight.org</span>
+  </div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p><a href="/">one to eight</a> · Eight Essentials for a Life That Holds</p>
+  <p style="margin-top: .5rem;">© 2026 onetoeight.org</p>
+</footer>
+
+</body>
+</html>
