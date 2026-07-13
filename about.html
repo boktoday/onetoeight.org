@@ -48,6 +48,7 @@ nav {
 .nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a { font-size: .9rem; font-weight: 500; color: var(--ink); transition: color .2s; }
 .nav-links a:hover { color: var(--terracotta); }
+.nav-toggle { display: none; }
 .nav-cta {
   background: var(--terracotta); color: var(--linen) !important; padding: .6rem 1.4rem;
   border-radius: 100px; font-weight: 600 !important; transition: all .25s;
@@ -169,7 +170,7 @@ footer {
 footer a { color: var(--almond); }
 
 /* ===== MOBILE MENU ===== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   nav { padding: .8rem 1rem !important; }
   nav {
     position: fixed !important;
