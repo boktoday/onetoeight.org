@@ -611,8 +611,8 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     <a href="#workshops">Weekly Meetup</a>
     <a href="#updates">Updates</a>
         <a href="#contact" class="nav-cta">Join the Meetup</a>
-  </div>
-<button id="lang-toggle" style="background:none;border:2px solid var(--almond);border-radius:100px;padding:.3rem .7rem;font-size:.75rem;font-weight:600;color:var(--umber);cursor:pointer;font-family:'Inter',sans-serif;margin-left:.6rem;transition:all .2s">ES</button>
+  <a href="#" id="lang-toggle" style="font-weight:600" onclick="event.preventDefault();toggleLang()">ES</a></div>
+
 </nav>
 
 <!-- ===== HERO ===== -->
@@ -1182,7 +1182,7 @@ const lt = document.getElementById('lang-toggle');
 let cl = localStorage.getItem('onetoeight_lang') || 'en';
 function al(l){document.querySelectorAll('[data-en]').forEach(e=>{if(l==='es'&&ES_LP[e.dataset.en])e.innerHTML=ES_LP[e.dataset.en];else e.innerHTML=e.dataset.et||e.innerHTML});if(lt)lt.textContent=l==='es'?'EN':'ES';localStorage.setItem('onetoeight_lang',l);cl=l}
 document.querySelectorAll('[data-en]').forEach(e=>e.dataset.et=e.innerHTML);
-if(lt)lt.addEventListener('click',()=>al(cl==='en'?'es':'en'));
+function toggleLang(){al(cl==='en'?'es':'en')};
 if(cl==='es')al('es');
 </script>
 
