@@ -587,6 +587,9 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
   .signup-form input[type="text"], .signup-form input[type="email"] { width: 100%; }
   .signup-form button { width: 100%; }
 }
+
+@media (max-width: 1024px) { .nav-lang-mobile { display: inline-block !important; } .nav-lang { display: none !important; } }
+@media (min-width: 1025px) { .nav-lang-mobile { display: none !important; } .nav-lang { display: inline !important; } }
 </style>
 </head>
 <body>
@@ -611,9 +614,11 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     <a href="#workshops" data-x="nav_meetup">Weekly Meetup</a>
     <a href="#updates">Updates</a>
         <a href="#contact" class="nav-cta" data-x="nav_cta">Join the Meetup</a>
-  <a href="#" id="lang-toggle" style="font-weight:600" onclick="event.preventDefault();toggleLang()">ES</a></div>
+    <a href="/index-es.html" class="nav-lang" style="font-weight:600;color:var(--terracotta)">ES</a>
+  </div>
 
-<a href="/index-es.html" style="background:none;border:2px solid var(--almond);border-radius:100px;padding:.3rem .7rem;font-size:.75rem;font-weight:600;color:var(--umber);cursor:pointer;font-family:'Inter',sans-serif;margin-left:.6rem;text-decoration:none">ES</a>
+
+<a href="/index-es.html" class="nav-lang-mobile" style="display:none;background:none;border:2px solid var(--almond);border-radius:100px;padding:.3rem .7rem;font-size:.75rem;font-weight:600;color:var(--umber);cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;margin-left:auto;margin-right:3rem">ES</a>
 </nav>
 
 <!-- ===== HERO ===== -->
