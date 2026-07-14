@@ -1172,7 +1172,13 @@ function applyLang(lang) {
 }
 document.querySelectorAll('[data-en]').forEach(el => { el.dataset.enText = el.innerHTML; });
 if(langToggle) langToggle.addEventListener('click', () => { applyLang(currentLang === 'en' ? 'es' : 'en'); });
-if (currentLang === 'es') applyLang('es');
+if (currentLang === 'es') applyLang('es'); 
+,"for_ms":"Para estudiantes de secundaria"
+,"for_yg":"Para grupos juveniles y comunidades"
+,"nav_contact":"Contacto"
+,"nav_updates":"Actualizaciones"
+,"nav_cta2":"Únete al Meetup →"
+
 </script>
 
 
@@ -1183,7 +1189,13 @@ let cl = localStorage.getItem('onetoeight_lang') || 'en';
 function al(l){document.querySelectorAll('[data-en]').forEach(e=>{if(l==='es'&&ES_LP[e.dataset.en])e.innerHTML=ES_LP[e.dataset.en];else e.innerHTML=e.dataset.et||e.innerHTML});if(lt)lt.textContent=l==='es'?'EN':'ES';localStorage.setItem('onetoeight_lang',l);cl=l}
 document.querySelectorAll('[data-en]').forEach(e=>e.dataset.et=e.innerHTML);
 function toggleLang(){al(cl==='en'?'es':'en')};
-if(cl==='es')al('es');
+if(cl==='es')al('es'); 
+,"for_ms":"Para estudiantes de secundaria"
+,"for_yg":"Para grupos juveniles y comunidades"
+,"nav_contact":"Contacto"
+,"nav_updates":"Actualizaciones"
+,"nav_cta2":"Únete al Meetup →"
+
 </script>
 
 </body>
