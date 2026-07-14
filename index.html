@@ -610,8 +610,9 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     <a href="#guide">The Guide</a>
     <a href="#workshops">Weekly Meetup</a>
     <a href="#updates">Updates</a>
-        <a href="#contact" class="nav-cta">Join the Meetup</a>
+        <a href="#contact" class="nav-cta" data-en="nav_cta">Join the Meetup</a>
   </div>
+<button id="lang-toggle" style="background:none;border:2px solid var(--almond);border-radius:100px;padding:.3rem .7rem;font-size:.75rem;font-weight:600;color:var(--umber);cursor:pointer;font-family:'Inter',sans-serif;margin-left:.6rem;transition:all .2s">ES</button>
 </nav>
 
 <!-- ===== HERO ===== -->
@@ -1017,7 +1018,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
   <div class="footer-logo">1 <span class="arrow">→</span> 8</div>
   <p>Eight Essentials for a Life That Holds</p>
   <div class="footer-links">
-    <a href="#pillars">The Eight</a><a href="#guide">The Kit</a><a href="/about">About</a><a href="/young-people">For You</a><a href="#workshops">Weekly Meetup</a><a href="#faq">FAQ</a><a href="mailto:hello@onetoeight.me">Contact</a>
+    <a href="#pillars">The Eight</a><a href="#guide" data-en="nav_kit">The Kit</a><a href="/about" data-en="nav_about">About</a>>About</a><a href="/young-people">For You</a><a href="#workshops">Weekly Meetup</a><a href="#faq">FAQ</a><a href="mailto:hello@onetoeight.me">Contact</a>
   </div>
   <div class="footer-citations">
     <p>Sources: ① 1 in 5 young people — NHS Digital / ONS, Mental Health of Children and Young People in England, 2023. ② 7 hrs avg screen time — Common Sense Media, The Common Sense Census: Media Use by Tweens and Teens, 2021. ③ 52% of graduates feel unprepared — Cengage/Morning Consult, Graduate Employability Survey, 2022. ④ 0 hours of silence — observation: the average young person's day contains no extended period of intentional silence; designed silence has been replaced by continuous audio and notification stimulus.</p>
@@ -1149,6 +1150,29 @@ if (navToggle) {
   });
 }
 
+</script>
+
+
+<script>
+const ES_LP = {"nav_logo": "one <em>to</em> eight", "nav_the_eight": "Los Ocho", "nav_kit": "El Kit", "nav_about": "Nosotros", "nav_meetup": "Meetup Semanal", "nav_faq": "FAQ", "nav_cta": "Únete al Meetup", "hero_tagline": "Ocho esenciales para una generación nacida en pantallas.", "hero_sub": "Una guía práctica y un meetup semanal que equipa a los jóvenes con la profundidad, habilidades, autodefensa digital, educación financiera, comunidad, conocimiento, cuerpo, naturaleza y convicciones que necesitarán cuando el ruido se desvanezca.", "hero_cta_guide": "Obtener el Kit →", "hero_cta_meetup": "Meetup Gratuito →", "pillars_label": "Los Ocho Esenciales", "pillars_title": "Ocho áreas donde <em>formar</em> a una persona completa.", "pillars_sub": "Extraído de miles de años de sabiduría — de la Santa Biblia, de la tradición, de la naturaleza y de la experiencia humana.", "p01": "Capacidad de Estar en Silencio", "p01d": "Encontrar quietud en un mundo ruidoso. Silenciar el ruido para escuchar a Dios.", "p02": "Tu Cuerpo es un Templo", "p02d": "Honrar a Dios con tu cuerpo. Pureza, descanso, salud y cuidado.", "p03": "Habilidades del Mundo Real", "p03d": "Cocinar, construir, presupuestar, arreglar. Cosas que funcionan sin batería.", "p04": "Autodefensa Digital", "p04d": "Toma el control de tu atención. No eres un producto — eres un hijo de Dios.", "p05": "Comunidad Real", "p05d": "Amigos que se presentan. Personas que cargan tus cargas.", "p06": "Conocimiento Sin Wi-Fi", "p06d": "Escribe en tu corazón lo que necesitas cuando no hay pantalla a la que recurrir.", "p07": "Recetar la Naturaleza", "p07d": "Sal afuera. Es medicina. La creación apunta a su Creador.", "p08": "Fe Probada", "p08d": "Convicciones que se mantienen bajo presión. Una fe que no puede ser sacudida.", "guide_label": "El Kit de Maestría", "guide_title": "Más que una guía —<br>un kit completo de <em>formación.</em>", "guide_sub": "En su núcleo, una guía de 140 páginas escrita desde una cosmovisión cristiana. Pero el Kit de Maestría es más grande que un libro. Incluye la guía completa, narración en audio de cada capítulo, 80 oraciones con audio, una base de datos bíblica, un paquete para líderes, un mini curso y herramientas de IA sin internet — todo lo que necesitas para construir los ocho esenciales en una vida que se sostiene.", "guide_f1": "8 capítulos, uno por esencial — legible en una tarde", "guide_f2": "Preguntas de discusión para grupos juveniles", "guide_f3": "Desafíos prácticos 'Haz Esto Esta Semana' para cada esencial", "guide_f4": "80 oraciones originales con narración en audio", "guide_f5": "Paquete para líderes: hojas de sesión, tarjetas, certificados", "guide_f6": "Mini curso de 8 sesiones", "guide_f7": "Herramientas de IA sin conexión", "guide_f8": "Aplicación para Android y iOS", "guide_price": "$44.88", "guide_price_unit": "/ copia digital", "guide_cta": "Ordenar el Kit →", "meetup_label": "Meetup Semanal", "meetup_title": "Reunión gratuita para <em>jóvenes</em> y <em>padres</em>", "meetup_sub1": "Un espacio semanal en vivo para discutir el esencial de la semana, compartir experiencias y caminar juntos. Sin presión. Sin ventas. Solo comunidad.", "problem_title": "La <em>Brecha</em>", "problem_sub": "Lo que la generación de las pantallas está perdiendo — y por qué los ocho esenciales son la respuesta.", "stat1_num": "4.5+", "stat1_label": "horas/día en redes sociales (jóvenes de 12-17)", "stat2_num": "3 de 10", "stat2_label": "jóvenes reportan baja autoestima relacionada con las redes", "stat3_num": "1 de 3", "stat3_label": "padres preocupados por el tiempo de pantalla de sus hijos", "stat4_num": "0%", "stat4_label": "de lo que importa se aprende con el pulgar hacia arriba", "faq_label": "Preguntas Frecuentes", "faq_title": "Responde tus <em>preguntas</em>.", "faq_q1": "¿Para qué rango de edad es esto?", "faq_a1": "La guía está escrita para edades de 15 a 25 años — desde estudiantes de secundaria hasta recién graduados. Los participantes más jóvenes se enfocan más en habilidades y comunidad; los mayores profundizan en convicciones y propósito.", "faq_q2": "¿Es cristiano?", "faq_a2": "Sí. El Capítulo 8 — Fe Probada — está escrito y entretejido con la Escritura y la verdad bíblica. Los otros siete capítulos son universales por diseño, mostrando cómo Dios construye integralidad en cada parte de la vida.", "faq_q3": "¿Hay una versión en audio?", "faq_a3": "Sí. Todos los ocho capítulos están disponibles en audio, narrados por Ryan, una voz masculina británica. Las 80 oraciones también tienen audio para que puedas escucharlas o rezarlas.", "faq_q4": "¿Puedo ver una muestra antes de comprar?", "faq_a4": "Por supuesto. Contáctanos y te enviaremos una muestra gratuita en PDF del primer capítulo, incluyendo preguntas de discusión y desafíos prácticos.", "faq_q5": "¿Ofrecen descuentos para grupos?", "faq_a5": "Sí. Contáctanos para obtener precios por volumen para grupos juveniles, escuelas e iglesias. Cuantos más pidas, más barato sale por copia.", "faq_q6": "¿Qué hay del meetup semanal gratuito?", "faq_a6": "Totalmente gratis. Sin trucos. Es un espacio semanal en vivo para discutir el esencial actual, compartir el progreso de los desafíos y encontrar comunidad en el camino.", "contact_label": "Comienza Hoy", "contact_title": "No se necesita una tarjeta de <em>crédito</em>.", "contact_sub": "Ordena la guía, únete al meetup gratuito, o simplemente inicia una conversación.", "contact_cta_kit": "Ordenar el Kit", "contact_cta_meetup": "Meetup Gratuito →", "updates_label": "Mantente Informado", "updates_title": "Nuevos recursos, nueva <em>formación</em>.", "updates_sub": "Sin spam. Sin vender tu información. Solo actualizaciones ocasionales cuando lancemos nuevos recursos, guías o productos.", "updates_name": "Tu nombre", "updates_email": "tu@email.com", "updates_btn": "Suscribirse", "updates_success": "¡Gracias! Te has suscrito exitosamente.", "footer_about": "Sobre Nosotros", "footer_parents": "Padres", "footer_youth": "Jóvenes", "footer_faq2": "FAQ", "footer_rights": "© 2026 onetoeight · Una guía y meetup semanal para jóvenes."};
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = localStorage.getItem('onetoeight_lang') || 'en';
+
+function applyLang(lang) {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if (lang === 'es' && ES_LP[el.dataset.en]) {
+      el.innerHTML = ES_LP[el.dataset.en];
+    } else {
+      el.innerHTML = el.dataset.enText || el.innerHTML;
+    }
+  });
+  if(langToggle) langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+  localStorage.setItem('onetoeight_lang', lang);
+  currentLang = lang;
+}
+document.querySelectorAll('[data-en]').forEach(el => { el.dataset.enText = el.innerHTML; });
+if(langToggle) langToggle.addEventListener('click', () => { applyLang(currentLang === 'en' ? 'es' : 'en'); });
+if (currentLang === 'es') applyLang('es');
 </script>
 
 </body>
