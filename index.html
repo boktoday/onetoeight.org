@@ -642,7 +642,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
       </audio>
       <button class="audio-btn" onclick="toggleAudio()" aria-label="Play promo">
         <span class="audio-icon">&#9654;</span>
-        <span class="audio-label">Listen: why onetoeight?</span>
+        <span class="audio-label" data-en="listen_label">Listen: why onetoeight?</span>
         <span class="audio-duration" id="audio-time">0:00</span>
       </button>
       <div class="audio-wave" id="audio-wave"><span></span><span></span><span></span><span></span><span></span></div>
@@ -654,7 +654,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     </div>
     <div class="hero-audience">
       <span>For middle school students</span>
-      <span>For university graduates</span>
+      <span data-en="for_ug">For university graduates</span>
       <span>For youth groups &amp; communities</span>
     </div>
   </div>
@@ -897,9 +897,9 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
       <p class="section-sub">Every week, we host a live online session — from a Christian perspective — where you can ask questions, dig deeper into each essential in community, and grow in faith and wisdom alongside others on the same road.</p>
 
     <div style="display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; max-width: 500px; margin: 0 auto 2rem;">
-      <span class="pillar-tag" style="background: var(--umber); color: var(--linen); font-size: .78rem; padding: .35rem .9rem;">Working with Children Check</span>
-      <span class="pillar-tag" style="background: var(--umber); color: var(--linen); font-size: .78rem; padding: .35rem .9rem;">NDIS Worker Screening</span>
-      <span class="pillar-tag" style="background: var(--umber); color: var(--linen); font-size: .78rem; padding: .35rem .9rem;">First Aid &amp; CPR</span>
+      <span class="pillar-tag" style="background: var(--umber); color: var(--linen); font-size: .78rem; padding: .35rem .9rem;" data-en="wwcc">Working with Children Check</span>
+      <span class="pillar-tag" style="background: var(--umber); color: var(--linen); font-size: .78rem; padding: .35rem .9rem;" data-en="ndis">NDIS Worker Screening</span>
+      <span class="pillar-tag" style="background: var(--umber); color: var(--linen); font-size: .78rem; padding: .35rem .9rem;" data-en="firstaid">First Aid &amp; CPR</span>
     </div>
 
     <p</p>
@@ -907,7 +907,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 
     <div class="workshop-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 900px; margin: 0 auto;">
       <div class="workshop-card" style="text-align: center;">
-        <div class="workshop-duration">LIVE ONLINE · WEEKLY</div>
+        <div class="workshop-duration" data-en="meetup_badge">LIVE ONLINE · WEEKLY</div>
         <h3>Thursday Night Live</h3>
         <p>Join us every Thursday evening for a live, interactive online session. Each week we unpack one of the eight essentials in depth — with practical teaching, real stories, and extended Q&amp;A where you can ask anything.</p>
         <ul style="text-align: left; max-width: 420px; margin: 1.5rem auto;">
@@ -925,7 +925,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
       </div>
 
       <div class="workshop-card" style="text-align: center; display: flex; flex-direction: column;">
-        <div class="workshop-duration">BY REQUEST</div>
+        <div class="workshop-duration" data-en="by_request">BY REQUEST</div>
         <h3>Sunday School Webinar</h3>
         <p>A dedicated webinar for Sunday school classes, youth groups, and church communities. We walk through the eight essentials in a faith-informed context, with space for discussion, reflection, and practical application.</p>
         <ul style="text-align: left; max-width: 420px; margin: 1.5rem auto;">
@@ -935,7 +935,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
           <li>Flexible scheduling — your time, your group</li>
         </ul>
         <div style="margin-top: auto; padding-top: 1rem;">
-          <span class="pillar-tag" style="background: var(--cream); color: var(--terracotta); font-size: .82rem;">Available on request</span>
+          <span class="pillar-tag" style="background: var(--cream); color: var(--terracotta); font-size: .82rem;" data-en="avail_request">Available on request</span>
 
         </div>
         <a href="#contact" class="btn-secondary" data-en="contact_enquire" style="display: inline-block; margin-top: 1.2rem;">Enquire →</a>
@@ -991,7 +991,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
   <div class="container">
     <img src="images/ch7-nature-4.png" alt="Nature — original therapy" class="final-image" loading="lazy">
     <h2>Give them <em>roots,</em><br>not just wings.</h2>
-    <p>Order the guide, join the meetup, or just start a conversation.</p>
+    <p data-en="contact_sub">Order the guide, join the meetup, or just start a conversation.</p>
     <div class="hero-ctas">
       <a href="mailto:hello@onetoeight.me" class="btn-primary" data-en="contact_touch">Get in Touch →</a>
       <a href="https://shop.onetoeight.org/" class="btn-secondary" data-en="contact_guide" target="_blank" rel="noopener">Order the Guide</a>
@@ -1008,15 +1008,15 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     <input type="email" name="email" placeholder="Your email" data-en="updates_email" required autocomplete="email">
     <button type="submit" id="signup-btn" data-en="updates_btn">Subscribe</button>
   </form>
-  <div class="signup-success" id="signup-success">You're in. We'll be in touch.</div>
-  <div class="signup-error" id="signup-error">Something went wrong. Please try again.</div>
-  <p class="signup-note">We will never share, sell, or rent your email address. Unsubscribe anytime with one click.</p>
+  <div class="signup-success" id="signup-success" data-en="signup_success">You're in. We'll be in touch.</div>
+  <div class="signup-error" id="signup-error" data-en="signup_error">Something went wrong. Please try again.</div>
+  <p class="signup-note" data-en="privacy_note">We will never share, sell, or rent your email address. Unsubscribe anytime with one click.</p>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-logo">1 <span class="arrow">→</span> 8</div>
-  <p>Eight Essentials for a Life That Holds</p>
+  <p data-en="book_title">Eight Essentials for a Life That Holds</p>
   <div class="footer-links">
     <a href="#pillars" data-en="nav_eight">The Eight</a><a href="#guide" data-en="nav_kit">The Kit</a><a href="/about" data-en="nav_about">About</a>>About</a><a href="/young-people" data-en="nav_youth">For You</a><a href="#workshops" data-en="nav_meetup">Weekly Meetup</a><a href="#faq" data-en="nav_faq">FAQ</a><a href="mailto:hello@onetoeight.me">Contact</a>
   </div>
