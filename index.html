@@ -593,7 +593,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 
 <!-- ===== NAV ===== -->
 <nav id="nav">
-  <a href="#" class="nav-logo">one <em style="font-style:italic;font-weight:300;color:var(--terracotta);">to</em> eight</a>
+  <a href="#" class="nav-logo" data-en="nav_logo">one <em style="font-style:italic;font-weight:300;color:var(--terracotta);">to</em> eight</a>
   <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
     <svg class="hamburger-svg" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
       <path class="h-line h-line-1" d="M4,8 L24,8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -650,7 +650,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     <p class="sub" data-en="hero_sub">A practical guide and weekly meetup that equips young people with the depth, skills, digital self-defence, financial literacy, community, knowledge, body, nature, and convictions they'll need when the noise fades and real life begins.</p>
     <div class="hero-ctas">
       <a href="https://shop.onetoeight.org/" class="btn-primary" target="_blank" rel="noopener" data-en="hero_guide">Get the Guide →</a>
-      <a href="#workshops" class="btn-secondary">Weekly Meetup</a>
+      <a href="#workshops" class="btn-secondary" data-en="meetup_cta">Weekly Meetup</a>
     </div>
     <div class="hero-audience">
       <span>For middle school students</span>
@@ -938,7 +938,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
           <span class="pillar-tag" style="background: var(--cream); color: var(--terracotta); font-size: .82rem;">Available on request</span>
 
         </div>
-        <a href="#contact" class="btn-secondary" style="display: inline-block; margin-top: 1.2rem;">Enquire →</a>
+        <a href="#contact" class="btn-secondary" data-en="contact_enquire" style="display: inline-block; margin-top: 1.2rem;">Enquire →</a>
       </div>
     </div>
   </div>
@@ -973,11 +973,11 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 <section class="faq" id="faq">
   <div class="container">
     <div class="center">
-      <div class="section-label">Questions</div>
+      <div class="section-label" data-en="faq_label">Questions</div>
       <h2 class="section-title">Things people <em>ask.</em></h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is this a Christian programme? <span class="plus">+</span></div><div class="faq-a"><p>Yes — unapologetically. onetoeight is written from a Christian worldview and is designed for churches, youth groups, Christian schools, and families who want to raise young people with roots that hold. Essentials 1–7 are practical and universal in their application; Essential 8 (Tested Convictions) is centred on Christian faith — the person of Jesus, the wisdom of Scripture, and the call to live a life of purpose. We believe the eight essentials are good for everyone, but we're not pretending they come from nowhere.</p></div></div>
+      <div class="faq-item"><div class="faq-q" data-en="faq_q2" onclick="toggleFaq(this)">Is this a Christian programme? <span class="plus">+</span></div><div class="faq-a"><p>Yes — unapologetically. onetoeight is written from a Christian worldview and is designed for churches, youth groups, Christian schools, and families who want to raise young people with roots that hold. Essentials 1–7 are practical and universal in their application; Essential 8 (Tested Convictions) is centred on Christian faith — the person of Jesus, the wisdom of Scripture, and the call to live a life of purpose. We believe the eight essentials are good for everyone, but we're not pretending they come from nowhere.</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-en="faq_q1">What age range is this for? <span class="plus">+</span></div><div class="faq-a"><p data-en="faq_a1">The guide is written for ages 15–25</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-en="faq_q3">How big does a group need to be? <span class="plus">+</span></div><div class="faq-a"><p>Weekly meetups work best with 10–30 participants. We can accommodate smaller groups (minimum 6) and larger groups by arrangement. The eight-week programme works especially well with 15–20 participants.</p></div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)" data-en="faq_q4">Do you travel outside your local area? <span class="plus">+</span></div><div class="faq-a"><p data-en="faq_a4">Yes. Travel within</p></div></div>
@@ -994,7 +994,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
     <p>Order the guide, join the meetup, or just start a conversation.</p>
     <div class="hero-ctas">
       <a href="mailto:hello@onetoeight.me" class="btn-primary" data-en="contact_touch">Get in Touch →</a>
-      <a href="https://shop.onetoeight.org/" class="btn-secondary" target="_blank" rel="noopener">Order the Guide</a>
+      <a href="https://shop.onetoeight.org/" class="btn-secondary" data-en="contact_guide" target="_blank" rel="noopener">Order the Guide</a>
     </div>
   </div>
 </section>
@@ -1004,8 +1004,8 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
   <h2>Get <em>updates, tips & offers.</em></h2>
   <p class="sub" data-en="updates_sub">No spam. No selling your info. Just occasional updates when we release new resources, guides, or product drops.</p>
   <form class="signup-form" id="signup-form" onsubmit="return submitSignup(event)">
-    <input type="text" name="name" placeholder="Your name" required data-en="updates_name" autocomplete="name">
-    <input type="email" name="email" placeholder="Your email" required autocomplete="email">
+    <input type="text" name="name" placeholder="Your name" data-en="updates_name" required data-en="updates_name" autocomplete="name">
+    <input type="email" name="email" placeholder="Your email" data-en="updates_email" required autocomplete="email">
     <button type="submit" id="signup-btn" data-en="updates_btn">Subscribe</button>
   </form>
   <div class="signup-success" id="signup-success">You're in. We'll be in touch.</div>
