@@ -2,160 +2,409 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#4C362D">
-<title>Resource Hub — one to eight</title>
-<meta name="description" content="All resources for one to eight — the guide, scripture, prayers, audio, and community in one place.">
-<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3D2820">
+<meta name="robots" content="noindex, nofollow">
+<title>onetoeight — Resource Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:#4C362D;background:#f5f0e8;overflow-x:hidden;line-height:1.6}
-h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:400;line-height:1.2}
-:root{--terracotta:#A46447;--almond:#CEB59E;--umber:#4C362D;--sage:#88937B;--linen:#E8E1D5;--cream:#f5f0e8}
-a{color:var(--terracotta);text-decoration:none;transition:color .2s}
-a:hover{color:var(--umber);text-decoration:none}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(245,240,232,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(76,54,45,.06)}
-.nav-logo{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--umber)}
-.nav-logo em{font-style:italic;font-weight:300;color:var(--terracotta)}
-.hero{padding:8rem 2rem 3rem;text-align:center;background:radial-gradient(ellipse at 50% 0%,#f0e8da 0%,var(--linen) 50%,#ddd4c4 100%)}
-.hero h1{font-size:clamp(2.5rem,6vw,4rem);color:var(--umber);letter-spacing:-.03em;margin-bottom:.8rem}
-.hero h1 em{font-style:italic;font-weight:300;color:var(--terracotta)}
-.hero p{max-width:560px;margin:0 auto;color:#7a6657;font-size:1.1rem}
-.grid{padding:3rem 1.5rem;max-width:1100px;margin:0 auto}
-.grid-inner{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
-.card{background:#fff;border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 8px rgba(76,54,45,.06);border:1px solid rgba(76,54,45,.06)}
-.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(76,54,45,.1)}
-.card-body{padding:1.5rem}
+body{font-family:'Inter',sans-serif;color:#4C362D;background:#f5f0e8;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.2}
+a{color:#A46447;text-decoration:none;transition:color .2s}
+a:hover{color:#4C362D;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:100;padding:.8rem 1.2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(245,240,232,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(76,54,45,.06)}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:600;color:#4C362D}
+.nav-logo em{font-style:italic;font-weight:300;color:#A46447}
+
+.hero{padding:4rem 1.5rem 2rem;text-align:center;background:radial-gradient(ellipse at 50% 0%,#f0e8da 0%,#E8E1D5 50%,#ddd4c4 100%)}
+.hero h1{font-size:clamp(2rem,5vw,3rem);color:#4C362D;letter-spacing:-.03em;margin-bottom:.6rem}
+.hero h1 em{font-style:italic;font-weight:300;color:#A46447}
+.hero p{max-width:520px;margin:0 auto;color:#7a6657;font-size:1rem}
+
+.grid{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
+.grid-inner{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+
+.section-label{grid-column:1/-1;font-size:.65rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#88937B;margin:1rem 0 .5rem}
+.section-label:first-child{margin-top:0}
+
+.card{background:#fff;border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 8px rgba(76,54,45,.06);border:1px solid rgba(76,54,45,.06);text-decoration:none;color:inherit;display:block}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(76,54,45,.1);text-decoration:none;color:inherit}
+.card-body{padding:1.3rem}
 .card-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.8rem}
-.card h3{font-size:1.15rem;margin-bottom:.4rem;color:var(--umber)}
-.card p{font-size:.88rem;color:#7a6657;line-height:1.5;margin-bottom:1rem}
-.card-tag{display:inline-block;padding:.25rem .7rem;border-radius:100px;font-size:.72rem;font-weight:500;margin-right:.3rem;margin-bottom:.3rem}
-.card-tag.guide{background:#A46447;color:#fff}
-.card-tag.audio{background:#88937B;color:#fff}
-.card-tag.scripture{background:#CEB59E;color:#4C362D}
-.card-tag.prayer{background:#4C362D;color:#fff}
-.card-tag.parents{background:#7a6657;color:#fff}
-.card-tag.about{background:#E8E1D5;color:#4C362D}
-.card-link{font-size:.85rem;font-weight:600;color:var(--terracotta);display:inline-flex;align-items:center;gap:.4rem}
-.card-link:hover{color:var(--umber)}
-footer{background:var(--umber);color:rgba(232,225,213,.5);padding:2rem;text-align:center;font-size:.82rem}
-footer a{color:var(--almond)}
-@media(max-width:768px){
-  nav{padding:.8rem 1rem}
-  .hero{padding:6rem 1rem 2rem}
-  .grid{padding:2rem 1rem}
+.card h3{font-size:1.1rem;margin-bottom:.35rem;color:#4C362D}
+.card p{font-size:.85rem;color:#7a6657;line-height:1.5;margin-bottom:.8rem}
+.card-tag{display:inline-block;padding:.22rem .65rem;border-radius:100px;font-size:.68rem;font-weight:600;margin-right:.3rem;margin-bottom:.3rem}
+.card-tag.app{background:#A46447;color:#fff}
+.card-tag.guide{background:#88937B;color:#fff}
+.card-tag.audio{background:#CEB59E;color:#4C362D}
+.card-tag.hub{background:#4C362D;color:#fff}
+.card-tag.free{background:#88937B;color:#fff}
+.card-tag.draft{background:#E8E1D5;color:#4C362D}
+.card-link{font-size:.82rem;font-weight:700;color:#A46447;display:inline-flex;align-items:center;gap:.35rem}
+.card-link:hover{color:#4C362D}
+
+footer{background:#4C362D;color:rgba(232,225,213,.5);padding:2rem;text-align:center;font-size:.82rem}
+footer a{color:#CEB59E}
+footer .updated{margin-top:.5rem;font-size:.72rem;color:rgba(232,225,213,.35)}
+
+@media(max-width:640px){
+  nav{padding:.7rem .9rem}
+  .hero{padding:3rem 1rem 1.5rem}
+  .grid{padding:1.5rem 1rem}
   .grid-inner{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
+
 <nav>
   <a href="/" class="nav-logo">one <em>to</em> eight</a>
 </nav>
+
 <section class="hero">
   <h1>Resource <em>Hub</em></h1>
-  <p>Everything you need for the eight essentials — guide, scripture, prayers, and community — all in one place.</p>
+  <p>Every page, app, and tool we've built — all in one place. Always up to date.</p>
 </section>
+
 <section class="grid">
 <div class="grid-inner">
 
-<a href="https://celest-mantle-r63d.here.now/onetoeight/guide-eight-v3.html" target="_blank" class="card" style="text-decoration:none;color:inherit">
-<div class="card-body">
-<div class="card-icon" style="background:#A46447;color:#fff">📖</div>
-<h3>The Guide</h3>
-<p>Eight essentials for a screen-born generation. Readable in an evening, with discussion questions, challenges, and wisdom from the Holy Bible.</p>
-<div><span class="card-tag guide">HTML</span><span class="card-tag guide">PDF</span></div>
-<span class="card-link">Read the Guide →</span>
-</div>
-</a>
+  <!-- APPS -->
+  <div class="section-label">Apps &amp; Tools</div>
 
-<a href="https://celest-mantle-r63d.here.now/onetoeight/scripture/index.html" target="_blank" class="card" style="text-decoration:none;color:inherit">
-<div class="card-body">
-<div class="card-icon" style="background:#CEB59E;color:#4C362D">📜</div>
-<h3>Scripture Database</h3>
-<p>56 Bible verses mapped to the eight essentials, with reading plans, discussion questions, and topical search.</p>
-<div><span class="card-tag scripture">56 verses</span><span class="card-tag scripture">8 plans</span></div>
-<span class="card-link">Explore Scripture →</span>
-</div>
-</a>
+  <a href="https://unbound-riddle-jqk2.here.now/drafts/circles-app/index.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#A46447;color:#fff">📱</div>
+      <h3>Circles App</h3>
+      <p>8-week formation experience. Pods of 8 friends, daily check-ins, podcast recording, evidence upload, WebLLM local AI, service extension. Runs as PWA or Android APK. Fully local — no account, no cost.</p>
+      <div>
+        <span class="card-tag app">PWA</span>
+        <span class="card-tag app">Android APK</span>
+        <span class="card-tag free">Free</span>
+      </div>
+      <span class="card-link">Open app →</span>
+    </div>
+  </a>
 
-<a href="https://celest-mantle-r63d.here.now/onetoeight/prayers/index.html" target="_blank" class="card" style="text-decoration:none;color:inherit">
-<div class="card-body">
-<div class="card-icon" style="background:#4C362D;color:#fff">🙏</div>
-<h3>Prayers</h3>
-<p>80 original prayers — ten for each essential — with audio. Each includes gratitude towards God through Jesus, written to be prayed honestly.</p>
-<div><span class="card-tag prayer">80 prayers</span><span class="card-tag audio">Audio</span></div>
-<span class="card-link">Listen & Pray →</span>
-</div>
-</a>
+  <a href="https://unbound-riddle-jqk2.here.now/drafts/circles-app/ai-archive.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#88937B;color:#fff">🤖</div>
+      <h3>AI Chat Archive</h3>
+      <p>Browse, read, and delete your AI conversation history. Standalone page — no tab-switching, no screen squeeze. Full history of every conversation with your local guide.</p>
+      <div>
+        <span class="card-tag guide">History</span>
+        <span class="card-tag free">Free</span>
+      </div>
+      <span class="card-link">Open archive →</span>
+    </div>
+  </a>
 
-<a href="https://celest-mantle-r63d.here.now/onetoeight/young-people.html" target="_blank" class="card" style="text-decoration:none;color:inherit">
-<div class="card-body">
-<div class="card-icon" style="background:#7a6657;color:#fff">💬</div>
-<h3>For Young People</h3>
-<p>Honest talk about the pressures you face — scrolling, loneliness, pressure, faith — and how the eight essentials help build a life that holds.</p>
-<div><span class="card-tag about">Youth</span></div>
-<span class="card-link">For You →</span>
-</div>
-</a>
+  <a href="https://unbound-riddle-jqk2.here.now/drafts/circles-app/local-ai.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#CEB59E;color:#4C362D">🧠</div>
+      <h3>Local AI Standalone</h3>
+      <p>WebLLM-powered Llama 3.2 1B running entirely in your browser. ~780MB download (cached after first load). Works offline forever. Knowledge base of all 8 essentials.</p>
+      <div>
+        <span class="card-tag guide">WebLLM</span>
+        <span class="card-tag free">Free</span>
+      </div>
+      <span class="card-link">Try it →</span>
+    </div>
+  </a>
 
-<a href="https://celest-mantle-r63d.here.now/onetoeight/parents/fear.html" target="_blank" class="card" style="text-decoration:none;color:inherit">
-<div class="card-body">
-<div class="card-icon" style="background:#7a6657;color:#fff">🛡️</div>
-<h3>For Parents — Fear</h3>
-<p>A hard look at the gap between screen time and real life. What would your teenager actually know how to do without a phone?</p>
-<div><span class="card-tag parents">Parents</span></div>
-<span class="card-link">Read →</span>
-</div>
-</a>
+  <!-- CONTENT -->
+  <div class="section-label">Content &amp; Guides</div>
 
-<a href="https://celest-mantle-r63d.here.now/onetoeight/parents/hope.html" target="_blank" class="card" style="text-decoration:none;color:inherit">
-<div class="card-body">
-<div class="card-icon" style="background:#7a6657;color:#fff">🌟</div>
-<h3>For Parents — Hope</h3>
-<p>Give your teenager a life screens can't compete with. Not another restriction — a better offer.</p>
-<div><span class="card-tag parents">Parents</span></div>
-<span class="card-link">Read →</span>
-</div>
-</a>
+  <a href="https://sleek-drift-4hqr.here.now/" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#A46447;color:#fff">📖</div>
+      <h3>Landing Page — one to eight</h3>
+      <p>The full guide landing page. 8 essentials, workshops (Thursday Night Live + Sunday School Webinar), FAQ, testimonials, email signup. The front door.</p>
+      <div>
+        <span class="card-tag hub">Main</span>
+      </div>
+      <span class="card-link">Visit →</span>
+    </div>
+  </a>
 
-<a href="https://celest-mantle-r63d.here.now/onetoeight/parents/bridge.html" target="_blank" class="card" style="text-decoration:none;color:inherit">
-<div class="card-body">
-<div class="card-icon" style="background:#7a6657;color:#fff">🌉</div>
-<h3>For Parents — Bridge</h3>
-<p>Bridging the digital generation gap with understanding. You didn't have a phone at sixteen. Your teenager has never known life without one.</p>
-<div><span class="card-tag parents">Parents</span></div>
-<span class="card-link">Read →</span>
-</div>
-</a>
+  <a href="https://autumn-atlas-ap56.here.now/onetoeight-pitch.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#4C362D;color:#fff">📊</div>
+      <h3>Pitch Deck</h3>
+      <p>Investor and community business presentation. Problem, solution, income model ($44.88 kit · $299 licence · $5.99/mo sub · $1,500 school), community impact, Circles App live demo, local AI architecture.</p>
+      <div>
+        <span class="card-tag hub">Pitch</span>
+      </div>
+      <span class="card-link">View →</span>
+    </div>
+  </a>
 
+  <a href="https://rosy-cottage-bfev.here.now/onetoeight-youth-benefits.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#88937B;color:#fff">💬</div>
+      <h3>For Young People</h3>
+      <p>What changes when you finish the eight. 8 outcome cards, before/after comparison, how the weekly rhythm works. Written for teens, not adults.</p>
+      <div>
+        <span class="card-tag guide">Youth</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
 
-<a class="card" style="text-decoration:none;color:inherit;cursor:default;opacity:.6">
-<div class="card-body">
-<div class="card-icon" style="background:#88937B;color:#fff">🤖</div>
-<h3>Offline AI Tools <span style="font-size:.7rem;font-weight:500;color:#A46447;display:inline">(coming soon)</span></h3>
-<p>AI-powered study tools that work without internet. Download once, use anywhere — no signal required.</p>
-<div><span class="card-tag about">Coming Soon</span></div>
-</div>
-</a>
+  <a href="https://dewy-nirvana-dpjt.here.now/au-outreach.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#A46447;color:#fff">🇦🇺</div>
+      <h3>Cold Outreach — Australian Christian Influencers</h3>
+      <p>Operations playbook for reaching AU Christian creators, pastors, and youth ministry networks. Verified names (Bryce Crawford, Jamie Zhu, The Pastor's Heart, Eternity News, SU Australia…), 4 tiers, real AU market rates, 12 sections, 90-day plan.</p>
+      <div>
+        <span class="card-tag draft">12 sections</span>
+        <span class="card-tag draft">AU-specific</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
 
-<a class="card" style="text-decoration:none;color:inherit;cursor:default;opacity:.6">
-<div class="card-body">
-<div class="card-icon" style="background:#CEB59E;color:#4C362D">📝</div>
-<h3>Mini Course <span style="font-size:.7rem;font-weight:500;color:#A46447;display:inline">(coming soon)</span></h3>
-<p>A digital walkthrough of the eight essentials. Bite-sized sessions with questions, reflections, and practical steps.</p>
-<div><span class="card-tag about">Coming Soon</span></div>
-</div>
-</a>
+  <a href="../parents-2am.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#4C362D;color:#fff">🌙</div>
+      <h3>2:07 AM — Reaching Parents of Preteens &amp; Teens</h3>
+      <p>What keeps parents awake, backed by real Australian eSafety data (the social media ban, the 8 worries, the guarding-vs-building gap). Maps every worry to a onetoeight practice, plus a 4-phase plan to reach parents and two ready-to-send messages.</p>
+      <div>
+        <span class="card-tag guide">Parents</span>
+        <span class="card-tag draft">Infographic</span>
+        <span class="card-tag draft">Research-backed</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="../tutoring-partners.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#A46447;color:#fff">🎒</div>
+      <h3>3:45 PM — The Tutoring Channel</h3>
+      <p>B2B strategy for reaching tutoring centres and after-school programs. The $2.2B Australian tutoring market, the whole-child gap, six partnership models, the ATA affiliate channel, a ranked prospect list (Kumon, Code Camp, Tutor Doctor…), pricing anchored to their reality, and a three-phase play.</p>
+      <div>
+        <span class="card-tag draft">B2B</span>
+        <span class="card-tag draft">Strategy</span>
+        <span class="card-tag draft">Research-backed</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="../creator-prospects.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#4f6f9e;color:#fff">📡</div>
+      <h3>The Creator Channel — Who to Call First</h3>
+      <p>Verified Australian creator prospect sheet. 10 real creators with live subscriber counts and public business emails. YouTube-first contact ladder, Jamie Zhu spotlight (895K YT, 2.4M TikTok, confirmed partnerships email), three outreach tiers, cold-email template, and honest gaps for a second research pass.</p>
+      <div>
+        <span class="card-tag draft">Outreach</span>
+        <span class="card-tag draft">Verified</span>
+        <span class="card-tag draft">Research-backed</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="../afterschool-agent.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#d9a441;color:#0d1220">🤖</div>
+      <h3>Afterschool Agent — 4:30 PM Live</h3>
+      <p>A live four-week programme where teens build their own local-first AI agent that teaches the eight essentials through personalised activities. Three sessions a week (Mon/Wed/Fri 4:30 PM), one hour each. The agent designs custom challenges for each essential — silence, body, scripture, nature, digital self-defence, life skills, community, character — plus three daily rituals: Afterschool Chat, Planning, and Morning Minute text-to-speech. $50/week. No coding needed. Free software, runs on your home computer.</p>
+      <div>
+        <span class="card-tag guide">Offer</span>
+        <span class="card-tag draft">Live Programme</span>
+        <span class="card-tag draft">$50/week</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="../penang-christian-network.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#7d8a6e;color:#fff">🌏</div>
+      <h3>The Penang Christian Youth Network</h3>
+      <p>Verified contact sheet for 60 Christian organisations in Penang, Malaysia — pulled live from Google Maps via the Outscraper API. Methodist and Catholic dominate the geography, with Anglican, Baptist, Presbyterian, Pentecostal, Assemblies of God, and independent fellowships filling the gaps. Real names, real phone numbers, real Google ratings, click-to-call. Best-fit starting points: YMCA Penang (1,417 reviews), St George's Anglican, Wesley Methodist, Minor Basilica of St Anne.</p>
+      <div>
+        <span class="card-tag draft">Field Test</span>
+        <span class="card-tag draft">Verified</span>
+        <span class="card-tag draft">60 contacts</span>
+        <span class="card-tag draft">Penang, MY</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  
+
+  <a href="../images-essentials/" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#2D4C3B;color:#fff">🎨</div>
+      <h3>Eight Essentials — AI Image Gallery</h3>
+      <p>Four painterly illustrations for the Eight Essentials, generated with Alibaba's Wan text-to-image models via Qwen Cloud. Each image is labelled with the exact model that created it (wan2.7-image vs wan2.7-image-pro).</p>
+      <div>
+        <span class="card-tag guide">Gallery</span>
+        <span class="card-tag draft">AI-generated</span>
+        <span class="card-tag draft">Wan models</span>
+      </div>
+      <span class="card-link">Browse →</span>
+    </div>
+  </a>
+
+  <a href="https://alpine-nirvana-6gtb.here.now/drafts/onetoeight-youth-shell-gtm.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#CEB59E;color:#4C362D">📋</div>
+      <h3>Youth Shell + Go-To-Market</h3>
+      <p>Complete strategy document. Phone-first design system, distribution channels, pricing architecture, launch sequence, content marketing, partnerships, metrics.</p>
+      <div>
+        <span class="card-tag draft">Strategy</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="https://fierce-anchor-qtjs.here.now/marketing-playbook.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#7a6657;color:#fff">📣</div>
+      <h3>Marketing to Christian Teens 2026</h3>
+      <p>Strategic playbook. Platform strategy, messaging, community-first, cultural entry points, tactical execution, and pitfalls to avoid. 8 sections.</p>
+      <div>
+        <span class="card-tag draft">Playbook</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="https://cerulean-poplar-65wx.here.now/prayers/" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#88937B;color:#fff">🙏</div>
+      <h3>Prayers</h3>
+      <p>80 original prayers — ten for each essential — with audio. Each includes gratitude to God through Jesus, written to be prayed honestly.</p>
+      <div>
+        <span class="card-tag audio">80 prayers</span>
+        <span class="card-tag audio">Audio</span>
+      </div>
+      <span class="card-link">Listen &amp; pray →</span>
+    </div>
+  </a>
+
+  <a href="https://devoted-valley-34cr.here.now/onetoeight/guide-eight-v3.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#4C362D;color:#fff">📖</div>
+      <h3>Full Guide (Christian Edition)</h3>
+      <p>The complete 130-page Christian guide to the 8 essentials. Now with 8 spoken-word TTS audio chapters — listen as you read, or on their own. Universal edition also available.</p>
+      <div>
+        <span class="card-tag guide">130 pages</span>
+        <span class="card-tag audio">8 audio</span>
+      </div>
+      <span class="card-link">Read &amp; listen →</span>
+    </div>
+  </a>
+
+  <a href="https://vast-jubilee-z2sh.here.now/onetoeight/gallery.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#A46447;color:#fff">🖼️</div>
+      <h3>Image Gallery</h3>
+      <p>39 chapter images generated by MiniMax. Cover art, chapter illustrations, and social media graphics for all 8 essentials.</p>
+      <div>
+        <span class="card-tag guide">39 images</span>
+      </div>
+      <span class="card-link">Browse →</span>
+    </div>
+  </a>
+
+  <!-- PARENTS -->
+  <div class="section-label">For Parents</div>
+
+  <a href="https://sleek-drift-4hqr.here.now/onetoeight/parents/fear.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#7a6657;color:#fff">🛡️</div>
+      <h3>Parents — Fear</h3>
+      <p>"If the internet went down tomorrow, what would your teenager actually know how to do?" A hard look at the gap between screen time and real life.</p>
+      <div>
+        <span class="card-tag guide">Parents</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="https://sleek-drift-4hqr.here.now/onetoeight/parents/hope.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#88937B;color:#fff">🌟</div>
+      <h3>Parents — Hope</h3>
+      <p>"Give your teenager a life screens can't compete with." Not another restriction — a better offer. The eight essentials as a pathway to real life.</p>
+      <div>
+        <span class="card-tag guide">Parents</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="https://sleek-drift-4hqr.here.now/onetoeight/parents/bridge.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#CEB59E;color:#4C362D">🌉</div>
+      <h3>Parents — Bridge</h3>
+      <p>"You didn't have a phone until you were sixteen. Your teenager has never known life without one." Bridging the digital generation gap.</p>
+      <div>
+        <span class="card-tag guide">Parents</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <!-- BETA / DRAFTS -->
+  <div class="section-label">Editions &amp; Drafts</div>
+
+  <a href="https://still-glider-bhr8.here.now/drafts/universal-edition.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#88937B;color:#fff">🌍</div>
+      <h3>Universal Edition</h3>
+      <p>The 8 essentials without faith content. For schools, secular groups, and open-enquiry settings. Tested Convictions instead of Tested Faith.</p>
+      <div>
+        <span class="card-tag draft">Universal</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="https://waxen-timber-yac3.here.now/drafts/christian-edition.html" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#A46447;color:#fff">✝️</div>
+      <h3>Christian Edition</h3>
+      <p>The 8 essentials framed by Scripture. Stillness before God, body as temple, scripture hidden in the heart, creation to Creator, tested faith in Jesus.</p>
+      <div>
+        <span class="card-tag draft">Christian</span>
+      </div>
+      <span class="card-link">Read →</span>
+    </div>
+  </a>
+
+  <a href="https://unbound-riddle-jqk2.here.now/drafts/circles-app/circles-app-v1.3.apk" target="_blank" class="card">
+    <div class="card-body">
+      <div class="card-icon" style="background:#4C362D;color:#fff">📦</div>
+      <h3>Android APK</h3>
+      <p>Install the Circles app directly on Android. All features: pods, AI, podcast, evidence, service extension. No Play Store needed. ~4MB.</p>
+      <div>
+        <span class="card-tag app">v1.3</span>
+        <span class="card-tag free">Free</span>
+      </div>
+      <span class="card-link">Download APK →</span>
+    </div>
+  </a>
+
 </div>
 </section>
+
 <footer>
-  <p><a href="https://onetoeight.org">one to eight</a> &middot; Resource Hub</p>
-  <p style="margin-top:.5rem;">Eight essentials for a screen-born generation</p>
+  <p><a href="https://onetoeight.org">one to eight</a> · Resource Hub</p>
+  <p style="margin-top:.3rem">Eight essentials for a screen-born generation · <a href="https://sleek-drift-4hqr.here.now/">Get the Guide</a></p>
+  <p class="updated">Updated automatically after every publish. Last: July 2026.</p>
 </footer>
+
 </body>
 </html>
