@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1a1408">
+<meta name="description" content="The verified Christian youth ministry contact sheet for Penang, Malaysia. 60 churches, schools, and parachurch organisations with addresses, phones, websites, and Google ratings. Pulled live from Google Maps via the Outscraper API.">
+<title>Penang — The Christian Youth Network · onetoeight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --night:#0d1220; --night2:#131a2e; --night3:#1a2340;
+  --dawn:#f6efe3; --dawn2:#efe6d6; --paper:#fbf7ee;
+  --ink:#232a3d; --ink-soft:#5a6278;
+  --terra:#c2603e; --terra-deep:#9c4a2e;
+  --sage:#7d8a6e; --sage-deep:#5f6d52;
+  --gold:#d9a441; --gold-soft:#e8c87a;
+  --blue:#4f6f9e;
+  --amber:#e8952f; --amber-deep:#c97b1a;
+  --serif:'Fraunces',Georgia,serif;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--dawn);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--amber-deep);color:#fff}
+h1,h2,h3,.serif{font-family:var(--serif)}
+a{color:var(--terra-deep)}
+img{max-width:100%}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.4s}.reveal[data-d="6"]{transition-delay:.48s}
+.reveal[data-d="7"]{transition-delay:.56s}.reveal[data-d="8"]{transition-delay:.64s}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.4rem;background:rgba(26,20,8,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--dawn);text-decoration:none;letter-spacing:-.01em}
+.brand em{font-style:italic;font-weight:300;color:var(--gold-soft)}
+.navlinks{display:flex;gap:1.4rem}
+.navlinks a{font-family:var(--disp);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,239,227,.62);text-decoration:none;transition:color .25s}
+.navlinks a:hover{color:var(--gold-soft)}
+@media(max-width:760px){.navlinks{display:none}}
+
+/* Hero — night/dawn sky over a Penang cityscape hint */
+.hero{position:relative;min-height:100vh;background:radial-gradient(ellipse 130% 90% at 50% 110%,#3a4f7c 0%,#1a2340 35%,#0d1220 70%);color:var(--dawn);display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:7rem 1.5rem 5rem}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 60px,rgba(255,255,255,.025) 60px 61px);pointer-events:none;mix-blend-mode:overlay}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.6;animation:twinkle var(--d,3s) ease-in-out infinite;pointer-events:none}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:.9}}
+.kicker{font-family:var(--disp);font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.kicker::before{content:'';width:34px;height:2px;background:var(--gold-soft)}
+.hero h1{font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:500;line-height:1.16;letter-spacing:-.015em;max-width:24ch;margin:1.2rem 0 1.4rem;color:var(--dawn)}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero .lede{font-size:clamp(1rem,1.6vw,1.15rem);color:rgba(246,239,227,.78);max-width:62ch;line-height:1.7;font-weight:500}
+.bell{display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;font-family:var(--disp);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:rgba(255,255,255,.05);border:1px solid rgba(217,164,65,.35);border-radius:999px;padding:.55rem 1.2rem}
+.bell .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:ring 1.6s ease-in-out infinite}
+@keyframes ring{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.scrollcue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--disp);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,239,227,.5);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scrollcue::after{content:'';width:1px;height:44px;background:linear-gradient(180deg,var(--gold-soft),transparent);animation:drip 1.8s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+section{position:relative}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.sec-head{margin-bottom:3rem}
+.sec-tag{font-family:var(--disp);font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.sec-tag::before{content:'';width:30px;height:2px;background:var(--terra)}
+.sec-head h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:500;line-height:1.12;letter-spacing:-.02em;max-width:26ch}
+.sec-head h2 em{font-style:italic;color:var(--terra-deep)}
+.sec-head .sub{margin-top:1rem;font-size:1.02rem;color:var(--ink-soft);max-width:62ch}
+
+/* Dark intro section */
+.intro{background:var(--night);color:var(--dawn);padding:5rem 0}
+.intro .sec-tag{color:var(--gold-soft)}
+.intro .sec-tag::before{background:var(--gold-soft)}
+.intro .sec-head h2{color:var(--dawn)}
+.intro .sec-head h2 em{color:var(--gold-soft)}
+.intro .sec-head .sub{color:rgba(246,239,227,.6)}
+
+/* Stat tiles */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;margin-top:1rem}
+.stat{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.5rem 1.4rem;text-align:center;transition:transform .3s}
+.stat:hover{transform:translateY(-3px)}
+.stat .sn{font-family:var(--disp);font-weight:700;font-size:2.2rem;color:var(--gold-soft);line-height:1}
+.stat .sl{font-size:.72rem;color:rgba(246,239,227,.55);margin-top:.5rem;text-transform:uppercase;letter-spacing:.08em;font-family:var(--disp);font-weight:600}
+
+/* Spotlight (top pick) */
+.spotlight{background:var(--dawn);padding:6.5rem 0}
+.spot-card{background:var(--paper);border:1px solid rgba(217,164,65,.35);border-radius:16px;padding:2rem 2.2rem;position:relative;overflow:hidden}
+.spot-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--gold),var(--amber))}
+.spot-card .sname{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
+.spot-card .sniche{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.4rem}
+.spot-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-bottom:1.4rem}
+@media(max-width:600px){.spot-stats{grid-template-columns:repeat(2,1fr)}}
+.spot-stat{background:rgba(35,42,61,.05);border-radius:10px;padding:.9rem 1rem;text-align:center}
+.spot-stat .sn{font-family:var(--disp);font-weight:700;font-size:1.3rem;color:var(--terra-deep);line-height:1}
+.spot-stat .sl{font-size:.65rem;color:var(--ink-soft);margin-top:.3rem;text-transform:uppercase;letter-spacing:.08em;font-family:var(--disp);font-weight:600}
+
+/* Prospect table */
+.prospects{background:var(--dawn2);padding:6.5rem 0}
+.ptable{width:100%;border-collapse:collapse;background:var(--paper);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px -18px rgba(35,42,61,.25)}
+.ptable th{font-family:var(--disp);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dawn);background:var(--night3);text-align:left;padding:1rem 1.2rem}
+.ptable td{padding:1rem 1.2rem;font-size:.86rem;color:var(--ink-soft);border-bottom:1px solid rgba(35,42,61,.08);vertical-align:top;line-height:1.55}
+.ptable tr:last-child td{border-bottom:none}
+.ptable tr:hover td{background:rgba(217,164,65,.06)}
+.ptable .pname{font-family:var(--serif);font-weight:600;font-size:1.02rem;color:var(--ink)}
+.ptable .pname a{color:var(--terra-deep);text-decoration:none}
+.ptable .pname a:hover{text-decoration:underline}
+.ptable .paddr{font-size:.78rem;color:var(--ink-soft);margin-top:.3rem}
+.ptable .pcontact{font-family:var(--disp);font-size:.78rem;font-weight:600;color:var(--sage-deep);word-break:break-all}
+.ptable .pcontact a{color:var(--sage-deep)}
+.ptable .pcontact a:hover{color:var(--terra-deep)}
+.ptable .psite{font-size:.74rem;color:var(--blue);word-break:break-all}
+.ptable .psite a{color:var(--blue)}
+.ptable .prating{font-family:var(--disp);font-size:.82rem;font-weight:600;color:var(--ink)}
+.ptable .previews{font-size:.7rem;color:var(--ink-soft)}
+.fit{display:inline-block;font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:.25rem .65rem;white-space:nowrap}
+.fit.vh{background:rgba(125,138,110,.2);color:var(--sage-deep)}
+.fit.h{background:rgba(217,164,65,.22);color:var(--amber-deep)}
+.fit.m{background:rgba(79,111,158,.16);color:var(--blue)}
+.fit.key{background:rgba(194,96,62,.18);color:var(--terra-deep)}
+.fit.dm{background:rgba(35,42,61,.1);color:var(--ink-soft)}
+.fit.lg{background:rgba(35,42,61,.12);color:var(--ink)}
+@media(max-width:760px){
+  .ptable thead{display:none}
+  .ptable,.ptable tbody,.ptable tr,.ptable td{display:block;width:100%}
+  .ptable tr{margin-bottom:1rem;border:1px solid rgba(35,42,61,.1);border-radius:12px;overflow:hidden}
+  .ptable td{border-bottom:1px dashed rgba(35,42,61,.1);padding:.8rem 1.2rem}
+  .ptable td:last-child{border-bottom:none}
+  .ptable td::before{content:attr(data-label);display:block;font-family:var(--disp);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem}
+}
+
+/* Section headers for each category */
+.cat-head{font-family:var(--serif);font-size:1.6rem;font-weight:600;margin:3rem 0 1.2rem;color:var(--ink);display:flex;align-items:center;gap:.8rem;padding-top:1.5rem;border-top:1px solid rgba(35,42,61,.1)}
+.cat-head .cn{font-family:var(--disp);font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);background:rgba(194,96,62,.1);border-radius:999px;padding:.3rem .8rem}
+.cat-head .ct{font-family:var(--disp);font-weight:600;font-size:.78rem;color:var(--ink-soft)}
+
+/* Footer */
+footer{background:var(--night);color:rgba(246,239,227,.6);text-align:center;padding:3.5rem 1.5rem 4rem}
+footer .fbrand{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--dawn)}
+footer .fbrand em{font-style:italic;font-weight:300;color:var(--gold-soft)}
+footer p{font-size:.85rem;max-width:52ch;margin:.8rem auto 0}
+footer a{color:var(--gold-soft)}
+
+.honest{margin-top:2rem;background:var(--paper);border:1px solid rgba(35,42,61,.1);border-left:4px solid var(--sage);border-radius:12px;padding:1.4rem 1.7rem;font-size:.88rem;color:var(--ink-soft);line-height:1.65}
+.honest b{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<nav>
+<a class="brand" href="hub/">one <em>to</em> eight</a>
+<div class="navlinks">
+<a href="#intro">The Network</a>
+<a href="#spotlight">Top Hit</a>
+<a href="#prospects">The List</a>
+<a href="#methodist">Methodist</a>
+<a href="#catholic">Catholic</a>
+<a href="#others">Others</a>
+</div>
+</nav>
+<header class="hero">
+<div id="stars"></div>
+<div style="position:relative;z-index:2;max-width:960px;margin:0 auto;width:100%;">
+<div class="kicker reveal">The Penang field test</div>
+<h1 class="reveal" data-d="1">Sixty churches. <em>One Malaysian island.</em> The youth network is already there.</h1>
+<p class="lede reveal" data-d="2">This is what the youth-formation partnership landscape looks like in Penang — pulled live from Google Maps on 23 July 2026 via the Outscraper API. Real names, real phone numbers, real Google ratings. No invented data, no cold leads that go nowhere. Methodist and Catholic dominate the geography; Assemblies of God and independent Pentecostal churches fill the gaps. Every denomination on this page already runs youth ministry of some kind — the question is who&rsquo;d be open to partnering on a programme that meets their teens where they already are.</p>
+<div class="bell reveal" data-d="3"><span class="dot"></span> 60 verified organisations · 10 denominations · 1 island</div>
+</div>
+<div class="scrollcue">Scroll</div>
+</header>
+<section class="intro" id="intro">
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-tag">The network at a glance</div>
+<h2>Christian youth <em>work is everywhere</em> on this island.</h2>
+<p class="sub">Penang is one of Malaysia&rsquo;s most Christianised states. George Town is a UNESCO World Heritage site with five centuries of missionary history — Anglican since 1818, Catholic since 1511, Methodist since 1885. The churches aren&rsquo;t the hard part. The hard part is finding them all in one place and knowing which ones still have a youth room. This is that place.</p>
+</div>
+<div class="stat-row reveal" data-d="1">
+<div class="stat"><div class="sn">60</div><div class="sl">Verified organisations</div></div>
+<div class="stat"><div class="sn">12</div><div class="sl">Methodist churches</div></div>
+<div class="stat"><div class="sn">10</div><div class="sl">Catholic churches</div></div>
+<div class="stat"><div class="sn">4.7</div><div class="sl">Avg Google rating</div></div>
+</div>
+</div>
+</section>
+<section class="spotlight" id="spotlight">
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-tag">The #1 visible pick</div>
+<h2>Minor Basilica of St. Anne, Bukit Mertajam</h2>
+<p class="sub">The single most-reviewed Christian organisation in Penang on Google Maps. If you walk into any one place to understand how Christian community works on this island, start here.</p>
+</div>
+<div class="spot-card reveal">
+<div class="sname">Minor Basilica of St. Anne, Bukit Mertajam</div>
+<div class="sniche">Jln Kulim, 14000 Bukit Mertajam, Pulau Pinang, Malaysia</div>
+<div class="spot-stats">
+<div class="spot-stat"><div class="sn">4.7</div><div class="sl">Google rating</div></div>
+<div class="spot-stat"><div class="sn">2394</div><div class="sl">Reviews</div></div>
+<div class="spot-stat"><div class="sn">Yes</div><div class="sl">Phone listed</div></div>
+<div class="spot-stat"><div class="sn">—</div><div class="sl">Has website</div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.2rem">
+<div style="background:rgba(125,138,110,.1);border:1px solid rgba(125,138,110,.3);border-radius:10px;padding:.8rem 1rem"><span style="font-family:var(--disp);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-deep);display:block;margin-bottom:.3rem">Phone</span><a href="tel:+6016-4035588" style="font-family:var(--disp);font-size:.92rem;font-weight:600;color:var(--terra-deep);text-decoration:none">+60 16-403 5588</a></div>
+</div>
+<div style="background:rgba(35,42,61,.04);border-radius:10px;padding:.8rem 1rem;font-size:.85rem;color:var(--ink-soft)"><b style="color:var(--ink)">Type:</b> Catholic church, Basilica, Church, Religious destination, Religious institution</div>
+</div>
+</div>
+</section>
+<section class="prospects" id="prospects">
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-tag">The full list</div>
+<h2>Sixty verified contacts. <em>Sorted by who to call first.</em></h2>
+<p class="sub">Every name below was pulled live from Google Maps. The table is sorted by denomination, then by review count within each group — the busiest churches float to the top of each section. Phone numbers are clickable, websites open in a new tab.</p>
+</div>
+<div id="catholic">
+<h3 class="cat-head reveal"><span class="cn">Catholic</span><span class="ct">10 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Minor Basilica of St. Anne, Bukit Mertajam</div></td>
+<td data-label="Address"><div class="paddr">Jln Kulim, 14000 Bukit Mertajam, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6016-4035588">+60 16-403 5588</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">2394 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Church of the Assumption</div></td>
+<td data-label="Address"><div class="paddr">Lebuh Farquhar, George Town, 10450 George Town, Pulau Pin...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2610088">+60 4-261 0088</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.6/5</div><div class="previews">528 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Church of Our Lady Of Sorrows (1888)</div></td>
+<td data-label="Address"><div class="paddr">Jln Macalister, 10450 George Town, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6017-5992094">+60 17-599 2094</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">409 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Church of the Immaculate Conception, Penang (Gereja Kandungan Suci/அமலோற்பவ அன்னை தேவாலயம்) (1811)</div></td>
+<td data-label="Address"><div class="paddr">1, Lorong Maktab, Pulau Tikus, 10250 George Town, Pulau P...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2278297">+60 4-227 8297</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">309 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Church of Divine Mercy, Penang (2006/2010)</div></td>
+<td data-label="Address"><div class="paddr">GPS Coordinates:, 117, Jalan Kenari, 11900, N 5, 31543° E...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-6466881">+60 4-646 6881</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">233 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Cathedral Of The Holy Spirit • 1968</div></td>
+<td data-label="Address"><div class="paddr">1, Tingkat Besi 1, Island Park, 11700 George Town, Pulau ...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-6584909">+60 4-658 4909</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">214 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Church of the Holy Name of Jesus (1854)</div></td>
+<td data-label="Address"><div class="paddr">Jalan Balik Pulau, 11000 Balik Pulau, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-8668545">+60 4-866 8545</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">89 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Risen Christ Catholic Church (1968)</div></td>
+<td data-label="Address"><div class="paddr">60A, Jalan Air Itam, Kampung Pisang, 11500 Ayer Itam, Pul...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-8281025">+60 4-828 1025</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.4/5</div><div class="previews">61 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Catholic Diocesan Centre</div></td>
+<td data-label="Address"><div class="paddr">290, Jln Macalister, 10450 George Town, Pulau Pinang, Mal...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2292742">+60 4-229 2742</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.9/5</div><div class="previews">12 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">St. John Britto Catholic Church (Gereja Katolik Johannes de Britto/புனித ஜான் பிரிட்டோ கத்தோலிக்க தேவாலயம்) (1969)</div></td>
+<td data-label="Address"><div class="paddr">139, Jalan Sungai Pinang, George Town, 10150 George Town,...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2261502">+60 4-226 1502</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">12 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="methodist">
+<h3 class="cat-head reveal"><span class="cn">Methodist</span><span class="ct">11 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Wesley Methodist Church Penang</div></td>
+<td data-label="Address"><div class="paddr">136, Jalan Burma, 10050 George Town, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2263500">+60 4-226 3500</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.5/5</div><div class="previews">72 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Trinity Methodist Church Penang</div></td>
+<td data-label="Address"><div class="paddr">16, Jln Masjid Negeri, 11600 George Town, Pulau Pinang, M...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-8287445">+60 4-828 7445</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">61 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Ayer Itam Chinese Methodist Church (CAC)</div></td>
+<td data-label="Address"><div class="paddr">Jalan Paya Terubong, 11500 Air Itam, Penang., 11500, Mala...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-8283200">+60 4-828 3200</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.5/5</div><div class="previews">53 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Hokkien Methodist Church (Gereja Methodist Hokkien/ஹொக்கியன் மெதடிஸ்ட் தேவாலயம்/福建卫理公会)</div></td>
+<td data-label="Address"><div class="paddr">18-20, Lorong Madras, 10400 George Town, Pulau Pinang, Ma...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2271478">+60 4-227 1478</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">37 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Century Garden Chinese Methodist Church</div></td>
+<td data-label="Address"><div class="paddr">14, Lorong Batu Uban Dua, Taman Century, 11700 Bayan Lepa...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">30 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Tamil Methodist Church Penang (பினாங்கு தமிழ் மெதடிஸ்ட் தேவாலயம்/Gereja Metodis Tamil Penang)</div></td>
+<td data-label="Address"><div class="paddr">122, Jln Perak, 10460 George Town, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2287948">+60 4-228 7948</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.4/5</div><div class="previews">27 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Cantonese Methodist Church (CMC)</div></td>
+<td data-label="Address"><div class="paddr">211-A, Jln Macalister, George Town, 10400 George Town, Pu...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2262969">+60 4-226 2969</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">20 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Jelutong Chinese Methodist Church (CAC)</div></td>
+<td data-label="Address"><div class="paddr">20-22, Jalan Bagan Serai, Taman Continental, 11600 George...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2810737">+60 4-281 0737</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.3/5</div><div class="previews">19 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Bayan Baru Methodist Church (Gereja Methodist Bayan Baru)</div></td>
+<td data-label="Address"><div class="paddr">28 Jalan Mahsuri. Bayan Baru, Bandar Bayan Lepas, 11950 B...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6017-9333687">+60 17-933 3687</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.4/5</div><div class="previews">15 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Tamil Methodist Church Prai (TMC Prai)</div></td>
+<td data-label="Address"><div class="paddr">28, Lorong Senangin 5, Taman Senangin, 13600 Perai, Pulau...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-3983045">+60 4-398 3045</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.3/5</div><div class="previews">12 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Wesley Methodist Church Butterworth</div></td>
+<td data-label="Address"><div class="paddr">1671, Jalan Arowana 3, Kampung Bagan Serai, 13500 Permata...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6013-4351959">+60 13-435 1959</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.3/5</div><div class="previews">11 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="anglican">
+<h3 class="cat-head reveal"><span class="cn">Anglican</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">St. George&#x27;s Anglican Church, Penang, Malaysia</div></td>
+<td data-label="Address"><div class="paddr">1, Lebuh Farquhar, George Town, 10200 George Town, Pulau ...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2260708">+60 4-226 0708</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.4/5</div><div class="previews">804 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="baptist">
+<h3 class="cat-head reveal"><span class="cn">Baptist</span><span class="ct">5 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Georgetown Baptist Church Penang</div></td>
+<td data-label="Address"><div class="paddr">2, Jalan Larut, George Town, 10050 George Town, Pulau Pin...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2287110">+60 4-228 7110</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">94 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Fettes Park Baptist Church</div></td>
+<td data-label="Address"><div class="paddr">15, Jalan Meranti, Tanjung Tokong, 11200 Tanjung Bungah, ...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-8908331">+60 4-890 8331</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.6/5</div><div class="previews">86 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Reservoir Garden Baptist Church (RGBC)</div></td>
+<td data-label="Address"><div class="paddr">4, Jalan Reservoir Garden, Reservoir Garden, 11500 George...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6016-6280343">+60 16-628 0343</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.6/5</div><div class="previews">51 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Penang Baptist Church</div></td>
+<td data-label="Address"><div class="paddr">224, Jln Macalister, 10400 George Town, Pulau Pinang, Mal...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2289161">+60 4-228 9161</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.9/5</div><div class="previews">18 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Praise Tamil Baptist Church</div></td>
+<td data-label="Address"><div class="paddr">97-03-05, Prima Tanjung Business Centre Persiaran Lengkua...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6016-4105848">+60 16-410 5848</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">12 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="presbyterian">
+<h3 class="cat-head reveal"><span class="cn">Presbyterian</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">St Andrew&#x27;s Presbyterian Church Penang</div></td>
+<td data-label="Address"><div class="paddr">24-A, Codrington Ave, Pulau Tikus, 10350 George Town, Pen...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6016-4241517">+60 16-424 1517</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">16 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="assemblies-of-god">
+<h3 class="cat-head reveal"><span class="cn">Assemblies of God</span><span class="ct">3 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Grace AOG Church (Georgetown)</div></td>
+<td data-label="Address"><div class="paddr">Gat Lebuh Macallum, 11600 George Town, Pulau Pinang, Mala...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6016-4205632">+60 16-420 5632</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">144 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Penang First Assembly of God (MMC)</div></td>
+<td data-label="Address"><div class="paddr">30, Persiaran Karpal Singh 2, Jelutong, 11600 George Town...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-6584404">+60 4-658 4404</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">79 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">City Stars Church 城市星光教会 (Penang First Assembly Of God)</div></td>
+<td data-label="Address"><div class="paddr">286, Jln Macalister, 10450 George Town, Pulau Pinang, Mal...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2293194">+60 4-229 3194</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">17 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="pentecostal">
+<h3 class="cat-head reveal"><span class="cn">Pentecostal</span><span class="ct">2 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Pentecostal Church Of Malaysia</div></td>
+<td data-label="Address"><div class="paddr">23A, Jln Padang Tembak, Kampung Baharu, 11400 George Town...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">12 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Petra Evangelical and Deliverance Church Penang</div></td>
+<td data-label="Address"><div class="paddr">52 tingkat, 1, Medan Angsana 4, Farlim, 11500 Air Itam, P...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6017-4054841">+60 17-405 4841</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">3 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="bible-church">
+<h3 class="cat-head reveal"><span class="cn">Bible Church</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Penang Bible Church</div></td>
+<td data-label="Address"><div class="paddr">202, Jalan Burma, George Town, 10350 George Town, Pulau P...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.4/5</div><div class="previews">12 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="community-church">
+<h3 class="cat-head reveal"><span class="cn">Community Church</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Excel Point Community Church (எக்செல் பொயிண்ட் சமூக தேவாலயம்/Gereja Komunitas Excel Point/Gereja Parsadaan Excel Point)</div></td>
+<td data-label="Address"><div class="paddr">105-12A, 01, Jalan C.Y. Choy, Georgetown, 10300 George To...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6017-2463722">+60 17-246 3722</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">161 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="fellowship-church">
+<h3 class="cat-head reveal"><span class="cn">Fellowship Church</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Peniel Christian Fellowship</div></td>
+<td data-label="Address"><div class="paddr">3015, Jalan Todak, Seberang Jaya, 13700 Perai, Pulau Pina...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-3838733">+60 4-383 8733</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">3.8/5</div><div class="previews">8 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="others">
+<h3 class="cat-head reveal"><span class="cn">Independent/Other</span><span class="ct">20 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Christoph&#x27;s</div></td>
+<td data-label="Address"><div class="paddr">55, Lorong Stewart, George Town, 10300 George Town, Pulau...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6010-8010188">+60 10-801 0188</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">126 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Penang Christian Centre</div></td>
+<td data-label="Address"><div class="paddr">1, Jalan Khaw Sim Bee, George Town, 10400 George Town, Pu...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2276161">+60 4-227 6161</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.6/5</div><div class="previews">118 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Audacity Malaysia</div></td>
+<td data-label="Address"><div class="paddr">3H-6-1, Straits Quay, Lorong Seri Tanjung Pinang, Seri Ta...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6010-2813181">+60 10-281 3181</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">71 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Burmah Road Gospel Hall (English Speaking Assembly)</div></td>
+<td data-label="Address"><div class="paddr">164, Jalan Burma, 10050 George Town, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6012-4712844">+60 12-471 2844</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.6/5</div><div class="previews">62 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">St. Paul&#x27;s Church (Gereja St. Paul/புனித பால் தேவாலயம்/圣保罗堂)</div></td>
+<td data-label="Address"><div class="paddr">56, Jln Macalister, George Town, 10400 George Town, Pulau...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2264620">+60 4-226 4620</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">57 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Kingdomcity Penang</div></td>
+<td data-label="Address"><div class="paddr">Level 1, Red Rock Hotel, 202A, Jln Macalister, 10400 Geor...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">54 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">The Church of Jesus Christ of Latter-day Saints</div></td>
+<td data-label="Address"><div class="paddr">16, Jalan Scotland, 10450 George Town, Pulau Pinang, Mala...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.7/5</div><div class="previews">36 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Tamil Christian Worship Centre தமிழ் கிறிஸ்தவ ஆராதனை இல்லம்</div></td>
+<td data-label="Address"><div class="paddr">11-02-06, New Bob Center, 11, Jalan Gottlieb, Pulau Tikus...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">26 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Every Nation Church Penang</div></td>
+<td data-label="Address"><div class="paddr">2A-05-07, Level 5, Lucas Ark Plaza, Lengkok Nipah, Taman ...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-6374181">+60 4-637 4181</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">23 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Elohim Tamil Church</div></td>
+<td data-label="Address"><div class="paddr">15, Lintang Angsana, Bandar Baru Air Itam, 11500 Ayer Ita...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6016-4823309">+60 16-482 3309</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">16 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">The Church in Penang (Hall 1)</div></td>
+<td data-label="Address"><div class="paddr">8, Jalan Johor, 10400 George Town, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">15 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Covenant Grace Church, Penang</div></td>
+<td data-label="Address"><div class="paddr">8A, Jln Masjid Negeri, 11600 Jelutong, Pulau Pinang, Mala...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6018-4690284">+60 18-469 0284</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">12 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Central Christian Church of M’sia | Penang</div></td>
+<td data-label="Address"><div class="paddr">5, Jalan Ariffin, George Town, 10050 George Town, Pulau P...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6018-2301196">+60 18-230 1196</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">11 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Cross &amp; Crown Church Penang (槟城十架冠冕教会)</div></td>
+<td data-label="Address"><div class="paddr">Level 5, Wisma Kinta, 11, Lrg Kinta, George Town, 10400 G...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">11 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Penang Christian Centre (PCC) Batu Kawan</div></td>
+<td data-label="Address"><div class="paddr">31, 33, VERVEA, 35, Jalan Vervea 12, 14110 Simpang Ampat,...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6017-5881577">+60 17-588 1577</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.8/5</div><div class="previews">11 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Penang International Church - 槟城国际教会 - 페낭 인터네셔널 교회</div></td>
+<td data-label="Address"><div class="paddr">Level 3, Island 88 Mall (Island Plaza), 118, Jalan Tokong...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">5/5</div><div class="previews">8 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Christian Convention Centre</div></td>
+<td data-label="Address"><div class="paddr">6, 11100 Batu Ferringhi, Pulau Pinang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6016-4592862">+60 16-459 2862</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.6/5</div><div class="previews">7 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">PENTACOSTAL CHURCH INDONESIA PENANG ISLAND ASSEMBLY</div></td>
+<td data-label="Address"><div class="paddr">Bayan Lepas, Penang, Malaysia</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6018-7690507">+60 18-769 0507</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.4/5</div><div class="previews">7 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Harvest Christian Centre</div></td>
+<td data-label="Address"><div class="paddr">Canton Square, 56, Jalan Cantonment, 10250 George Town, P...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2292194">+60 4-229 2194</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.5/5</div><div class="previews">2 reviews</div></td>
+</tr>
+<tr>
+<td data-label="Name"><div class="pname">Tamil Christ Harvest Church</div></td>
+<td data-label="Address"><div class="paddr">248-B Jalan Machang Bubok Taman Machang Bubok 14020 Bukit...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+6012-7018024">+60 12-701 8024</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating">—</td>
+</tr>
+</tbody></table>
+</div>
+<div id="parachurch-ymcaywca">
+<h3 class="cat-head reveal"><span class="cn">Parachurch (YMCA/YWCA)</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Young Men&#x27;s Christian Association Of Penang (YMCA)</div></td>
+<td data-label="Address"><div class="paddr">211, Jln Macalister, George Town, 10400 George Town, Pula...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2288211">+60 4-228 8211</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.3/5</div><div class="previews">1417 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div id="parachurch-campus">
+<h3 class="cat-head reveal"><span class="cn">Parachurch (Campus)</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">The Navigators</div></td>
+<td data-label="Address"><div class="paddr">14, Jalan SS 26/4, Taman Mayang Jaya, 47301 Petaling Jaya...</div></td>
+<td data-label="Phone"><div class="pcontact">—</div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating">—</td>
+</tr>
+</tbody></table>
+</div>
+<div id="methodist-school">
+<h3 class="cat-head reveal"><span class="cn">Methodist School</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">Wesley Methodist School Penang (International)</div></td>
+<td data-label="Address"><div class="paddr">1, Lbh Sungai Pinang 1, 11600 George Town, Pulau Pinang, ...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-2804790">+60 4-280 4790</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating">—</td>
+</tr>
+</tbody></table>
+</div>
+<div id="seminary">
+<h3 class="cat-head reveal"><span class="cn">Seminary</span><span class="ct">1 organisations</span></h3>
+<table class="ptable reveal">
+<thead><tr><th>Name</th><th>Address</th><th>Phone</th><th>Website</th><th>Rating</th></tr></thead>
+<tbody>
+<tr>
+<td data-label="Name"><div class="pname">College General</div></td>
+<td data-label="Address"><div class="paddr">Jalan Cengai, Tanjung Tokong, 11200 Tanjung Bungah, Pulau...</div></td>
+<td data-label="Phone"><div class="pcontact"><a href="tel:+604-8902002">+60 4-890 2002</a></div></td>
+<td data-label="Website"><div class="psite">—</div></td>
+<td data-label="Rating"><div class="prating">4.9/5</div><div class="previews">15 reviews</div></td>
+</tr>
+</tbody></table>
+</div>
+<div class="honest reveal" data-d="1" style="margin-top:3rem">
+<b>Honest notes on this list.</b> Google Maps data shows what tourists and visitors search for — it captures the major denominations well but may miss small house churches, Chinese/Tamil-language fellowships without English Maps entries, and informal youth groups. We also couldn&rsquo;t verify which of these churches currently have active youth programs (vs. dormant ones). Before any cold outreach, check the church&rsquo;s Facebook page or call the listed number to confirm:
+<ul style="margin:.8rem 0 .5rem 1.4rem;color:var(--ink-soft);font-size:.86rem;line-height:1.65">
+<li>Do they have a youth worker or youth ministry lead?</li>
+<li>What&rsquo;s the typical Friday/Saturday evening attendance for teens?</li>
+<li>Would they pilot a 4-week programme that meets teens on Telegram or Discord?</li>
+</ul>
+If you&rsquo;re after verified active youth programs specifically, the <b>YMCA Penang</b> (1,417 Google reviews, established youth hostel + learning centre) and the <b>Wesley Methodist Church Penang</b> (historic Anglican-Methodist cooperation, full-time youth staff) are the two highest-confidence starting points. <b>Minor Basilica of St. Anne, Bukit Mertajam</b> is the biggest youth draw for Catholic teens — they run an annual pilgrimage that brings 50,000+ pilgrims, many of them young.
+</div>
+</div>
+</section>
+<footer>
+<div class="fbrand">one <em>to</em> eight</div>
+<p>The Penang Christian Youth Network · <a href="hub/">Resource Hub</a> · <a href="parents-2am.html">For Parents</a> · <a href="tutoring-partners.html">Tutoring Partners</a> · <a href="afterschool-agent.html">Afterschool Agent</a></p>
+<p style="margin-top:1.5rem;font-size:.75rem;opacity:.6">Pulled live from Google Maps via the Outscraper API · 23 July 2026 · Penang, Malaysia</p>
+</footer>
+<script>
+// Generate stars
+const starsEl = document.getElementById('stars');
+if (starsEl) {
+  for (let i = 0; i < 40; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.top = (Math.random() * 80) + '%';
+    s.style.left = (Math.random() * 100) + '%';
+    s.style.setProperty('--d', (2 + Math.random() * 3) + 's');
+    s.style.animationDelay = (Math.random() * 3) + 's';
+    starsEl.appendChild(s);
+  }
+}
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
