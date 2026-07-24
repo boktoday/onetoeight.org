@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d1220">
-<meta name="description" content="Go-to-market strategy for the onetoeight suite of offerings: Guide, Circles App, Afterschool Agent, Hub, and Leader Pack. Five-month rollout from August 1 to January 1, with a defined GTM Engineer role.">
+<meta name="description" content="Go-to-market strategy for the onetoeight suite: Guide, Circles App, Afterschool Agent, Hub, and Leader Pack. Five-month rollout (Aug 1 → Jan 1) with a defined GTM Engineer role. Powered by AITable CRM, Emailit, SocialIT, Gozen analytics, and Outscraper prospecting.">
 <title>6:00 AM — The Go-to-Market Plan · onetoeight</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -140,6 +140,17 @@ section{position:relative}
 .role-card ul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--terra)}
 .role-card.routine ul li::before{background:var(--gold-soft)}
 
+/* ---------- tool cards ---------- */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.tool{background:var(--paper);border:1px solid rgba(35,42,61,.08);border-radius:14px;padding:1.4rem 1.4rem;transition:transform .35s,box-shadow .35s,border-color .35s;position:relative}
+.tool:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(35,42,61,.28);border-color:rgba(194,96,62,.35)}
+.tool .to{font-family:var(--disp);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem}
+.tool h3{font-size:1.05rem;font-weight:600;margin-bottom:.3rem}
+.tool h3 a{color:var(--ink);text-decoration:none}
+.tool h3 a:hover{color:var(--terra-deep);text-decoration:underline}
+.tool p{font-size:.84rem;color:var(--ink-soft);line-height:1.55}
+.tool .tuse{display:inline-block;margin-top:.6rem;font-family:var(--disp);font-size:.65rem;font-weight:600;letter-spacing:.08em;color:var(--sage-deep)}
+
 /* ---------- honest disclosure ---------- */
 .honest{margin-top:2.5rem;background:var(--paper);border:1px solid rgba(35,42,61,.1);border-left:4px solid var(--sage);border-radius:12px;padding:1.4rem 1.7rem;font-size:.88rem;color:var(--ink-soft);line-height:1.65}
 .honest b{color:var(--ink)}
@@ -161,6 +172,7 @@ footer a{color:var(--gold-soft)}
     <a href="#channels">Channels</a>
     <a href="#timeline">Timeline</a>
     <a href="#role">The GTM Engineer</a>
+    <a href="#tools">Tool Stack</a>
     <a href="#gaps">Gaps</a>
   </div>
 </nav>
@@ -339,12 +351,12 @@ footer a{color:var(--gold-soft)}
         <div class="rd">Daily routine</div>
         <h3>The engine room</h3>
         <ul>
-          <li>Check and respond to hub enquiries, emails, and social DMs within 2 hours</li>
-          <li>Run the morning social post (or queue it); engage with comments and shares</li>
-          <li>Send 2–5 personalised outreach emails (church, tutor, school, creator contacts)</li>
-          <li>Log every contact interaction in a simple CRM (Airtable / spreadsheet)</li>
+          <li>Check and respond to hub enquiries, emails, and social DMs within 2 hours — logged in <b>AITable CRM</b></li>
+          <li>Run the morning social post via <b>SocialIT</b> (or queue it); engage with comments and shares</li>
+          <li>Send 2–5 personalised outreach emails via <b>Emailit</b> (church, tutor, school, creator contacts)</li>
+          <li>Log every contact interaction in <b>AITable CRM</b> (enrich new leads via <b>Outscraper</b> if needed)</li>
           <li>Review the Afterschool Agent session recording or notes from the day before</li>
-          <li>Update the phase tracker: what's complete, what's blocked, what changed</li>
+          <li>Update the phase tracker in <b>AITable</b>: what's complete, what's blocked, what changed</li>
         </ul>
       </div>
 
@@ -352,12 +364,12 @@ footer a{color:var(--gold-soft)}
         <div class="rd">Weekly rhythm</div>
         <h3>The big moves</h3>
         <ul>
-          <li>Write and schedule 1 parent-oriented long-form post for the week</li>
-          <li>Check Afterschool Agent enrolment status; follow up with leads who asked but haven't enrolled</li>
-          <li>Prepare and send the weekly email to active church groups (encouragement + tip)</li>
-          <li>Run the channel prioritisation: which channel got attention this week, what was the result</li>
+          <li>Write and schedule 1 parent-oriented long-form post for the week via <b>SocialIT</b></li>
+          <li>Check Afterschool Agent enrolment status in <b>AITable</b>; follow up with leads via <b>Emailit</b></li>
+          <li>Prepare and send the weekly email to active church groups (template in <b>Emailit</b>, contacts in <b>AITable</b>)</li>
+          <li>Run the channel prioritisation in <b>Gozen</b>: which channel got attention this week, what was the result</li>
           <li>Update the Leader Pack or Guide based on feedback from active users</li>
-          <li>Review analytics: hub traffic, social engagement, email open rates</li>
+          <li>Review analytics: hub traffic (<b>Gozen</b>), social engagement, email open rates (<b>Emailit</b>)</li>
         </ul>
       </div>
 
@@ -365,12 +377,12 @@ footer a{color:var(--gold-soft)}
         <div class="rd">Monthly review</div>
         <h3>The scoreboard</h3>
         <ul>
-          <li>Revenue by offering (Guide subs, Agent fees, Leader Pack sales, App donations if any)</li>
-          <li>New contacts by channel (church / tutor / school / creator / social / parent)</li>
-          <li>Conversion rate: contact → conversation → trial → paid</li>
+          <li>Revenue by offering — tracked in <b>AITable</b> (Guide subs, Agent fees, Leader Pack sales)</li>
+          <li>New contacts by channel — pulled from <b>AITable CRM</b> (church / tutor / school / creator / social / parent)</li>
+          <li>Conversion rate: contact → conversation → trial → paid — <b>AITable</b> pipeline view</li>
           <li>Afterschool Agent retention: how many teens completed the programme</li>
-          <li>Phase progress: on track, ahead, or behind for the current phase</li>
-          <li>Decide: which channels to keep, drop, or test next month</li>
+          <li>Phase progress: on track, ahead, or behind for the current phase — <b>Gozen</b> dashboard</li>
+          <li>Decide: which channels to keep, drop, or test next month — export data from <b>Gozen</b> + <b>AITable</b></li>
         </ul>
       </div>
 
@@ -390,6 +402,54 @@ footer a{color:var(--gold-soft)}
 
     <div class="honest reveal" data-d="1" style="margin-top:2.5rem">
       <b>What this role is not.</b> It is not a content farm — the GTM Engineer does not write all the essential posts from scratch (the brand system generates those). It is not a customer support role — the Agent, Guide, and App are designed to be self-serve. It is not a sales role with quotas — the goal is to build channels that <em>become</em> self-sustaining over the five months, not to hit revenue targets by pressuring contacts. The GTM Engineer's job is to <b>test every channel rigorously, eliminate the ones that don't work, and document what does</b> so that by January the next iteration knows exactly where to focus.
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOOL STACK ============ -->
+<section class="cream" id="tools">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">The stack</div>
+      <h2>Five tools. <em>One GTM machine.</em></h2>
+      <p class="sub">Every tool in this stack is already paid for and wired. The GTM Engineer never needs to ask for budget or wait for procurement. Each one has a specific job — together they cover the entire outreach-to-publish pipeline.</p>
+    </div>
+
+    <div class="tool-grid">
+      <div class="tool reveal">
+        <div class="to">CRM</div>
+        <h3><a href="https://developers.aitable.ai/api/introduction/" target="_blank">AITable</a></h3>
+        <p>Every contact, every conversation, every deal. Churches, tutors, schools, creators, parents — all logged with interaction history, pipeline stage, and follow-up dates. Dashboard shows conversion rates and revenue by channel. The source of truth for everything that isn't content.</p>
+        <div class="tuse">CRM · Pipeline · Reporting</div>
+      </div>
+      <div class="tool reveal" data-d="1">
+        <div class="to">Email</div>
+        <h3><a href="https://emailit.com/docs/" target="_blank">Emailit</a></h3>
+        <p>Outreach, newsletters, follow-ups. Personalised cold emails to church leaders and tutoring centre owners. Weekly encouragement emails to active groups. Transactional emails for Guide subscriptions and Agent enrolment. Templates in place, analytics on open rates and clicks.</p>
+        <div class="tuse">Outreach · Newsletters · Automation</div>
+      </div>
+      <div class="tool reveal" data-d="2">
+        <div class="to">Social</div>
+        <h3><a href="https://socialit.com/docs/api-reference/" target="_blank">SocialIT</a></h3>
+        <p>Schedule and publish every essential post across Bluesky, LinkedIn, TikTok, and YouTube from one dashboard. Image upload, text scheduling, multi-platform posting, and engagement tracking. Already wired — Essential 3 and 4 are live.</p>
+        <div class="tuse">Posting · Scheduling · Analytics</div>
+      </div>
+      <div class="tool reveal" data-d="3">
+        <div class="to">Growth</div>
+        <h3><a href="https://gozen.io/growth/" target="_blank">Gozen</a></h3>
+        <p>Channel analytics, traffic monitoring, and growth tracking. Which channels are driving hub visits? How are social posts converting? Where are sign-ups coming from? Real-time dashboard that feeds the monthly review decisions. Attribution view shows which outreach efforts are paying for themselves.</p>
+        <div class="tuse">Analytics · Attribution · Dashboard</div>
+      </div>
+      <div class="tool reveal" data-d="4">
+        <div class="to">Research</div>
+        <h3><a href="https://outscraper.com/google-maps-scraper/" target="_blank">Outscraper</a></h3>
+        <p>Live Google Maps data for prospect discovery. Pull church, school, and tutoring centre details (name, address, phone, ratings, website) for any city or region. Already used to build the Penang 60 contact sheet. Enrich AITable CRM with fresh leads on demand — no manual research.</p>
+        <div class="tuse">Prospecting · Enrichment · Maps Data</div>
+      </div>
+    </div>
+
+    <div class="honest reveal" data-d="5" style="margin-top:2.5rem">
+      <b>How they fit together.</b> The GTM Engineer's day starts in <b>AITable</b> (who to contact today), fires emails through <b>Emailit</b>, schedules posts through <b>SocialIT</b>, monitors results in <b>Gozen</b>, and enriches the prospect list with <b>Outscraper</b> when a channel runs dry. None of these tools requires a second login to manually cross-reference — each one feeds into the monthly phase report that decides where the next month's effort goes.
     </div>
   </div>
 </section>
