@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1220">
+<meta name="description" content="Go-to-market strategy for the onetoeight suite of offerings: Guide, Circles App, Afterschool Agent, Hub, and Leader Pack. Five-month rollout from August 1 to January 1, with a defined GTM Engineer role.">
+<title>6:00 AM — The Go-to-Market Plan · onetoeight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0d1220; --night2:#131a2e; --night3:#1a2340;
+  --dawn:#f6efe3; --dawn2:#efe6d6; --paper:#fbf7ee;
+  --ink:#232a3d; --ink-soft:#5a6278;
+  --terra:#c2603e; --terra-deep:#9c4a2e;
+  --sage:#7d8a6e; --sage-deep:#5f6d52;
+  --gold:#d9a441; --gold-soft:#e8c87a;
+  --blue:#4f6f9e;
+  --star:rgba(255,255,255,.85);
+  --serif:'Fraunces',Georgia,serif;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--dawn);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--terra);color:#fff}
+h1,h2,h3,.serif{font-family:var(--serif)}
+a{color:var(--terra-deep)}
+img{max-width:100%}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.4s}.reveal[data-d="6"]{transition-delay:.48s}
+.reveal[data-d="7"]{transition-delay:.56s}.reveal[data-d="8"]{transition-delay:.64s}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.4rem;background:rgba(13,18,32,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--dawn);text-decoration:none;letter-spacing:-.01em}
+.brand em{font-style:italic;font-weight:300;color:var(--gold-soft)}
+.navlinks{display:flex;gap:1.4rem}
+.navlinks a{font-family:var(--disp);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,239,227,.62);text-decoration:none;transition:color .25s}
+.navlinks a:hover{color:var(--gold-soft)}
+@media(max-width:760px){.navlinks{display:none}}
+
+/* ---------- opening: the dawn scene (6:00 AM) ---------- */
+.dawn{position:relative;min-height:100vh;background:radial-gradient(ellipse 120% 90% at 50% 110%,#4f6f9e 0%,#233055 28%,#17203c 55%,#0d1220 82%);color:var(--dawn);display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:7rem 1.5rem 5rem}
+.dawn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(0deg,rgba(246,239,227,.06),transparent);pointer-events:none}
+.stars{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--star);animation:twinkle var(--tw,3s) ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.95}}
+.sun-line{position:absolute;top:6%;right:4%;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 50% 50%,#fdf6e3,#e8d9b0 40%,#e88a3a 80%);box-shadow:0 0 100px 40px rgba(232,217,176,.25);opacity:.85}
+.dawn-inner{position:relative;z-index:2;max-width:960px;margin:0 auto;width:100%}
+.clock{font-family:var(--disp);font-weight:700;font-size:clamp(4rem,13vw,8.5rem);letter-spacing:-.03em;line-height:1;color:var(--dawn);text-shadow:0 0 40px rgba(217,164,65,.2)}
+.clock .colon{animation:blink 1.4s steps(1) infinite;color:var(--gold-soft)}
+@keyframes blink{50%{opacity:.15}}
+.kicker{font-family:var(--disp);font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.kicker::before{content:'';width:34px;height:1px;background:var(--gold-soft)}
+.dawn h1{font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:400;line-height:1.18;letter-spacing:-.015em;max-width:22ch;margin:1.2rem 0 1.4rem}
+.dawn h1 em{font-style:italic;color:var(--gold-soft)}
+.dawn .lede{font-size:clamp(1rem,1.6vw,1.15rem);color:rgba(246,239,227,.72);max-width:60ch;line-height:1.7}
+.scrollcue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--disp);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,239,227,.45);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scrollcue::after{content:'';width:1px;height:44px;background:linear-gradient(180deg,var(--gold-soft),transparent);animation:drip 1.8s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- section scaffolding ---------- */
+section{position:relative}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.sec-head{margin-bottom:3rem}
+.sec-tag{font-family:var(--disp);font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.sec-tag::before{content:'';width:30px;height:2px;background:var(--terra)}
+.sec-head h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:500;line-height:1.12;letter-spacing:-.02em;max-width:26ch}
+.sec-head h2 em{font-style:italic;color:var(--terra-deep)}
+.sec-head .sub{margin-top:1rem;font-size:1.02rem;color:var(--ink-soft);max-width:62ch}
+
+/* ---------- dark sections ---------- */
+.dark{background:var(--night);color:var(--dawn);padding:6.5rem 0}
+.dark .sec-tag{color:var(--gold-soft)}
+.dark .sec-tag::before{background:var(--gold-soft)}
+.dark .sec-head h2{color:var(--dawn)}
+.dark .sec-head h2 em{color:var(--gold-soft)}
+.dark .sec-head .sub{color:rgba(246,239,227,.6)}
+
+/* ---------- offering cards ---------- */
+.offer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.offer{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.8rem 1.6rem;transition:border-color .3s,transform .3s}
+.offer:hover{border-color:rgba(217,164,65,.45);transform:translateY(-5px)}
+.offer .ot{font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.5rem}
+.offer h3{font-size:1.15rem;font-weight:600;color:var(--dawn);margin-bottom:.4rem}
+.offer p{font-size:.86rem;color:rgba(246,239,227,.68);line-height:1.6}
+.offer .oprice{display:inline-block;margin-top:.8rem;font-family:var(--disp);font-weight:700;font-size:1.1rem;color:var(--gold-soft)}
+
+/* ---------- cream sections ---------- */
+.cream{background:var(--dawn);padding:6.5rem 0}
+.cream.alt{background:var(--dawn2)}
+
+/* ---------- stat tiles ---------- */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.stat{background:var(--paper);border:1px solid rgba(35,42,61,.09);border-radius:14px;padding:1.5rem 1.3rem;text-align:center;transition:transform .3s}
+.stat:hover{transform:translateY(-4px)}
+.stat .sn{font-family:var(--disp);font-weight:700;font-size:2rem;color:var(--terra-deep);line-height:1}
+.stat .sl{font-size:.72rem;color:var(--ink-soft);margin-top:.45rem;text-transform:uppercase;letter-spacing:.08em;font-family:var(--disp);font-weight:600}
+
+/* ---------- timeline ---------- */
+.timeline{position:relative;padding:0}
+.timeline::before{content:'';position:absolute;top:0;bottom:0;left:24px;width:2px;background:var(--terra);opacity:.35}
+.phase{position:relative;padding:0 0 2.5rem 58px}
+.phase::before{content:'';position:absolute;left:16px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--terra);border:4px solid var(--paper);z-index:2}
+.phase:last-child{padding-bottom:0}
+.phase .pm{font-family:var(--disp);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.phase .pd{font-family:var(--disp);font-size:.82rem;font-weight:600;color:var(--terra)}
+.phase h3{font-size:1.15rem;font-weight:600;margin:.3rem 0 .6rem}
+.phase p{font-size:.88rem;color:var(--ink-soft);line-height:1.6;max-width:62ch}
+
+/* ---------- phase card grid ---------- */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.8rem;margin-top:1rem}
+.pcard{background:rgba(194,96,62,.06);border:1px solid rgba(194,96,62,.18);border-radius:10px;padding:1rem 1.2rem}
+.pcard .ptag{font-family:var(--disp);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-deep)}
+.pcard p{font-size:.82rem;color:var(--ink-soft);line-height:1.55;margin-top:.2rem}
+
+/* ---------- role definition ---------- */
+.role-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:800px){.role-grid{grid-template-columns:1fr}}
+.role-card{background:var(--paper);border:1px solid rgba(35,42,61,.08);border-radius:14px;padding:1.6rem 1.5rem}
+.role-card.routine{background:var(--night);color:var(--dawn);border-color:rgba(255,255,255,.09)}
+.role-card.routine .rd{font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.5rem}
+.role-card.routine h3{color:var(--dawn)}
+.role-card.routine p{color:rgba(246,239,227,.68)}
+.role-card .rd{font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.role-card h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+.role-card p{font-size:.86rem;color:var(--ink-soft);line-height:1.6}
+.role-card ul{list-style:none;margin-top:.8rem}
+.role-card ul li{position:relative;padding:0 0 .5rem 1.3rem;font-size:.82rem;color:var(--ink-soft);line-height:1.5}
+.role-card.routine ul li{color:rgba(246,239,227,.7)}
+.role-card ul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--terra)}
+.role-card.routine ul li::before{background:var(--gold-soft)}
+
+/* ---------- honest disclosure ---------- */
+.honest{margin-top:2.5rem;background:var(--paper);border:1px solid rgba(35,42,61,.1);border-left:4px solid var(--sage);border-radius:12px;padding:1.4rem 1.7rem;font-size:.88rem;color:var(--ink-soft);line-height:1.65}
+.honest b{color:var(--ink)}
+
+/* ---------- footer ---------- */
+footer{background:var(--night);color:rgba(246,239,227,.6);text-align:center;padding:3.5rem 1.5rem 4rem}
+footer .fbrand{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--dawn)}
+footer .fbrand em{font-style:italic;font-weight:300;color:var(--gold-soft)}
+footer p{font-size:.85rem;max-width:52ch;margin:.8rem auto 0}
+footer a{color:var(--gold-soft)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="hub/">one <em>to</em> eight</a>
+  <div class="navlinks">
+    <a href="#offerings">Offerings</a>
+    <a href="#channels">Channels</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#role">The GTM Engineer</a>
+    <a href="#gaps">Gaps</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="dawn">
+  <div class="stars" id="stars"></div>
+  <div class="sun-line"></div>
+  <div class="dawn-inner">
+    <div class="kicker reveal">The go-to-market plan</div>
+    <div class="clock reveal" data-d="1">6:00<span class="colon">:</span>00</div>
+    <h1 class="reveal" data-d="2">Five months to put every offering <em>in the hands of the people who need them.</em></h1>
+    <p class="lede reveal" data-d="3">The guide, the app, the afterschool programme, the hub, and the leader pack — each one is a door into the eight essentials. This plan maps every door, every channel, every phase, and the person who makes it all move. From August 1 to January 1, this is the playbook.</p>
+  </div>
+  <div class="scrollcue">Scroll</div>
+</header>
+
+<!-- ============ PART I — THE OFFERINGS ============ -->
+<section class="dark" id="offerings">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Part I</div>
+      <h2>Five offerings. <em>One formation.</em></h2>
+      <p class="sub">None of these is the product on its own. The product is a young person who can sit in silence, cook a meal, budget money, guard their attention, serve a community, think without Wi-Fi, read scripture, and act on conviction. Each offering is just a different door into that outcome.</p>
+    </div>
+
+    <div class="offer-grid">
+      <div class="offer reveal">
+        <div class="ot">The guide</div>
+        <h3>Christian &amp; Universal Editions</h3>
+        <p>Full eight-week curriculum with daily wisdom reflections, weekly challenges, discussion questions, and scripture. Runs in any browser, downloads to PDF. No account needed. The core product — everything else is a wrapper around this.</p>
+        <div class="oprice">$8.88/mo</div>
+      </div>
+      <div class="offer reveal" data-d="1">
+        <div class="ot">The app</div>
+        <h3>Circles App</h3>
+        <p>Pods of 8 friends, 8 weeks. Daily check-ins, podcast recording, evidence upload, WebLLM local AI guide. Runs as PWA or APK. Fully local — no account, no cost. Designed for groups: youth groups, school clubs, church pods.</p>
+        <div class="oprice">Free</div>
+      </div>
+      <div class="offer reveal" data-d="2">
+        <div class="ot">Live programme</div>
+        <h3>Afterschool Agent</h3>
+        <p>4-week live programme where teens build their own local-first AI agent that teaches the eight essentials. Three sessions a week (Mon/Wed/Fri 4:30 PM), one hour each. Keeps the agent forever — can re-use it for school, hobbies, anything. The <em>learn to fish</em> offering.</p>
+        <div class="oprice">$44.88/wk</div>
+      </div>
+      <div class="offer reveal" data-d="3">
+        <div class="ot">The hub</div>
+        <h3>Resource Index</h3>
+        <p>Central index of every page, every asset, every offering. Marketing pages, parent outreach, church contact sheets, curriculum downloads, social proof. The front door for anyone who hears about onetoeight and wants to understand what it is.</p>
+        <div class="oprice">Free</div>
+      </div>
+      <div class="offer reveal" data-d="4">
+        <div class="ot">For leaders</div>
+        <h3>Leader Pack</h3>
+        <p>Session running sheets, challenge cards, scripture index, progress tracker, certificate, parent letter. Everything a youth pastor or teacher needs to run the eight essentials with a group. Print-and-go. No tech literacy required.</p>
+        <div class="oprice">$299</div>
+      </div>
+    </div>
+
+    <div class="stat-row reveal" data-d="5" style="margin-top:3rem">
+      <div class="stat"><div class="sn">$8.88/mo</div><div class="sl">Guide (individual)</div></div>
+      <div class="stat"><div class="sn">Free</div><div class="sl">App + Hub</div></div>
+      <div class="stat"><div class="sn">$44.88/wk</div><div class="sl">Afterschool Agent</div></div>
+      <div class="stat"><div class="sn">$299</div><div class="sl">Leader Pack</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART II — CHANNELS ============ -->
+<section class="cream" id="channels">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Part II</div>
+      <h2>Six doors. <em>Each one opens into the same room.</em></h2>
+      <p class="sub">Every offering needs a different entry point because every audience lives in a different place. Parents don't find things where teens do. Youth pastors don't look where teachers look. These are the channels — proven or testable — and which offering goes through which door.</p>
+    </div>
+
+    <div class="pgrid reveal">
+      <div class="pcard"><div class="ptag">Channel 1 · Church networks</div><p>Leader Pack + Guide. Pitch to youth pastors via the Anglican DYC, Methodist youth councils, Catholic diocese youth offices. One denomination sold = 20–50 groups. Contact sheet already built for Penang; extend to AU churches. <b>GTM action</b>: Email the Penang 60 with a Leader Pack trial offer.</p></div>
+      <div class="pcard" data-d="1"><div class="ptag">Channel 2 · Tutoring centres</div><p>Afterschool Agent. Pitch as a "whole-child add-on" for existing tutoring students. Parents already paying $50–80/hour for English/Maths; the Agent is a $44.88/wk upsell that teaches the skills schools and tutors miss. <b>GTM action</b>: Prospect list built, outreach template ready.</p></div>
+      <div class="pcard" data-d="2"><div class="ptag">Channel 3 · Parents (direct)</div><p>Guide + Circles App. Reach parents via eSafety-adjacent content (the 2:07 AM page is the template). Social media posts, parent Facebook groups, school newsletter ads. The hook: "Your kid can navigate five apps but can't budget their allowance." <b>GTM action</b>: Run Essentials 1–4 as a social series, measure click-through to the hub.</p></div>
+      <div class="pcard" data-d="3"><div class="ptag">Channel 4 · Schools</div><p>Leader Pack + Guide. Wellbeing coordinators and chaplains in Christian/independent schools. The eight essentials align with the Australian Curriculum's Personal and Social Capability. Price at school-budget level ($299 for a pack that serves 100+ students). <b>GTM action</b>: Build a one-page school prospectus from the Leader Pack.</p></div>
+      <div class="pcard" data-d="4"><div class="ptag">Channel 5 · Creator partnerships</div><p>Afterschool Agent. AU Christian creators (Jamie Zhu, Timothy Yi) promote the programme to their audiences. Revenue share or flat fee per enrolled teen. Verified prospect list of 10 creators already built. <b>GTM action</b>: Send the 10-creator outreach list.</p></div>
+      <div class="pcard" data-d="5"><div class="ptag">Channel 6 · Social media</div><p>Hub + Guide. Branded social cards for each essential, posted to Bluesky, LinkedIn, TikTok, YouTube. Not sales — education. Each post is "here's one essential, here's why it matters." The hub is the destination. <b>GTM action</b>: Essentials 1–8 queued as a weekly post series.</p></div>
+    </div>
+
+    <div class="honest reveal" data-d="6" style="margin-top:2.5rem">
+      <b>Channel priority.</b> Not all six can run in month one. The GTM Engineer's first job is to pick the three with the shortest path to a paying customer. My read: <b>church networks</b> (Leader Pack has a clear buyer and a known pain point), <b>tutoring centres</b> (the B2B playbook is half-written), and <b>social</b> (lowest cost, fastest feedback). Schools and creators are phase-two bets — longer sales cycles, more research needed.
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART III — TIMELINE ============ -->
+<section class="dark" id="timeline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Part III</div>
+      <h2>Five months. <em>Four phases. One direction.</em></h2>
+      <p class="sub">From zero to a self-sustaining set of channels. Each phase has a clear finish line: a measurable outcome that tells you the phase worked, not a list of activities that assume it did.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="phase reveal">
+        <div class="pm">Phase 1</div>
+        <div class="pd">August 1 → August 31</div>
+        <h3>Foundation &amp; Churches</h3>
+        <p><b>Goal</b>: 3 church groups trialling the Leader Pack (paid or sponsored). Hub fully indexed and live on a stable URL. Social posting cadence established. Afterschool Agent programme structure finalised and priced for September launch.</p>
+        <div class="pgrid">
+          <div class="pcard"><div class="ptag">Week 1</div><p>Hub card for every existing page. Hub linked from the custom domain. First Leader Pack email goes to the Penang 60.</p></div>
+          <div class="pcard"><div class="ptag">Week 2</div><p>Essential 1–3 queued as weekly social posts. Follow up Leader Pack emails with phone calls to the top 10 Penang churches.</p></div>
+          <div class="pcard"><div class="ptag">Week 3</div><p>First Leader Pack sale or trial sign-up. Begin Afterschool Agent marketing page finalisation for Sept 1 launch. Prep school one-pager.</p></div>
+          <div class="pcard"><div class="ptag">Week 4</div><p>At least 1 church group actively running the 8-week guide using the pack. August metrics reviewed: traffic, social engagement, enquiries.</p></div>
+        </div>
+      </div>
+
+      <div class="phase reveal" data-d="1">
+        <div class="pm">Phase 2</div>
+        <div class="pd">September 1 → October 15</div>
+        <h3>Product Launch &amp; Tutoring</h3>
+        <p><b>Goal</b>: Afterschool Agent first cohort running (paid, 3–5 teens). Tutoring partners prospect list contacted, first trial booked. Social following passes 500 across all platforms. Church channel at 5+ active groups.</p>
+        <div class="pgrid">
+          <div class="pcard"><div class="ptag">Launch</div><p>Afterschool Agent goes live. First cohort starts Sep 1 — 4-week programme running Mon/Wed/Fri 4:30 PM. $44.88/wk. Document everything: session notes, teen feedback, tech issues.</p></div>
+          <div class="pcard"><div class="ptag">B2B</div><p>Contact top 20 tutoring centres (from the existing prospect list). Pitch the Agent as a $44.88/wk add-on. Offer free first week to trial centres.</p></div>
+          <div class="pcard"><div class="ptag">Content</div><p>Weekly essential posts on Bluesky + LinkedIn. At least 1 parent-focused post per week (the 2:07 AM angle). Begin recording teen testimonial clips (with permission).</p></div>
+          <div class="pcard"><div class="ptag">Church</div><p>Follow up non-responding Penang churches. Extend to Australian Methodist/Anglican networks using the same outreach template.</p></div>
+        </div>
+      </div>
+
+      <div class="phase reveal" data-d="2">
+        <div class="pm">Phase 3</div>
+        <div class="pd">October 15 → November 30</div>
+        <h3>Scale &amp; School Pilots</h3>
+        <p><b>Goal</b>: Afterschool Agent running 2 cohorts simultaneously. First school pilot booked (Leader Pack + retreat day). At least 10 active church/youth groups. Revenue from multiple channels.</p>
+        <div class="pgrid">
+          <div class="pcard"><div class="ptag">Cohort 2</div><p>Afterschool Agent cohort 2 starts Oct 15. If cohort 1 feedback was positive, raise price to $54.88/wk with a referral discount for cohort 1 families.</p></div>
+          <div class="pcard"><div class="ptag">Schools</div><p>School one-pager sent to 20 Christian/independent schools. Follow up with a free Leader Pack sample (session 1 + challenge cards 1–2).</p></div>
+          <div class="pcard"><div class="ptag">Creator</div><p>Begin outreach to AU Christian creators. Offer affiliate or revenue-share. Goal: 1 creator promoting the Agent or Guide by end of phase.</p></div>
+          <div class="pcard"><div class="ptag">Content</div><p>Publish first "Why onetoeight works" case study (anonymised). Share on hub. Post to LinkedIn. Use as sales collateral.</p></div>
+        </div>
+      </div>
+
+      <div class="phase reveal" data-d="3">
+        <div class="pm">Phase 4</div>
+        <div class="pd">December 1 → January 1</div>
+        <h3>Refine &amp; Plan Next Year</h3>
+        <p><b>Goal</b>: Full pipeline assessment. Which channels paid for themselves? Which didn't? Decision on 2027 direction. Cohort 3 booked. Christmas campaign (gift a guide?) tested.</p>
+        <div class="pgrid">
+          <div class="pcard"><div class="ptag">Audit</div><p>Revenue by channel. CAC by channel. Time invested vs revenue generated. Drop the channels that didn't work. Double the ones that did.</p></div>
+          <div class="pcard"><div class="ptag">Christmas</div><p>Test a "Gift the Eight Essentials" campaign. Guide subscription as a Christmas gift for parents. Social posts timed for mid-Dec shopping.</p></div>
+          <div class="pcard"><div class="ptag">2027 Plan</div><p>Based on audit, write the Phase 5–8 plan for Jan–Apr 2027. Should include: pricing adjustments, new channels, product refinements.</p></div>
+          <div class="pcard"><div class="ptag">Team</div><p>Assess whether the GTM Engineer role needs to become full-time or split into specialist roles (content, sales, partnerships).</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row reveal" data-d="4" style="margin-top:3rem">
+      <div class="stat"><div class="sn">5</div><div class="sl">Months</div></div>
+      <div class="stat"><div class="sn">4</div><div class="sl">Phases</div></div>
+      <div class="stat"><div class="sn">6</div><div class="sl">Channels to test</div></div>
+      <div class="stat"><div class="sn">5</div><div class="sl">Offerings to launch</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART IV — THE GTM ENGINEER ============ -->
+<section class="cream" id="role">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Part IV</div>
+      <h2>The GTM Engineer. <em>Not a marketer. Not a salesperson. A builder.</em></h2>
+      <p class="sub">This is not a content manager role. This is the person who takes a finished offering and drives it into the world — through outreach, partnerships, social presence, and one-to-one conversations. They don't wait for leads to come in. They go find them.</p>
+    </div>
+
+    <div class="role-grid">
+      <div class="role-card routine">
+        <div class="rd">Daily routine</div>
+        <h3>The engine room</h3>
+        <ul>
+          <li>Check and respond to hub enquiries, emails, and social DMs within 2 hours</li>
+          <li>Run the morning social post (or queue it); engage with comments and shares</li>
+          <li>Send 2–5 personalised outreach emails (church, tutor, school, creator contacts)</li>
+          <li>Log every contact interaction in a simple CRM (Airtable / spreadsheet)</li>
+          <li>Review the Afterschool Agent session recording or notes from the day before</li>
+          <li>Update the phase tracker: what's complete, what's blocked, what changed</li>
+        </ul>
+      </div>
+
+      <div class="role-card">
+        <div class="rd">Weekly rhythm</div>
+        <h3>The big moves</h3>
+        <ul>
+          <li>Write and schedule 1 parent-oriented long-form post for the week</li>
+          <li>Check Afterschool Agent enrolment status; follow up with leads who asked but haven't enrolled</li>
+          <li>Prepare and send the weekly email to active church groups (encouragement + tip)</li>
+          <li>Run the channel prioritisation: which channel got attention this week, what was the result</li>
+          <li>Update the Leader Pack or Guide based on feedback from active users</li>
+          <li>Review analytics: hub traffic, social engagement, email open rates</li>
+        </ul>
+      </div>
+
+      <div class="role-card" style="margin-top:2rem">
+        <div class="rd">Monthly review</div>
+        <h3>The scoreboard</h3>
+        <ul>
+          <li>Revenue by offering (Guide subs, Agent fees, Leader Pack sales, App donations if any)</li>
+          <li>New contacts by channel (church / tutor / school / creator / social / parent)</li>
+          <li>Conversion rate: contact → conversation → trial → paid</li>
+          <li>Afterschool Agent retention: how many teens completed the programme</li>
+          <li>Phase progress: on track, ahead, or behind for the current phase</li>
+          <li>Decide: which channels to keep, drop, or test next month</li>
+        </ul>
+      </div>
+
+      <div class="role-card routine" style="margin-top:2rem">
+        <div class="rd">Core deliverables</div>
+        <h3>What the GTM Engineer actually produces</h3>
+        <ul>
+          <li>100 outreach contacts logged and followed up per 30 days</li>
+          <li>20+ social posts published across all platforms per month</li>
+          <li>2–5 active church / tutor / school conversations at any time</li>
+          <li>Afterschool Agent cohorts hitting minimum enrolment (3+ teens)</li>
+          <li>Hub updated with every new page, asset, and case study</li>
+          <li>Monthly phase report with decisions for the next month</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="honest reveal" data-d="1" style="margin-top:2.5rem">
+      <b>What this role is not.</b> It is not a content farm — the GTM Engineer does not write all the essential posts from scratch (the brand system generates those). It is not a customer support role — the Agent, Guide, and App are designed to be self-serve. It is not a sales role with quotas — the goal is to build channels that <em>become</em> self-sustaining over the five months, not to hit revenue targets by pressuring contacts. The GTM Engineer's job is to <b>test every channel rigorously, eliminate the ones that don't work, and document what does</b> so that by January the next iteration knows exactly where to focus.
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART V — HONEST GAPS ============ -->
+<section class="dark" id="gaps">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Part V</div>
+      <h2>What this plan <em>doesn't know yet.</em></h2>
+      <p class="sub">A go-to-market strategy is a bet on assumptions. These are the assumptions that need to be stress-tested before the plan becomes a forecast. If any of them is wrong, the plan adapts — but only if we know which one broke.</p>
+    </div>
+
+    <div class="pgrid reveal">
+      <div class="pcard"><div class="ptag">Assumption 1</div><p><b>Church groups will pay $299 for a Leader Pack.</b> Test: offer it for $99 to the first 5 groups. If they say no at $99, the product is wrong or the pitch is wrong.</p></div>
+      <div class="pcard" data-d="1"><div class="ptag">Assumption 2</div><p><b>Teens will stay in a 4-week programme with 3 live sessions a week.</b> Test: track attendance per session in cohort 1. If attendance drops below 50% by week 3, the format needs to change.</p></div>
+      <div class="pcard" data-d="2"><div class="ptag">Assumption 3</div><p><b>Parents will pay for an "after-school character programme" but not for "character formation."</b> Test: A/B test the Afterschool Agent landing page with both framings. Measure conversion rate.</p></div>
+      <div class="pcard" data-d="3"><div class="ptag">Assumption 4</div><p><b>Tutoring centres want a whole-child add-on.</b> Test: if 0 of the top 20 centres respond after 2 outreach attempts, this channel is dead until a referral opens a door.</p></div>
+      <div class="pcard" data-d="4"><div class="ptag">Assumption 5</div><p><b>The Guide subscription ($8.88/mo) will convert from free content.</b> Test: measure hub-to-Guide conversion. If <1% of hub visitors subscribe, the pricing or the funnel needs work.</p></div>
+      <div class="pcard" data-d="5"><div class="ptag">Assumption 6</div><p><b>Creator partnerships are worth the effort.</b> Test: if 0 of the 10 creators respond to outreach, creator channel is deprioritised in favour of direct-to-parent content.</p></div>
+    </div>
+
+    <div class="honest reveal" data-d="6" style="margin-top:2.5rem">
+      <b>Honest note on this plan.</b> The numbers, timelines, and conversion targets above are <b>hypothetical test thresholds</b>, not forecasts or projections. They exist to give the GTM Engineer a clear "keep going" or "change course" signal at every phase. If the phase 1 target (3 church groups) hits zero, the Phase 1 did not fail — the assumption about church groups was wrong, and Phase 2 shifts weight to tutoring or social. The plan is not a promise. It is a hypothesis <em>generator</em>. Market figures cited (tutoring pricing, school budgets) are estimates drawn from public sources and personal knowledge of the AU education sector; they are not independently audited.
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="fbrand">one <em>to</em> eight</div>
+  <p>Five months to put every offering in the hands of the people who need them. August 1 — January 1.</p>
+  <p style="margin-top:.6rem"><a href="hub/">Resource Hub</a> · <a href="../parents-2am.html">For Parents</a> · <a href="../tutoring-partners.html">Tutoring Partners</a> · <a href="../afterschool-agent.html">Afterschool Agent</a></p>
+</footer>
+
+<script>
+// starfield
+(function(){
+  var s=document.getElementById('stars'),n=70,i,el;
+  for(i=0;i<n;i++){el=document.createElement('span');el.className='star';
+    el.style.left=(Math.random()*100)+'%';el.style.top=(Math.random()*100)+'%';
+    el.style.setProperty('--tw',(2+Math.random()*4).toFixed(2)+'s');
+    el.style.animationDelay=(Math.random()*4).toFixed(2)+'s';
+    var sz=(Math.random()<.85?2:3);el.style.width=sz+'px';el.style.height=sz+'px';
+    s.appendChild(el);}
+})();
+// reveal
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting)return;
+    e.target.classList.add('in');
+    io.unobserve(e.target);
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
