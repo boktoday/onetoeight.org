@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1220">
+<meta name="description" content="Watch and Pray: a field guide for young Christians navigating spiritual deception, counterfeit spirituality, and the last-days warnings of Jesus.">
+<title>Watch and Pray · A Field Guide for Young Christians · onetoeight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0d1220; --night2:#131a2e; --night3:#1a2340; --night4:#212b4a;
+  --dawn:#f6efe3; --dawn2:#efe6d6; --paper:#fbf7ee;
+  --ink:#232a3d; --ink-soft:#5a6278; --ink-mute:#8a92a8;
+  --terra:#c2603e; --terra-deep:#9c4a2e; --terra-glow:#e07c54;
+  --sage:#7d8a6e; --sage-deep:#5f6d52;
+  --gold:#d9a441; --gold-soft:#e8c87a; --gold-pale:#f4e4c0;
+  --blue:#4f6f9e; --blue-soft:#7a9ac9;
+  --warn:#b84a3d; --warn-soft:#d97a6e;
+  --star:rgba(255,255,255,.88);
+  --serif:'Fraunces',Georgia,serif;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--dawn);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--terra);color:#fff}
+h1,h2,h3,.serif{font-family:var(--serif)}
+a{color:var(--terra-deep)}
+img{max-width:100%}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+.reveal[data-d="5"]{transition-delay:.4s}.reveal[data-d="6"]{transition-delay:.48s}
+.reveal[data-d="7"]{transition-delay:.56s}.reveal[data-d="8"]{transition-delay:.64s}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.4rem;background:rgba(13,18,32,.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--dawn);text-decoration:none;letter-spacing:-.01em}
+.brand em{font-style:italic;font-weight:300;color:var(--gold-soft)}
+.navlinks{display:flex;gap:1.4rem}
+.navlinks a{font-family:var(--disp);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,239,227,.62);text-decoration:none;transition:color .25s}
+.navlinks a:hover{color:var(--gold-soft)}
+@media(max-width:760px){.navlinks{display:none}}
+
+/* hero: watch and pray */
+.hero{position:relative;min-height:100vh;background:radial-gradient(ellipse 140% 100% at 50% 120%,#2a3a66 0%,#19233f 35%,#0d1220 72%);color:var(--dawn);display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:8rem 1.5rem 6rem}
+.stars{position:absolute;inset:0;pointer-events:none;z-index:1}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--star);animation:twinkle var(--tw,3s) ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.95}}
+.eye{position:absolute;top:18%;left:50%;transform:translateX(-50%);width:180px;height:180px;opacity:.08;z-index:1}
+.eye svg{width:100%;height:100%;fill:none;stroke:var(--gold-soft);stroke-width:1.5}
+.hero-inner{position:relative;z-index:2;max-width:980px;margin:0 auto;width:100%;text-align:center}
+.kicker{font-family:var(--disp);font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:1.2rem;display:inline-flex;align-items:center;gap:.7rem}
+.kicker::before,.kicker::after{content:'';width:34px;height:1px;background:var(--gold-soft)}
+.hero h1{font-size:clamp(2.4rem,6.5vw,5.2rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;margin:1rem 0 1.4rem}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero .lede{font-size:clamp(1.05rem,1.8vw,1.25rem);color:rgba(246,239,227,.76);max-width:66ch;margin:0 auto 2.6rem;line-height:1.75}
+.hero .verse{font-family:var(--serif);font-size:clamp(1.15rem,2vw,1.45rem);font-style:italic;color:var(--gold-pale);max-width:54ch;margin:0 auto 3.2rem;line-height:1.55}
+.hero .verse cite{display:block;font-family:var(--body);font-style:normal;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin-top:.9rem}
+.hero-cta{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+.btn{font-family:var(--disp);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:1.05rem 1.9rem;border-radius:50px;transition:transform .25s,box-shadow .25s,background .25s}
+.btn-primary{background:var(--terra);color:#fff;border:1px solid var(--terra);box-shadow:0 12px 34px -10px rgba(194,96,62,.45)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 44px -12px rgba(194,96,62,.55);background:var(--terra-glow)}
+.btn-ghost{background:transparent;color:var(--dawn);border:1px solid rgba(246,239,227,.35)}
+.btn-ghost:hover{background:rgba(246,239,227,.08);border-color:rgba(246,239,227,.55)}
+.scrollcue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--disp);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,239,227,.45);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scrollcue::after{content:'';width:1px;height:44px;background:linear-gradient(180deg,var(--gold-soft),transparent);animation:drip 1.8s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}56%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* section scaffolding */
+section{position:relative}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+.sec-head{margin-bottom:3.2rem}
+.sec-tag{font-family:var(--disp);font-size:.7rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.sec-tag::before{content:'';width:30px;height:2px;background:var(--terra)}
+.sec-head h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:500;line-height:1.12;letter-spacing:-.02em;max-width:26ch}
+.sec-head h2 em{font-style:italic;color:var(--terra-deep)}
+.sec-head .sub{margin-top:1rem;font-size:1.05rem;color:var(--ink-soft);max-width:62ch;line-height:1.65}
+
+/* warning strip */
+.warning{background:var(--warn);color:#fff;padding:4.5rem 0 5rem;position:relative;overflow:hidden}
+.warning::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(0,0,0,.06),rgba(0,0,0,.06) 12px,transparent 12px,transparent 24px);pointer-events:none}
+.warning .sec-tag{color:#fff}
+.warning .sec-tag::before{background:#fff}
+.warning .sec-head h2{color:#fff}
+.warning .sec-head .sub{color:rgba(255,255,255,.82)}
+.warning-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;position:relative;z-index:2}
+.warn-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:1.6rem 1.5rem;backdrop-filter:blur(6px)}
+.warn-card h3{font-family:var(--disp);font-size:1.1rem;font-weight:600;letter-spacing:.02em;margin-bottom:.55rem}
+.warn-card p{font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.85)}
+.warn-card .icon{font-size:1.6rem;margin-bottom:.6rem;display:block}
+
+/* deception grid */
+.deceptions{background:var(--dawn);padding:6.5rem 0 5rem}
+.dec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.3rem}
+.dec-card{position:relative;background:var(--paper);border:1px solid rgba(35,42,61,.08);border-radius:16px;padding:1.7rem 1.6rem 1.5rem;overflow:hidden;transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s,border-color .35s}
+.dec-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px -18px rgba(35,42,61,.22);border-color:rgba(194,96,62,.32)}
+.dec-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--dc,var(--terra));transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+.dec-card:hover::before{transform:scaleX(1)}
+.dec-card .num{font-family:var(--disp);font-weight:700;font-size:.72rem;letter-spacing:.18em;color:var(--dc,var(--terra));text-transform:uppercase}
+.dec-card h3{font-size:1.32rem;font-weight:600;margin:.7rem 0 .55rem;line-height:1.25;color:var(--ink)}
+.dec-card .looks{font-size:.82rem;color:var(--ink-mute);margin-bottom:.9rem;line-height:1.5}
+.dec-card .looks strong{color:var(--ink);font-weight:600}
+.dec-card .lie{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--warn);margin:1rem 0 .7rem;line-height:1.45;padding-left:1rem;border-left:3px solid var(--warn-soft)}
+.dec-card .truth{font-size:.95rem;color:var(--ink);line-height:1.6;margin-bottom:1rem}
+.dec-card .question{font-size:.85rem;font-weight:600;color:var(--sage-deep);background:rgba(125,138,110,.1);border-radius:8px;padding:.8rem 1rem;line-height:1.5}
+
+/* digital section */
+.digital{background:var(--night);color:var(--dawn);padding:6.5rem 0;overflow:hidden}
+.digital .sec-tag{color:var(--gold-soft)}
+.digital .sec-tag::before{background:var(--gold-soft)}
+.digital .sec-head h2{color:var(--dawn)}
+.digital .sec-head .sub{color:rgba(246,239,227,.72)}
+.digital-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
+.dig-card{background:var(--night3);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.6rem;transition:background .25s,border-color .25s}
+.dig-card:hover{background:var(--night4);border-color:rgba(255,255,255,.18)}
+.dig-card h3{font-family:var(--disp);font-size:1.1rem;font-weight:600;color:var(--gold-soft);margin-bottom:.7rem}
+.dig-card p{font-size:.95rem;color:rgba(246,239,227,.72);line-height:1.65;margin-bottom:.8rem}
+.dig-card .example{font-size:.85rem;color:rgba(246,239,227,.5);border-left:2px solid var(--terra);padding-left:.8rem}
+
+/* armor section */
+.armor{background:var(--paper);padding:6.5rem 0 5rem}
+.armor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
+.armor-card{background:#fff;border:1px solid rgba(35,42,61,.08);border-radius:14px;padding:1.5rem;text-align:center;box-shadow:0 8px 24px -12px rgba(35,42,61,.1)}
+.armor-card .icon{font-size:2.2rem;margin-bottom:.8rem}
+.armor-card h3{font-size:1.05rem;font-weight:600;margin-bottom:.4rem}
+.armor-card p{font-size:.85rem;color:var(--ink-soft);line-height:1.55}
+
+/* cta */
+.cta{background:radial-gradient(ellipse 120% 90% at 50% 120%,#2a3a66 0%,#19233f 42%,#0d1220 78%);color:var(--dawn);padding:6rem 0 6.5rem;text-align:center}
+.cta h2{font-size:clamp(1.9rem,4.2vw,3rem);font-weight:500;line-height:1.12;letter-spacing:-.02em;max-width:26ch;margin:0 auto 1.2rem}
+.cta h2 em{font-style:italic;color:var(--gold-soft)}
+.cta p{font-size:1.05rem;color:rgba(246,239,227,.72);max-width:58ch;margin:0 auto 2.2rem;line-height:1.65}
+
+/* footer */
+footer{background:var(--night);color:rgba(246,239,227,.5);padding:2.6rem 0;text-align:center;font-size:.85rem}
+footer a{color:var(--gold-soft);text-decoration:none}
+
+@media(max-width:640px){
+  .hero h1{font-size:2.2rem}
+  .kicker::before,.kicker::after{width:20px}
+  .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">one<em>to</em>eight</a>
+  <div class="navlinks">
+    <a href="index.html">Home</a>
+    <a href="afterschool-agent.html">Afterschool Agent</a>
+    <a href="watch-and-pray.html">Watch & Pray</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="stars" id="stars"></div>
+  <div class="eye reveal" data-d="1">
+    <svg viewBox="0 0 100 100"><path d="M5 50 C 25 15, 75 15, 95 50 C 75 85, 25 85, 5 50 Z"/><circle cx="50" cy="50" r="14"/></svg>
+  </div>
+  <div class="hero-inner">
+    <div class="kicker reveal" data-d="1">A field guide for young Christians</div>
+    <h1 class="reveal" data-d="2">Watch and <em>Pray</em></h1>
+    <p class="lede reveal" data-d="3">Jesus warned us first about deception. Not war. Not disaster. Not politics. He said the end would be marked by a flood of convincing lies dressed up as light. This is how to spot them.</p>
+    <blockquote class="verse reveal" data-d="4">
+      "See to it that no one deceives you. For many will come in my name, claiming, 'I am the Messiah,' and will deceive many."
+      <cite>Matthew 24:4-5</cite>
+    </blockquote>
+    <div class="hero-cta reveal" data-d="5">
+      <a href="#deceptions" class="btn btn-primary">Read the field guide</a>
+      <a href="#armor" class="btn btn-ghost">Put on the armour</a>
+    </div>
+  </div>
+  <div class="scrollcue">Watch closely</div>
+</section>
+
+<section class="warning">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Why this matters now</div>
+      <h2>Jesus and Paul both led with the <em>same warning</em>.</h2>
+      <p class="sub">Before they spoke about wars, disasters, or the end of the age, they spoke about deception. The most dangerous threat to a young Christian today is not an obvious enemy. It is a lie that looks like truth.</p>
+    </div>
+    <div class="warning-cards">
+      <div class="warn-card reveal" data-d="1">
+        <span class="icon">👁</span>
+        <h3>Watchful, not afraid</h3>
+        <p>Fear is not the goal. Jesus says "see to it" — clear eyes, steady heart, awake mind. The Christian posture is alert, not anxious.</p>
+      </div>
+      <div class="warn-card reveal" data-d="2">
+        <span class="icon">🔗</span>
+        <h3>The best lies are 90% true</h3>
+        <p>Deception rarely arrives as obvious evil. It arrives as a half-truth, a counterfeit blessing, a spiritual shortcut that bypasses the cross.</p>
+      </div>
+      <div class="warn-card reveal" data-d="3">
+        <span class="icon">📱</span>
+        <h3>Your phone is a battlefield</h3>
+        <p>Algorithms, influencers, and endless feeds are not neutral. They are designed to shape what you want, believe, and worship — one scroll at a time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deceptions" id="deceptions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">The field guide</div>
+      <h2>Eight deceptions young Christians should <em>learn to recognise</em>.</h2>
+      <p class="sub">Not everything on this list is demonic in every form. But every item is a common doorway that leads away from the narrow path. Here is what it looks like, the lie underneath, and the truth that answers it.</p>
+    </div>
+    <div class="dec-grid">
+      <div class="dec-card reveal" data-d="1" style="--dc:#c2603e">
+        <div class="num">01 — Aesthetic Witchcraft</div>
+        <h3>Crystals, tarot, sigils, and "spiritual" rituals</h3>
+        <p class="looks"><strong>Looks like:</strong> WitchTok, "pick a card" readings, "energy cleansing," moon rituals, zodiac makeup, manifestation jars, and Christian influencers blending Jesus with sage and tarot.</p>
+        <p class="lie">"You are in control. These tools give you hidden power. It is harmless because it is beautiful."</p>
+        <p class="truth">Power belongs to God alone. The Holy Spirit is not a technique. The Bible calls witchcraft an abomination not because it is never real, but because it is real enough to steal your allegiance.</p>
+        <div class="question">Question: Am I seeking power from a source other than God, even if it feels peaceful or pretty?</div>
+      </div>
+      <div class="dec-card reveal" data-d="2" style="--dc:#7d8a6e">
+        <div class="num">02 — Manifestation Culture</div>
+        <h3>"Speak it into existence"</h3>
+        <p class="looks"><strong>Looks like:</strong> Vision boards, "the universe will provide," affirmations that become spells, "claiming" things by speaking them, and the idea that your words create reality.</p>
+        <p class="lie">"You are the author of your own life. Your words have creative power. If you just believe hard enough, you will get what you want."</p>
+        <p class="truth">Only God creates by speaking. Prayer is surrender, not spell-casting. The goal is not to get what you want; it is to want what God wants.</p>
+        <div class="question">Question: Am I treating prayer like a technique to get things, or as a relationship with God?</div>
+      </div>
+      <div class="dec-card reveal" data-d="3" style="--dc:#d9a441">
+        <div class="num">03 — Prosperity Gospel</div>
+        <h3>God wants you rich, healthy, and comfortable</h3>
+        <p class="looks"><strong>Looks like:</strong> Influencers promising breakthroughs, private-jet preachers, "seed faith" donations, and testimonies that measure blessing by bank balance and health.</p>
+        <p class="lie">"Faith guarantees success. If you are suffering, your faith is weak. God wants you to be wealthy and happy."</p>
+        <p class="truth">Jesus promised trouble, not comfort. The cross is the shape of the Christian life. Wealth is not a sign of God's favour; faithfulness is.</p>
+        <div class="question">Question: Does this message make me love Jesus more, or does it make me love success more?</div>
+      </div>
+      <div class="dec-card reveal" data-d="4" style="--dc:#4f6f9e">
+        <div class="num">04 — Progressive Christianity</div>
+        <h3>"You don't need to believe that"</h3>
+        <p class="looks"><strong>Looks like:</strong> "The Bible was written by men with agendas," "all paths lead to God," "your truth is valid," "Jesus never actually said that," and reinterpreting every hard teaching until nothing is left.</p>
+        <p class="lie">"The church got it wrong. The real Jesus is nicer than the Bible. Doctrine divides; love unites."</p>
+        <p class="truth">Love without truth is sentiment. A Jesus who never judges, never calls for repentance, and never claims to be the only way is not the Jesus of the Gospels. He is a useful fiction.</p>
+        <div class="question">Question: Would this message have sounded strange to the apostles, or to Jesus himself?</div>
+      </div>
+      <div class="dec-card reveal" data-d="5" style="--dc:#9c4a2e">
+        <div class="num">05 — Algorithmic Formation</div>
+        <h3>Your attention is being sold</h3>
+        <p class="looks"><strong>Looks like:</strong> Infinite scroll, rage bait, outrage cycles, fear-driven news, hyper-sexual content, and platforms that keep you angry, anxious, or aroused because it earns them money.</p>
+        <p class="lie">"You are in control of what you watch. It is just entertainment. It doesn't affect your soul."</p>
+        <p class="truth">"Where your treasure is, there your heart will be also." Your attention is your treasure. If you give it away to algorithms, they will form your desires without your permission.</p>
+        <div class="question">Question: Is this feed making me more like Christ, or more like the people who profit from my anger and lust?</div>
+      </div>
+      <div class="dec-card reveal" data-d="6" style="--dc:#5f6d52">
+        <div class="num">06 — Counterfeit Intimacy</div>
+        <h3>Porn, hookup culture, and AI companions</h3>
+        <p class="looks"><strong>Looks like:</strong> "No-strings" apps, AI girlfriends, parasocial influencer relationships, and content that promises closeness without commitment or cost.</p>
+        <p class="lie">"You can have intimacy without vulnerability. Love is a feeling you consume. Commitment is optional."</p>
+        <p class="truth">Real love is costly. Christ laid down his life. Pornography and AI companions are counterfeits: they promise connection but deliver isolation, shame, and a trained inability to love truly.</p>
+        <div class="question">Question: Is this relationship forming me to give, or to take?</div>
+      </div>
+      <div class="dec-card reveal" data-d="7" style="--dc:#b84a3d">
+        <div class="num">07 — Identity as Self-Creation</div>
+        <h3>"You are whatever you decide to be"</h3>
+        <p class="looks"><strong>Looks like:</strong> "Live your truth," "your feelings define you," "identity is a choice," and any ideology that says you are the author of your own being.</p>
+        <p class="lie">"You are the expert on yourself. Your desires are your identity. To deny them is to deny who you really are."</p>
+        <p class="truth">You are not a self-created project. You are a creature, fearfully and wonderfully made, known and loved by God before you chose anything. Your identity begins in being loved by him, not in inventing yourself.</p>
+        <div class="question">Question: Am I building my identity on what I feel, or on who God says I am?</div>
+      </div>
+      <div class="dec-card reveal" data-d="8" style="--dc:#8a6d9e">
+        <div class="num">08 — Biblical Counterfeit</div>
+        <h3>Softened translations, cherry-picking, and meme theology</h3>
+        <p class="looks"><strong>Looks like:</strong> Translations that remove hard words, "red-letter" minimalism, viral verses ripped out of context, and Bible content that always agrees with your politics.</p>
+        <p class="lie">"The Bible is just a collection of inspiring thoughts. You can ignore the parts you don't like. The real message is love, full stop."</p>
+        <p class="truth">Scripture is one story with one author: the God who calls us to repentance, holiness, and faith. If your Bible never offends you, you have made it in your own image.</p>
+        <div class="question">Question: Am I reading the Bible to be changed, or to confirm what I already believe?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="digital">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Social media & mainstream media</div>
+      <h2>How deception <em>travels</em> in the feed.</h2>
+      <p class="sub">You do not need to go looking for false teaching. It is algorithmically delivered to you. Here is how to recognise the delivery system, not just the content.</p>
+    </div>
+    <div class="digital-grid">
+      <div class="dig-card reveal" data-d="1">
+        <h3>1. The Aesthetic of Innocence</h3>
+        <p>Deception now looks like pastel infographics, calming music, and soft lighting. The packaging is wholesome. The content is not. A spell is still a spell when it is in a Canva template.</p>
+        <p class="example">Example: "Christian" tarot readers, astrology memes labelled "just for fun," and mindfulness coaches who channel "spirit guides."</p>
+      </div>
+      <div class="dig-card reveal" data-d="2">
+        <h3>2. The Deconstruction Pipeline</h3>
+        <p>Social media rewards dramatic exits. A young person is shown one hard doctrine, told it is "toxic," and then guided through a gentle, entertaining path away from the faith entirely.</p>
+        <p class="example">Example: "I used to be a Christian, but then I learned..." videos that treat the Bible as a power structure rather than revelation.</p>
+      </div>
+      <div class="dig-card reveal" data-d="3">
+        <h3>3. The Consensus Illusion</h3>
+        <p>"Everyone agrees" is a feeling engineered by algorithms. When every post in your feed says the same thing, dissent starts to feel dangerous. That is how false teaching becomes invisible.</p>
+        <p class="example">Example: "The church is finally evolving on this issue," as if numbers determine truth.</p>
+      </div>
+      <div class="dig-card reveal" data-d="4">
+        <h3>4. The Outrage-Compassion Cycle</h3>
+        <p>Your feed keeps you in fight-or-flight. It makes you hate your enemies and fear your future. A terrified Christian is easy to manipulate. A watchful Christian is not.</p>
+        <p class="example">Example: Doomsday headlines, fear-based prophecy content, and memes that mock your own family or church leaders.</p>
+      </div>
+      <div class="dig-card reveal" data-d="5">
+        <h3>5. The New Age Rebrand</h3>
+        <p>Old deceptions return in new language. "Energy" becomes a substitute for the Holy Spirit. "The universe" becomes a substitute for God. "Vibes" becomes a substitute for discernment.</p>
+        <p class="example">Example: "Spiritual but not religious," "the universe has my back," "I manifested this."</p>
+      </div>
+      <div class="dig-card reveal" data-d="6">
+        <h3>6. The Sexualisation of Everything</h3>
+        <p>Mainstream media and social feeds are relentless in shaping what you desire. Bodies are marketed as identity. Pornography is marketed as freedom. Lust is marketed as love.</p>
+        <p class="example">Example: "Empowerment" content that requires you to expose yourself, or "relationship advice" that treats other people as disposable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="armor" id="armor">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">The armour</div>
+      <h2>How to stand without <em>falling</em>.</h2>
+      <p class="sub">Discernment is not a personality trait. It is a practice. You build it the same way you build a muscle: slowly, daily, and under resistance.</p>
+    </div>
+    <div class="armor-grid">
+      <div class="armor-card reveal" data-d="1">
+        <span class="icon">📖</span>
+        <h3>Know the real thing</h3>
+        <p>Read the Bible. Not just the easy parts. The more familiar you are with the true voice, the faster you detect the counterfeit.</p>
+      </div>
+      <div class="armor-card reveal" data-d="2">
+        <span class="icon">🙏</span>
+        <h3>Pray daily</h3>
+        <p>Ask God for wisdom. James says he gives it generously without finding fault. Prayer is your first line of defence, not your last resort.</p>
+      </div>
+      <div class="armor-card reveal" data-d="3">
+        <span class="icon">👥</span>
+        <h3>Stay in community</h3>
+        <p>Deception isolates. The church is a place where your blind spots are seen by people who love you enough to tell you the truth.</p>
+      </div>
+      <div class="armor-card reveal" data-d="4">
+        <span class="icon">👁</span>
+        <h3>Curate your feed</h3>
+        <p>Unfollow accounts that make you anxious, angry, or ashamed. Set limits. Your attention is sacred. Treat it like the temple it is.</p>
+      </div>
+      <div class="armor-card reveal" data-d="5">
+        <span class="icon">✍️</span>
+        <h3>Study the truth</h3>
+        <p>Learn the creeds. Learn church history. The lies of today are recycled. The answers have already been written down by smarter, holier people than us.</p>
+      </div>
+      <div class="armor-card reveal" data-d="6">
+        <span class="icon">⚔️</span>
+        <h3>Expect resistance</h3>
+        <p>Following Jesus will cost you something. If your faith never costs you, it may not be faith. If the world always agrees with you, check your message.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 class="reveal">Keep your eyes open. <em>Keep your heart fixed.</em></h2>
+    <p class="reveal" data-d="1">The end of the age is not the end of hope. It is the hour for clear-eyed Christians who know what they believe, why they believe it, and who they belong to. This is the work of onetoeight: forming young people who can stand.</p>
+    <div class="hero-cta reveal" data-d="2">
+      <a href="https://onetoeight.org" class="btn btn-primary">Explore onetoeight.org</a>
+      <a href="index.html#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 onetoeight.org · A youth formation movement for the days ahead.</p>
+  </div>
+</footer>
+
+<script>
+// starfield
+const stars = document.getElementById('stars');
+for (let i = 0; i < 90; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  s.style.left = Math.random() * 100 + '%';
+  s.style.top = Math.random() * 100 + '%';
+  s.style.setProperty('--tw', (2 + Math.random() * 4) + 's');
+  s.style.opacity = 0.15 + Math.random() * 0.85;
+  stars.appendChild(s);
+}
+
+// reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
