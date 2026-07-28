@@ -99,6 +99,15 @@ section{padding:6rem 1.5rem;position:relative}
 .cream .feature-tag{color:var(--terra)}
 .feature-card p{font-size:.95rem;color:var(--ink-soft);line-height:1.65}
 .cream .feature-card p{color:var(--ink-soft)}
+/* Host credentials grid — 4 across */
+.cred-grid{grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.cred-grid .feature-card{padding:1.6rem 1.1rem}
+.cred-grid .feature-icon{width:46px;height:46px;font-size:1.2rem;margin-bottom:1rem}
+.cred-grid .feature-card h3{font-size:1.08rem}
+.cred-grid .feature-card p{font-size:.84rem;line-height:1.55}
+.cred-grid .feature-tag{margin-bottom:.4rem}
+@media(max-width:900px){.cred-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.cred-grid{grid-template-columns:1fr}}
 .feature-time{font-family:var(--disp);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(217,164,65,.08)}
 .cream .feature-time{border-color:rgba(194,96,62,.08)}
 
@@ -585,7 +594,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
     <div class="kicker reveal">Your Host — Safe & Vetted</div>
     <h2 class="sec-title reveal">Every live session is run by a <em>screened</em> instructor.</h2>
     <p class="sec-lead reveal">The Afterschool Agent programme is hosted by a safeguarding-cleared facilitator. Before any teen logs on, the host holds the following verified credentials:</p>
-    <div class="feature-grid">
+    <div class="feature-grid cred-grid">
       <div class="feature-card reveal">
         <div class="feature-icon" style="background:rgba(194,96,62,.12);color:var(--terra)">🛡️</div>
         <div class="feature-tag">Credential 1</div>
