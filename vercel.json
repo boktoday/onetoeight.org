@@ -1,20 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "afterschool.agency" }],
-      "destination": "https://onetoeight.org/afterschool-agent",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "afterschool.agency" }],
-      "destination": "https://onetoeight.org/afterschool-agent",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
