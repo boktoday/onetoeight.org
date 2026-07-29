@@ -39,29 +39,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);-
 @media(max-width:760px){.nav-links{display:none}}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:6rem 1.5rem 3rem}
-.hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 35%,rgba(217,164,65,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 50% 80%,rgba(79,111,158,.08) 0%,transparent 50%),linear-gradient(180deg,var(--night) 0%,var(--night2) 50%,var(--night3) 100%)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 3rem 3rem}
+.hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 35%,rgba(217,164,65,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 70% 80%,rgba(79,111,158,.08) 0%,transparent 50%),linear-gradient(180deg,var(--night) 0%,var(--night2) 50%,var(--night3) 100%)}
+.hero-layout{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;max-width:1400px;width:100%;margin:0 auto;align-items:center}
+@media(max-width:900px){.hero-layout{grid-template-columns:1fr;gap:2rem;text-align:center}}
 /* Glowing agent terminal motif */
-.agent-motif{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(820px,90vw);aspect-ratio:9/16;border-radius:24px;border:1px solid rgba(217,164,65,.18);background:linear-gradient(160deg,rgba(19,26,46,.95),rgba(26,35,64,.9));box-shadow:0 0 120px rgba(217,164,65,.1),0 20px 60px rgba(0,0,0,.4);overflow:hidden;opacity:.35}
+.agent-motif{position:relative;width:100%;max-width:420px;aspect-ratio:9/14;border-radius:24px;border:1px solid rgba(217,164,65,.18);background:linear-gradient(160deg,rgba(19,26,46,.95),rgba(26,35,64,.9));box-shadow:0 0 120px rgba(217,164,65,.1),0 20px 60px rgba(0,0,0,.4);overflow:hidden;opacity:.6;margin:0 auto}
+@media(max-width:900px){.agent-motif{display:none}}
 .agent-motif::before{content:'';position:absolute;top:0;left:0;right:0;height:48px;background:rgba(13,18,32,.8);border-bottom:1px solid rgba(217,164,65,.1)}
 .agent-motif::after{content:'● ● ●';position:absolute;top:15px;left:20px;font-size:.7rem;letter-spacing:.3em;color:rgba(217,164,65,.3);font-family:var(--disp)}
-.agent-line{position:absolute;left:24px;right:24px;font-family:var(--disp);font-size:1rem;color:rgba(246,239,227,.35);line-height:1.8}
+.agent-line{position:absolute;left:24px;right:24px;font-family:var(--disp);font-size:.95rem;color:rgba(246,239,227,.4);line-height:1.8}
 .agent-line:nth-child(2){top:80px}
-.agent-line:nth-child(3){top:125px;color:rgba(217,164,65,.4)}
+.agent-line:nth-child(3){top:125px;color:rgba(217,164,65,.5)}
 .agent-line:nth-child(4){top:170px}
-.agent-line:nth-child(5){top:215px;color:rgba(125,138,110,.35)}
+.agent-line:nth-child(5){top:215px;color:rgba(125,138,110,.4)}
 
-.hero-content{position:relative;z-index:2;text-align:center;max-width:780px}
+.hero-content{position:relative;z-index:2;text-align:left;max-width:680px}
+@media(max-width:900px){.hero-content{text-align:center;max-width:780px;margin:0 auto}}
 .eyebrow{font-family:var(--disp);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;display:inline-block;border:1px solid rgba(217,164,65,.28);padding:.4rem 1.1rem;border-radius:100px}
-.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--dawn);margin-bottom:1.5rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--dawn);margin-bottom:1.5rem}
 .hero h1 em{font-style:italic;font-weight:400;color:var(--gold)}
-.hero-sub{font-size:1.15rem;color:var(--ink-soft);max-width:580px;margin:0 auto 2.5rem;line-height:1.7}
-.hero-time{font-family:var(--disp);font-size:clamp(3rem,10vw,5.5rem);font-weight:700;letter-spacing:-.04em;color:var(--gold);line-height:1;margin-bottom:.4rem}
+.hero-sub{font-size:1.1rem;color:var(--ink-soft);max-width:520px;margin:0 0 2.5rem;line-height:1.7}
+@media(max-width:900px){.hero-sub{max-width:580px;margin:0 auto 2.5rem}}
+.hero-time{font-family:var(--disp);font-size:clamp(2.8rem,6.5vw,4.8rem);font-weight:700;letter-spacing:-.04em;color:var(--gold);line-height:1;margin-bottom:.4rem}
 .hero-time-label{font-family:var(--disp);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
 .hero-underline{position:relative;display:inline-block}
 .hero-underline::after{content:'';position:absolute;left:-2%;right:-2%;bottom:.08em;height:.12em;background:linear-gradient(90deg,transparent 0%,var(--terra) 15%,var(--gold) 50%,var(--terra) 85%,transparent 100%);border-radius:1px;transform:scaleX(0);transform-origin:left;animation:underline-draw 1.2s cubic-bezier(.22,.61,.36,1) .6s forwards}
 @keyframes underline-draw{to{transform:scaleX(1)}}
-.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem}
+.cta-row{display:flex;gap:1rem;justify-content:flex-start;flex-wrap:wrap;margin-top:2.5rem}
+@media(max-width:900px){.cta-row{justify-content:center}}
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--disp);font-size:.85rem;font-weight:600;letter-spacing:.04em;padding:.9rem 2rem;border-radius:10px;transition:all .2s;cursor:pointer;border:none}
 .btn-primary{background:var(--gold);color:var(--night)}
 .btn-primary:hover{background:var(--gold-soft);transform:translateY(-1px)}
@@ -265,22 +271,24 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 <!-- HERO -->
 <header class="hero">
   <div class="hero-sky"></div>
-  <div class="agent-motif">
-    <div class="agent-line">> agent: good afternoon, Alex</div>
-    <div class="agent-line">> what's on your mind?</div>
-    <div class="agent-line">> let's plan your week</div>
-    <div class="agent-line">> silence first. one minute.</div>
-    <div class="agent-line">> ✓ morning minute ready</div>
-  </div>
-  <div class="hero-content">
-    <span class="eyebrow">On-Demand Training + Weekly Live Q&amp;A</span>
-    <div class="hero-time" style="font-size:clamp(2.8rem,6.5vw,4.8rem)">In a world full of <br>AI agents,</div>
-    <div class="hero-time" style="font-size:clamp(2.8rem,6.5vw,4.8rem);margin-bottom:1.5rem">we give young people <span class="hero-underline">agency in real life</span>.</div>
-    <h1>Your teen builds their own <em>AI agent</em>. One that teaches life skills and guides them to grow.</h1>
-    <p class="hero-sub">In a world full of AI agents, we give young people agency in real life. On-demand training where they build a local-first AI companion that walks them through the eight essentials of onetoeight &mdash; personalising each one with activities that fit their life. The agent also helps with homework, planning, and the day ahead. No coding experience needed. No cloud accounts. Everything lives on their device. Plus a weekly live Q&amp;A session every Tuesday.</p>
-    <div class="cta-row">
-      <a href="#pricing" class="btn btn-primary">Enrol — $44.88</a>
-      <a href="#what" class="btn btn-ghost">How it works</a>
+  <div class="hero-layout">
+    <div class="hero-content">
+      <span class="eyebrow">On-Demand Training + Weekly Live Q&amp;A</span>
+      <div class="hero-time" style="font-size:clamp(2.8rem,6.5vw,4.8rem)">In a world full of <br>AI agents,</div>
+      <div class="hero-time" style="font-size:clamp(2.8rem,6.5vw,4.8rem);margin-bottom:1.5rem">we give young people <span class="hero-underline">agency in real life</span>.</div>
+      <h1>Your teen builds their own <em>AI agent</em>. One that teaches life skills and guides them to grow.</h1>
+      <p class="hero-sub">In a world full of AI agents, we give young people agency in real life. On-demand training where they build a local-first AI companion that walks them through the eight essentials of onetoeight &mdash; personalising each one with activities that fit their life. The agent also helps with homework, planning, and the day ahead. No coding experience needed. No cloud accounts. Everything lives on their device. Plus a weekly live Q&amp;A session every Tuesday.</p>
+      <div class="cta-row">
+        <a href="#pricing" class="btn btn-primary">Enrol — $44.88</a>
+        <a href="#what" class="btn btn-ghost">How it works</a>
+      </div>
+    </div>
+    <div class="agent-motif">
+      <div class="agent-line">&gt; agent: good afternoon, Alex</div>
+      <div class="agent-line">&gt; what's on your mind?</div>
+      <div class="agent-line">&gt; let's plan your week</div>
+      <div class="agent-line">&gt; silence first. one minute.</div>
+      <div class="agent-line">&gt; ✓ morning minute ready</div>
     </div>
   </div>
   <div class="scroll-cue">Scroll to explore</div>
