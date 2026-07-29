@@ -41,10 +41,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);-
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 3rem 3rem}
 .hero-sky{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 35%,rgba(217,164,65,.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 70% 80%,rgba(79,111,158,.08) 0%,transparent 50%),linear-gradient(180deg,var(--night) 0%,var(--night2) 50%,var(--night3) 100%)}
-.hero-layout{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;max-width:1400px;width:100%;margin:0 auto;align-items:center}
+.hero-layout{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;max-width:1400px;width:100%;margin:0 auto;align-items:end;padding-bottom:3rem}
 @media(max-width:900px){.hero-layout{grid-template-columns:1fr;gap:2rem;text-align:center}}
 /* Glowing agent terminal motif */
-.agent-motif{position:relative;width:100%;max-width:420px;aspect-ratio:9/14;border-radius:24px;border:1px solid rgba(217,164,65,.18);background:linear-gradient(160deg,rgba(19,26,46,.98),rgba(26,35,64,.95));box-shadow:0 0 120px rgba(217,164,65,.1),0 20px 60px rgba(0,0,0,.4);overflow:hidden;opacity:1;margin:0 auto;align-self:flex-start;margin-top:-2rem}
+.agent-motif{position:relative;width:100%;max-width:420px;aspect-ratio:9/14;border-radius:24px;border:1px solid rgba(217,164,65,.18);background:linear-gradient(160deg,rgba(19,26,46,.98),rgba(26,35,64,.95));box-shadow:0 0 120px rgba(217,164,65,.1),0 20px 60px rgba(0,0,0,.4);overflow:hidden;opacity:1;margin:0 auto;align-self:center}
 @media(max-width:900px){.agent-motif{display:none}}
 .agent-motif::before{content:'';position:absolute;top:0;left:0;right:0;height:48px;background:rgba(13,18,32,.8);border-bottom:1px solid rgba(217,164,65,.1)}
 .agent-motif::after{content:'● ● ●';position:absolute;top:15px;left:20px;font-size:.7rem;letter-spacing:.3em;color:rgba(217,164,65,.3);font-family:var(--disp)}
