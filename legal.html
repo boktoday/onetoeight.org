@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Legal · Terms of Use, Disclaimer &amp; Privacy — one to eight</title>
+<meta name="description" content="Terms of use, disclaimer, and privacy policy for onetoeight.org — the eight essentials guide, weekly meetup, and Afterschool Agent programme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', sans-serif;
+  color: #4C362D;
+  background: #E8E1D5;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+:root {
+  --terracotta: #A46447;
+  --almond: #CEB59E;
+  --umber: #4C362D;
+  --sage: #88937B;
+  --linen: #E8E1D5;
+  --cream: #f5f0e8;
+  --ink: #4C362D;
+  --muted: #7a6657;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+  background: rgba(232,225,213,0.95); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(76,54,45,0.06);
+}
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: .25em; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { font-size: .9rem; font-weight: 500; color: var(--ink); transition: color .2s; }
+.nav-links a:hover { color: var(--terracotta); }
+.nav-toggle { display: none; }
+.nav-cta {
+  background: var(--terracotta); color: var(--linen) !important; padding: .6rem 1.4rem;
+  border-radius: 100px; font-weight: 600 !important; transition: all .25s;
+}
+.nav-cta:hover { background: var(--umber); transform: translateY(-1px); }
+
+/* ===== HERO ===== */
+.legal-hero {
+  padding: 8rem 2rem 3rem;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 0%, #f0e8da 0%, var(--linen) 50%, #ddd4c4 100%);
+}
+.legal-hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  color: var(--umber);
+  letter-spacing: -.03em;
+  margin-bottom: 1rem;
+}
+.legal-hero h1 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.legal-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: clamp(.95rem, 1.8vw, 1.05rem);
+}
+.legal-hero .updated {
+  display: inline-block;
+  margin-top: 1.2rem;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: .8;
+}
+
+/* ===== TOC ===== */
+.toc {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+}
+.toc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  justify-content: center;
+}
+.toc-links a {
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--terracotta);
+  border: 1px solid rgba(164,100,71,.35);
+  padding: .45rem 1.1rem;
+  border-radius: 100px;
+  transition: all .2s;
+}
+.toc-links a:hover { background: var(--terracotta); color: var(--linen); border-color: var(--terracotta); }
+
+/* ===== CONTENT ===== */
+.legal-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 5rem;
+}
+.legal-section {
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 2.2rem 2.2rem 1.6rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(76,54,45,.05);
+}
+.legal-section h2 {
+  font-size: 1.6rem;
+  color: var(--umber);
+  margin-bottom: .4rem;
+  letter-spacing: -.01em;
+}
+.legal-section h2 em { font-style: italic; font-weight: 300; color: var(--terracotta); }
+.legal-section .sec-updated {
+  font-size: .78rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.legal-section h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--umber);
+  margin: 1.6rem 0 .5rem;
+}
+.legal-section p {
+  font-size: .95rem;
+  color: var(--ink);
+  margin-bottom: .9rem;
+}
+.legal-section ul {
+  margin: 0 0 1rem 1.2rem;
+  list-style: none;
+}
+.legal-section ul li {
+  font-size: .93rem;
+  color: var(--ink);
+  margin-bottom: .55rem;
+  padding-left: 1.1rem;
+  position: relative;
+}
+.legal-section ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .62rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
+.legal-section a { color: var(--terracotta); border-bottom: 1px solid rgba(164,100,71,.3); transition: border-color .2s; }
+.legal-section a:hover { border-color: var(--terracotta); }
+.legal-section .note {
+  background: rgba(136,147,123,.12);
+  border-left: 3px solid var(--sage);
+  padding: .9rem 1.2rem;
+  border-radius: 0 10px 10px 0;
+  font-size: .9rem;
+  color: var(--ink);
+  margin: 1.2rem 0;
+}
+
+/* ===== FOOTER ===== */
+footer { background: var(--umber); color: rgba(232,225,213,0.5); padding: 3rem 2rem 2rem; text-align: center; }
+.footer-logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--linen); margin-bottom: .5rem; }
+.footer-logo span { color: var(--terracotta); }
+footer p { font-size: .85rem; margin-bottom: .3rem; }
+.footer-links { margin: 1.5rem 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+.footer-links a { font-size: .85rem; color: rgba(232,225,213,0.4); transition: color .2s; }
+.footer-links a:hover { color: var(--almond); }
+
+/* ===== MOBILE ===== */
+@media (max-width: 720px) {
+  .nav-links {
+    position: fixed; top: 0; right: -100%; height: 100vh; width: 70%; max-width: 300px;
+    background: var(--linen); flex-direction: column; justify-content: center; gap: 1.6rem;
+    transition: right .3s ease; box-shadow: -8px 0 24px rgba(76,54,45,.12);
+  }
+  .nav-links.open { right: 0; }
+  .nav-toggle { display: block; background: none; border: none; cursor: pointer; color: var(--ink); }
+  .legal-body { padding: 2rem 1.2rem 4rem; }
+  .legal-section { padding: 1.8rem 1.4rem 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <a href="/" class="nav-logo">one <em style="font-style:italic;font-weight:300;color:var(--terracotta);">to</em> eight</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <svg class="hamburger-svg" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
+      <path class="h-line h-line-1" d="M4,8 L24,8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="h-line h-line-2" d="M4,14 L24,14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="h-line h-line-3" d="M4,20 L24,20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle class="h-dot" cx="14" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0"/>
+      <circle class="h-dot-inner" cx="14" cy="14" r="2" fill="currentColor" opacity="0"/>
+    </svg>
+  </button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/#pillars">The Eight</a>
+    <a href="/#guide">The Guide</a>
+    <a href="/#workshops">Meetup</a>
+    <a href="/#contact" class="nav-cta">Join the Meetup</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="legal-hero">
+  <h1>Legal — <em>the fine print, plainly.</em></h1>
+  <p>Terms of use, disclaimer, and privacy for onetoeight.org — the guide, the weekly meetup, and the Afterschool Agent programme. We've tried to keep this honest and readable.</p>
+  <span class="updated">Last updated: August 2026</span>
+</section>
+
+<!-- ===== TOC ===== -->
+<div class="toc">
+  <div class="toc-links">
+    <a href="#terms">Terms of Use</a>
+    <a href="#disclaimer">Disclaimer</a>
+    <a href="#privacy">Privacy Policy</a>
+  </div>
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div class="legal-body">
+
+  <!-- TERMS OF USE -->
+  <section class="legal-section" id="terms">
+    <h2>Terms of <em>Use</em></h2>
+    <p class="sec-updated">Last updated: August 2026</p>
+
+    <h3>1. Acceptance of terms</h3>
+    <p>By accessing onetoeight.org, purchasing the guide or Mastery Kit, joining the weekly meetup, or enrolling in the Afterschool Agent programme, you agree to these Terms of Use. If you do not agree, please do not use the site or purchase the products.</p>
+
+    <h3>2. Who we are</h3>
+    <p>onetoeight is operated by Brendan O'Keefe. Our site offers a practical guide and resources (the "Guide" or "Mastery Kit"), a weekly live meetup, and the Afterschool Agent training programme (operated at <a href="https://www.afterschool.agency" target="_blank" rel="noopener">afterschool.agency</a>). The Mastery Kit is sold through our store at <a href="https://shop.onetoeight.org" target="_blank" rel="noopener">shop.onetoeight.org</a>, which is provided by Flowlance, with payments processed by Stripe.</p>
+
+    <h3>3. The Guide &amp; Mastery Kit</h3>
+    <ul>
+      <li>The Mastery Kit is a digital product. Purchase grants you a personal, non-exclusive, non-transferable licence to use it for yourself, your family, or your group.</li>
+      <li>You may print copies for participants in your own group, church, or class. You may not resell, redistribute, republish, or upload the guide or any part of it (including audio narration and prayers) to the open internet.</li>
+      <li>All content — text, audio, scripture database, images, and design — remains the property of onetoeight unless otherwise stated.</li>
+    </ul>
+
+    <h3>4. Weekly meetup</h3>
+    <ul>
+      <li>The weekly meetup is a live online session offered on a recurring basis. Joining the meetup means you agree to engage respectfully with other participants and the host.</li>
+      <li>Recordings of live sessions may be made available to participants. You may not redistribute recordings.</li>
+      <li>We may cancel or reschedule sessions; if a paid session is cancelled, we will offer a credit or refund for that session.</li>
+    </ul>
+
+    <h3>5. Afterschool Agent programme</h3>
+    <p>The Afterschool Agent programme has its own terms, available on the <a href="https://www.afterschool.agency" target="_blank" rel="noopener">Afterschool Agent website</a>. Purchasing the programme there is subject to those terms.</p>
+
+    <h3>6. Payments &amp; refunds</h3>
+    <ul>
+      <li>Payments for the Mastery Kit are processed via shop.onetoeight.org (Flowlance / Stripe).</li>
+      <li>Because the Mastery Kit is a digital product delivered instantly, all sales are final. If you have a genuine problem with your purchase (e.g. you didn't receive it, or it's corrupted), contact us and we'll fix it or refund you.</li>
+      <li>Where a refund is issued, it is processed back to the original payment method.</li>
+    </ul>
+
+    <h3>7. Acceptable use</h3>
+    <p>You agree not to use the site or its content to: break the law; harass or harm anyone; impersonate others; attempt to access our systems without permission; or republish our content commercially without written consent.</p>
+
+    <h3>8. Limitation of liability</h3>
+    <p>The guide, meetup, and programme are provided on an "as is" basis. To the fullest extent permitted by law, onetoeight is not liable for indirect, incidental, or consequential damages arising from your use of the site, the guide, or the meetup.</p>
+
+    <h3>9. Changes to these terms</h3>
+    <p>We may update these terms from time to time. The "Last updated" date at the top of this page reflects the latest version. Continued use of the site after changes are posted constitutes acceptance of the updated terms.</p>
+
+    <h3>10. Contact</h3>
+    <p>Questions about these terms? Email <a href="mailto:hello@onetoeight.me">hello@onetoeight.me</a>.</p>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section class="legal-section" id="disclaimer">
+    <h2>Disclaimer</h2>
+    <p class="sec-updated">Last updated: August 2026</p>
+
+    <h3>General information only</h3>
+    <p>The content on onetoeight.org — including the Guide, the Mastery Kit, meetup sessions, and the Afterschool Agent programme — is provided for educational and informational purposes only. It is not a substitute for professional advice.</p>
+
+    <h3>Not professional advice</h3>
+    <p>Nothing on this site constitutes medical, psychological, financial, legal, or pastoral-counselling advice. If you or your child are experiencing significant distress, a mental health crisis, or are at risk of harm, please contact a qualified professional immediately, or in an emergency call your local emergency number.</p>
+
+    <h3>Faith-based content</h3>
+    <p>onetoeight is written from a Christian worldview, unapologetically. The Guide includes Scripture references, prayers, and faith-based teaching. If you're not a Christian, the first seven essentials are practical and universal in their application; the eighth (Tested Convictions) is centred on Christian faith. The material is offered as one perspective, not as a universal prescription.</p>
+
+    <h3>Results vary</h3>
+    <p>Every young person is different. We make no guarantees about specific outcomes — educational, behavioural, spiritual, or otherwise — from using the Guide, joining the meetup, or completing the Afterschool Agent programme. Testimonials on this site reflect individual experiences and are not a promise of results.</p>
+
+    <h3>Third-party links &amp; services</h3>
+    <p>Our site links to third-party services including Flowlance (shop.onetoeight.org), Stripe, Activepieces, Google Fonts, YouTube, and others. We are not responsible for the content, practices, or availability of third-party sites. Purchases made through our store are governed by Flowlance's terms and the applicable payment processor's terms.</p>
+
+    <h3>Technology &amp; AI tools</h3>
+    <p>The Afterschool Agent programme teaches teens to build a local-first AI agent using third-party software (including Hermes and OpenCode Go). These are separate products with their own licences and terms. We are not responsible for the operation, availability, or behaviour of third-party software.</p>
+
+    <div class="note">
+      <strong>In short:</strong> we build resources we believe in, and we're honest that we can't promise how any individual will respond to them. If something in the content doesn't sit right with you, we'd rather you talk to us about it than ignore it.
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="legal-section" id="privacy">
+    <h2>Privacy <em>Policy</em></h2>
+    <p class="sec-updated">Last updated: August 2026</p>
+
+    <h3>What we collect</h3>
+    <p>When you subscribe to updates, contact us, or enrol in a programme, we collect the information you choose to provide — typically your name and email address. We don't collect anything else unless you tell us.</p>
+
+    <h3>How we use it</h3>
+    <ul>
+      <li>To send you updates, tips, and offers you've asked for</li>
+      <li>To respond to your enquiries</li>
+      <li>To administer purchases, the weekly meetup, and programme enrolment</li>
+      <li>To improve our content and site</li>
+    </ul>
+
+    <h3>What we don't do</h3>
+    <ul>
+      <li>We don't sell, rent, or share your personal information with anyone</li>
+      <li>We don't use advertising pixels or cross-site tracking</li>
+      <li>We don't read your private data</li>
+    </ul>
+
+    <h3>Third-party services</h3>
+    <p>We use a small number of service providers to run the site:</p>
+    <ul>
+      <li><strong>Vercel</strong> — hosts this website</li>
+      <li><strong>Activepieces</strong> — processes the email sign-up form on this site</li>
+      <li><strong>Flowlance &amp; Stripe</strong> — process purchases made at shop.onetoeight.org</li>
+      <li><strong>Google Fonts</strong> — serves the fonts used on this site</li>
+    </ul>
+    <p>Each of these providers processes data under its own privacy policy. We choose providers that respect user privacy.</p>
+
+    <h3>Data storage &amp; deletion</h3>
+    <p>Your name and email are stored securely. You can request a copy of your data or ask us to delete it at any time by emailing <a href="mailto:hello@onetoeight.me">hello@onetoeight.me</a> — we'll action deletion requests within 14 days.</p>
+
+    <h3>Cookies</h3>
+    <p>This site does not use tracking cookies. It may use strictly necessary storage (e.g. to remember a menu state), and third-party providers may set their own cookies in line with their policies.</p>
+
+    <h3>Young people</h3>
+    <p>Our content is designed for young people aged roughly 13–25. We encourage parents and guardians to be involved. If you're under 18, please check with a parent or guardian before signing up. If we become aware that we hold personal information of a child under 13 without parental consent, we will delete it.</p>
+
+    <h3>Your rights</h3>
+    <p>Depending on your location, you may have rights to access, correct, or delete your personal information, and to object to or restrict certain processing. Email <a href="mailto:hello@onetoeight.me">hello@onetoeight.me</a> to exercise these rights.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>If we change this policy, we'll update the "Last updated" date above. Material changes will be noted on this page.</p>
+  </section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">1 <span>→</span> 8</div>
+  <p>Eight Essentials for a Life That Holds</p>
+  <div class="footer-links">
+    <a href="/#pillars">The Eight</a><a href="/#guide">The Guide</a><a href="/about">About</a><a href="/young-people">For You</a><a href="/#workshops">Weekly Meetup</a><a href="/#faq">FAQ</a><a href="mailto:hello@onetoeight.me">Contact</a><a href="/legal.html">Legal</a>
+  </div>
+  <p>© 2026 onetoeight · A guide and weekly meetup for young people.</p>
+</footer>
+
+<script>
+// Mobile menu toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navToggle.classList.contains('open'));
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+</script>
+
+</body>
+</html>
