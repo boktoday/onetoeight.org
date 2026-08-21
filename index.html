@@ -200,6 +200,13 @@ nav.scrolled { background: rgba(232,225,213,0.95); backdrop-filter: blur(12px); 
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
   text-align: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden;
   background: radial-gradient(ellipse at 50% 0%, #f0e8da 0%, var(--linen) 50%, #ddd4c4 100%);
+
+  /* faint warm grain for depth */
+  .hero-grain {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .35;
+    background-image: radial-gradient(rgba(76,54,45,.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
 }
 .hero::before {
   content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px;
@@ -628,6 +635,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 <!-- ===== HERO ===== -->
 <section class="hero">
   <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="hero-grain" aria-hidden="true"></div>
   <div class="hero-content">
     <svg class="hero-logo" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg" aria-label="one to eight logo">
       <path fill="none" stroke="#4C362D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M100,25 L100,360"/>
