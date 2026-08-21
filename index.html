@@ -71,7 +71,7 @@ body { font-family: 'Inter', sans-serif; color: #4C362D; background: #E8E1D5; ov
 }
 /* dark sections read as raised sheets laid over the page */
 .problem, .orgs {
-  border-radius: var(--sheet-radius);
+  border-radius: 0;
   margin: 1.25rem clamp(.75rem, 3vw, 2.5rem);
   box-shadow: var(--shadow-lift);
 }
@@ -100,6 +100,27 @@ body { font-family: 'Inter', sans-serif; color: #4C362D; background: #E8E1D5; ov
   background: radial-gradient(ellipse at center, rgba(76,54,45,.16) 0%, transparent 68%);
   z-index: -1;
 }
+/* ---- squared edges (afterschool style) ---- */
+/* images, feature boxes, buttons, badges — sharp corners, no rounding */
+.nav-cta, .hero-badge, .btn-primary, .btn-secondary, .pillar-tag,
+.guide-price .note, .pillar-card, .workshop-card, .test-card, .org-cta-box,
+.signup-form input, .signup-form button, .signup-success, .signup-error,
+.problem-image, .final-image, .eight-progression .step, .test-avatar {
+  border-radius: 0 !important;
+}
+/* audio player button: squared to match */
+.audio-btn { border-radius: 0 !important; }
+/* small chips get a tiny 2px edge */
+.org-icon, .hero-audience span, .audio-wave span, .guide-book::after {
+  border-radius: 2px !important;
+}
+/* the book mockup keeps its book-spine shape */
+.book-3d { border-radius: 4px 12px 12px 4px; }
+/* the hero circles and dots stay round */
+.hero::before, .hero::after, .hero-badge .dot, .hero-audio .audio-icon {
+  border-radius: 50%;
+}
+
 h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.15; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
@@ -704,7 +725,7 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
       </button>
       <div class="audio-wave" id="audio-wave"><span></span><span></span><span></span><span></span><span></span></div>
     </div>
-    <p class="sub">A practical guide and weekly meetup that equips young people with the depth, skills, digital self-defence, financial literacy, community, knowledge, body, nature, and convictions they'll need when the noise fades and real life begins.</p>
+    <p class="sub">Eight essentials to rewire a captured generation <br>and escape the digital prison.</p>
     <div class="hero-ctas">
       <a href="#" class="btn-primary">Get the Guide →</a>
       <a href="#workshops" class="btn-secondary">Weekly Meetup</a>
