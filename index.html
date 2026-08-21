@@ -62,6 +62,44 @@ body { font-family: 'Inter', sans-serif; color: #4C362D; background: #E8E1D5; ov
 @media (prefers-reduced-motion: reduce) {
   #starfield { display: none; }
 }
+
+/* ---- depth system (matches the lead-magnet look) ---- */
+:root {
+  --shadow-soft: 0 2px 6px rgba(76,54,45,.05), 0 12px 32px rgba(76,54,45,.08);
+  --shadow-lift: 0 4px 10px rgba(76,54,45,.07), 0 24px 56px rgba(76,54,45,.14);
+  --sheet-radius: 28px;
+}
+/* dark sections read as raised sheets laid over the page */
+.problem, .orgs {
+  border-radius: var(--sheet-radius);
+  margin: 1.25rem clamp(.75rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-lift);
+}
+/* photos get the lead-magnet frame */
+.problem-image, .final-image {
+  box-shadow: var(--shadow-soft), 0 30px 60px rgba(0,0,0,.18);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.problem-image:hover, .final-image:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift), 0 36px 72px rgba(0,0,0,.22);
+}
+/* cards lift on hover */
+.pillar-card, .workshop-card {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.workshop-card { box-shadow: var(--shadow-soft); }
+.pillar-card:hover, .workshop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lift);
+}
+.test-avatar { box-shadow: 0 4px 14px rgba(76,54,45,.15); }
+.guide-book::after {
+  content: ''; position: absolute; left: 50%; bottom: -26px; transform: translateX(-50%);
+  width: 70%; height: 34px; border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(76,54,45,.16) 0%, transparent 68%);
+  z-index: -1;
+}
 h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.15; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
