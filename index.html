@@ -52,6 +52,16 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body { font-family: 'Inter', sans-serif; color: #4C362D; background: #E8E1D5; overflow-x: hidden; }
+
+/* ---- starfield background: the eight essentials as stars ---- */
+#starfield {
+  position: fixed; inset: 0; z-index: 9990;
+  pointer-events: none;
+  width: 100%; height: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  #starfield { display: none; }
+}
 h1, h2, h3, h4 { font-family: 'Fraunces', serif; font-weight: 500; line-height: 1.15; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
@@ -591,6 +601,9 @@ footer p { font-size: .85rem; margin-bottom: .3rem; }
 </style>
 </head>
 <body>
+
+<!-- ===== STARFIELD BACKGROUND ===== -->
+<canvas id="starfield" aria-hidden="true"></canvas>
 
 <!-- ===== NAV ===== -->
 <nav id="nav">
@@ -1144,6 +1157,99 @@ if (navToggle) {
     });
   });
 }
+
+// ============================================================
+// STARFIELD — the eight essentials as a night sky
+// Small white numerals 1–8, twinkling on and off at random.
+// ============================================================
+(function () {
+  var canvas = document.getElementById('starfield');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  var DPR = Math.min(window.devicePixelRatio || 1, 2);
+  var W = 0, H = 0;
+  var stars = [];
+  var NUMERALS = ['1', '2', '3', '4', '5', '6', '7', '8'];
+
+  function resize() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * DPR;
+    canvas.height = H * DPR;
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    seed();
+  }
+
+  // Each star: fixed % position (so it stays put on resize),
+  // a numeral, a size, a base alpha, and a twinkle phase.
+  function seed() {
+    stars = [];
+    var count = Math.max(70, Math.round((W * H) / 14000));
+    count = Math.min(count, 260);
+    for (var i = 0; i < count; i++) {
+      var bright = Math.random();
+      stars.push({
+        x: Math.random() * 100,            // percent
+        y: Math.random() * 100,            // percent
+        n: NUMERALS[(Math.random() * 8) | 0],
+        size: bright > 0.93 ? 26 + Math.random() * 10   // rare large
+            : bright > 0.75 ? 16 + Math.random() * 6
+            : 9 + Math.random() * 7,
+        base: 0.25 + Math.random() * 0.45, // peak alpha
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.25 + Math.random() * 1.1, // twinkle speed
+        drift: Math.random() > 0.85,       // a few float slowly
+        driftX: (Math.random() - 0.5) * 0.012,
+        driftY: (Math.random() - 0.5) * 0.012,
+        life: Math.random() * 100
+      });
+    }
+  }
+
+  var t = 0;
+  function frame() {
+    t += 1 / 60;
+    ctx.clearRect(0, 0, W, H);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      s.life += 1 / 60;
+
+      // soft on/off twinkle: mostly dim, occasional bright flash
+      var tw = 0.5 + 0.5 * Math.sin(s.phase + s.life * s.speed * 0.9);
+      var flash = Math.sin(s.phase * 0.3 + s.life * s.speed * 2.3);
+      var alpha = s.base * (0.35 + 0.65 * tw) * (0.75 + 0.25 * flash);
+      alpha = Math.max(0, Math.min(1, alpha));
+
+      if (s.drift) {
+        s.x += s.driftX;
+        s.y += s.driftY;
+        if (s.x < 0 || s.x > 100) s.driftX *= -1;
+        if (s.y < 0 || s.y > 100) s.driftY *= -1;
+      }
+
+      var px = (s.x / 100) * W;
+      var py = (s.y / 100) * H;
+
+      // warm halo so white reads on cream AND glows on dark
+      ctx.shadowColor = 'rgba(120, 84, 62, ' + (alpha * 0.55) + ')';
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = 'rgba(255, 255, 255, ' + alpha + ')';
+      ctx.font = '500 ' + s.size + 'px "Fraunces", serif';
+      ctx.fillText(s.n, px, py);
+    }
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(frame);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(frame);
+})();
 
 </script>
 
