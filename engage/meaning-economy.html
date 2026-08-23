@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Meaning Economy — A Supplementary Chapter for Young People</title>
+<meta name="description" content="A practical guide for young people preparing for meaningful work in an AI-shaped world. Four pathways, the eight essentials, and a twelve-month plan.">
+<link rel="canonical" href="https://onetoeight.org/engage/meaning-economy">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://onetoeight.org/engage/meaning-economy">
+<meta property="og:title" content="The Meaning Economy — A Supplementary Chapter for Young People">
+<meta property="og:description" content="A practical guide for young people preparing for meaningful work in an AI-shaped world. Four pathways, the eight essentials, and a twelve-month plan.">
+<meta property="og:image" content="https://onetoeight.org/engage/meaning-cover.jpg">
+<meta property="og:site_name" content="one to eight">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Meaning Economy — A Supplementary Chapter for Young People">
+<meta name="twitter:description" content="A practical guide for young people preparing for meaningful work in an AI-shaped world. Four pathways, the eight essentials, and a twelve-month plan.">
+<meta name="twitter:image" content="https://onetoeight.org/engage/meaning-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   BRAND TOKENS — match onetoeight-system (night/dawn editorial)
+   ========================================================================= */
+:root{
+  --night:#0d1220; --night2:#131a2e; --night3:#1a2340;
+  --dawn:#f6efe3; --dawn2:#efe6d6; --paper:#fbf7ee;
+  --ink:#232a3d; --ink-soft:#5a6278;
+  --terra:#c2603e; --terra-deep:#9c4a2e;
+  --sage:#7d8a6e; --sage-deep:#5f6d52;
+  --gold:#d9a441; --gold-soft:#e8c87a;
+  --blue:#4f6f9e;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, sans-serif;
+  --disp:'Space Grotesk', system-ui, sans-serif;
+}
+
+/* =========================================================================
+   SCREEN STYLES
+   ========================================================================= */
+@media screen{
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html, body{background:#1a1d28; color:var(--ink); font-family:var(--sans); line-height:1.55;}
+  body{padding:40px 20px 80px;}
+  .page{max-width:clamp(720px, 86vw, 940px); margin:0 auto; background:var(--paper); border-radius:8px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.35);}
+  .actions{max-width:780px; margin:20px auto 0; text-align:center; color:#a8aab3; font-size:13px;}
+  .actions a{color:var(--gold); text-decoration:none; padding:8px 14px; border:1px solid var(--gold); border-radius:6px; margin:0 6px; display:inline-block;}
+  .actions a.solid{background:var(--gold); color:var(--night);}
+  .actions a:hover{background:var(--gold); color:var(--night);}
+}
+
+/* =========================================================================
+   COVER PAGE
+   ========================================================================= */
+.cover{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(217,164,65,.20), transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(125,138,110,.18), transparent 60%),
+    var(--night);
+  color:var(--paper);
+  padding:120px clamp(32px, 6vw, 96px) 80px;
+  position:relative;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.cover .kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:40px;}
+.cover .kicker .bar{width:40px; height:1px; background:var(--gold);}
+.cover .wordmark{display:flex; align-items:baseline; gap:10px; font-family:var(--serif); font-size:clamp(28px, 3.5vw, 42px); color:var(--paper); line-height:1; margin-bottom:8px; flex-wrap:wrap;}
+.cover .wordmark em{color:var(--gold); font-style:italic;}
+.cover .wordmark .num{font-family:var(--disp); font-size:24px; color:var(--gold); font-weight:500;}
+.cover h1{font-family:var(--serif); font-size:clamp(40px, 5.4vw, 64px); line-height:1.05; color:var(--paper); letter-spacing:-.02em; margin-top:60px; max-width:62ch; font-weight:400;}
+.cover h1 em{color:var(--gold-soft); font-style:italic; font-weight:300;}
+.cover .sub{font-family:var(--sans); font-size:18px; line-height:1.6; color:#d3c9b6; max-width:62ch; margin-top:32px;}
+.cover .author{margin-top:auto; padding-top:60px; display:flex; align-items:center; gap:14px;}
+.cover .author .by{font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold);}
+.cover .author .name{font-family:var(--serif); font-size:22px; color:var(--paper); font-style:italic;}
+.cover .meta{margin-top:auto; padding-top:30px; font-family:var(--disp); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#a39c8c;}
+
+/* =========================================================================
+   IMAGES
+   ========================================================================= */
+.cover-img-wrap{
+  margin:48px 0 8px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+.cover-img{
+  display:block; width:100%; height:auto;
+}
+.img-band{
+  margin:36px 0 40px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+.img-band img{
+  display:block; width:100%; height:auto;
+}
+
+/* =========================================================================
+   NORMAL PAGES
+   ========================================================================= */
+section.page-section{padding:96px clamp(32px, 6vw, 96px); background:var(--paper); color:var(--ink);}
+section.dark{background:var(--night); color:var(--paper); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+section.cream{background:var(--dawn2); color:var(--ink); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+
+.part-kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--terra); margin-bottom:36px; font-weight:600;}
+section.dark .part-kicker{color:var(--gold);}
+.part-kicker::after{content:''; flex:0 0 80px; height:1px; background:currentColor; opacity:.5;}
+
+h2{font-family:var(--serif); font-size:42px; line-height:1.1; color:var(--ink); letter-spacing:-.01em; margin-bottom:24px; font-weight:400;}
+section.dark h2{color:var(--paper);}
+h2 em{color:var(--terra); font-style:italic; font-weight:300;}
+section.dark h2 em{color:var(--gold-soft);}
+
+h3{font-family:var(--serif); font-size:22px; line-height:1.3; color:var(--ink-soft); margin-top:36px; margin-bottom:14px; font-weight:500;}
+section.dark h3{color:var(--paper);}
+
+p{font-size:16.5px; line-height:1.75; margin-bottom:18px; max-width:62ch; color:var(--ink);}
+section.dark p{color:#d3c9b6;}
+p.lead{font-size:21px; line-height:1.55; color:var(--ink-soft); font-family:var(--serif); font-weight:300; font-style:italic;}
+section.dark p.lead{color:var(--paper);}
+
+ul.tight, ol.tight{margin:0 0 24px 22px; padding:0; max-width:62ch;}
+ul.tight li, ol.tight li{font-size:16px; line-height:1.7; margin-bottom:10px; color:var(--ink);}
+section.dark ul.tight li, section.dark ol.tight li{color:#d3c9b6;}
+ul.tight li::marker, ol.tight li::marker{color:var(--terra);}
+
+blockquote{margin:32px 0 32px 0; padding:20px 28px; border-left:3px solid var(--gold); font-family:var(--serif); font-size:22px; line-height:1.45; color:var(--ink); font-style:italic; font-weight:300;}
+section.dark blockquote{color:var(--paper);}
+blockquote::before{content:'\201C'; color:var(--gold); margin-right:4px;}
+blockquote::after{content:'\201D'; color:var(--gold); margin-left:4px;}
+
+.grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin:36px 0;}
+.card{background:rgba(255,255,255,.04); border:1px solid rgba(217,164,65,.22); border-radius:8px; padding:28px 22px;}
+section.cream .card, section.page-section .card{background:white; border:1px solid rgba(0,0,0,.06);}
+.card .label{font-family:var(--disp); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600;}
+.card h4{font-family:var(--serif); font-size:18px; line-height:1.3; color:var(--paper); margin-bottom:10px; font-weight:500;}
+section.cream .card h4, section.page-section .card h4{color:var(--ink);}
+.card p{font-size:14px; line-height:1.55; color:#b8b0a0; margin-bottom:0;}
+section.cream .card p, section.page-section .card p{color:var(--ink-soft);}
+
+.pull{font-family:var(--serif); font-size:clamp(32px, 4.6vw, 56px); line-height:1.12; color:var(--paper); font-style:italic; font-weight:300; max-width:62ch; letter-spacing:-.01em; margin:40px 0;}
+section.cream .pull, section.page-section .pull{color:var(--ink);}
+
+.signoff{margin-top:60px; padding-top:30px; border-top:1px solid rgba(217,164,65,.20); font-family:var(--serif); font-size:16px; color:var(--ink); font-style:italic;}
+section.dark .signoff{border-color:rgba(217,164,65,.30); color:var(--paper);}
+.signoff .name{font-style:normal; color:var(--terra); font-weight:500;}
+section.dark .signoff .name{color:var(--gold);}
+
+/* =========================================================================
+   PRINT STYLES — A4, drop everything that only matters on screen
+   ========================================================================= */
+@page{
+  size:A4 portrait;
+  margin:0; /* full-bleed, our sections handle inner padding */
+}
+
+@media print{
+  html, body{background:white;}
+  body{padding:0; margin:0;}
+  .page{max-width:none; border-radius:0; box-shadow:none;}
+  .actions{display:none;}
+
+  /* cover page: full bleed */
+  .cover{page-break-after:always; min-height:auto;}
+
+  /* natural book flow — no forced per-section pages */
+  section.page-section, section.dark, section.cream{
+    min-height:0;
+    box-sizing:border-box;
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+
+  /* avoid breaking inside cards and quote */
+  .card, blockquote, .pull{page-break-inside:avoid;}
+  h2, h3{page-break-after:avoid;}
+
+  /* colour preservation */
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+
+  /* shrink fonts slightly so it fits inside A4 with breathing room */
+  body{font-size:11pt;}
+  h1{font-size:44pt;}
+  h2{font-size:24pt;}
+  h3{font-size:14pt;}
+  p{font-size:11pt; line-height:1.6;}
+  p.lead{font-size:14pt;}
+  blockquote{font-size:14pt;}
+  .pull{font-size:30pt;}
+  .card p{font-size:9.5pt;}
+  .cover h1{font-size:44pt;}
+  /* force a generous horizontal safe area on every section */
+  section.page-section, section.dark, section.cream, .cover{
+    padding-left:64px !important;
+    padding-right:64px !important;
+  }
+  .grid3{grid-template-columns:1fr 1fr 1fr;}
+  .cover .sub{max-width:62ch;}
+  /* images: keep them visible and contained in the print */
+  .cover-img-wrap, .img-band{
+    border-radius:8px;
+    box-shadow:none;
+    margin:28px 0;
+    page-break-inside:avoid;
+  }
+  .cover-img, .img-band img{
+    width:100%; height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class="actions" aria-hidden="true">
+  <a class="solid" href="javascript:window.print()">Save as PDF</a>
+  <a href="meaning-economy.pdf">Download PDF</a>
+  <a href="/engage/">All Free Guides</a>
+  <a href="/">onetoeight.org</a>
+</div>
+<article class="page">
+<section class="cover">
+  <div>
+    <div class="kicker"><span class="bar"></span><span>One-To-Eight · Lead Magnet · The Meaning Economy</span></div>
+    <div class="wordmark">
+      <span>one</span><em>to</em><span>eight</span>
+      <span class="num">128</span>
+    </div>
+  </div>
+
+  <h1>Your future is<br>not just a <em>job</em>.</h1>
+
+  <p class="sub">A practical guide for young people preparing for meaningful work in an AI-shaped world. How to find your pathway and start building it now.</p>
+
+  <div class="cover-img-wrap">
+    <img src="meaning-cover.jpg" alt="A young person with a backpack on a country road at dawn, looking toward a glowing horizon" class="cover-img">
+  </div>
+
+  <div class="author">
+    <span class="by">By</span>
+    <span class="name">Brendan O'Keefe</span>
+  </div>
+  <div class="meta">A 128 Lead Magnet · Supplementary Chapter · 2026</div>
+</section><section class="page-section">
+  <div class="part-kicker">Part 1 · The Change</div>
+<h2>The world of work is <em>changing</em></h2><p>You finish school, apply for your first job, and discover that half the entry-level tasks have already been automated.</p><p>That is not a prediction. That is already happening.</p><p>Data entry, basic customer service, routine bookkeeping, transcription, simple content writing, and parts of financial analysis are already being handled by AI tools. The change is not coming in five years. It is here now.</p><p>But here is the important distinction: AI does not usually eliminate an entire job. It eliminates <strong>parts</strong> of a job. The tasks that are repetitive, rule-based, and do not require human judgement. Those are the first to go.</p><p>The valuable worker is not the one who avoids AI. The valuable worker is the one who knows how to use it.</p><p>The good news is that AI still struggles with basic human tasks, such as understanding what someone actually meant in an email.</p>
+</section><section class="dark">
+  <div class="part-kicker">Part 2 · What Holds</div>
+<h2>What is the <em>meaning</em> economy?</h2><p class="lead">The meaning economy is work built around contribution, trust, judgement, creativity, care and practical value.</p><p>It is not a buzzword. It is a description of what happens when routine tasks are automated and what remains is the work that requires a human being who can think, feel, listen, create and solve problems that matter.</p><blockquote>Meaning is not the same as having an impressive job title. Sometimes meaningful work looks like repairing a roof properly, helping a frightened person feel safe or building a small business that solves a real problem.</blockquote><p>The meaning economy includes:</p><ul class="tight"><li>Community support and care work</li><li>Skilled trades and practical building</li><li>Education, mentoring and teaching</li><li>Health and wellbeing services</li><li>Creative work and content</li><li>Entrepreneurship and small business</li><li>Human-AI collaboration and orchestration</li><li>Work that solves problems people genuinely have</li></ul><p>These are not glamorous industries. They are essential ones. And they are the industries that will need people who can think, adapt and contribute in ways that no algorithm can replicate.</p>
+</section><section class="cream">
+  <div class="part-kicker">Part 3 · The Pathways</div>
+<h2>Four <em>pathways</em> forward</h2><p class="lead">There is no single right pathway. But there are four broad directions that make sense in the new economy. Most people will combine more than one.</p><div class="grid3"><div class="card"><div class="label">Pathway 01</div><h4>Creator and Entrepreneur</h4><p>Build your own path with distribution as the key to success. Create content, products, services or businesses that serve a real audience.</p><p><strong>Key skills:</strong> communication, distribution, digital literacy, audience understanding, persistence, financial basics.</p></div><div class="card"><div class="label">Pathway 02</div><h4>Community and Human Support</h4><p>Make a direct impact supporting those who need it most. Care work, disability support, mental health, education, youth work, community building.</p><p><strong>Key skills:</strong> listening, patience, boundaries, emotional intelligence, practical responsibility, trust.</p></div><div class="card"><div class="label">Pathway 03</div><h4>AI Orchestrator</h4><p>Master AI tools to multiply your impact and stay ahead of automation. Learn to direct AI systems to solve problems, not just chat with them.</p><p><strong>Key skills:</strong> asking good questions, checking results, understanding tools, privacy and safety, workflow design, human judgement.</p></div><div class="card"><div class="label">Pathway 04</div><h4>Skilled Trades and Practical Work</h4><p>Build with your hands in essential trades that AI cannot replace. Electrical, plumbing, construction, mechanics, trades that keep the physical world running.</p><p><strong>Key skills:</strong> reliability, spatial reasoning, safety, problem-solving, physical competence, apprenticeship and continual learning.</p></div></div><p>These pathways overlap. Someone might become a community worker who uses AI tools to help families navigate services. A tradie who runs a digital business on the side. A creator who teaches practical skills. An AI orchestrator who builds tools for disability support workers.</p><p>The point is not to pick one and stay there forever. The point is to start somewhere and learn what fits.</p>
+</section><section class="dark">
+  <div class="part-kicker">Part 4 · The Foundation</div>
+<h2>The skills AI cannot <em>hand you</em></h2><p class="lead">AI can write an email. It cannot sit with a frightened person and make them feel heard. It can analyse data. It cannot walk into a room and know who needs help. It can generate content. It cannot build a friendship.</p><p>The eight essentials are not separate from your career. They are the foundation that makes your career possible.</p><div class="grid3"><div class="card"><div class="label">Essential 01</div><h4>Silence and Listening</h4></div><div class="card"><div class="label">Essential 02</div><h4>Body as Temple</h4></div><div class="card"><div class="label">Essential 03</div><h4>Real-World Skills</h4></div><div class="card"><div class="label">Essential 04</div><h4>Digital Self-Defence</h4></div><div class="card"><div class="label">Essential 05</div><h4>Real Community</h4></div><div class="card"><div class="label">Essential 06</div><h4>Knowledge Without Wi-Fi</h4></div><div class="card"><div class="label">Essential 07</div><h4>Prescribe Nature</h4></div><div class="card"><div class="label">Essential 08</div><h4>Tested Convictions</h4></div></div><p>The new economy will reward people who can use technology without becoming dependent on it. Who can sit quietly and think. Who can listen to another person without checking their phone. Who can fix a tap, cook a meal, write a hard email and show up on time.</p><p>These are not soft skills. These are survival skills.</p>
+</section><section class="cream">
+  <div class="part-kicker">Part 5 · Finding Your Way</div>
+<h2>Find your <em>pathway</em></h2><p class="lead">A career can look excellent from the outside and still be a terrible fit for the person living inside it.</p><p>Before you choose a direction, ask yourself these questions honestly:</p><ul class="tight"><li>What kinds of problems do I naturally notice?</li><li>Do I prefer building, helping, explaining, organising or creating?</li><li>When have people trusted me with responsibility?</li><li>What activity makes time pass quickly?</li><li>Do I prefer working with people, systems, tools, ideas or physical materials?</li><li>What do I want to become better at over the next year?</li><li>What kind of difficulty am I willing to tolerate?</li><li>What would I still care about if nobody praised me for it?</li></ul><p>Do not choose a pathway because it sounds impressive. Choose it because it fits who you are and who you want to become.</p>
+</section><section class="page-section">
+  <div class="part-kicker">Part 6 · The First Steps</div>
+<h2>Start before you feel <em>ready</em></h2><p class="lead">You do not find a pathway by thinking about it forever. You find it by taking small steps and paying attention to what happens.</p><h3>If you are interested in creating</h3><ul class="tight"><li>Publish one small project this week</li><li>Interview someone already doing the work</li><li>Learn basic distribution (how content reaches people)</li><li>Build a simple portfolio of things you have made</li></ul><h3>If you are interested in community support</h3><ul class="tight"><li>Volunteer with a local organisation</li><li>Listen to people already doing the work</li><li>Complete an introductory course in your area of interest</li><li>Practise boundaries and clear communication</li></ul><h3>If you are interested in AI orchestration</h3><ul class="tight"><li>Learn what an AI agent actually is</li><li>Use several AI tools critically, not just one</li><li>Build a small workflow that saves you time</li><li>Keep a record of what worked and what failed</li></ul><h3>If you are interested in trades</h3><ul class="tight"><li>Visit a workplace and watch how people actually work</li><li>Speak to an apprentice about what it is really like</li><li>Learn basic tool and safety skills</li><li>Make or repair something real this month</li></ul><div class="img-band"><img src="meaning-work.jpg" alt="A young person repairing a wooden stool at a workbench, tools laid out, warm light"></div>
+</section><section class="dark">
+  <div class="part-kicker">Part 7 · The Twelve Months</div>
+<h2>Your twelve-month <em>pathway plan</em></h2><p class="lead">You do not need the whole plan today. You need the next honest step.</p><div class="grid3"><div class="card"><div class="label">Month 1</div><h4>Notice</h4><p>Identify your interests, strengths, concerns and possible pathways. Write down what you notice about yourself.</p></div><div class="card"><div class="label">Months 2-3</div><h4>Explore</h4><p>Speak with people, visit workplaces, try small projects. Do not commit to anything yet. Just learn.</p></div><div class="card"><div class="label">Months 4-6</div><h4>Build</h4><p>Create evidence of ability through projects, volunteering, study or practice. Build something you can point to.</p></div><div class="card"><div class="label">Months 7-9</div><h4>Contribute</h4><p>Help someone else, join a team, take on real responsibility. Meaningful work involves other people.</p></div><div class="card"><div class="label">Months 10-12</div><h4>Choose</h4><p>Review what you learned and decide which pathway deserves deeper investment. You are choosing the next step, not a career for life.</p></div></div><h3>A weekly rhythm</h3><ul class="tight"><li><strong>One hour learning</strong> - read, watch, study something related to your pathway</li><li><strong>One practical project</strong> - build, write, fix, create something small</li><li><strong>One conversation</strong> - speak with someone already doing the work</li><li><strong>One reflection</strong> - write down what you learned this week</li><li><strong>One useful contribution</strong> - help someone else with something you know</li></ul>
+</section><section class="cream">
+  <div class="part-kicker">Part 8 · Honest About AI</div>
+<h2>A realistic view of <em>AI</em></h2><p>Here is what is actually true about AI and work:</p><ul class="tight"><li>Some jobs will change significantly</li><li>Some tasks will disappear entirely</li><li>New work will emerge that does not exist yet</li><li>Human judgement will remain important</li><li>AI literacy will become as common as computer literacy</li><li>Nobody can predict every job title of the future</li><li>The goal is not to guess perfectly</li><li>The goal is to become adaptable, useful and grounded</li></ul><blockquote>You do not need to predict the future perfectly. You need to become the kind of person who can keep learning when the future changes.</blockquote><p>The workers who will struggle are not the ones who use AI. They are the ones who never learned to think for themselves. The ones who let the algorithm decide what to watch, what to buy, what to believe and who to become.</p><p>That is the real risk. Not that AI will take your job. That you will hand over your attention, your thinking and your direction without noticing.</p>
+</section><section class="page-section">
+  <div class="part-kicker">Part 9 · The Worksheet</div>
+<h2>Your meaning <em>statement</em></h2><p class="lead">Complete these sentences honestly. There are no wrong answers. This is not a test. It is a conversation with yourself.</p><h3>My pathway reflection</h3><ul class="tight"><li>I care about...</li><li>I am curious about...</li><li>People often ask me for help with...</li><li>I want to get better at...</li><li>The kind of problem I would like to help solve is...</li><li>The people I would like my work to serve are...</li><li>A meaningful working life would allow me to...</li><li>This year, I will begin by...</li></ul><h3>My one-paragraph pathway</h3><p>Complete this in your own words. Do not copy from above. Let it sound like you.</p><blockquote>I am interested in using my strengths in ______________ to help ______________ with ______________. I am going to explore this by ______________ over the next three months.</blockquote>
+</section><section class="dark">
+  <div class="part-kicker">Part 10 · The Bottom Line</div>
+<h2>The <em>bottom line</em></h2><p class="lead">The reason the eight essentials exist is not because young people need another list of things to worry about. You already have enough of those.</p><p>They exist because the future will ask more of you than technical competence. It will ask whether you can pay attention, work with people, care for your body, think for yourself, use technology wisely and keep going when the easy answer stops working.</p><p>The new economy will need people who can do more than complete tasks. It will need people who can notice what matters and make a useful contribution. That is the work of finding your pathway.</p><p class="pull">You do not need the whole plan today. You need the next honest step.</p><p>Do not wait until graduation. Start now. Speak to someone. Build something. Help someone. Learn a skill. Put the phone down long enough to hear your own thoughts.</p><div class="signoff"><h3>Start your <em>pathway</em>.</h3><p>Take the pathway assessment. Choose one small project. Speak with one person already doing the work. Return to the eight essentials. Write your twelve-month plan.</p><div class="author"><span class="by">By</span><span class="name">Brendan O'Keefe</span></div></div>
+</section>
+</article>
+
+</body>
+</html>
