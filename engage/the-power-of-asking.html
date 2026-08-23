@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Power of Asking — A Young Person's Guide to Curiosity and Ideas</title>
+<meta name="description" content="A short guide to curiosity, questioning and generating ideas. How to ask better questions, think clearly and create ideas worth keeping.">
+<link rel="canonical" href="https://onetoeight.org/engage/the-power-of-asking">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://onetoeight.org/engage/the-power-of-asking">
+<meta property="og:title" content="The Power of Asking — A Young Person's Guide to Curiosity and Ideas">
+<meta property="og:description" content="A short guide to curiosity, questioning and generating ideas. How to ask better questions, think clearly and create ideas worth keeping.">
+<meta property="og:image" content="https://onetoeight.org/engage/asking-cover.jpg">
+<meta property="og:site_name" content="one to eight">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Power of Asking — A Young Person's Guide to Curiosity and Ideas">
+<meta name="twitter:description" content="A short guide to curiosity, questioning and generating ideas. How to ask better questions, think clearly and create ideas worth keeping.">
+<meta name="twitter:image" content="https://onetoeight.org/engage/asking-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   BRAND TOKENS — match onetoeight-system (night/dawn editorial)
+   ========================================================================= */
+:root{
+  --night:#0d1220; --night2:#131a2e; --night3:#1a2340;
+  --dawn:#f6efe3; --dawn2:#efe6d6; --paper:#fbf7ee;
+  --ink:#232a3d; --ink-soft:#5a6278;
+  --terra:#c2603e; --terra-deep:#9c4a2e;
+  --sage:#7d8a6e; --sage-deep:#5f6d52;
+  --gold:#d9a441; --gold-soft:#e8c87a;
+  --blue:#4f6f9e;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, sans-serif;
+  --disp:'Space Grotesk', system-ui, sans-serif;
+}
+
+/* =========================================================================
+   SCREEN STYLES
+   ========================================================================= */
+@media screen{
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html, body{background:#1a1d28; color:var(--ink); font-family:var(--sans); line-height:1.55;}
+  body{padding:40px 20px 80px;}
+  .page{max-width:clamp(720px, 86vw, 940px); margin:0 auto; background:var(--paper); border-radius:8px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.35);}
+  .actions{max-width:780px; margin:20px auto 0; text-align:center; color:#a8aab3; font-size:13px;}
+  .actions a{color:var(--gold); text-decoration:none; padding:8px 14px; border:1px solid var(--gold); border-radius:6px; margin:0 6px; display:inline-block;}
+  .actions a.solid{background:var(--gold); color:var(--night);}
+  .actions a:hover{background:var(--gold); color:var(--night);}
+}
+
+/* =========================================================================
+   COVER PAGE
+   ========================================================================= */
+.cover{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(217,164,65,.20), transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(125,138,110,.18), transparent 60%),
+    var(--night);
+  color:var(--paper);
+  padding:120px clamp(32px, 6vw, 96px) 80px;
+  position:relative;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.cover .kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:40px;}
+.cover .kicker .bar{width:40px; height:1px; background:var(--gold);}
+.cover .wordmark{display:flex; align-items:baseline; gap:10px; font-family:var(--serif); font-size:clamp(28px, 3.5vw, 42px); color:var(--paper); line-height:1; margin-bottom:8px; flex-wrap:wrap;}
+.cover .wordmark em{color:var(--gold); font-style:italic;}
+.cover .wordmark .num{font-family:var(--disp); font-size:24px; color:var(--gold); font-weight:500;}
+.cover h1{font-family:var(--serif); font-size:clamp(40px, 5.4vw, 64px); line-height:1.05; color:var(--paper); letter-spacing:-.02em; margin-top:60px; max-width:62ch; font-weight:400;}
+.cover h1 em{color:var(--gold-soft); font-style:italic; font-weight:300;}
+.cover .sub{font-family:var(--sans); font-size:18px; line-height:1.6; color:#d3c9b6; max-width:62ch; margin-top:32px;}
+.cover .author{margin-top:auto; padding-top:60px; display:flex; align-items:center; gap:14px;}
+.cover .author .by{font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold);}
+.cover .author .name{font-family:var(--serif); font-size:22px; color:var(--paper); font-style:italic;}
+.cover .meta{margin-top:auto; padding-top:30px; font-family:var(--disp); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#a39c8c;}
+
+/* =========================================================================
+   IMAGES
+   ========================================================================= */
+.cover-img-wrap{
+  margin:48px 0 8px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+.cover-img{
+  display:block; width:100%; height:auto;
+}
+.img-band{
+  margin:36px 0 40px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+.img-band img{
+  display:block; width:100%; height:auto;
+}
+
+/* =========================================================================
+   NORMAL PAGES
+   ========================================================================= */
+section.page-section{padding:96px clamp(32px, 6vw, 96px); background:var(--paper); color:var(--ink);}
+section.dark{background:var(--night); color:var(--paper); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+section.cream{background:var(--dawn2); color:var(--ink); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+
+.part-kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--terra); margin-bottom:36px; font-weight:600;}
+section.dark .part-kicker{color:var(--gold);}
+.part-kicker::after{content:''; flex:0 0 80px; height:1px; background:currentColor; opacity:.5;}
+
+h2{font-family:var(--serif); font-size:42px; line-height:1.1; color:var(--ink); letter-spacing:-.01em; margin-bottom:24px; font-weight:400;}
+section.dark h2{color:var(--paper);}
+h2 em{color:var(--terra); font-style:italic; font-weight:300;}
+section.dark h2 em{color:var(--gold-soft);}
+
+h3{font-family:var(--serif); font-size:22px; line-height:1.3; color:var(--ink-soft); margin-top:36px; margin-bottom:14px; font-weight:500;}
+section.dark h3{color:var(--paper);}
+
+p{font-size:16.5px; line-height:1.75; margin-bottom:18px; max-width:62ch; color:var(--ink);}
+section.dark p{color:#d3c9b6;}
+p.lead{font-size:21px; line-height:1.55; color:var(--ink-soft); font-family:var(--serif); font-weight:300; font-style:italic;}
+section.dark p.lead{color:var(--paper);}
+
+ul.tight, ol.tight{margin:0 0 24px 22px; padding:0; max-width:62ch;}
+ul.tight li, ol.tight li{font-size:16px; line-height:1.7; margin-bottom:10px; color:var(--ink);}
+section.dark ul.tight li, section.dark ol.tight li{color:#d3c9b6;}
+ul.tight li::marker, ol.tight li::marker{color:var(--terra);}
+
+blockquote{margin:32px 0 32px 0; padding:20px 28px; border-left:3px solid var(--gold); font-family:var(--serif); font-size:22px; line-height:1.45; color:var(--ink); font-style:italic; font-weight:300;}
+section.dark blockquote{color:var(--paper);}
+blockquote::before{content:'\201C'; color:var(--gold); margin-right:4px;}
+blockquote::after{content:'\201D'; color:var(--gold); margin-left:4px;}
+
+.grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin:36px 0;}
+.card{background:rgba(255,255,255,.04); border:1px solid rgba(217,164,65,.22); border-radius:8px; padding:28px 22px;}
+section.cream .card, section.page-section .card{background:white; border:1px solid rgba(0,0,0,.06);}
+.card .label{font-family:var(--disp); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600;}
+.card h4{font-family:var(--serif); font-size:18px; line-height:1.3; color:var(--paper); margin-bottom:10px; font-weight:500;}
+section.cream .card h4, section.page-section .card h4{color:var(--ink);}
+.card p{font-size:14px; line-height:1.55; color:#b8b0a0; margin-bottom:0;}
+section.cream .card p, section.page-section .card p{color:var(--ink-soft);}
+
+.pull{font-family:var(--serif); font-size:clamp(32px, 4.6vw, 56px); line-height:1.12; color:var(--paper); font-style:italic; font-weight:300; max-width:62ch; letter-spacing:-.01em; margin:40px 0;}
+section.cream .pull, section.page-section .pull{color:var(--ink);}
+
+.signoff{margin-top:60px; padding-top:30px; border-top:1px solid rgba(217,164,65,.20); font-family:var(--serif); font-size:16px; color:var(--ink); font-style:italic;}
+section.dark .signoff{border-color:rgba(217,164,65,.30); color:var(--paper);}
+.signoff .name{font-style:normal; color:var(--terra); font-weight:500;}
+section.dark .signoff .name{color:var(--gold);}
+
+/* =========================================================================
+   PRINT STYLES — A4, drop everything that only matters on screen
+   ========================================================================= */
+@page{
+  size:A4 portrait;
+  margin:0; /* full-bleed, our sections handle inner padding */
+}
+
+@media print{
+  html, body{background:white;}
+  body{padding:0; margin:0;}
+  .page{max-width:none; border-radius:0; box-shadow:none;}
+  .actions{display:none;}
+
+  /* cover page: full bleed */
+  .cover{page-break-after:always; min-height:auto;}
+
+  /* natural book flow — no forced per-section pages */
+  section.page-section, section.dark, section.cream{
+    min-height:0;
+    box-sizing:border-box;
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+
+  /* avoid breaking inside cards and quote */
+  .card, blockquote, .pull{page-break-inside:avoid;}
+  h2, h3{page-break-after:avoid;}
+
+  /* colour preservation */
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+
+  /* shrink fonts slightly so it fits inside A4 with breathing room */
+  body{font-size:11pt;}
+  h1{font-size:44pt;}
+  h2{font-size:24pt;}
+  h3{font-size:14pt;}
+  p{font-size:11pt; line-height:1.6;}
+  p.lead{font-size:14pt;}
+  blockquote{font-size:14pt;}
+  .pull{font-size:30pt;}
+  .card p{font-size:9.5pt;}
+  .cover h1{font-size:44pt;}
+  /* force a generous horizontal safe area on every section */
+  section.page-section, section.dark, section.cream, .cover{
+    padding-left:64px !important;
+    padding-right:64px !important;
+  }
+  .grid3{grid-template-columns:1fr 1fr 1fr;}
+  .cover .sub{max-width:62ch;}
+  /* images: keep them visible and contained in the print */
+  .cover-img-wrap, .img-band{
+    border-radius:8px;
+    box-shadow:none;
+    margin:28px 0;
+    page-break-inside:avoid;
+  }
+  .cover-img, .img-band img{
+    width:100%; height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class="actions" aria-hidden="true">
+  <a class="solid" href="javascript:window.print()">Save as PDF</a>
+  <a href="the-power-of-asking.pdf">Download PDF</a>
+  <a href="/engage/">All Free Guides</a>
+  <a href="/">onetoeight.org</a>
+</div>
+<article class="page">
+<section class="cover">
+  <div>
+    <div class="kicker"><span class="bar"></span><span>One-To-Eight · Lead Magnet · The Power of Asking</span></div>
+    <div class="wordmark">
+      <span>one</span><em>to</em><span>eight</span>
+      <span class="num">128</span>
+    </div>
+  </div>
+
+  <h1>Curiosity is a <em>skill</em>,<br>not a trait.</h1>
+
+  <p class="sub">A short guide to curiosity, questioning and generating ideas. How to ask better questions, think clearly and create ideas worth keeping.</p>
+
+  <div class="cover-img-wrap">
+    <img src="asking-cover.jpg" alt="A young person at a wooden desk by a window at dawn, chin on hand, looking thoughtfully at a soft morning sky" class="cover-img">
+  </div>
+
+  <div class="author">
+    <span class="by">By</span>
+    <span class="name">Brendan O'Keefe</span>
+  </div>
+  <div class="meta">A 128 Lead Magnet · Supplementary Chapter · 2026</div>
+</section><section class="page-section">
+  <div class="part-kicker">Part 1 · The Problem</div>
+<h2>The problem with <em>brainstorming</em></h2><p>Picture the scene. A group project. Someone says, "Let's brainstorm ideas." Everybody starts shouting suggestions. The loudest voice wins. The good idea gets lost somewhere in the middle. And twenty minutes later, the group settles on the first idea that nobody actively hated.</p><p>That is not a decision. That is a retreat.</p><p>Here is the uncomfortable truth: the research on brainstorming is clear. Individuals working alone often produce more ideas, and better ideas, than the same people working in a group.</p><p>This is not an argument against teamwork. Teamwork is essential. This is an argument for doing the thinking right.</p><p>Group brainstorming has four quiet killers:</p><ul class="tight"><li><strong>Production blocking.</strong> Only one person can speak at a time. While you are waiting for your turn, your idea evaporates.</li><li><strong>Evaluation apprehension.</strong> Nobody wants to look silly in front of the group. So nobody says the idea that might be brilliant.</li><li><strong>Social loafing.</strong> Someone always coasts while the others do the work.</li><li><strong>Social matching.</strong> Everyone unconsciously slows down to match the least productive person in the room.</li></ul><p>The research was done by two researchers named Diehl and Stroebe in the late 1980s. They kept finding the same result: real groups produce fewer ideas than the same number of people working alone and combining their lists afterwards.</p><p>Think about that. The group looks productive. Everyone is talking. It feels like progress. And yet the thinking is thinner than it would have been if everyone had sat quietly and worked alone first.</p>
+</section><section class="dark">
+  <div class="part-kicker">Part 2 · The Question</div>
+<h2>Why the question matters more<br>than the <em>answer</em></h2><p class="lead">Every answer starts from a question. The question you ask determines the answer you can find.</p><p>Ask a weak question and you get a weak answer, even if you try hard. Ask a good question and the answer becomes almost inevitable.</p><p>Tim Hurson, who wrote a book called <em>Think Better</em>, built his whole method around this idea. The quality of your thinking is determined by the quality of your questions. Change the question and you change everything downstream of it.</p><p class="pull">You cannot outwork a bad question.</p><p>Most people grab the first question that comes to mind and then work very hard in the wrong direction. They spend hours answering a question they never actually chose.</p><p>The skill is not answering faster. The skill is asking better.</p>
+</section><section class="cream">
+  <div class="part-kicker">Part 3 · The Skill</div>
+<h2>Curiosity as a <em>skill</em></h2><p class="lead">Curiosity is usually treated as a personality trait. You either have it or you do not. That is not quite right. Curiosity behaves much more like a skill. It can be practised. It can be strengthened. It can be directed.</p><p>There is a well-known idea called the curiosity gap. It comes from a researcher named George Loewenstein. The basic insight is this: we get curious when we notice the gap between what we know and what we want to know.</p><p>You do not need to make yourself a curious person. You need to notice the gaps.</p><p>There is also a difference between shallow curiosity and deep curiosity.</p><ul class="tight"><li><strong>Shallow curiosity</strong> asks <em>what</em>. What is that? What happened? What are they doing?</li><li><strong>Deep curiosity</strong> asks <em>why</em>, <em>how</em>, <em>what if</em> and <em>what else</em>. Why does that work? How could it be different? What if the opposite were true? What else could this be?</li></ul><p>Shallow curiosity is satisfied quickly. Deep curiosity keeps going.</p><p>And here is a quiet connection to the first essential of one to eight. You cannot wonder properly if you are never quiet. Curiosity needs space. If every gap in your day is filled with a screen, the gaps never get noticed.</p>
+</section><section class="page-section">
+  <div class="part-kicker">Part 4 · On Your Own</div>
+<h2>Generating ideas <em>by yourself</em></h2><p class="lead">Some of the best thinking you will ever do will be done alone, on paper, with nobody watching.</p><h3>Free writing</h3><p>Set a timer for ten minutes. Write without stopping. Do not edit. Do not judge. Do not worry about spelling or sense. The goal is to get the obvious thoughts out of the way so the interesting ones can surface.</p><h3>Mind mapping</h3><p>Write one idea in the middle of a page. Draw branches out from it. Let each branch grow its own branches. You are not organising thoughts. You are letting them connect.</p><h3>Word association</h3><p>Start with one word. Write the next word it pulls out of you. Then the next. Do not think. Let the chain grow.</p><h3>The question list</h3><p>Before you try to answer anything, write down twenty questions about the thing. Do not answer them. Just collect them. The questions themselves will change how you see the problem.</p><h3>The awful idea</h3><p>Deliberately generate terrible ideas first. The worst possible idea. The idea that would get you laughed out of the room. This loosens the brain. Once you have written down the terrible ideas, the good ones feel easier to say.</p><h3>SCAMPER</h3><div class="grid3"><div class="card"><div class="label">S</div><h4>Substitute</h4></div><div class="card"><div class="label">C</div><h4>Combine</h4></div><div class="card"><div class="label">A</div><h4>Adapt</h4></div><div class="card"><div class="label">M</div><h4>Modify</h4></div><div class="card"><div class="label">P</div><h4>Put to another use</h4></div><div class="card"><div class="label">E</div><h4>Eliminate</h4></div><div class="card"><div class="label">R</div><h4>Reverse</h4></div><div class="card"><div class="label">?</div><h4>What else?</h4></div></div><p>Take any idea and run it through SCAMPER. What could you substitute? What could you combine? What would happen if you reversed it? Each question is a door into a different version of the idea.</p><h3>Stepping away</h3><p>The best ideas often arrive when you stop trying. When you walk, when you shower, when you are doing something else entirely. The brain keeps working in the background. This is not magic. It is what happens when the conscious mind stops blocking.</p><p>The discipline is to have paper nearby when the idea arrives.</p><blockquote>Ideas are not found by waiting for lightning. They are found by giving the brain material to work with.</blockquote>
+</section><section class="dark">
+  <div class="part-kicker">Part 5 · The First Idea</div>
+<h2>The first idea <em>trap</em></h2><p class="lead">The first idea is rarely the best idea.</p><p>It is usually the most obvious, the most familiar and the most socially acceptable. It is the idea everyone else would have had. It is the idea that requires no thinking.</p><p>Great ideas are often second, third or seventh.</p><p>The fix is not to reject the first idea. The first idea can be fine. The fix is to refuse to stop there.</p><p class="pull">A simple discipline: generate at least ten ideas before you choose one.</p><p>This is not a rule that came from nowhere. Research on ideation keeps finding the same pattern. The early ideas in a session are the obvious ones. The good ideas tend to arrive later, once the brain has cleared out the familiar answers.</p><p>Quantity creates quality. You have to get through the obvious ideas to reach the interesting ones.</p>
+</section><section class="cream">
+  <div class="part-kicker">Part 6 · Together</div>
+<h2>Generating ideas <em>with other people</em></h2><p class="lead">Groups are good at many things. Generating raw ideas in a shouting match is not one of them.</p><p>The fix is simple: think first, then talk.</p><p>It is called brainwriting, and it is the plain English version of something researchers call the nominal group technique.</p><ol class="tight"><li>Everyone sits quietly and writes down their own ideas. No talking.</li><li>After five or ten minutes, the ideas are shared, one at a time, around the circle.</li><li>Everyone writes down new ideas inspired by what they hear.</li><li>The group discusses the ideas in rounds, without judging during generation.</li><li>Someone collects everything. The best ideas get tested.</li></ol><h3>Why it works</h3><ul class="tight"><li>It removes production blocking. Nobody is waiting for a turn. Everyone is writing.</li><li>It reduces evaluation apprehension. Nobody is watching you think.</li><li>It stops social loafing. Everybody contributes before the talking starts.</li></ul><h3>Rules for group ideation</h3><ul class="tight"><li>No judging during generation</li><li>Write everything down</li><li>Build on each other's ideas</li><li>Take silence seriously as thinking time</li><li>Someone facilitates and protects the process</li></ul><blockquote>A good group session is not a competition to be heard. It is a way to collect thinking.</blockquote>
+</section><section class="page-section">
+  <div class="part-kicker">Part 7 · With AI</div>
+<h2>Getting ideas with the help of <em>AI</em></h2><p class="lead">Here is a tool your grandparents never had. A thinking partner that never gets tired, never gets embarrassed, never judges your first draft, and is happy to produce fifty ideas before breakfast.</p><p>AI will not think for you. But it will think <em>with</em> you, and it is remarkably good at pushing past the obvious if you ask it to.</p><h3>AI gives you what you ask for</h3><p>The same rule applies to AI as to everything else in this chapter: the question determines the answer.</p><p>Ask for obvious ideas and you will get obvious ideas. Ask it to push the boundaries and it will push them. The quality of what comes back depends almost entirely on the quality of what you send in.</p><h3>Ways to push AI past the obvious</h3><ul class="tight"><li><strong>Ask for quantity first.</strong> "Give me fifty ideas for this." The first ten will be average. The ideas get stranger and more interesting the further down the list you go.</li><li><strong>Ask for the wild versions.</strong> "Now give me ten ideas that would never survive a committee meeting." AI is very good at being uncensored when you give it permission.</li><li><strong>Ask what it would never suggest.</strong> "What ideas would you normally hold back?" The opposite framing pulls out ideas you would never have thought to request.</li><li><strong>Ask for combinations.</strong> "Combine this idea with that unrelated concept." Some of the best ideas come from mashing two things that have never met.</li><li><strong>Ask from another field.</strong> "How would a chef solve this problem? A musician? A gardener? A pilot?" Pulling ideas across domains is one of the oldest creativity tricks, and AI is fluent in every domain at once.</li><li><strong>Ask it to argue against its own ideas.</strong> "Which of these would fail, and why?" Stress-testing is part of generating.</li><li><strong>Iterate on the rubbish.</strong> Take its worst idea and ask how to make it good. Take its best idea and ask how to make it better. The second pass is often where the gold is.</li></ul><div class="img-band"><img src="asking-walk.jpg" alt="A young person walking a coastal path at dawn, no phone, looking at the sea and sky"></div><h3>The boundary-pushing games</h3><ul class="tight"><li><strong>The constraints game.</strong> Add a random constraint on purpose. What would this look like if it had to be done in an hour? With no money? With no screen?</li><li><strong>The scale game.</strong> Make it tiny. Then make it enormous. The same idea at different scales is often several different ideas.</li><li><strong>The audience game.</strong> Design for a completely different person. What would this look like for a five year old? For a ninety year old?</li><li><strong>The time game.</strong> What would this look like in 1920? What would it look like in 2120?</li><li><strong>The reversal game.</strong> What is the opposite of the obvious answer? What happens if we drop the assumption everyone is making?</li></ul><p>These games work on your own too. AI just makes them faster, because it will happily play all of them at once.</p><h3>The honest warning</h3><p>AI is a mirror of everything that has already been written. Its default ideas are the average of the internet. That makes it a brilliant starting point and a terrible destination.</p><ul class="tight"><li><strong>Think first, then ask.</strong> If you always ask AI before you think, you never learn to think. The sequence matters. Generate your own ideas first, then use AI to push further.</li><li><strong>Your judgement is the part that counts.</strong> AI can produce the strange idea. Only you can recognise which strange idea matters, and decide to pursue it.</li><li><strong>Never let AI choose for you.</strong> Ask it to give you more to choose from. The choosing is yours.</li></ul><blockquote>AI is brilliant at producing the tenth idea. It is terrible at knowing which idea matters.</blockquote><h3>Prompts worth keeping</h3><ul class="tight"><li>"Give me thirty ideas for this. Then pick the five weirdest and develop them."</li><li>"What would an expert in a completely different field suggest?"</li><li>"What am I not seeing?"</li><li>"Break this idea in the most interesting way possible."</li><li>"What is the assumption everyone is making here, and what happens if we drop it?"</li></ul><p>Notice something. Every one of those prompts is a better question. The tool changes, the skill does not.</p>
+</section><section class="dark">
+  <div class="part-kicker">Part 8 · Six Hats</div>
+<h2>Six Thinking Hats, in plain <em>English</em></h2><p class="lead">Edward de Bono spent his life studying how people think. One of his best-known tools is the Six Thinking Hats. The idea is simple: everyone in the room thinks in the same direction at the same time, one direction at a time.</p><p>When everyone thinks in the same direction together, the thinking gets deeper instead of more defensive.</p><div class="grid3"><div class="card"><div class="label">White Hat</div><h4>The Facts</h4><p>Just the facts. What do we know? What do we need to find out? No opinions, no feelings.</p></div><div class="card"><div class="label">Red Hat</div><h4>Feelings</h4><p>Feelings and intuition. How do we feel about this? No justification needed. Feelings are allowed to be feelings.</p></div><div class="card"><div class="label">Black Hat</div><h4>The Caution</h4><p>What could go wrong? The caution hat. This is where the risks get named honestly.</p></div><div class="card"><div class="label">Yellow Hat</div><h4>The Optimism</h4><p>What could go well? The optimism hat. What are the benefits? What is the value?</p></div><div class="card"><div class="label">Green Hat</div><h4>The New</h4><p>New ideas and possibilities. The creativity hat. What if? What else? What could be?</p></div><div class="card"><div class="label">Blue Hat</div><h4>The Process</h4><p>Running the process. What hat are we wearing now? What comes next? The control hat.</p></div></div><p>Example. A group of students deciding what to do for a school project. They start with the white hat: what are the facts, what are the requirements. Then red: how do we actually feel about these options. Then black: what could go wrong with each. Then yellow: what would be worth it. Then green: what could we do that nobody has suggested yet. Then blue: which ideas deserve to be tested.</p><p>Nobody is attacking anybody's idea. Every hat is a direction, not a debate. The thinking happens in parallel instead of in opposition.</p><p>De Bono also gave us lateral thinking, which simply means solving a problem by approaching it from an unexpected angle instead of pushing straight at it. His favourite tool for this was a provocation: deliberately introducing a wild idea to break the pattern. Sometimes the wild idea is useless. Sometimes it unlocks the real one.</p>
+</section><section class="cream">
+  <div class="part-kicker">Part 9 · Questions That Move</div>
+<h2>Questions that lead <em>somewhere</em></h2><p class="lead">Not all questions are equal. Some questions close the door. Some questions open it.</p><p><strong>Diagnostic questions</strong> ask for an explanation. Why is this happening? Who is to blame? What went wrong? These questions are useful, but they can become a trap. They produce analysis. Analysis is not the same as progress.</p><p><strong>Generative questions</strong> produce movement. What could I try? What would I do differently? What is one small step? These questions produce action.</p><p>A good question does not just ask for an answer. It makes something happen.</p><blockquote>The dead questions are not wrong. They are just where thinking stalls. The live questions are where thinking starts moving.</blockquote>
+</section><section class="page-section">
+  <div class="part-kicker">Part 10 · The Practice</div>
+<h2>Your question <em>practice</em></h2><p class="lead">Curiosity and questioning are skills. Skills need practice. Here is a rhythm that takes almost no time and changes how you think.</p><ul class="tight"><li><strong>One question a day.</strong> Write down one good question. No pressure to answer it. Just collect it.</li><li><strong>One deep question a week.</strong> A real question about something you care about. Why does this matter to me? What would I do if I were not afraid?</li><li><strong>One idea session a week.</strong> Ten minutes of solo ideation. Pick a problem, write down ten ideas, do not judge any of them.</li><li><strong>One group session a month.</strong> Brainwriting with friends or family. Think first, then talk.</li><li><strong>One curiosity walk.</strong> No phone, no music. Just walk and notice. Let the questions surface.</li></ul><h3>My question journal</h3><ul class="tight"><li>Today's question</li><li>What I noticed when I sat with it</li><li>One idea I generated this week</li><li>One idea I did not judge too quickly</li><li>The question I keep avoiding</li><li>What is the smallest possible step I could take?</li><li>What would I do if I were not afraid of looking silly?</li><li>What did I learn this week about how I think?</li></ul>
+</section><section class="dark">
+  <div class="part-kicker">Part 11 · The Bottom Line</div>
+<h2>The <em>bottom line</em></h2><p class="lead">Every invention, every story, every discovery, every good decision began with a question.</p><p>Questioning is not weakness. It is the engine of learning. The people who move things forward are rarely the ones who know everything. They are the ones who ask the question nobody else thought to ask.</p><p>Curiosity is not something you lose as you grow up. It is something you practise, or something you let rust.</p><p>The eight essentials give you a foundation. Silence teaches you to notice. Skills teach you to build. Community teaches you to listen. Knowledge without Wi-Fi teaches you to think for yourself. And questions give you direction.</p><blockquote><strong>A note on the sources.</strong> The ideas in this chapter come from a long line of people who studied thinking: Alex Osborn, who invented brainstorming in 1953 and wrote its rules; Edward de Bono, who gave us lateral thinking and the Six Thinking Hats; Tim Hurson, who argued that questions shape thinking; George Loewenstein, who explained the curiosity gap; and the researchers Diehl and Stroebe, who showed that groups underperform when they shout instead of write. If you want to go deeper, start with Hurson's <em>Think Better</em> and de Bono's <em>Six Thinking Hats</em>.</blockquote><p class="pull">Ask a better question.</p><div class="signoff"><h3>Ask a better <em>question</em>.</h3><p>Start your question practice today. One question a day. One idea session a week. One curiosity walk. The next great idea in your life is waiting for the right question.</p><div class="author"><span class="by">By</span><span class="name">Brendan O'Keefe</span></div></div>
+</section>
+</article>
+
+</body>
+</html>
