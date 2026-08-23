@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Body as a Temple — A One-To-Eight Guide</title>
+<meta name="description" content="You cannot out-think an exhausted body. The physical side of digital self-defence: sleep, movement, food, dopamine and the body you run your life on. Clear-eyed, practical, hopeful — for young people and the adults who love them.">
+<link rel="canonical" href="https://onetoeight.org/engage/your-body-as-a-temple">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://onetoeight.org/engage/your-body-as-a-temple">
+<meta property="og:title" content="Your Body as a Temple — A One-To-Eight Guide">
+<meta property="og:description" content="The physical side of digital self-defence: sleep, movement, food, dopamine and the body you run your life on. For young people and the adults who love them.">
+<meta property="og:image" content="https://onetoeight.org/engage/body-cover.jpg">
+<meta property="og:site_name" content="one to eight">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your Body as a Temple — A One-To-Eight Guide">
+<meta name="twitter:description" content="The physical side of digital self-defence: sleep, movement, food, dopamine and the body you run your life on. For young people and the adults who love them.">
+<meta name="twitter:image" content="https://onetoeight.org/engage/body-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   BRAND TOKENS — match onetoeight-system (night/dawn editorial)
+   ========================================================================= */
+:root{
+  --night:#0d1220; --night2:#131a2e; --night3:#1a2340;
+  --dawn:#f6efe3; --dawn2:#efe6d6; --paper:#fbf7ee;
+  --ink:#232a3d; --ink-soft:#5a6278;
+  --terra:#c2603e; --terra-deep:#9c4a2e;
+  --sage:#7d8a6e; --sage-deep:#5f6d52;
+  --gold:#d9a441; --gold-soft:#e8c87a;
+  --blue:#4f6f9e;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, sans-serif;
+  --disp:'Space Grotesk', system-ui, sans-serif;
+}
+
+/* =========================================================================
+   SCREEN STYLES
+   ========================================================================= */
+@media screen{
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html, body{background:#1a1d28; color:var(--ink); font-family:var(--sans); line-height:1.55;}
+  body{padding:40px 20px 80px;}
+  .page{max-width:clamp(720px, 86vw, 940px); margin:0 auto; background:var(--paper); border-radius:8px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.35);}
+  .actions{max-width:780px; margin:20px auto 0; text-align:center; color:#a8aab3; font-size:13px;}
+  .actions a{color:var(--gold); text-decoration:none; padding:8px 14px; border:1px solid var(--gold); border-radius:6px; margin:0 6px; display:inline-block;}
+  .actions a.solid{background:var(--gold); color:var(--night);}
+  .actions a:hover{background:var(--gold); color:var(--night);}
+}
+
+/* =========================================================================
+   COVER PAGE
+   ========================================================================= */
+.cover{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(217,164,65,.20), transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(79,111,158,.22), transparent 60%),
+    var(--night);
+  color:var(--paper);
+  padding:120px clamp(32px, 6vw, 96px) 80px;
+  position:relative;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.cover .kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:40px;}
+.cover .kicker .bar{width:40px; height:1px; background:var(--gold);}
+.cover .wordmark{display:flex; align-items:baseline; gap:10px; font-family:var(--serif); font-size:clamp(28px, 3.5vw, 42px); color:var(--paper); line-height:1; margin-bottom:8px; flex-wrap:wrap;}
+.cover .wordmark em{color:var(--gold); font-style:italic;}
+.cover .wordmark .num{font-family:var(--disp); font-size:24px; color:var(--gold); font-weight:500;}
+.cover h1{font-family:var(--serif); font-size:clamp(40px, 5.4vw, 64px); line-height:1.05; color:var(--paper); letter-spacing:-.02em; margin-top:60px; max-width:62ch; font-weight:400;}
+.cover h1 em{color:var(--gold-soft); font-style:italic; font-weight:300;}
+.cover .sub{font-family:var(--sans); font-size:18px; line-height:1.6; color:#d3c9b6; max-width:62ch; margin-top:32px;}
+.cover .author{margin-top:auto; padding-top:60px; display:flex; align-items:center; gap:14px;}
+.cover .author .by{font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold);}
+.cover .author .name{font-family:var(--serif); font-size:22px; color:var(--paper); font-style:italic;}
+.cover .meta{margin-top:auto; padding-top:30px; font-family:var(--disp); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#a39c8c;}
+
+/* =========================================================================
+   IMAGES
+   ========================================================================= */
+.cover-img-wrap{
+  margin:48px 0 8px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+.cover-img{
+  display:block; width:100%; height:auto;
+}
+.img-band{
+  margin:36px 0 40px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+.img-band img{
+  display:block; width:100%; height:auto;
+}
+
+/* =========================================================================
+   NORMAL PAGES
+   ========================================================================= */
+section.page-section{padding:96px clamp(32px, 6vw, 96px); background:var(--paper); color:var(--ink);}
+section.dark{background:var(--night); color:var(--paper); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+section.cream{background:var(--dawn2); color:var(--ink); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+
+.part-kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--terra); margin-bottom:36px; font-weight:600;}
+section.dark .part-kicker{color:var(--gold);}
+.part-kicker::after{content:''; flex:0 0 80px; height:1px; background:currentColor; opacity:.5;}
+
+h2{font-family:var(--serif); font-size:42px; line-height:1.1; color:var(--ink); letter-spacing:-.01em; margin-bottom:24px; font-weight:400;}
+section.dark h2{color:var(--paper);}
+h2 em{color:var(--terra); font-style:italic; font-weight:300;}
+section.dark h2 em{color:var(--gold-soft);}
+
+h3{font-family:var(--serif); font-size:22px; line-height:1.3; color:var(--ink-soft); margin-top:36px; margin-bottom:14px; font-weight:500;}
+section.dark h3{color:var(--paper);}
+
+p{font-size:16.5px; line-height:1.75; margin-bottom:18px; max-width:62ch; color:var(--ink);}
+section.dark p{color:#d3c9b6;}
+p.lead{font-size:21px; line-height:1.55; color:var(--ink-soft); font-family:var(--serif); font-weight:300; font-style:italic;}
+section.dark p.lead{color:var(--paper);}
+
+ul.tight, ol.tight{margin:0 0 24px 22px; padding:0; max-width:62ch;}
+ul.tight li, ol.tight li{font-size:16px; line-height:1.7; margin-bottom:10px; color:var(--ink);}
+section.dark ul.tight li, section.dark ol.tight li{color:#d3c9b6;}
+ul.tight li::marker, ol.tight li::marker{color:var(--terra);}
+
+blockquote{margin:32px 0 32px 0; padding:20px 28px; border-left:3px solid var(--gold); font-family:var(--serif); font-size:22px; line-height:1.45; color:var(--ink); font-style:italic; font-weight:300;}
+section.dark blockquote{color:var(--paper);}
+blockquote::before{content:'\201C'; color:var(--gold); margin-right:4px;}
+blockquote::after{content:'\201D'; color:var(--gold); margin-left:4px;}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:36px 0;}
+.grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin:36px 0;}
+@media (max-width:700px){ .grid2, .grid3{grid-template-columns:1fr;} }
+.card{background:rgba(255,255,255,.04); border:1px solid rgba(217,164,65,.22); border-radius:8px; padding:28px 22px;}
+section.cream .card, section.page-section .card{background:white; border:1px solid rgba(0,0,0,.06);}
+.card .label{font-family:var(--disp); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600;}
+.card h4{font-family:var(--serif); font-size:18px; line-height:1.3; color:var(--paper); margin-bottom:10px; font-weight:500;}
+section.cream .card h4, section.page-section .card h4{color:var(--ink);}
+.card p{font-size:14px; line-height:1.55; color:#b8b0a0; margin-bottom:0;}
+section.cream .card p, section.page-section .card p{color:var(--ink-soft);}
+
+/* contrast / compare table */
+.compare{width:100%; border-collapse:collapse; margin:36px 0; font-size:15px;}
+.compare th{font-family:var(--disp); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); text-align:left; padding:14px 16px; border-bottom:1px solid rgba(217,164,65,.35); font-weight:600;}
+.compare td{padding:16px; border-bottom:1px solid rgba(0,0,0,.08); vertical-align:top; line-height:1.6;}
+section.dark .compare td{border-color:rgba(217,164,65,.16); color:#d3c9b6;}
+.compare td.dim{font-family:var(--disp); letter-spacing:.04em; color:var(--ink-soft); width:24%;}
+section.dark .compare td.dim{color:#a39c8c;}
+.compare td b, .compare td strong{color:var(--terra); font-weight:600;}
+section.dark .compare td strong{color:var(--gold-soft);}
+.compare td.slash{width:1%; white-space:nowrap; color:var(--gold); text-align:center; font-family:var(--serif); font-size:22px;}
+
+.pull{font-family:var(--serif); font-size:clamp(32px, 4.6vw, 56px); line-height:1.12; color:var(--paper); font-style:italic; font-weight:300; max-width:62ch; letter-spacing:-.01em; margin:40px 0;}
+section.cream .pull, section.page-section .pull{color:var(--ink);}
+
+.signoff{margin-top:60px; padding-top:30px; border-top:1px solid rgba(217,164,65,.20); font-family:var(--serif); font-size:16px; color:var(--ink); font-style:italic;}
+section.dark .signoff{border-color:rgba(217,164,65,.30); color:var(--paper);}
+.signoff .name{font-style:normal; color:var(--terra); font-weight:500;}
+section.dark .signoff .name{color:var(--gold);}
+
+/* =========================================================================
+   PRINT STYLES — A4, drop everything that only matters on screen
+   ========================================================================= */
+@page{
+  size:A4 portrait;
+  margin:0; /* full-bleed, our sections handle inner padding */
+}
+
+@media print{
+  html, body{background:white;}
+  body{padding:0; margin:0;}
+  .page{max-width:none; border-radius:0; box-shadow:none;}
+  .actions{display:none;}
+  .cover{page-break-after:always; min-height:auto;}
+  section.page-section, section.dark, section.cream{
+    min-height:0;
+    box-sizing:border-box;
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+  .card, blockquote, .pull{page-break-inside:avoid;}
+  h2, h3{page-break-after:avoid;}
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  body{font-size:11pt;}
+  h1{font-size:44pt;}
+  h2{font-size:24pt;}
+  h3{font-size:14pt;}
+  p{font-size:11pt; line-height:1.6;}
+  p.lead{font-size:14pt;}
+  blockquote{font-size:14pt;}
+  .pull{font-size:30pt;}
+  .card p{font-size:9.5pt;}
+  .cover h1{font-size:44pt;}
+  section.page-section, section.dark, section.cream, .cover{
+    padding-left:64px !important;
+    padding-right:64px !important;
+  }
+  .grid2{grid-template-columns:1fr 1fr;}
+  .grid3{grid-template-columns:1fr 1fr 1fr;}
+  .cover .sub{max-width:62ch;}
+  .cover-img-wrap, .img-band{
+    border-radius:8px;
+    box-shadow:none;
+    margin:28px 0;
+    page-break-inside:avoid;
+  }
+  .cover-img, .img-band img{
+    width:100%; height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class="actions" aria-hidden="true">
+  <a class="solid" href="javascript:window.print()">Save as PDF</a>
+  <a href="/engage/your-body-as-a-temple.pdf">Download PDF</a>
+  <a href="/engage/">All Free Guides</a>
+  <a href="/">onetoeight.org</a>
+</div>
+<article class="page">
+<section class="cover">
+  <div>
+    <div class="kicker"><span class="bar"></span><span>One-To-Eight · Lead Magnet · The Body</span></div>
+    <div class="wordmark">
+      <span>one</span><em>to</em><span>eight</span>
+      <span class="num">128</span>
+    </div>
+  </div>
+
+  <h1>Your Body<br>as a <em>Temple</em>.</h1>
+
+  <p class="sub">The physical side of digital self-defence. Before you can hold your attention, you need a body that is rested, fed, moved and awake. This is a clear-eyed look at the hardware you are running your life on, and how to care for it.</p>
+
+  <div class="cover-img-wrap">
+    <img src="/engage/body-cover.jpg" alt="A young person moving on a sunlit trail at golden morning, healthy and present, no phone in sight" class="cover-img">
+  </div>
+
+  <div class="author">
+    <span class="by">By</span>
+    <span class="name">Brendan O'Keefe</span>
+  </div>
+  <div class="meta">A 128 Lead Magnet · The Body · 2026</div>
+</section><section class="page-section">
+  <div class="part-kicker">Part 1 · The Hardware</div>
+<h2>You are running your life on <em>hardware</em></h2><p class="lead">You cannot out-think an exhausted body. Every essential starts with the body, because everything else runs on it.</p><p>The first guide looked at the screen. This one looks at the body you are holding the screen in. Two hours of scrolling and no sleep will undo a week of good intentions. Skipping meals and living on energy drinks will drain the very thing you need to pay attention, to think, to hope.</p><p>None of this is about being an athlete. It is about not running your one life on a machine you have forgotten to maintain.</p>
+</section><section class="dark">
+  <div class="part-kicker">Part 2 · Sleep</div>
+<h2>Sleep is where it <em>starts</em></h2><p class="lead">Almost every young person is running a sleep deficit, and the phone is the reason. This is the first thing to fix.</p><div class="grid2"><div class="card"><div class="label">The Screen</div><h4>Bedtime is postponed</h4><p>The glow, the stimulation, the constant pinging, the fear of missing out. Each "one more video" pushes sleep back by ten or twenty minutes, until midnight feels normal.</p></div><div class="card"><div class="label">The Cost</div><h4>Everything gets worse</h4><p>Short sleep means worse focus, worse mood, worse decisions, stronger cravings and a body that is tired all day and then can't switch off at night. A vicious, self-feeding loop.</p></div></div><blockquote>You cannot sleep your way out of a good phone habit, and you cannot phone your way out of a bad sleep habit. Sleep is the foundation.</blockquote>
+</section><section class="cream">
+  <div class="part-kicker">Part 3 · Movement</div>
+<h2>Your body <em>wants</em> to move</h2><p class="lead">You were built to move. The unnatural thing is sitting in a chair, staring at a screen, for fourteen hours. The body is asking for something and telling you in aches, restlessness and low mood.</p><div class="grid3"><div class="card"><div class="label">Move</div><h4>Walk, run, play</h4><p>It does not need to be a gym. A brisk walk, a kick of a ball, a bike ride, walking to school instead of scrolling. Twenty minutes is a real start.</p></div><div class="card"><div class="label">Light</div><h4>Get your sun</h4><p>Outdoor light in the morning sets your body clock, lifts mood and helps you sleep at night. It is free and it works better than any gadget.</p></div><div class="card"><div class="label">Strength</div><h4>Get stronger, not thinner</h4><p>Your body responds to being used. Push-ups, carrying things, swimming, sport. Strength is confidence you can feel.</p></div></div><blockquote>Twenty minutes of moving most days will do more for your mood than any app you could download.</blockquote>
+</section><section class="page-section">
+  <div class="part-kicker">Part 4 · Food</div>
+<h2>Food is <em>information</em>, not just fuel</h2><p class="lead">What you eat tells your body what to do. Ultra-processed food and sugar spikes send it a different message than a real meal does.</p><p>This is not a diet lecture. It is a simple pattern: real food, eaten more often than the stuff that comes in a packet. Drink water instead of energy drinks. Eat something with actual food in it for breakfast, and notice how your afternoon changes.</p><p>Your brain is running on what you put in. Feed it properly and it thinks more clearly. Feed it rubbish and it gets foggy, irritable and tired, and you will blame the world instead of the snack.</p>
+</section><section class="dark">
+  <div class="part-kicker">Part 5 · Dopamine</div>
+<h2>Your reward system is being <em>hijacked</em></h2><p class="lead">The phone hands you cheap, instant dopamine. The body offers the real thing, but it asks for effort first. This is the whole game.</p><table class="compare"><thead><tr><th class="dim">Reward</th><th>Cheap dopamine (the feed)</th><th>Real dopamine (the body)</th></tr></thead><tbody><tr><td class="dim">Effort</td><td><strong>Zero.</strong> A swipe, a tap, and the hit arrives.</td><td><strong>Costs you.</strong> Sunlight, exercise, mastery, real conversation.</td></tr><tr><td class="dim">Aftermath</td><td><strong>Empty.</strong> Seven-second inputs, gone, nothing gained.</td><td><strong>Full.</strong> A sense of accomplishment that lingers.</td></tr><tr><td class="dim">Pattern</td><td><strong>Loop.</strong> More, faster, the same nothing.</td><td><strong>Grows.</strong> Each effort builds on the last.</td></tr></tbody></table><blockquote>The feed is a slot machine for your mood. Your body is the only place a real win is actually stored.</blockquote>
+</section><section class="cream">
+  <div class="part-kicker">Part 6 · Comparison</div>
+<h2>You are not your <em>screenshot</em></h2><p class="lead">You are comparing your behind-the-scenes to everyone else's highlight reel, and it is doing a number on how you see your own body.</p><p>The algorithm feeds you the curated best twenty seconds of a million lives, filtered, lit and posed. No one posts the bad angle, the morning face, the stretch marks, the awkward laugh. To measure yourself against that is to lose before you start.</p><p>Your body is not an object for other people to approve of. It is the place you get to live. If you are a parent or a leader, this is worth having with your young person out loud: the feed is a funhouse mirror, not a fair judge.</p>
+</section><section class="page-section">
+  <div class="part-kicker">Part 7 · For The Adults</div>
+<h2>If you are the <em>adult</em> in the room</h2><p class="lead">Parents, carers, youth leaders, teachers. You cannot lecture a young person into sleeping well while you doomscroll at 1am. You lead, and then you set the room up.</p><ul class="tight"><li><strong>Make the phone sleep elsewhere.</strong> A bowl on the kitchen bench, the bedroom off limits to screens at night. Almost every sleep problem in a teen starts here, and this one rule fixes it faster than anything.</li><li><strong>Move and eat together.</strong> A walk after dinner, a shared meal without a screen flat on the table. It is not about being the cool parent. It is about being present and making health the normal thing on your street.</li><li><strong>Be the model.</strong> Your phone habits are the loudest thing you will ever say about your own body. Put yours away first. Sleep first. Move first.</li></ul><blockquote>You cannot ask a young person to care for their body while your own tells a different story.</blockquote>
+</section><section class="dark">
+  <div class="part-kicker">Part 8 · For The Young Person</div>
+<h2>Your first <em>week</em></h2><p class="lead">Do not try to change everything. Pick two of these and actually do them. Feel the difference before you add more.</p><div class="grid3"><div class="card"><div class="label">Do</div><h4>Phone out of the bedroom</h4><p>Charge it across the room or in the kitchen. You sleep better within a week, almost without trying.</p></div><div class="card"><div class="label">Do</div><h4>Twenty minutes of movement</h4><p>Walk, run, play, ride. Outside, in daylight, if you can. Watch your mood do something.</p></div><div class="card"><div class="label">Do</div><h4>One real meal, water</h4><p>Swap one energy drink for water. Eat one meal that did not come out of a packet. Start there.</p></div><div class="card"><div class="label">Do</div><h4>Morning light</h4><p>Step outside within an hour of waking. It sets your body clock and helps night-time sleep.</p></div><div class="card"><div class="label">Skip</div><h4>The 1am scroll</h4><p>That last hour is stolen from the next day's body. Put it down and let the day actually end.</p></div></div><blockquote>Two of these, done honestly for a week, will change how you feel more than any app or trick.</blockquote>
+</section><section class="cream">
+  <div class="part-kicker">Part 9 · The Temple</div>
+<h2>A <em>temple</em>, not a trophy</h2><p class="lead">This is where the whole thing gets its name. The body is a temple, a place where the Spirit dwells, in the words of Scripture.</p><p>"Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore honour God with your bodies."</p><p>That is not purity culture and it is not shame. It is stewardship. You care for this body because it is not just yours, and because it is the place where the life you are actually given gets lived. It is not a trophy to be judged against the feed. It is a gift to be looked after.</p><blockquote>Honour God with your body. Not by making it perfect. By treating it as if it matters.</blockquote>
+</section><section class="page-section">
+  <div class="part-kicker">Part 10 · A Week That Works</div>
+<h2>A week that actually <em>works</em></h2><p class="lead">Forget the perfect plan. This is a rhythm you can keep, and it is enough.</p><ol class="tight"><li><strong>Sleep before midnight.</strong> Phone out of the bedroom, lights low, an hour before bed.</li><li><strong>Get light in the morning.</strong> Step outside. Twenty minutes of movement, in daylight where you can.</li><li><strong>Eat real food.</strong> Water instead of energy drinks. One real meal a day at least, most days.</li><li><strong>Compare less.</strong> The feed is a funhouse mirror. You are not your screenshot.</li><li><strong>Show your body grace.</strong> It is a temple, not a project. Rest is not laziness, and worth is not a number.</li></ol><p class="pull">You do not need a new body. You need to treat the one you have as if it matters.</p><p>Start there. Your body is the ground the whole of the eight essentials stands on: silence, real community, knowledge without Wi-Fi, a steady faith. None of it will hold on a body that is running on fumes. Two small choices this week. Feel the difference, then keep going.</p><div class="signoff"><h3>Start with the <em>body</em>.</h3><p>Put the phone out of reach tonight. Walk twenty minutes in the morning. Eat something real. See how you feel before you decide it does not matter.</p><div class="author"><span class="by">By</span><span class="name">Brendan O'Keefe</span></div></div>
+</section>
+</article>
+
+</body>
+</html>
