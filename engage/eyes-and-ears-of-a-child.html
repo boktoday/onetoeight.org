@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Eyes and Ears of a Child — A short guide to awe, curiosity, and the practice of looking again</title>
+<meta name="description" content="A lead magnet for the 128 / one-to-eight programme. Why awe, curiosity, and the practice of asking are going to be the three things that hold young people steady in the age of everything becoming fake. The eyes and ears of a child, on purpose, in everything.">
+<link rel="canonical" href="https://onetoeight.org/engage/eyes-and-ears-of-a-child">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://onetoeight.org/engage/eyes-and-ears-of-a-child">
+<meta property="og:title" content="The Eyes and Ears of a Child — A short guide to awe, curiosity, and the practice of looking again">
+<meta property="og:description" content="A lead magnet for the 128 / one-to-eight programme. Why awe, curiosity, and the practice of asking are going to be the three things that hold young people steady in the age of everything becoming fake.">
+<meta property="og:image" content="https://onetoeight.org/engage/awe-cover.jpg">
+<meta property="og:site_name" content="one to eight">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Eyes and Ears of a Child — A short guide to awe, curiosity, and the practice of looking again">
+<meta name="twitter:description" content="A lead magnet for the 128 / one-to-eight programme. Why awe, curiosity, and the practice of asking are going to be the three things that hold young people steady in the age of everything becoming fake.">
+<meta name="twitter:image" content="https://onetoeight.org/engage/awe-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   BRAND TOKENS — match onetoeight-system (night/dawn editorial)
+   ========================================================================= */
+:root{
+  --night:#0d1220; --night2:#131a2e; --night3:#1a2340;
+  --dawn:#f6efe3; --dawn2:#efe6d6; --paper:#fbf7ee;
+  --ink:#232a3d; --ink-soft:#5a6278;
+  --terra:#c2603e; --terra-deep:#9c4a2e;
+  --sage:#7d8a6e; --sage-deep:#5f6d52;
+  --gold:#d9a441; --gold-soft:#e8c87a;
+  --blue:#4f6f9e;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, sans-serif;
+  --disp:'Space Grotesk', system-ui, sans-serif;
+}
+
+/* =========================================================================
+   SCREEN STYLES
+   ========================================================================= */
+@media screen{
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html, body{background:#1a1d28; color:var(--ink); font-family:var(--sans); line-height:1.55;}
+  body{padding:40px 20px 80px;}
+  .page{max-width:clamp(720px, 86vw, 940px); margin:0 auto; background:var(--paper); border-radius:8px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.35);}
+  .actions{max-width:780px; margin:20px auto 0; text-align:center; color:#a8aab3; font-size:13px;}
+  .actions a{color:var(--gold); text-decoration:none; padding:8px 14px; border:1px solid var(--gold); border-radius:6px; margin:0 6px; display:inline-block;}
+  .actions a.solid{background:var(--gold); color:var(--night);}
+  .actions a:hover{background:var(--gold); color:var(--night);}
+}
+
+/* =========================================================================
+   COVER PAGE
+   ========================================================================= */
+.cover{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(217,164,65,.20), transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(125,138,110,.18), transparent 60%),
+    var(--night);
+  color:var(--paper);
+  padding:120px clamp(32px, 6vw, 96px) 80px;
+  position:relative;
+  display:flex; flex-direction:column; justify-content:space-between;
+}
+.cover .kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:40px;}
+.cover .kicker .bar{width:40px; height:1px; background:var(--gold);}
+.cover .wordmark{display:flex; align-items:baseline; gap:10px; font-family:var(--serif); font-size:clamp(28px, 3.5vw, 42px); color:var(--paper); line-height:1; margin-bottom:8px; flex-wrap:wrap;}
+.cover .wordmark em{color:var(--gold); font-style:italic;}
+.cover .wordmark .num{font-family:var(--disp); font-size:24px; color:var(--gold); font-weight:500;}
+.cover h1{font-family:var(--serif); font-size:clamp(40px, 5.4vw, 64px); line-height:1.05; color:var(--paper); letter-spacing:-.02em; margin-top:60px; max-width:62ch; font-weight:400;}
+.cover h1 em{color:var(--gold-soft); font-style:italic; font-weight:300;}
+.cover .sub{font-family:var(--sans); font-size:18px; line-height:1.6; color:#d3c9b6; max-width:62ch; margin-top:32px;}
+.cover .author{margin-top:auto; padding-top:60px; display:flex; align-items:center; gap:14px;}
+.cover .author .by{font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold);}
+.cover .author .name{font-family:var(--serif); font-size:22px; color:var(--paper); font-style:italic;}
+.cover .meta{margin-top:auto; padding-top:30px; font-family:var(--disp); font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#a39c8c;}
+
+/* =========================================================================
+   IMAGES
+   ========================================================================= */
+.cover-img-wrap{
+  margin:48px 0 8px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+.cover-img{
+  display:block; width:100%; height:auto;
+}
+.img-band{
+  margin:36px 0 40px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+.img-band img{
+  display:block; width:100%; height:auto;
+}
+
+/* =========================================================================
+   NORMAL PAGES
+   ========================================================================= */
+section.page-section{padding:96px clamp(32px, 6vw, 96px); background:var(--paper); color:var(--ink);}
+section.dark{background:var(--night); color:var(--paper); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+section.cream{background:var(--dawn2); color:var(--ink); padding-top:96px; padding-bottom:96px; padding-left:clamp(32px, 6vw, 96px); padding-right:clamp(32px, 6vw, 96px);}
+
+.part-kicker{display:flex; align-items:center; gap:14px; font-family:var(--disp); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--terra); margin-bottom:36px; font-weight:600;}
+section.dark .part-kicker{color:var(--gold);}
+.part-kicker::after{content:''; flex:0 0 80px; height:1px; background:currentColor; opacity:.5;}
+
+h2{font-family:var(--serif); font-size:42px; line-height:1.1; color:var(--ink); letter-spacing:-.01em; margin-bottom:24px; font-weight:400;}
+section.dark h2{color:var(--paper);}
+h2 em{color:var(--terra); font-style:italic; font-weight:300;}
+section.dark h2 em{color:var(--gold-soft);}
+
+h3{font-family:var(--serif); font-size:22px; line-height:1.3; color:var(--ink-soft); margin-top:36px; margin-bottom:14px; font-weight:500;}
+section.dark h3{color:var(--paper);}
+
+p{font-size:16.5px; line-height:1.75; margin-bottom:18px; max-width:62ch; color:var(--ink);}
+section.dark p{color:#d3c9b6;}
+p.lead{font-size:21px; line-height:1.55; color:var(--ink-soft); font-family:var(--serif); font-weight:300; font-style:italic;}
+section.dark p.lead{color:var(--paper);}
+
+ul.tight, ol.tight{margin:0 0 24px 22px; padding:0; max-width:62ch;}
+ul.tight li, ol.tight li{font-size:16px; line-height:1.7; margin-bottom:10px; color:var(--ink);}
+section.dark ul.tight li, section.dark ol.tight li{color:#d3c9b6;}
+ul.tight li::marker, ol.tight li::marker{color:var(--terra);}
+
+blockquote{margin:32px 0 32px 0; padding:20px 28px; border-left:3px solid var(--gold); font-family:var(--serif); font-size:22px; line-height:1.45; color:var(--ink); font-style:italic; font-weight:300;}
+section.dark blockquote{color:var(--paper);}
+blockquote::before{content:'\201C'; color:var(--gold); margin-right:4px;}
+blockquote::after{content:'\201D'; color:var(--gold); margin-left:4px;}
+
+.grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin:36px 0;}
+.card{background:rgba(255,255,255,.04); border:1px solid rgba(217,164,65,.22); border-radius:8px; padding:28px 22px;}
+section.cream .card, section.page-section .card{background:white; border:1px solid rgba(0,0,0,.06);}
+.card .label{font-family:var(--disp); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; font-weight:600;}
+.card h4{font-family:var(--serif); font-size:18px; line-height:1.3; color:var(--paper); margin-bottom:10px; font-weight:500;}
+section.cream .card h4, section.page-section .card h4{color:var(--ink);}
+.card p{font-size:14px; line-height:1.55; color:#b8b0a0; margin-bottom:0;}
+section.cream .card p, section.page-section .card p{color:var(--ink-soft);}
+
+.pull{font-family:var(--serif); font-size:clamp(32px, 4.6vw, 56px); line-height:1.12; color:var(--paper); font-style:italic; font-weight:300; max-width:62ch; letter-spacing:-.01em; margin:40px 0;}
+section.cream .pull, section.page-section .pull{color:var(--ink);}
+
+.signoff{margin-top:60px; padding-top:30px; border-top:1px solid rgba(217,164,65,.20); font-family:var(--serif); font-size:16px; color:var(--ink); font-style:italic;}
+section.dark .signoff{border-color:rgba(217,164,65,.30); color:var(--paper);}
+.signoff .name{font-style:normal; color:var(--terra); font-weight:500;}
+section.dark .signoff .name{color:var(--gold);}
+
+/* =========================================================================
+   PRINT STYLES — A4, drop everything that only matters on screen
+   ========================================================================= */
+@page{
+  size:A4 portrait;
+  margin:0; /* full-bleed, our sections handle inner padding */
+}
+
+@media print{
+  html, body{background:white;}
+  body{padding:0; margin:0;}
+  .page{max-width:none; border-radius:0; box-shadow:none;}
+  .actions{display:none;}
+
+  /* cover page: full bleed */
+  .cover{page-break-after:always; min-height:auto;}
+
+  /* natural book flow — no forced per-section pages */
+  section.page-section, section.dark, section.cream{
+    min-height:0;
+    box-sizing:border-box;
+    padding-top:64px;
+    padding-bottom:64px;
+  }
+
+  /* avoid breaking inside cards and quote */
+  .card, blockquote, .pull{page-break-inside:avoid;}
+  h2, h3{page-break-after:avoid;}
+
+  /* colour preservation */
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+
+  /* shrink fonts slightly so it fits inside A4 with breathing room */
+  body{font-size:11pt;}
+  h1{font-size:44pt;}
+  h2{font-size:24pt;}
+  h3{font-size:14pt;}
+  p{font-size:11pt; line-height:1.6;}
+  p.lead{font-size:14pt;}
+  blockquote{font-size:14pt;}
+  .pull{font-size:30pt;}
+  .card p{font-size:9.5pt;}
+  .cover h1{font-size:44pt;}
+  /* force a generous horizontal safe area on every section */
+  section.page-section, section.dark, section.cream, .cover{
+    padding-left:64px !important;
+    padding-right:64px !important;
+  }
+  .grid3{grid-template-columns:1fr 1fr 1fr;}
+  .cover .sub{max-width:62ch;}
+  /* images: keep them visible and contained in the print */
+  .cover-img-wrap, .img-band{
+    border-radius:8px;
+    box-shadow:none;
+    margin:28px 0;
+    page-break-inside:avoid;
+  }
+  .cover-img, .img-band img{
+    width:100%; height:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class="actions" aria-hidden="true">
+  <a class="solid" href="javascript:window.print()">Save as PDF</a>
+  <a href="eyes-and-ears-of-a-child.pdf">Download PDF</a>
+  <a href="/engage/">All Free Guides</a>
+  <a href="/">onetoeight.org</a>
+</div>
+<article class="page">
+
+<!-- =====================================================================
+     COVER
+     ===================================================================== -->
+<section class="cover">
+  <div>
+    <div class="kicker"><span class="bar"></span><span>One-To-Eight · Lead Magnet · 128</span></div>
+    <div class="wordmark">
+      <span>one</span><em>to</em><span>eight</span>
+      <span class="num">128</span>
+    </div>
+  </div>
+
+  <h1>The Eyes and Ears<br>of a Child.</h1>
+
+  <p class="sub">A short guide on awe, curiosity, and the practice of looking again at the real world, so the future gets brighter for young people aged 13 to 23.</p>
+
+  <div class="cover-img-wrap">
+    <img src="awe-cover.jpg" alt="A young person on a hill at dawn, looking up at a golden sky" class="cover-img">
+  </div>
+
+  <div class="author">
+    <span class="by">By</span>
+    <span class="name">Brendan O'Keefe</span>
+  </div>
+  <div class="meta">A 128 Lead Magnet · Edition One · 2026</div>
+</section>
+
+
+<!-- =====================================================================
+     PART 1 — WHAT IS HAPPENING
+     ===================================================================== -->
+<section class="page-section">
+  <div class="part-kicker">Part 1 · The Setup</div>
+  <h2>Everything is about to become <em>fake</em>.</h2>
+  <p class="lead">Most of what we will read, see, hear, and watch in the next five years will be made by a machine. Most of it will be cheap to make. Most of it will be designed to keep our eyes on it. None of that is, by itself, the problem.</p>
+  <p>The problem is what comes after. When enough of what we see is made to perform on us, we stop trusting our own seeing. The feed looks like the world. The world looks like the feed. The diff between them flattens to nothing, and a young person is left without a way to tell which is which.</p>
+  <p>This is not a future problem. It is already happening. Eleven-year-olds can make a perfect-quality song in their bedroom. Fifteen-year-olds can make a perfect-quality face on a screen. Sixteen-year-olds can build an entire news feed that reads like a country's morning paper. Anything that can be faked will be faked. Anything that can be made convincing will be made convincing.</p>
+  <p>The question, then, is not whether fake gets better. It is whether the human who has to live inside the noise stays awake to it.</p>
+</section>
+
+
+<!-- =====================================================================
+     PART 2 — WHAT HOLDS
+     ===================================================================== -->
+<section class="dark">
+  <div class="part-kicker">Part 2 · What Holds</div>
+  <h2>Three things that will not be faked <em>in time</em>.</h2>
+  <p class="lead">A young person who keeps three inner habits stays alive in any environment. The list is short. The list is also the whole story.</p>
+
+  <div class="grid3">
+    <div class="card">
+      <div class="label">01 · Awe</div>
+      <h4>Looking up</h4>
+      <p>The felt sense that something is bigger than you, that you are seeing something real, that the room has a ceiling and the sky has stars. Awe resets the nervous system. Awe also cannot be generated by a prompt.</p>
+    </div>
+    <div class="card">
+      <div class="label">02 · Curiosity</div>
+      <h4>Going looking</h4>
+      <p>The energy that does not accept the first answer. The habit of pulling a thread, of checking the second source, of asking, "and what does that mean?". Curiosity is the engine.</p>
+    </div>
+    <div class="card">
+      <div class="label">03 · Questioning</div>
+      <h4>Staying open</h4>
+      <p>The discipline of holding two ideas at once. The willingness to say, "I might be wrong". Questioning is what keeps both awe and curiosity alive, instead of letting them stiffen into certainty.</p>
+    </div>
+  </div>
+
+  <p class="pull">"The most powerful thing a young person can carry into the next twenty years is the ability to be genuinely impressed by something real."</p>
+
+  <h3>Why these three and not any others</h3>
+  <p>The reason is not sentimental. The reason is mechanical.</p>
+  <ul class="tight">
+    <li>Fake content is engineered to <em>overwhelm</em>. Awe, curiosity and questioning are the three states that cannot be outperformed by volume. They are also the three states a machine cannot feel.</li>
+    <li>Fake content is engineered to <em>close loops</em>. Each one is a settled question. Awe, curiosity and questioning each open a loop. They reach for more rather than less.</li>
+    <li>Fake content is engineered to <em>replace</em>. Awe, curiosity and questioning each produce original response. They do not borrow a reaction; they create one.</li>
+  </ul>
+  <p>These are not virtues. They are the working parts of a person who is awake.</p>
+</section>
+
+
+<!-- =====================================================================
+     PART 3 — AWE
+     ===================================================================== -->
+<section class="cream">
+  <div class="part-kicker">Part 3 · Awe</div>
+  <h2>Start by looking for the <em>incredible</em> in nature.</h2>
+  <p class="lead">Awe is not a special experience you have to wait for. Awe is a muscle that goes slack. The fastest way to wake it up is to start with the things that are already incredible, that you walked past this morning to get to school. Look up, that is the entire practice.</p>
+
+  <div class="img-band">
+    <img src="awe-nature.jpg" alt="A tiny ant on a dewdrop on a leaf, backlit by golden dawn light">
+  </div>
+
+  <h3>The smallest awe</h3>
+  <p>You do not need a mountain. You need a tree. You need a single ant carrying a crumb across the path. You need a cloud that is shaped differently now than it was when you looked up thirty seconds ago. Awe lives in the smallest unit of "look again".</p>
+
+  <h3>Three small habits to rebuild the muscle</h3>
+  <ol class="tight">
+    <li><strong>One minute outside, no phone, looking at anything green.</strong> Every morning. Before the first message of the day.</li>
+    <li><strong>Look up at the sky at three random points in the day.</strong> Even a glance. The sky is doing a thing right now. Most of it is weather and photons from a star that is millions of miles away. You do not have to think about that. You just have to notice it is there.</li>
+    <li><strong>Notice one thing you have walked past before.</strong> A crack in the footpath. A roof shape. A bird. The noticing is the practice. The thing you noticed is just the door in.</li>
+  </ol>
+
+  <blockquote>The world is not going to give you awe on a schedule. The world is going to give it to you when you have not been looking. The point of the habit is to have been looking when it does.</blockquote>
+</section>
+
+
+<!-- =====================================================================
+     PART 4 — CURIOSITY
+     ===================================================================== -->
+<section class="dark">
+  <div class="part-kicker">Part 4 · Curiosity</div>
+  <h2>Curiosity is a <em>practice</em>, not a personality.</h2>
+  <p class="lead">We have been sold a lie about curiosity. The lie is that it is a trait. Some of you have it, some of you do not. The lie is convenient, because it lets people off the hook. The truth is that curiosity is a habit. It is what happens when a person learns to live for a while on the second question.</p>
+
+  <div class="img-band">
+    <img src="awe-curiosity.jpg" alt="A young person writing in a notebook by a window at dawn">
+  </div>
+
+  <h3>The shape of a curious question</h3>
+  <p>A curious question is rarely the first question. The first question is usually a category: "What is this thing?". The second question is the interesting one. "Why is this thing shaped like that?". The third. "What is it like to the thing itself?".</p>
+
+  <h3>Three small practices</h3>
+  <ul class="tight">
+    <li><strong>The thirty-minute rule.</strong> Spend thirty minutes a week learning one thing you do not need to know. Not for school. Not for work. For the fun of being the only person at dinner who knows what a tardigrade is, or what the oldest living tree species is, or how a hummingbird keeps its heart going at 1,200 beats a minute.</li>
+    <li><strong>The what is missing read.</strong> After you read or watch something, ask: "What is missing here?". The first four things that come to mind are usually the most useful. The exercise trains your brain to notice the gap.</li>
+    <li><strong>The held disagreement.</strong> Find one person you disagree with, gently, for one hour a week. Curiosity is not agreement. Curiosity is the willingness to sit inside the disagreement long enough to learn what the other person is actually seeing.</li>
+  </ul>
+
+  <blockquote>Curiosity is the slow habit of saying, "I do not know yet, and I am willing to stay in that." Most people treat "I do not know" as a finish line. Curious people treat it as a starting gate.</blockquote>
+</section>
+
+
+<!-- =====================================================================
+     PART 5 — QUESTIONING
+     ===================================================================== -->
+<section class="cream">
+  <div class="part-kicker">Part 5 · Questioning</div>
+  <h2>Stay open. <em>Stay wrong.</em></h2>
+  <p class="lead">Questioning is the discipline of being wrong on purpose, in small doses, in front of yourself. It is what keeps awe from becoming awe-of-the-thing-I-already-believe, and curiosity from becoming curiosity-about-the-things-I-already-like.</p>
+
+  <h3>The most important sentence</h3>
+  <p>The most important sentence a young person can learn to say is, "I might be wrong."</p>
+  <p>Not as a disclaimer. Not as a way to escape a conversation. As a real, considered move. As the thing you say when your first answer feels a little too easy, or a little too satisfying, or a little too close to the answer your friends already gave.</p>
+
+  <h3>Three small habits</h3>
+  <ol class="tight">
+    <li><strong>The steel-man.</strong> When you disagree with someone, before you say so, tell their argument back to them in its strongest form. If you cannot, you have not understood it yet. If you can, the disagreement is more useful.</li>
+    <li><strong>The written-belief check.</strong> Once a week, write down one thing you are certain about. Then write down the strongest argument against it. Most certainties are surprisingly thin.</li>
+    <li><strong>The change-of-mind log.</strong> When you change your mind about something, write down what you used to think, what you think now, and what changed your mind. The log is gold when you are thirty-five.</li>
+  </ol>
+
+  <blockquote>Questioning is not doubt. Doubt is the refusal to commit to anything. Questioning is the willingness to commit, and to be wrong, and to come back, and to commit again, sharper.</blockquote>
+</section>
+
+
+<!-- =====================================================================
+     PART 6 — HOW TO DO ALL THREE
+     ===================================================================== -->
+<section class="page-section">
+  <div class="part-kicker">Part 6 · The Daily Practice</div>
+  <h2>How to <em>actually do this</em>.</h2>
+  <p class="lead">Awe, curiosity and questioning can become a daily practice in three minutes a day. The three minutes belong to the morning. They are the cheapest hour in your life and they are the most expensive thing you will ever build.</p>
+
+  <h3>The three-minute morning</h3>
+  <ul class="tight">
+    <li><strong>One minute outside, looking at something alive.</strong> A plant, a tree, a bird, the sky. One minute, no phone. This is the awe.</li>
+    <li><strong>One minute, one question.</strong> Pick one question for the day, written on a piece of paper. Carry it with you. "Why do I think this is true?". "What is missing from this picture?". "What would I be wrong about today?". This is the curiosity.</li>
+    <li><strong>One minute, the steel-man.</strong> In your head, before any conversation, picture the strongest version of the other person's view. Hold it for a minute. This is the questioning.</li>
+  </ul>
+
+  <h3>What happens if you skip a day</h3>
+  <p>You are back the next morning. The practice does not punish absence. It only rewards return. The whole point is that there is no streak to defend. There is only the next morning.</p>
+
+  <h3>What happens if you do it for thirty days</h3>
+  <p>You become a different kind of person in the room. You notice what other people walk past. You ask the second question. You say, "I might be wrong" without flinching. You become the person that other young people go to when they want to know what is really going on. That is the entire reward.</p>
+
+  <div class="img-band">
+    <img src="awe-open.jpg" alt="A young person in a field at dusk, looking up at a moonlit sky with wonder">
+  </div>
+
+  <p class="pull">The future does not need more confident young people. It needs fewer confident young people and more awake young people. Awakeness is a practice. The practice takes three minutes a day.</p>
+</section>
+
+
+<!-- =====================================================================
+     PART 7 — INVITATION
+     ===================================================================== -->
+<section class="dark" style="background:linear-gradient(180deg, var(--night) 0%, #08101e 100%);">
+  <div class="part-kicker">Part 7 · The Invitation</div>
+  <h2>The eyes of a child, on purpose, in <em>everything</em>.</h2>
+  <p class="lead">Children do not have awe, curiosity and questioning. Children have not learned to lose them yet. The work of a young person who wants to stay awake in the next twenty years is to keep them, on purpose, through the noise.</p>
+
+  <p>The 128 programme is built around that work. The eight essentials, the daily rituals, the Morning Minute, the conversation at the end of the day. They are ways of building the practice into a life that has a phone in it, and a feed, and a world that is becoming fake faster than any of us can describe.</p>
+
+  <h3>What one-to-eight is, in one paragraph</h3>
+  <p>One-to-eight is a formation programme for young people aged 13 to 23, built on eight essentials. The product is not information. The product is the daily practice of paying attention, of asking better questions, and of staying awake in the room. A small school, for a few quiet hours a day, focused on what makes a person a person.</p>
+
+  <h3>If you want to know more</h3>
+  <p>Read more at <a href="https://onetoeight.org" style="color:var(--gold);">onetoeight.org</a>. The Eighth Essentials guide is free. The morning minute audio is free. The afterschool-agent software that holds the practice together is open source. Nothing here is locked behind a paywall you cannot see.</p>
+
+  <p>If you want to bring one-to-eight to your school, your church, your family, your community group, write to me directly. The programme is small. I run it myself. I would rather it grew slowly into the right places than quickly into the wrong ones.</p>
+
+  <div class="signoff">
+    With care, <br><br>
+    <span class="name">Brendan O'Keefe</span><br>
+    Founder, One-To-Eight
+  </div>
+</section>
+
+</article>
+
+</body>
+</html>
