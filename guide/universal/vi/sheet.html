@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup Walkthrough Â· Lab Manual</title>
+<style>
+:root{
+  --bg: #f2f2f2;
+  --grid: rgba(45,41,38,.08);
+  --ink: #2d2926;
+  --ink-soft: #2d2926;
+  --ink-mute: rgba(45,41,38,.55);
+  --ink-faint: rgba(45,41,38,.35);
+  --teal: #b8d8be;
+  --teal-deep: #7fb286;
+  --pink: #e91e63;
+  --pink-deep: #c2185b;
+  --yellow: #fff200;
+  --warn-bg: #e91e63;
+  --warn-ink: #ffffff;
+  --hair: rgba(45,41,38,.55);
+  --hair-soft: rgba(45,41,38,.25);
+  --card: #ffffff;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);}
+body{
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  padding: 0;
+}
+
+.sheet{
+  width: 1080px;
+  min-height: 1920px;
+  margin: 24px auto;
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--bg);
+  position: relative;
+  padding: 48px 56px 36px;
+  color: var(--ink);
+}
+.sheet::before{
+  content:""; position:absolute; top:48px; bottom:36px; left:24px; width:18px;
+  background: repeating-linear-gradient(to bottom, transparent 0 18px, var(--ink-faint) 18px 19px, transparent 19px 36px);
+}
+.sheet::after{
+  content:""; position:absolute; top:48px; bottom:36px; right:24px; width:18px;
+  background: repeating-linear-gradient(to bottom, transparent 0 18px, var(--ink-faint) 18px 19px, transparent 19px 36px);
+}
+
+.corner{
+  position:absolute; font: 9px/1.2 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+  color: var(--ink-mute); letter-spacing: .04em;
+}
+.corner.tl{ top:20px; left:48px; }
+.corner.tr{ top:20px; right:48px; text-align:right; }
+.corner.bl{ bottom:12px; left:48px; }
+.corner.br{ bottom:12px; right:48px; text-align:right; }
+.corner .barcode{
+  display:inline-block; width:88px; height:14px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 3px, var(--ink) 3px 4px, transparent 4px 7px, var(--ink) 7px 8px, transparent 8px 11px, var(--ink) 11px 12px, transparent 12px 14px);
+  vertical-align: middle; margin-right: 8px;
+}
+
+.eyebrow{ font: 600 11px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace; letter-spacing:.22em; text-transform:uppercase; color: var(--ink); }
+.h1{ font-weight: 900; font-size: 64px; line-height:.92; letter-spacing:-0.025em; text-transform: uppercase; }
+.h2{ font-weight: 900; font-size: 22px; line-height:1; letter-spacing:-0.01em; text-transform: uppercase; }
+.mono{ font-family: "JetBrains Mono","SF Mono",ui-monospace,monospace; }
+.sub{ font-size: 12px; color: var(--ink-mute); }
+
+.module{ position:relative; padding-top:18px; margin-top:28px; }
+.module:first-child{ margin-top:0; padding-top:0; }
+.module-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; }
+.module-title{ display:flex; align-items:baseline; gap:18px; }
+.coord{ font:700 11px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace; letter-spacing:.12em; color: var(--ink); border:1px solid var(--hair); padding:5px 7px; background: var(--bg); }
+.coord.sm{ font-size:9px; padding:3px 5px; }
+.divider{ height:1px; background: var(--hair); margin:8px 0 14px; }
+.module-sub{ font:500 11px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace; color: var(--ink-mute); letter-spacing:.04em; }
+
+/* === title === */
+.title-row{ position:relative; padding-bottom:8px; }
+.crosshair{
+  position:absolute; left:-12px; top:-12px; width:24px; height:24px;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 6px, var(--ink) 6px 7px, transparent 7px),
+    linear-gradient(var(--ink) 0 1px, transparent 1px 100%) 50% 0/100% 100%,
+    linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 100%) 50% 0/100% 100%;
+  background-repeat:no-repeat;
+  border-radius: 50%;
+}
+.h1 .reticle{
+  display:inline-block; width:10px; height:10px; vertical-align:middle; margin: 0 6px 14px;
+  background: radial-gradient(circle, transparent 2px, var(--pink) 2px 3px, transparent 3px);
+}
+.title-meta{ display:flex; justify-content:space-between; margin-top:10px; }
+.title-meta .chips{ display:flex; gap:8px; }
+.chip{ font:600 10px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace; letter-spacing:.08em; padding:6px 8px; border:1px solid var(--hair); }
+.title-sub{ margin-top:14px; max-width:920px; font-size:15px; line-height:1.45; color: var(--ink-soft); }
+.title-sub b{ font-weight:700; }
+
+/* === module 2 â Piper TTS split === */
+.split-2{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.bin-list{ border:1px solid var(--ink); background:#fff; padding:12px; }
+.bin-list .head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+.bin-list .h2{ font-size:16px; }
+.bin-row{
+  display:grid; grid-template-columns: 56px 1fr; gap:10px; align-items:baseline;
+  padding:6px 0; border-bottom:1px dashed var(--hair-soft);
+  font:600 11px/1.3 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.bin-row:last-child{ border-bottom:none; }
+.bin-row .id{ color: var(--ink-mute); font-size:10px; letter-spacing:.1em; }
+.bin-row .path{ padding: 1px 6px; position:relative; }
+.bin-row .path.hl::before{ content:""; position:absolute; left:-2px; top:1px; bottom:1px; width:4px; background: var(--yellow); }
+.bin-row .path.hl span{ position:relative; z-index:1; }
+
+.voices{ border:1px solid var(--ink); background:#fff; padding:12px; }
+.voices .head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+.voices .h2{ font-size:16px; }
+.voice{
+  display:grid; grid-template-columns: 1fr auto; gap:8px; align-items:center;
+  padding:7px 10px; margin-bottom:4px;
+  background: var(--teal); border:1px solid var(--hair);
+  font:600 11px/1.2 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.voice .nm b{ font-weight:900; }
+.voice .code{ font-size:10px; color: var(--ink); }
+
+.foot-micro{ margin-top:10px; font:500 10px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace; color: var(--ink-mute); letter-spacing:.04em; }
+
+/* === module 3 â Jina === */
+.jina{
+  border:1px solid var(--ink); background:#fff; padding:16px 18px;
+  position:relative;
+}
+.jina .stamp-no-cc{
+  position:absolute; right:14px; top:14px;
+  font:900 11px/1 "Inter", sans-serif; letter-spacing:.08em; text-transform:uppercase;
+  color: var(--pink); border:2px solid var(--pink); padding:4px 8px;
+  transform: rotate(-3deg);
+}
+.jina .env-line{
+  font:800 18px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+  background: var(--yellow); padding:8px 12px; display:inline-block;
+  box-shadow: 3px 3px 0 0 var(--ink);
+}
+.jina .env-line .k{ color: var(--ink); }
+.jina .env-line .v{ color: var(--ink-mute); }
+.jina .meta{ margin-top:10px; font:500 12px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace; color: var(--ink-soft); }
+.jina .verify{
+  margin-top:12px; padding:8px 10px;
+  border:1px dashed var(--hair); background: rgba(45,41,38,.03);
+  font:600 11px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.jina .verify .lbl{
+  display:block; font:700 9px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+  letter-spacing:.18em; text-transform:uppercase; color: var(--ink-mute); margin-bottom:6px;
+}
+
+/* === module 4 â Channel split === */
+.channel{ display:grid; grid-template-columns: 1.15fr 1fr; gap:12px; }
+.tg{ border:1.5px solid var(--ink); background: var(--teal); padding:14px; position:relative; }
+.tg .rec{
+  position:absolute; right:10px; top:10px;
+  font:900 11px/1 "Inter", sans-serif; letter-spacing:.06em; text-transform:uppercase;
+  color:#fff; background: var(--pink); padding:4px 8px;
+  border:2px solid var(--ink); transform: rotate(-3deg);
+}
+.tg .head{ display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+.tg .h2{ font-size:17px; }
+.tstep{
+  display:grid; grid-template-columns: 32px 1fr; gap:8px; align-items:start;
+  padding:5px 0; border-bottom:1px dashed rgba(45,41,38,.35);
+  font:600 11px/1.35 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.tstep:last-child{ border-bottom:none; }
+.tstep .num{
+  width:22px; height:22px; border-radius:50%;
+  background: var(--bg); border:2px solid var(--ink);
+  display:flex; align-items:center; justify-content:center;
+  font:900 11px/1 "Inter", sans-serif;
+}
+
+.wa{ border:1px dashed var(--hair); background:#fff; padding:14px; position:relative; }
+.wa .fall{
+  position:absolute; right:10px; top:10px;
+  font:900 10px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace; letter-spacing:.18em;
+  color: var(--ink-mute); border:1px solid var(--hair); padding:3px 6px;
+}
+.wa .head{ display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+.wa .h2{ font-size:17px; }
+.wrow{
+  display:grid; grid-template-columns: 1fr; gap:4px;
+  padding:8px 10px; margin-bottom:6px;
+  border:1px solid var(--hair); background: rgba(45,41,38,.03);
+  font:600 11px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.wrow b{ font-weight:800; }
+
+/* === module 5 â Eight Essentials tree === */
+.tree{ border:1px solid var(--ink); background:#fff; padding:10px 12px; }
+.trow{
+  display:grid; grid-template-columns: 56px 18px 1fr; gap:10px; align-items:center;
+  padding:5px 0; border-bottom:1px dashed var(--hair-soft);
+  font:600 11px/1.3 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.trow:last-child{ border-bottom:none; }
+.trow .id{ color: var(--ink-mute); font-size:10px; letter-spacing:.1em; }
+.trow .pip{ width:10px; height:10px; border-radius:50%; background:#2ea149; box-shadow:0 0 0 2px rgba(46,161,73,.18); justify-self:center; }
+.trow .pip.y{ background:#e8a23b; box-shadow:0 0 0 2px rgba(232,162,59,.18); }
+.trow .nm{ display:flex; align-items:center; gap:10px; }
+.trow .nm .branch{
+  font:900 9px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+  letter-spacing:.18em; color: var(--pink); border:1.5px solid var(--pink); padding:3px 5px;
+  text-transform:uppercase;
+}
+.schema{
+  margin-top:10px; padding:8px 10px;
+  border:1px dashed var(--hair); background: rgba(45,41,38,.03);
+  font:600 11px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+  display:flex; gap:14px; align-items:center;
+}
+.schema .lbl{ font:700 9px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace; letter-spacing:.18em; text-transform:uppercase; color: var(--ink-mute); }
+
+/* === module 6 â .env vs memory === */
+.envmem{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.envside{ border:1px solid var(--ink); background:#fff; padding:12px; position:relative; }
+.memside{ border:1px solid var(--ink); background: var(--teal); padding:12px; position:relative; }
+.iconlock, .iconkey{
+  position:absolute; right:10px; top:10px; width:18px; height:18px;
+}
+.iconlock svg, .iconkey svg{ width:100%; height:100%; }
+.envside .head, .memside .head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+.envside .h2, .memside .h2{ font-size:16px; }
+.envside .row, .memside .row{
+  display:grid; grid-template-columns: 44px 1fr; gap:8px; align-items:baseline;
+  padding:5px 0; border-bottom:1px dashed var(--hair-soft);
+  font:600 11px/1.3 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.envside .row:last-child, .memside .row:last-child{ border-bottom:none; }
+.envside .row .id, .memside .row .id{ color: var(--ink-mute); font-size:10px; letter-spacing:.1em; }
+.envside .row .val{ position:relative; padding: 1px 6px; }
+.envside .row .val::before{ content:""; position:absolute; left:-2px; top:1px; bottom:1px; width:4px; background: var(--yellow); }
+.envside .row .val span{ position:relative; z-index:1; }
+
+/* === module 7 â verification + pitfalls === */
+.final-split{ display:grid; grid-template-columns: 1.05fr 1fr; gap:12px; }
+.verify{ border:1px solid var(--ink); background:#fff; padding:12px; }
+.verify .head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+.verify .h2{ font-size:16px; }
+.vrow{
+  display:grid; grid-template-columns: 56px 24px 1fr; gap:8px; align-items:baseline;
+  padding:6px 0; border-bottom:1px dashed var(--hair-soft);
+  font:600 11px/1.35 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+}
+.vrow:last-child{ border-bottom:none; }
+.vrow .id{ color: var(--ink-mute); font-size:10px; letter-spacing:.1em; }
+.vrow .ck{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:18px; height:18px; border-radius:50%;
+  background: var(--yellow); border:1.5px solid var(--ink);
+  font:900 11px/1 "Inter", sans-serif; color: var(--ink);
+}
+
+.pits{
+  border:2px solid var(--pink); background: var(--pink); color: var(--warn-ink);
+  padding:12px; position:relative;
+}
+.pits .head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px; }
+.pits .head .h2{ font-size:16px; color: var(--warn-ink); }
+.pits .head .sub{ color: rgba(255,255,255,.85); font:500 10px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace; }
+.pgrid{ display:grid; grid-template-columns: 1fr 1fr; gap:6px; }
+.pit{ border:1px solid rgba(255,255,255,.6); background: rgba(255,255,255,.08); padding:6px 8px; min-height:64px; position:relative; }
+.pit .id{ font:700 9px/1 "JetBrains Mono","SF Mono",ui-monospace,monospace; letter-spacing:.16em; opacity:.85; }
+.pit .lbl{ font:900 12px/1.2 "Inter", sans-serif; margin-top:4px; }
+.pit .haz{
+  position:absolute; bottom:5px; right:6px; width:10px; height:10px;
+  background: conic-gradient(from 45deg, transparent 0 22.5deg, #fff 22.5deg 45deg, transparent 45deg 67.5deg, #fff 67.5deg 90deg, transparent 90deg 112.5deg, #fff 112.5deg 135deg, transparent 135deg 157.5deg, #fff 157.5deg 180deg, transparent 180deg 202.5deg, #fff 202.5deg 225deg, transparent 225deg 247.5deg, #fff 247.5deg 270deg, transparent 270deg 292.5deg, #fff 292.5deg 315deg, transparent 315deg 337.5deg, #fff 337.5deg 360deg);
+  opacity:.9;
+}
+.stop-stamp{
+  position:absolute; top:50%; left:50%; transform: translate(-50%,-50%) rotate(-14deg);
+  font:900 36px/1 "Inter", sans-serif; letter-spacing:.06em;
+  color: rgba(255,255,255,.95); border:4px solid rgba(255,255,255,.95);
+  padding:6px 14px; pointer-events:none; mix-blend-mode: screen; opacity:.55;
+}
+
+/* footer */
+.foot-bar{
+  margin-top:28px; padding-top:10px; border-top:1px solid var(--hair);
+  display:flex; justify-content:space-between; align-items:center;
+  font:500 9px/1.4 "JetBrains Mono","SF Mono",ui-monospace,monospace;
+  color: var(--ink-mute); letter-spacing:.06em;
+}
+.foot-bar .barcode{
+  display:inline-block; width:120px; height:14px;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 3px, var(--ink) 3px 4px, transparent 4px 8px, var(--ink) 8px 9px, transparent 9px 13px, var(--ink) 13px 14px, transparent 14px 18px, var(--ink) 18px 19px, transparent 19px 21px, var(--ink) 21px 22px, transparent 22px 26px);
+  vertical-align: middle; margin-right: 10px;
+}
+.k{ font-weight:700; }
+.muted{ color: var(--ink-mute); }
+.tiny{ font-size:9px; letter-spacing:.16em; text-transform:uppercase; color: var(--ink-mute); }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet">
+
+  <div class="corner tl"><span class="barcode"></span>AFTERSCHOOL AGENT / SETUP-WALKTHROUGH</div>
+  <div class="corner tr">LAB MANUAL Â· v1.0.0 Â· MIT</div>
+  <div class="corner bl">TRANG 1 / 1 Â· Má»¤C Lá»¤C MÃ-ÄUN 7/7</div>
+  <div class="corner br">DENSE-MODULES Ã POP-LABORATORY Â· 9:16</div>
+
+  <!-- ============ MODULE 1 ============ -->
+  <section class="module title-row">
+    <div class="crosshair"></div>
+    <div class="module-head">
+      <div class="module-title"><span class="coord sm">S-00 / v1.0.0</span></div>
+      <div class="tiny">after-school-agent Â· setup-walkthrough Â· bá»n bÆ°á»c cÃ i Äáº·t</div>
+    </div>
+    <h1 class="h1" style="margin-top:14px;">
+      HÆ°á»ng dáº«n<br>cÃ i Äáº·t<span class="reticle"></span>
+    </h1>
+    <div class="title-meta">
+      <div class="chips">
+        <span class="chip">Piper TTS</span>
+        <span class="chip">Jina AI</span>
+        <span class="chip">Telegram / WhatsApp</span>
+        <span class="chip">HÆ°á»ng dáº«n Eight Essentials</span>
+      </div>
+    </div>
+    <p class="title-sub">
+      Bá»n háº¡ng má»¥c ngoÃ i Hermes máº·c Äá»nh, thá»±c hiá»n tá»«ng bÆ°á»c: <b>cÃ i Äáº·t Piper TTS + chá»n giá»ng nÃ³i</b>, <b>khÃ³a API Jina AI miá»n phÃ­</b>, <b>kÃªnh phÃ¢n phá»i</b> (Telegram hoáº·c WhatsApp), vÃ  <b>cÃ¡c tá»p MD hÆ°á»ng dáº«n Eight Essentials</b> trong <span class="mono">essentials/01..08/</span>. Má»i bÆ°á»c sáº½ dá»«ng láº¡i á» cá»ng xÃ¡c thá»±c thÃ´ng tin ÄÄng nháº­p.
+    </p>
+  </section>
+
+  <!-- ============ MODULE 2 â Piper TTS ============ -->
+  <section class="module">
+    <div class="module-head">
+      <div class="module-title">
+        <span class="coord">P-01 to P-05</span>
+        <h2 class="h2">BÆ°á»c 1 Â· Piper TTS</h2>
+      </div>
+      <div class="module-sub">CÃ´ng cá»¥ giá»ng nÃ³i ngoáº¡i tuyáº¿n Â· chá»n binary Â· chá»n giá»ng Â· kiá»m tra tá»ng há»£p</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="split-2">
+      <div class="bin-list">
+        <div class="head">
+          <div class="h2">Piper binary</div>
+          <div class="tiny">3 ÄÆ°á»ng dáº«n OS Â· 1 gÃ³i Py</div>
+        </div>
+        <div class="bin-row"><span class="id">P-01</span><span class="path hl"><span><b>Windows</b> Â· <span class="mono">C:/Users/insig/.openhuman/bin/piper/piper/piper.exe</span></span></span></div>
+        <div class="bin-row"><span class="id">P-02</span><span class="path"><span>Linux Â· <span class="mono">/data/.hermes/bin/piper/piper</span></span></span></div>
+        <div class="bin-row"><span class="id">P-03</span><span class="path"><span>macOS Â· <span class="mono">/opt/homebrew/bin/piper</span></span></span></div>
+        <div class="bin-row"><span class="id">P-04</span><span class="path"><span>GÃ³i Py Â· <span class="mono">pip install piper-tts</span></span></span></div>
+      </div>
+
+      <div class="voices">
+        <div class="head">
+          <div class="h2">Bá» chá»n giá»ng nÃ³i</div>
+          <div class="tiny">5 giá»ng nÃ³i Â· rhasspy/piper-voices</div>
+        </div>
+        <div class="voice"><div class="nm"><b>Joe</b> Â· Nam Má»¹</div><div class="code">en_US-joe-medium</div></div>
+        <div class="voice"><div class="nm"><b>Amy</b> Â· Ná»¯ Má»¹</div><div class="code">en_US-amy-medium</div></div>
+        <div class="voice"><div class="nm"><b>Alan</b> Â· Nam Anh</div><div class="code">en_GB-alan-medium</div></div>
+        <div class="voice"><div class="nm"><b>Jenny Dioco</b> Â· Ná»¯ Anh</div><div class="code">en_GB-jenny_dioco-medium</div></div>
+        <div class="voice"><div class="nm"><b>Natasha</b> Â· Ná»¯ Ãc</div><div class="code">en_AU-natasha-medium</div></div>
+      </div>
+    </div>
+
+    <div class="foot-micro">ÄÆ°á»ng dáº«n giá»ng nÃ³i + ÄÆ°á»ng dáº«n binary â memory, KHÃNG PHáº¢I .env. XÃ¡c minh báº±ng lá»nh: <span class="mono">echo "The Morning Minute is ready." | piper -m &lt;voice.onnx&gt; -f /tmp/piper-test.wav</span></div>
+  </section>
+
+  <!-- ============ MODULE 3 â Jina ============ -->
+  <section class="module">
+    <div class="module-head">
+      <div class="module-title">
+        <span class="coord">J-01</span>
+        <h2 class="h2">BÆ°á»c 2 Â· Jina AI</h2>
+      </div>
+      <div class="module-sub">TÃ¬m kiáº¿m web miá»n phÃ­ Â· há»c viÃªn thÃªm khÃ³a API Â· Äáº¡i lÃ½ xÃ¡c minh</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="jina">
+      <span class="stamp-no-cc">KhÃ´ng cáº§n tháº» tÃ­n dá»¥ng</span>
+      <div class="env-line"><span class="k">JINA_API_KEY</span>=<span class="v">jina_xxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></div>
+      <div class="meta">ÄÄng kÃ½ táº¡i <span class="mono">jina.ai</span> Â· gÃ³i miá»n phÃ­, khÃ´ng cáº§n tháº» tÃ­n dá»¥ng Â· há»c viÃªn tá»± thÃªm khÃ³a vÃ o <span class="mono">.env</span>; Äáº¡i lÃ½ khÃ´ng bao giá» yÃªu cáº§u trong chat.</div>
+      <div class="verify">
+        <span class="lbl">XÃ¡c minh báº±ng má»t Äoáº¡n thá»±c táº¿</span>
+        <span class="mono">curl -s -H "Authorization: Bearer ***" "https://s.jina.ai/https://hermes-agent.nousresearch.com/docs"</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODULE 4 â Channel ============ -->
+  <section class="module">
+    <div class="module-head">
+      <div class="module-title">
+        <span class="coord">C-01 to C-05</span>
+        <h2 class="h2">BÆ°á»c 3 Â· KÃªnh phÃ¢n phá»i</h2>
+      </div>
+      <div class="module-sub">Telegram (khuyÃªn dÃ¹ng) Â· WhatsApp (phÆ°Æ¡ng Ã¡n dá»± phÃ²ng)</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="channel">
+      <div class="tg">
+        <span class="rec">KhuyÃªn dÃ¹ng</span>
+        <div class="head">
+          <div class="h2">Telegram</div>
+          <div class="tiny">rÃµ rÃ ng hÆ¡n Â· Ã¢m thanh phÃ¡t trá»±c tiáº¿p</div>
+        </div>
+        <div class="tstep"><span class="num">1</span><span>Táº¡o bot qua <span class="mono">@BotFather</span> Â· <span class="mono">/newbot</span> â mÃ£ token</span></div>
+        <div class="tstep"><span class="num">2</span><span>ThÃªm vÃ o <span class="mono">.env</span>: <span class="mono">TELEGRAM_BOT_TOKEN</span> + <span class="mono">TELEGRAM_CHAT_ID</span></span></div>
+        <div class="tstep"><span class="num">3</span><span><b>Khá»i Äá»ng bot</b> â má» Telegram, tÃ¬m bot cá»§a báº¡n, gá»­i báº¥t ká»³ tin nháº¯n nÃ o. Bot chÆ°a nháº­n ÄÆ°á»£c tin nháº¯n tá»« báº¡n sáº½ bá» lá»i khi gá»­i láº§n Äáº§u.</span></div>
+        <div class="tstep"><span class="num">4</span><span>DM Äáº¿n <span class="mono">@userinfobot</span> â láº¥y ID chat sá» â <span class="mono">TELEGRAM_CHAT_ID</span></span></div>
+        <div class="tstep"><span class="num">5</span><span>Kiá»m tra <span class="mono">sendMessage</span> Â· há»c viÃªn nháº­n ÄÆ°á»£c tin nháº¯n Â· xÃ¡c minh xong</span></div>
+      </div>
+
+      <div class="wa">
+        <span class="fall">PhÆ°Æ¡ng Ã¡n dá»± phÃ²ng</span>
+        <div class="head">
+          <div class="h2">WhatsApp</div>
+          <div class="tiny">khÃ´ng cÃ³ bot API cÃ¡ nhÃ¢n chÃ­nh thá»©c</div>
+        </div>
+        <div class="wrow"><b>Business API qua BSP (Twilio)</b> Â· tÃ­nh phÃ­ theo tin nháº¯n Â· ÄÄng kÃ½ Â· láº¥y sá» sandbox Â· dÃ¡n thÃ´ng tin vÃ o <span class="mono">.env</span></div>
+        <div class="wrow"><b>Cáº§u ná»i cÃ¡ nhÃ¢n (Baileys)</b> Â· miá»n phÃ­ Â· cáº§n Node.js + session luÃ´n hoáº¡t Äá»ng Â· chá» nháº¯c Äáº¿n náº¿u há»c viÃªn yÃªu cáº§u</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODULE 5 â Eight Essentials tree ============ -->
+  <section class="module">
+    <div class="module-head">
+      <div class="module-title">
+        <span class="coord">E-01 to E-08</span>
+        <h2 class="h2">BÆ°á»c 4 Â· HÆ°á»ng dáº«n Eight Essentials</h2>
+      </div>
+      <div class="module-sub">Tháº£ chÆ°Æ¡ng má»¥c liÃªn quan vÃ o tá»«ng thÆ° má»¥c Â· phÃ¢n nhÃ¡nh niá»m tin theo truyá»n thá»ng</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="tree">
+      <div class="trow"><span class="id">E-01</span><span class="pip"></span><span class="mono">essentials/01-silence/lessons/</span></div>
+      <div class="trow"><span class="id">E-02</span><span class="pip"></span><span class="mono">essentials/02-body/lessons/</span></div>
+      <div class="trow"><span class="id">E-03</span><span class="pip"></span><span class="mono">essentials/03-skills/lessons/</span></div>
+      <div class="trow"><span class="id">E-04</span><span class="pip"></span><span class="mono">essentials/04-digital-self-defence/lessons/</span></div>
+      <div class="trow"><span class="id">E-05</span><span class="pip"></span><span class="mono">essentials/05-community/lessons/</span></div>
+      <div class="trow"><span class="id">E-06</span><span class="pip"></span><span class="mono">essentials/06-knowledge/lessons/</span></div>
+      <div class="trow"><span class="id">E-07</span><span class="pip"></span><span class="mono">essentials/07-nature/lessons/</span></div>
+      <div class="trow"><span class="id">E-08</span><span class="pip y"></span><span class="nm"><span class="mono">essentials/08-faith/lessons/</span> <span class="branch">PhÃ¢n nhÃ¡nh Â· truyá»n thá»ng</span> â <span class="mono">.christian.md</span> / <span class="mono">.universal.md</span></span></div>
+    </div>
+    <div class="schema">
+      <span class="lbl">Schema tá»p</span>
+      giá»i thiá»u Â· ná»i dung Â· thá»±c hÃ nh Â· pháº£n Ã¡nh Â· trÃ­ch dáº«n
+    </div>
+  </section>
+
+  <!-- ============ MODULE 6 â .env vs memory ============ -->
+  <section class="module">
+    <div class="module-head">
+      <div class="module-title">
+        <span class="coord">R-01 to R-09</span>
+        <h2 class="h2">.env so vá»i Memory</h2>
+      </div>
+      <div class="module-sub">BÃ­ máº­t Äá» trong <span class="mono">.env</span> Â· ÄÆ°á»ng dáº«n vÃ  tÃ¹y chá»n Äá» trong memory</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="envmem">
+      <div class="envside">
+        <span class="iconlock"><svg viewBox="0 0 24 24" fill="none" stroke="#2d2926" stroke-width="1.6"><rect x="5" y="11" width="14" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+        <div class="head">
+          <div class="h2">.env Â· bÃ­ máº­t</div>
+          <div class="tiny">há»c viÃªn nháº­p vÃ o</div>
+        </div>
+        <div class="row"><span class="id">R-01</span><span class="val"><span><b>JINA_API_KEY</b>=jina_xxx...</span></span></div>
+        <div class="row"><span class="id">R-02</span><span class="val"><span><b>TELEGRAM_BOT_TOKEN</b>=123456:abc...</span></span></div>
+        <div class="row"><span class="id">R-03</span><span class="val"><span><b>TELEGRAM_CHAT_ID</b>=...</span></span></div>
+        <div class="row"><span class="id">R-04</span><span class="val"><span>ThÃ´ng tin xÃ¡c thá»±c BSP WhatsApp (tÃ¹y chá»n)</span></span></div>
+      </div>
+
+      <div class="memside">
+        <span class="iconkey"><svg viewBox="0 0 24 24" fill="none" stroke="#2d2926" stroke-width="1.6"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2L21 2"/><path d="M18 5l3 3"/><path d="M15 8l3 3"/></svg></span>
+        <div class="head">
+          <div class="h2">memory Â· ÄÆ°á»ng dáº«n</div>
+          <div class="tiny">Äáº¡i lÃ½ ghi vÃ o</div>
+        </div>
+        <div class="row"><span class="id">R-05</span><span><b>piper_binary_path</b></span></div>
+        <div class="row"><span class="id">R-06</span><span><b>piper_voice_path</b></span></div>
+        <div class="row"><span class="id">R-07</span><span><b>delivery_channel</b></span></div>
+        <div class="row"><span class="id">R-08</span><span><b>truyá»n thá»ng</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODULE 7 â verification + pitfalls ============ -->
+  <section class="module">
+    <div class="module-head">
+      <div class="module-title">
+        <span class="coord">V-01 to V-05 Â· W-01 to W-04</span>
+        <h2 class="h2">XÃ¡c minh &amp; Rá»§i ro</h2>
+      </div>
+      <div class="module-sub">KhÃ´ng ÄÃ¡nh dáº¥u hoÃ n thÃ nh cho Äáº¿n khi kiá»m tra Äáº¡t yÃªu cáº§u</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="final-split">
+      <div class="verify">
+        <div class="head">
+          <div class="h2">5 bÆ°á»c xÃ¡c minh</div>
+          <div class="tiny">má»i bÆ°á»c Äá»u cáº§n thá»±c hiá»n</div>
+        </div>
+        <div class="vrow"><span class="id">V-01</span><span class="ck">â</span><span><b>Piper</b> Â· kiá»m tra tá»ng há»£p â <span class="mono">/tmp/piper-test.wav</span></span></div>
+        <div class="vrow"><span class="id">V-02</span><span class="ck">â</span><span><b>Jina</b> Â· tÃ¬m kiáº¿m thá»±c táº¿ â Äoáº¡n trÃ­ch sáº¡ch</span></div>
+        <div class="vrow"><span class="id">V-03</span><span class="ck">â</span><span><b>Telegram</b> Â· <span class="mono">sendMessage</span> 200 + há»c viÃªn nháº­n ÄÆ°á»£c</span></div>
+        <div class="vrow"><span class="id">V-04</span><span class="ck">â</span><span><b>WhatsApp</b> Â· BSP hoáº·c Baileys hoáº¡t Äá»ng</span></div>
+        <div class="vrow"><span class="id">V-05</span><span class="ck">â</span><span><b>HÆ°á»ng dáº«n MD</b> Â· má»i thÆ° má»¥c <span class="mono">essentials/XX/lessons/</span> cÃ³ tá»p chÆ°Æ¡ng má»¥c</span></div>
+      </div>
+
+      <div class="pits">
+        <div class="stop-stamp">Dá»ªNG Láº I</div>
+        <div class="head">
+          <div class="h2">4 rá»§i ro</div>
+          <div class="sub">ThÃ´ng tin xÃ¡c thá»±c Â· Ngá»¥y táº¡o Â· XÃ¡c minh Â· Truyá»n thá»ng</div>
+        </div>
+        <div class="pgrid">
+          <div class="pit"><span class="id">W-01</span><div class="lbl"><b>Creds</b> trong chat</div><div class="haz"></div></div>
+          <div class="pit"><span class="id">W-02</span><div class="lbl"><b>Ngá»¥y táº¡o</b> bÃ i há»c</div><div class="haz"></div></div>
+          <div class="pit"><span class="id">W-03</span><div class="lbl"><b>Bá» qua</b> xÃ¡c minh</div><div class="haz"></div></div>
+          <div class="pit"><span class="id">W-04</span><div class="lbl"><b>Trá»n láº«n</b> truyá»n thá»ng</div><div class="haz"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot-bar">
+    <span><span class="barcode"></span>v1.0.0 Â· MIT Â· afterschool-agent Â· setup-walkthrough</span>
+    <span>Káº¾T THÃC TÃI LIá»U Â· thÆ°á»c Äo tá»a Äá» dá»c theo mÃ©p trÃ¡i</span>
+  </div>
+
+</div>
+</body>
+</html>', path: 'infographic/setup-walkthrough/sheet-vi.html'} ... ok, verified: true
