@@ -215,6 +215,23 @@ em { font-style: italic; }
 .guide-price .price { font-family: 'Fraunces', serif; font-size: 2.6rem; font-weight: 500; color: var(--ink); letter-spacing: -.02em; }
 .guide-price .unit { font-size: .95rem; color: var(--muted); }
 .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
+/* ---- Free guide access form (More than a guide section) ---- */
+.guide-access { margin-top: 1.4rem; max-width: 400px; }
+.guide-access-lede { font-size: .95rem; color: var(--muted); line-height: 1.6; margin-bottom: .9rem; }
+.guide-form { display: flex; flex-direction: column; gap: .6rem; }
+.guide-form input { padding: .8rem 1rem; font-size: .92rem; border: 1.5px solid rgba(76,54,45,.22); border-radius: var(--r-none); font-family: 'Inter', sans-serif; color: var(--ink); background: var(--cream); outline: none; transition: border-color .2s, box-shadow .2s; width: 100%; }
+.guide-form input::placeholder { color: var(--muted); }
+.guide-form input:focus { border-color: var(--terra); box-shadow: 0 0 0 3px rgba(164,100,71,.14); }
+.guide-form button { background: var(--terra); color: var(--paper); border: none; padding: .8rem 1.4rem; border-radius: var(--r-none); font-weight: 600; font-size: .88rem; cursor: pointer; font-family: 'Inter', sans-serif; transition: background .2s; width: 100%; }
+.guide-form button:hover { background: var(--umber); }
+.guide-form button:disabled { opacity: .6; cursor: default; }
+.guide-success { display: none; background: var(--terra); color: var(--paper); padding: .95rem 1.2rem; border-radius: var(--r-none); font-size: .92rem; line-height: 1.55; margin-top: .6rem; }
+.guide-success.show { display: block; }
+.guide-success .guide-open { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.guide-error { display: none; color: #a13a2e; font-size: .85rem; margin-top: .6rem; }
+.guide-error.show { display: block; }
+.guide-note { font-size: .8rem; color: var(--muted); margin-top: .9rem; line-height: 1.5; }
+
 
 /* ============ WEEKLY MEETUP ============ */
 .meet-head { max-width: 680px; margin-bottom: 3rem; }
@@ -337,7 +354,7 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
       <a href="#essentials">The Eight</a>
       <a href="#guide">The Guide</a>
       <a href="#workshops">Weekly Meetup</a>
-      <a href="https://store.onetoeight.guide/" target="_blank" rel="noopener" class="nav-cta">Get the Guide</a>
+      <a href="#guide" class="nav-cta">Get the Guide</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
@@ -370,7 +387,7 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
         <h1 class="reveal">We handed them the world.<br>We never gave them <em>roots.</em></h1>
         <p class="hero-sub reveal">The screen-born generation is the most connected and the most adrift. onetoeight is a practical guide and a weekly meetup that builds eight tested foundations into young lives that hold, not just perform. <strong>One to eight.</strong></p>
         <div class="hero-ctas reveal">
-          <a href="https://store.onetoeight.guide/" target="_blank" rel="noopener" class="btn btn-primary">Get the Guide</a>
+          <a href="#guide" class="btn btn-primary">Get the Guide</a>
           <a href="#workshops" class="btn btn-secondary">Weekly Meetup</a>
         </div>
         <div class="hero-audio reveal">
@@ -515,7 +532,7 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
 
       <div>
         <h2 class="headline reveal">More than a guide.<br>A complete <em>formation kit.</em></h2>
-        <p class="lede reveal">At its heart, the 140-page guide is written from a Christian worldview. A secular version is also available. Bigger than a book, the kit includes a leader pack, extra resources, spoken word audio for each chapter, and offline AI tools: everything needed to build the eight essentials into a life that holds.</p>
+        <p class="lede reveal">One edition, written for every young person. Free for now. Bigger than a book, the guide includes spoken word audio for each chapter, discussion questions, and practical challenges: everything needed to build the eight essentials into a life that holds.</p>
         <ul class="guide-features reveal">
           <li><span class="check">&#10003;</span> 8 chapters, one per essential: self-paced</li>
           <li><span class="check">&#10003;</span> Audio spoken word for each chapter</li>
@@ -527,10 +544,19 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
           <li><span class="check">&#10003;</span> 10% off coupon for Afterschool Agent</li>
           <li><span class="check">&#10003;</span> Lifetime updates</li>
         </ul>
-        <div class="guide-price reveal"><span class="price">$44.88</span><span class="unit">/ digital copy</span></div>
-        <div class="cta-row reveal">
-          <a href="https://store.onetoeight.guide/" target="_blank" rel="noopener" class="btn btn-primary">Order the Mastery Kit</a>
-          <a href="https://store.onetoeight.guide/" target="_blank" rel="noopener" class="btn btn-ghost">Order the Secular Version</a>
+        <div class="cta-row reveal" id="guide-access">
+          <button type="button" class="btn btn-primary" id="guide-access-btn" onclick="showGuideForm()">Get the Free Guide</button>
+        </div>
+        <div class="guide-access" id="guide-form" hidden>
+          <p class="guide-access-lede">Enter your first name and email to get instant access. No charge, no card, no spam.</p>
+          <form class="guide-form" id="guide-form-el" onsubmit="return requestGuide(event)" aria-label="Get the free guide">
+            <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
+            <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+            <button type="submit" id="guide-form-btn">Get Access</button>
+          </form>
+          <div class="guide-success" id="guide-success">You're in! Your free guide is ready. <a href="/guide/universal/" class="guide-open">Open the Universal Guide &rarr;</a></div>
+          <div class="guide-error" id="guide-error">Something went wrong. Please try again.</div>
+          <p class="guide-note">We will never share your email. Unsubscribe anytime.</p>
         </div>
       </div>
     </div>
@@ -587,10 +613,10 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
     <div class="final-grid">
       <div>
         <h2 class="headline reveal">Give them <em>roots,</em><br>not just wings.</h2>
-        <p class="lede reveal">Order the guide, join the meetup, or just start a conversation.</p>
+        <p class="lede reveal">Get the free guide, join the meetup, or just start a conversation.</p>
         <div class="cta-row reveal">
           <a href="mailto:go@getonetoeight.org" class="btn btn-primary">Get in Touch</a>
-          <a href="https://store.onetoeight.guide/" target="_blank" rel="noopener" class="btn btn-ghost">Order the Guide</a>
+          <a href="#guide" class="btn btn-ghost">Get the Free Guide</a>
         </div>
       </div>
       <img src="images/ch7-nature-4.png" alt="Nature: the original therapy" class="final-img reveal" loading="lazy">
@@ -683,6 +709,46 @@ function submitSignup(e) {
       form.style.display = 'none'; success.classList.add('show');
     }).catch(function() {
       btn.disabled = false; btn.textContent = 'Subscribe'; error.classList.add('show');
+    });
+  });
+  return false;
+}
+
+/* ---- Free guide access (More than a guide section) ---- */
+function showGuideForm() {
+  var btn = document.getElementById('guide-access-btn');
+  var form = document.getElementById('guide-form');
+  if (btn) btn.style.display = 'none';
+  if (form) form.hidden = false;
+}
+function requestGuide(e) {
+  e.preventDefault();
+  var form = document.getElementById('guide-form-el');
+  var btn = document.getElementById('guide-form-btn');
+  var success = document.getElementById('guide-success');
+  var error = document.getElementById('guide-error');
+  var firstName = form.querySelector('input[name="first_name"]').value;
+  var email = form.querySelector('input[name="email"]').value;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  error.classList.remove('show');
+  fetch('https://cloud.activepieces.com/api/v1/webhooks/mFlYDmEWcfIOBLkpGcAPN', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: firstName, email: email, source: 'onetoeight free guide access' })
+  })
+  .then(function(resp) {
+    if (resp.ok || resp.status === 200 || resp.status === 201 || resp.status === 204) {
+      form.style.display = 'none'; success.classList.add('show');
+    } else { throw new Error('HTTP ' + resp.status); }
+  })
+  .catch(function() {
+    fetch('https://cloud.activepieces.com/api/v1/webhooks/mFlYDmEWcfIOBLkpGcAPN', {
+      method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: firstName, email: email, source: 'onetoeight free guide access' })
+    }).then(function() {
+      form.style.display = 'none'; success.classList.add('show');
+    }).catch(function() {
+      btn.disabled = false; btn.textContent = 'Get Access'; error.classList.add('show');
     });
   });
   return false;
