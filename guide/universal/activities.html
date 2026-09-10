@@ -300,5 +300,24 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
 <style>
 h1,h2,.wordmark{overflow-wrap:break-word}
 </style>
+<style>
+/* touch targets: keep every real control at or above 44x44 on touch-sized screens */
+.nav-toggle{width:44px;height:44px}
+.nav-toggle span:nth-child(1){top:15px}
+.nav-toggle span:nth-child(2){top:21px}
+.nav-toggle span:nth-child(3){top:27px}
+@media(max-width:900px){
+ .has-js .top.open .bar nav a,.has-js .toolbar.open .bar nav a,.has-js .toolbar.open .bar nav button{display:flex;align-items:center;min-height:44px;padding:10px 0}
+ .skill-btn{min-height:44px;padding:11px 16px;font-size:12px}
+ .ap-rate{min-width:44px;min-height:44px}
+ .brand,.brand-mini{padding-top:7px;padding-bottom:7px}
+ .hero-bottom a,.bottom a,.cover-bottom a{display:inline-flex;align-items:center;min-height:44px}
+ .editor summary,.book summary{display:flex;align-items:center;min-height:44px;padding:9px 0}
+ .checks input{width:22px;height:22px}
+}
+@media(max-width:420px){
+ .has-js .top.open .bar nav a,.has-js .toolbar.open .bar nav a,.has-js .toolbar.open .bar nav button{min-height:46px}
+}
+</style>
 </body>
 </html>
