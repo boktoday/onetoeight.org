@@ -348,11 +348,11 @@ End with a simple spaced practice plan and a reminder that one useful idea carri
   function fallback(txt){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Meta Prompt copied')}catch(e){toast('Copy failed: select and copy manually')}ta.remove();}
 })();
 </script><style>
-.chapter-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 30px;max-width:680px}
-.chapter-btn{display:inline-flex;align-items:center;background:transparent;border:1px solid #a46447;color:#a46447;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;cursor:pointer;text-decoration:none;font-family:Inter,Arial,sans-serif;line-height:1.2}
-.chapter-btn:hover{background:#a46447;color:#fbf7ee}
-.chapter-btn.tip-btn{background:#a46447;color:#fbf7ee;border-color:#a46447}
-.chapter-btn.tip-btn:hover{background:#8c5540}
+.chapter-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:0 auto 34px;max-width:900px}
+.chapter-btn{font-family:'Inter',Arial,sans-serif;font-size:.95rem;font-weight:600;padding:.95rem 1.7rem;border-radius:0;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid rgba(251,247,238,.3);background:transparent;color:#fbf7ee;text-decoration:none}
+.chapter-btn:hover{border-color:#fbf7ee;background:rgba(251,247,238,.06)}
+.chapter-btn.tip-btn{background:var(--terra);color:var(--paper);border-color:var(--terra)}
+.chapter-btn.tip-btn:hover{background:#8c5540;border-color:#8c5540;transform:translateY(-2px);box-shadow:0 10px 26px rgba(164,100,71,.28)}
 </style><script>
 (function(){
   function toast(m){var t=document.getElementById('meta-toast');if(!t){t=document.createElement('div');t.id='meta-toast';t.className='meta-toast';document.body.appendChild(t);}t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show')},2200);}
@@ -382,4 +382,4 @@ End with a simple spaced practice plan and a reminder that one useful idea carri
 .meta-modal{border-radius:0}
 .meta-toast{border-radius:0}
 .meta-modal-body pre{border-radius:0}
-</style><style>.audio-player{background:#4c362d;width:100%;max-width:none;margin:0;padding:34px 22px 26px;border:0;border-top:1px solid rgba(217,164,65,.22);border-bottom:1px solid rgba(217,164,65,.22);text-align:center}.audio-player > *{max-width:700px;margin-left:auto;margin-right:auto}.audio-player .ap-row,.audio-player .ap-progress{max-width:none;margin-left:auto;margin-right:auto}.audio-player .ap-row{margin:0 auto 22px}@media(max-width:520px){.audio-player{padding:26px 18px 20px}}</style></body></html>
+</style><style>.audio-player{background:#4c362d;width:100%;max-width:none;margin:0 0 34px;padding:34px 22px 30px;border:0;border-top:1px solid rgba(217,164,65,.22);border-bottom:1px solid rgba(217,164,65,.22);text-align:center}.audio-player > *{max-width:700px;margin-left:auto;margin-right:auto}.audio-player .ap-row{margin:0 auto 22px}@media(max-width:520px){.audio-player{padding:26px 18px 24px}}</style></body></html>
