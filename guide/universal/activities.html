@@ -75,6 +75,15 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
 <section class="section">
  <h2>Try one this <em>week.</em></h2>
  <p class="lede">Each essential has its own set of activities. Choose one that fits your week, your space and your people. Start small; done beats perfect. More activities are on the way.</p>
+<div class="ways">
+ <h3>Three ways to do these</h3>
+ <p>Every activity on this page works on your own, and every one of them works better with company. Pick whichever fits the week you are actually having.</p>
+ <ul>
+  <li><span class="w-label">On your own</span>A few minutes, no audience, nobody to explain yourself to. Most of these need nothing but you, and this is the easiest place to start. If you would rather not tell anyone you are doing this yet, you do not have to.</li>
+  <li><span class="w-label">With other people</span>A friend, a small group, a class, or your family. Doing it next to someone else is usually the thing that turns a one-off into a habit, because somebody notices when you are not there. There are <a href="/guide/universal/discussion-questions.html">discussion questions</a> ready for groups if you want a starting point.</li>
+  <li><span class="w-label">With an AI agent</span>The honest problem with anything you do by yourself is that nobody notices when you stop. An agent notices. It holds the thread, remembers where you got to, checks in when you asked it to, asks the questions you would rather skip, and points you at the next thing when you are ready to do more. That is what the skill.md files on this page are for.</li>
+ </ul>
+</div>
 <div class="explainer">
  <h3>What is a <em>skill.md</em> file?</h3>
  <p>A skill.md is a plain text file, written in markdown. It tells an AI agent how to do one thing: who to be, what the goal is, the steps to follow, the questions to ask, and where to stop. There is no code in it and nothing to install. Every activity on this page has one, and it is yours to read, edit and keep.</p>
@@ -335,6 +344,19 @@ h1,h2,.wordmark{overflow-wrap:break-word}
 .explainer .harness-list a:hover{border-bottom-color:var(--terra)}
 .explainer .harness-list a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .explainer .harness-list .h-what{color:#6d6157}
+</style>
+<style>
+.ways{margin:0 0 42px;max-width:760px}
+.ways h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:26px;line-height:1.15;margin:0 0 12px}
+.ways > p{font-size:16.5px;line-height:1.65;margin:0 0 22px;color:var(--ink)}
+.ways ul{list-style:none;padding:0;margin:0}
+.ways li{font-size:15.5px;line-height:1.65;margin-bottom:17px;padding-left:18px;border-left:2px solid #e0d5c2;color:var(--ink)}
+.ways li:last-child{margin-bottom:0}
+.ways .w-label{display:block;font-weight:600;color:var(--terra);margin-bottom:4px;font-size:16px}
+.ways a{color:var(--terra);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(164,100,71,.4)}
+.ways a:hover{border-bottom-color:var(--terra)}
+.ways a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media(max-width:640px){.ways h3{font-size:22px}.ways > p{font-size:16px}.ways li{font-size:15px}}
 </style>
 </body>
 </html>
