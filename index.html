@@ -734,7 +734,7 @@ function requestGuide(e) {
   btn.disabled = true;
   btn.textContent = 'Sending...';
   error.classList.remove('show');
-  fetch('https://cloud.activepieces.com/api/v1/webhooks/mFlYDmEWcfIOBLkpGcAPN', {
+  fetch('https://cloud.activepieces.com/api/v1/webhooks/9FKYYbfxndzwgQgRo7lrU', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: firstName, email: email, source: 'onetoeight free guide access' })
   })
@@ -744,7 +744,7 @@ function requestGuide(e) {
     } else { throw new Error('HTTP ' + resp.status); }
   })
   .catch(function() {
-    fetch('https://cloud.activepieces.com/api/v1/webhooks/mFlYDmEWcfIOBLkpGcAPN', {
+    fetch('https://cloud.activepieces.com/api/v1/webhooks/9FKYYbfxndzwgQgRo7lrU', {
       method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: firstName, email: email, source: 'onetoeight free guide access' })
     }).then(function() {
