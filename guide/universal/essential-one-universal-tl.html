@@ -380,4 +380,15 @@ text-transform:uppercase;font-weight:600;padding:4px 8px;border-radius:6px;trans
  window.addEventListener('resize',function(){if(btn.offsetParent===null)set(false);});
 })();
 </script>
+<style>
+.cover-top,.cover-grid,.cover-bottom{padding-left:64px;padding-right:64px}
+h1,h2,.wordmark{overflow-wrap:break-word}
+@media(max-width:800px){
+ .cover-top,.cover-grid,.cover-bottom{padding-left:35px;padding-right:35px}
+}
+@media(max-width:540px){
+ .cover-top,.cover-grid,.cover-bottom{padding-left:22px;padding-right:22px}
+ h1{font-size:clamp(40px,13vw,88px)}
+}
+</style>
 </body></html>
