@@ -75,6 +75,30 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
 <section class="section">
  <h2>Try one this <em>week.</em></h2>
  <p class="lede">Each essential has its own set of activities. Choose one that fits your week, your space and your people. Start small; done beats perfect. More activities are on the way.</p>
+<div class="explainer">
+ <h3>What is a <em>skill.md</em> file?</h3>
+ <p>A skill.md is a plain text file, written in markdown. It tells an AI agent how to do one thing: who to be, what the goal is, the steps to follow, the questions to ask, and where to stop. There is no code in it and nothing to install. Every activity on this page has one, and it is yours to read, edit and keep.</p>
+ <h4>Why they help</h4>
+ <ul>
+  <li>Your agent runs the activity properly, and the same way every time, instead of improvising.</li>
+  <li>The safety notes and boundaries travel inside the file, so the tone stays right.</li>
+  <li>It is yours to change. Shorten it, reword it, or add your own notes at the bottom.</li>
+  <li>It is portable. The same file works in any harness that can read markdown, so you are not locked into one tool.</li>
+  <li>It sets delivery up for you: how often the activity runs, how you want to be reminded, and how it arrives.</li>
+ </ul>
+ <h4>How to use one</h4>
+ <ol>
+  <li>Find an activity and press <strong>skill.md</strong>.</li>
+  <li>Copy the text, or download the file.</li>
+  <li>Give it to your agent. Either save it where your agent keeps its skills or instructions, or paste it in as the first message of a new chat.</li>
+  <li>Tell your agent to start by setting up delivery: how often you want it, how you want to be reminded and at what time, and whether you want it as chat, audio, imagery, a web page, or a combination.</li>
+  <li>Run it. Keep the file and run it again whenever you like.</li>
+ </ol>
+ <h4>Which harnesses they work with</h4>
+ <p>These files are plain markdown, so they are not tied to one tool. They work with any agent harness that can load an instruction file, including Hermes, Msty Go, Agent Zero, Open Claw, Qwen Paw, LM Studio Bionic and DeepSeek Harness, and with an ordinary chat window in any capable model.</p>
+ <p>Where a harness has a skills, prompts or instructions folder, save the file there under the activity's name. Where it does not, paste the text in as your first message. Your harness's own documentation will tell you which place it expects.</p>
+</div>
+
 
 <div class="cat">
  <div class="cat-head"><span class="cat-num">01</span><div><h3 class="cat-title">The ability to sit in <em>silence.</em></h3><p class="cat-sub">Stillness / attention</p></div></div>
@@ -216,5 +240,15 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
   });
 })();
 </script>
+<style>
+.explainer{background:#f3ecdf;border-left:3px solid var(--terra);padding:26px 30px;margin:0 0 52px}
+.explainer h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:26px;line-height:1.15;margin:0 0 12px}
+.explainer h3 em{color:var(--terra);font-style:normal}
+.explainer h4{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:19px;margin:24px 0 8px}
+.explainer p{font-size:16px;line-height:1.65;margin:0 0 10px;color:var(--ink)}
+.explainer ul,.explainer ol{margin:0 0 10px;padding-left:22px}
+.explainer li{font-size:15.5px;line-height:1.6;margin-bottom:7px;color:var(--ink)}
+@media(max-width:640px){.explainer{padding:20px 18px}.explainer h3{font-size:22px}}
+</style>
 </body>
 </html>
