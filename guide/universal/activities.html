@@ -95,9 +95,18 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
   <li>Run it. Keep the file and run it again whenever you like.</li>
  </ol>
  <h4>Which harnesses they work with</h4>
- <p>These files are plain markdown, so they are not tied to one tool. They work with any agent harness that can load an instruction file, including Hermes, Msty Go, Agent Zero, Open Claw, Qwen Paw, LM Studio Bionic and DeepSeek Harness, and with an ordinary chat window in any capable model.</p>
- <p>Where a harness has a skills, prompts or instructions folder, save the file there under the activity's name. Where it does not, paste the text in as your first message. Your harness's own documentation will tell you which place it expects.</p>
-</div>
+ <p>These files are plain markdown, so they are not tied to one tool. They work with any agent harness that can load an instruction file. These seven are a good place to start:</p>
+ <ul class="harness-list">
+  <li><a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener noreferrer">Hermes</a> <span class="h-what">Open source and self-hosted, with persistent memory and skills that grow with you.</span> Save the file where your agent keeps its skills, or paste it in as your first message.</li>
+  <li><a href="https://qwenpaw.agentscope.io/" target="_blank" rel="noopener noreferrer">QwenPaw</a> <span class="h-what">A personal agent workstation you run yourself, extensible with Skills and MCP.</span> Add this activity as a skill.</li>
+  <li><a href="https://www.deepseek.com/harness/en/" target="_blank" rel="noopener noreferrer">DeepSeek Harness</a> <span class="h-what">A developer preview where every capability is a plugin, skills included.</span> Add the file as a skill plugin.</li>
+  <li><a href="https://www.agent-zero.ai/" target="_blank" rel="noopener noreferrer">Agent Zero</a> <span class="h-what">An open source agentic framework that runs on its own computer and builds its own tools.</span> Give it the file as an instruction and it will follow it.</li>
+  <li><a href="https://msty.ai/products/go/" target="_blank" rel="noopener noreferrer">Msty Go</a> <span class="h-what">Scoped agents you run from desktop or mobile, reviewing each step as it goes.</span> Paste the file as the first message of a new agent.</li>
+  <li><a href="https://openclaw.ai/" target="_blank" rel="noopener noreferrer">OpenClaw</a> <span class="h-what">An open source assistant on your own machine, reached through WhatsApp, Telegram or any chat app.</span> Paste the text into the chat.</li>
+  <li><a href="https://lmstudio.ai/" target="_blank" rel="noopener noreferrer">LM Studio Bionic</a> <span class="h-what">LM Studio’s agent for work and code, running open models locally on your device.</span> Paste the file in as your first message, or as the system prompt.</li>
+ </ul>
+ <p>Where a harness has a skills, prompts or instructions folder, save the file there under the activity’s name. Where it does not, paste the text in as your first message. Your harness’s own documentation will tell you which place it expects, and an ordinary chat window in any capable model will work too.</p>
+ </div>
 
 
 <div class="cat">
@@ -318,6 +327,14 @@ h1,h2,.wordmark{overflow-wrap:break-word}
 @media(max-width:420px){
  .has-js .top.open .bar nav a,.has-js .toolbar.open .bar nav a,.has-js .toolbar.open .bar nav button{min-height:46px}
 }
+</style>
+<style>
+.explainer .harness-list{list-style:none;padding:0;margin:0 0 14px}
+.explainer .harness-list li{font-size:15.5px;line-height:1.6;margin-bottom:13px;padding-left:0;color:var(--ink)}
+.explainer .harness-list a{color:var(--terra);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(164,100,71,.4)}
+.explainer .harness-list a:hover{border-bottom-color:var(--terra)}
+.explainer .harness-list a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.explainer .harness-list .h-what{color:#6d6157}
 </style>
 </body>
 </html>
