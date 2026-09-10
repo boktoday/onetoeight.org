@@ -63,9 +63,9 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
  .hero{padding:44px 28px}
 }
 </style>
-</head>
+<script>document.documentElement.classList.add("has-js")</script></head>
 <body>
-<header class="top"><div class="bar"><a class="brand" href="/guide/universal/index.html">one<span>to</span>eight. / Universal edition</a><nav><a href="/guide/universal/index.html">Guide</a><a href="/guide/universal/reading-resources.html">Reading &amp; Resources</a><a href="#" class="on">Activities</a></nav></div></header>
+<header class="top"><div class="bar"><a class="brand" href="/guide/universal/index.html">one<span>to</span>eight. / Universal edition</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button><nav id="site-nav"><a href="/guide/universal/index.html">Guide</a><a href="/guide/universal/reading-resources.html">Reading &amp; Resources</a><a href="#" class="on">Activities</a></nav></div></header>
 <main>
 <section class="hero">
  <div class="hero-top"><span class="eyebrow">The eight essentials</span><span class="eyebrow">Activities<br>Universal edition</span></div>
@@ -250,5 +250,52 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
 .explainer li{font-size:15.5px;line-height:1.6;margin-bottom:7px;color:var(--ink)}
 @media(max-width:640px){.explainer{padding:20px 18px}.explainer h3{font-size:22px}}
 </style>
+<style>
+.nav-toggle{display:none;flex:0 0 auto;width:44px;height:40px;padding:0;background:none;border:1px solid rgba(251,247,238,.42);color:inherit;position:relative;cursor:pointer;border-radius:0;-webkit-tap-highlight-color:transparent}
+.nav-toggle span{position:absolute;left:11px;right:11px;height:2px;background:currentColor;transition:transform .18s ease,opacity .18s ease}
+.nav-toggle span:nth-child(1){top:13px}
+.nav-toggle span:nth-child(2){top:19px}
+.nav-toggle span:nth-child(3){top:25px}
+.nav-toggle:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.top.open .nav-toggle span:nth-child(1),.toolbar.open .nav-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.top.open .nav-toggle span:nth-child(2),.toolbar.open .nav-toggle span:nth-child(2){opacity:0}
+.top.open .nav-toggle span:nth-child(3),.toolbar.open .nav-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:900px){
+ .has-js .top .nav-toggle{display:block}
+ .has-js .top .bar nav{display:none}
+ .has-js .top.open .bar nav{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:#000;border-top:1px solid #424856;border-bottom:1px solid #424856;padding:18px 24px 22px;gap:16px;font-size:14px;letter-spacing:.08em;z-index:12;box-shadow:0 20px 34px rgba(0,0,0,.38)}
+ .has-js .top.open .bar nav a{padding:4px 0}
+}
+@media(max-width:620px){
+ .has-js .toolbar .nav-toggle{display:block}
+ .has-js .toolbar .bar nav{display:none}
+ .has-js .toolbar.open .bar nav{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:#000;border-top:1px solid #404452;border-bottom:1px solid #404452;padding:18px 24px 22px;gap:16px;z-index:12;box-shadow:0 20px 34px rgba(0,0,0,.38)}
+ .has-js .toolbar.open .bar nav a,.has-js .toolbar.open .bar nav button{font-size:14px}
+ .has-js .toolbar.open .bar nav button{padding:9px 14px}
+}
+@media(max-width:420px){
+ .nav-toggle{width:42px;height:38px}
+ .has-js .top.open .bar nav,.has-js .toolbar.open .bar nav{padding:16px 18px 20px}
+}
+@media print{.nav-toggle{display:none!important}}
+</style>
+<script>
+(function(){
+ var h=document.querySelector('header.top,header.toolbar');
+ if(!h) return;
+ var btn=h.querySelector('.nav-toggle'), nav=h.querySelector('.bar nav');
+ if(!btn||!nav) return;
+ function set(open){
+  h.classList.toggle('open',open);
+  btn.setAttribute('aria-expanded',open?'true':'false');
+  btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+ }
+ btn.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('open'));});
+ nav.addEventListener('click',function(e){if(e.target.closest('a,button'))set(false);});
+ document.addEventListener('click',function(e){if(!h.contains(e.target))set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){set(false);btn.focus();}});
+ window.addEventListener('resize',function(){if(btn.offsetParent===null)set(false);});
+})();
+</script>
 </body>
 </html>
