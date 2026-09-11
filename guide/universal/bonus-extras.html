@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/guide/universal/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="32x32" href="/guide/universal/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/guide/universal/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/guide/universal/apple-touch-icon.png"><link rel="manifest" href="/guide/universal/site.webmanifest">
+<meta name="robots" content="noindex,nofollow"><meta name="googlebot" content="noindex,nofollow">
+<title>Bonus extras | onetoeight.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{--night:#4c362d;--night2:#5b4237;--paper:#fbf7ee;--dawn:#e8e1d5;--ink:#4c362d;--muted:#796b63;--gold:#a46447;--terra:#a46447;--sage:#88937b}
+*{box-sizing:border-box}
+body{margin:0;background:#171b25;color:var(--ink);font-family:Inter,Arial,sans-serif;font-size:18px;line-height:1.75}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:3;background:#000;color:var(--paper);border-bottom:1px solid #424856}
+.bar{max-width:1120px;margin:auto;padding:15px 24px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.brand{font-weight:600;text-decoration:none;color:var(--paper)}
+.brand em{color:var(--gold);font-style:normal}
+.bar nav{display:flex;gap:22px;font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+.bar nav a{color:var(--paper);text-decoration:none}
+.bar nav a:hover{color:var(--gold)}
+.bar nav a.on{color:var(--gold)}
+main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
+.hero{padding:55px 64px 45px;background:radial-gradient(ellipse at 82% 35%,#a464471c,transparent 48%),var(--night);color:var(--paper);display:flex;flex-direction:column;justify-content:space-between}
+.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;line-height:1.6}
+.hero-top{display:flex;justify-content:space-between;gap:20px}
+.hero-top .eyebrow{text-align:right;color:#cbc4b7}
+.hero h1,.hero h2,.hero h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal}
+.hero h1{font-size:clamp(56px,7vw,96px);line-height:.98;margin:22px 0;letter-spacing:.01em}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-lead{font-size:22px;line-height:1.5;max-width:34ch;color:#e0dacc}
+.hero-bottom{border-top:1px solid #ffffff35;padding-top:20px;display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#bfb9ac}
+.section{background:var(--paper);padding:60px 110px}
+.section h2{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:40px;line-height:1.1;margin:0 0 12px}
+.section h2 em{color:var(--gold);font-style:normal}
+.section .lede{font-size:19px;color:var(--muted);max-width:52ch;margin:0 0 48px}
+.cat{margin-bottom:58px}
+.cat:last-child{margin-bottom:0}
+.cat-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:10px}
+.cat-num{font-family:Fraunces,Georgia,serif;font-size:34px;line-height:1;color:var(--gold);flex:none}
+.cat-title{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:29px;line-height:1.1;margin:0;color:var(--ink)}
+.cat-title em{color:var(--gold);font-style:normal}
+.cat-sub{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:7px 0 0}
+.res-list{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.res-row{display:flex;align-items:flex-start;gap:24px;padding:22px 0;border-bottom:1px solid #e2d8cb}
+.res-row:last-child{border-bottom:none}
+.res-text{flex:1;min-width:0}
+.res-text h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:23px;line-height:1.2;margin:0 0 6px;color:var(--ink)}
+.res-text h3 em{color:var(--gold);font-style:normal}
+.res-text p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.55}
+.res-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.res-meta span{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid #e2d8cb;padding:3px 10px;border-radius:0}
+.note{background:var(--dawn);border-radius:0;padding:22px 28px;margin-top:12px}
+.note h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:22px;margin:0 0 8px}
+.note p{margin:0;font-size:15.5px;color:var(--ink)}
+.footer{background:var(--night);color:#bfb9ac;padding:28px 64px;display:flex;justify-content:space-between;gap:20px;font-size:12px}
+.footer a{color:var(--gold);text-decoration:none}
+@media(max-width:860px){
+ .section{padding:44px 28px}
+ .res-list{grid-template-columns:1fr}
+ .cat-num{font-size:26px}
+ .cat-title{font-size:24px}
+ .hero{padding:44px 28px}
+}
+</style>
+<script>document.documentElement.classList.add("has-js")</script></head>
+<body>
+<header class="top"><div class="bar"><a class="brand" href="/guide/universal/index.html">one<span>to</span>eight. / Universal edition</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button><nav id="site-nav"><a href="/guide/universal/index.html">Guide</a><a href="/guide/universal/reading-resources.html">Reading &amp; Resources</a><a href="/guide/universal/activities.html">Activities</a><a href="#" class="on">Bonus Extras</a></nav></div></header>
+<main>
+<section class="hero"><div class="hero-top"><span class="eyebrow">The eight essentials</span><span class="eyebrow">Bonus extras<br>Universal edition</span></div><div class="hero-main"><div><p class="eyebrow">A few things that did not fit</p><h1>Bonus<br><em>extras.</em></h1><p class="hero-lead">A discount, two doors worth opening, and one thing still to come.</p></div><div class="hero-mark"><svg viewBox="0 0 200 400" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#CEB59E" stroke-width="7" d="M100,25 L100,360"/><path stroke="#CEB59E" stroke-width="7" d="M66,58 L100,15"/><path stroke="#E8C87A" stroke-width="7" d="M36,120 C55,116 76,119 100,119 C126,119 147,116 164,120"/><path stroke="#E8C87A" stroke-width="6" d="M100,118 C140,118 166,155 160,190 C155,222 130,245 100,245 C70,245 45,222 40,190 C34,155 60,118 100,118"/><path stroke="#E8C87A" stroke-width="6" d="M100,245 C136,245 156,280 150,315 C145,345 124,360 100,360 C76,360 55,345 50,315 C44,280 65,245 100,245"/></g></svg></div></div><div class="hero-bottom"><span>onetoeight. / Universal edition</span><a style="color:var(--gold);text-decoration:none" href="/guide/universal/index.html">Back to the guide</a></div></section><div class="chapter-actions"><button type="button" class="chapter-btn meta-prompt-btn">Meta Prompt</button><a class="chapter-btn agent-btn" href="https://www.afterschool.agency/" target="_blank" rel="noopener noreferrer">Get the Agent</a><button type="button" class="chapter-btn share-btn">Share</button><button type="button" class="chapter-btn copy-text-btn">Copy Text</button><a class="chapter-btn tip-btn" href="https://donate.stripe.com/cNibJ20kK5HY2hf7oUaEE0t" target="_blank" rel="noopener noreferrer">Tip Me</a><a class="chapter-btn notebooklm-btn" href="#" target="_blank" rel="noopener noreferrer">NotebookLM</a></div>
+<section class="section" id="bonus">
+ <h2>Worth <em>having.</em></h2>
+ <p class="lede">Four extras that did not belong inside a chapter. Take what is useful and leave the rest.</p>
+
+ <div class="cat">
+  <div class="cat-head"><div class="cat-num">01</div><div><h3>Afterschool Agent <em>discount.</em></h3><p class="cat-sub">10% off for guide readers</p></div></div>
+  <div class="res-list">
+   <div class="res-row"><div class="res-text">
+    <h3>Your code</h3>
+    <p>When you enrol in the Afterschool Agent, this code takes 10% off the one-time price. Enter it at checkout.</p>
+    <div class="res-meta"><span>10% off</span><span>One time</span><span>$44.88 &rarr; $40.39</span><button type="button" class="code-btn" data-code="ONETOEIGHT10">Copy code: ONETOEIGHT10</button></div>
+   </div></div>
+  </div>
+ </div>
+
+ <div class="cat">
+  <div class="cat-head"><div class="cat-num">02</div><div><h3>The Afterschool <em>Agent.</em></h3><p class="cat-sub">The paid programme</p></div></div>
+  <div class="res-list">
+   <div class="res-row"><div class="res-text">
+    <h3>Build your own local-first agent</h3>
+    <p>A four-week programme where a young person builds their own AI agent that teaches the eight essentials through personalised activities. On-demand training, plus a live Q&amp;A every week. It runs on your own computer, with no accounts and no cloud costs.</p>
+    <div class="res-meta"><span>One-time $44.88</span><span>Lifetime access</span><a class="res-link" href="https://www.afterschool.agency/" target="_blank" rel="noopener noreferrer">afterschool.agency &rarr;</a></div>
+   </div></div>
+  </div>
+ </div>
+
+ <div class="cat">
+  <div class="cat-head"><div class="cat-num">03</div><div><h3>Run the agent <em>offline.</em></h3><p class="cat-sub">Free, open, and unbranded by anyone else</p></div></div>
+  <div class="res-list">
+   <div class="res-row"><div class="res-text">
+    <h3>The Local Studio</h3>
+    <p>If you would rather run the models yourself, this is the studio we set up for our own young people. Image generation, chat, speech-to-text and text-to-speech, all offline on your own hardware. Point it at this guide and ask it questions.</p>
+    <div class="res-meta"><span>Free</span><span>Windows / Linux / macOS</span><span>No account</span><a class="res-link" href="https://github.com/Distincto-Apps/OnetoEight-Uncensored-Local-Studio" target="_blank" rel="noopener noreferrer">GitHub &rarr;</a></div>
+   </div></div>
+  </div>
+ </div>
+
+ <div class="cat">
+  <div class="cat-head"><div class="cat-num">04</div><div><h3>Coming <em>soon.</em></h3><p class="cat-sub">Still being built</p></div></div>
+  <div class="res-list">
+   <div class="res-row"><div class="res-text">
+    <h3>Something else</h3>
+    <p>Reserved. This slot is waiting on the next extra.</p>
+    <div class="res-meta"><span>Placeholder</span></div>
+   </div></div>
+  </div>
+ </div>
+
+</section>
+
+<div class="skill-modal-overlay" id="skill-modal" role="dialog" aria-modal="true" aria-labelledby="skill-modal-title">
+ <div class="skill-modal">
+  <div class="skill-modal-head"><h3 id="skill-modal-title">skill.md</h3><button class="skill-close" id="skill-close" aria-label="Close">&#215;</button></div>
+  <div class="skill-modal-body"><pre id="skill-text">Loading...</pre></div>
+  <div class="skill-modal-foot">
+   <button type="button" class="skill-copy" id="skill-copy">Copy skill.md</button>
+   <a class="skill-dl" id="skill-dl" href="#" download>Download .md</a>
+   <p class="skill-how">Paste this into your AI agent and it will walk you through the activity.</p>
+  </div>
+ </div>
+</div>
+</main>
+<section class="support" aria-label="Support"><p><strong>A guide cannot listen.</strong> If you need to talk to a person, about anything at all, free and confidential helplines are listed by country.</p><a href="https://findahelpline.com/i/iasp" target="_blank" rel="noopener noreferrer">Find a helpline &rarr;</a></section><footer class="footer"><span>onetoeight. / Universal edition</span><span class="foot-legal"><a href="/legal.html">Legal</a><a href="#top">Back to the top</a></span></footer>
+<style>
+.skill-btn{display:inline-flex;align-items:center;margin-top:12px;background:transparent;border:1px solid var(--terra);color:var(--terra);border-radius:0;padding:5px 11px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:Inter,Arial,sans-serif;transition:background .15s,color .15s}
+.skill-btn:hover{background:var(--terra);color:#fbf7ee}
+.skill-modal-overlay{position:fixed;inset:0;background:rgba(28,18,13,.62);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
+.skill-modal-overlay.open{display:flex}
+.skill-modal{background:#fbf7ee;color:#4c362d;max-width:780px;width:100%;max-height:86vh;border-radius:0;box-shadow:0 24px 64px rgba(0,0,0,.45);display:flex;flex-direction:column;overflow:hidden;font-family:Inter,Arial,sans-serif}
+.skill-modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 22px;border-bottom:1px solid #e2d7c6}
+.skill-modal-head h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:19px;margin:0;line-height:1.25}
+.skill-close{border:0;background:none;font-size:26px;line-height:1;cursor:pointer;color:#a46447;padding:0 4px}
+.skill-modal-body{overflow:auto;padding:18px 22px;flex:1}
+.skill-modal-body pre{white-space:pre-wrap;font-family:ui-monospace,Consolas,monospace;font-size:13px;line-height:1.55;margin:0;color:#3c2f27}
+.skill-modal-foot{padding:14px 22px;border-top:1px solid #e2d7c6;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.skill-copy{background:#a46447;color:#fbf7ee;border:0;border-radius:0;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:Inter,Arial,sans-serif}
+.skill-copy:hover{background:#8c5540}
+.skill-dl{background:transparent;color:#a46447;border:1px solid #a46447;border-radius:0;padding:9px 15px;font-size:13px;font-weight:600;text-decoration:none;font-family:Inter,Arial,sans-serif}
+.skill-dl:hover{background:#a46447;color:#fbf7ee}
+.skill-how{font-size:12px;color:#796b63;margin:0;flex:1 1 220px;line-height:1.45}
+.skill-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:#4c362d;color:#fbf7ee;padding:10px 18px;font-size:13px;border-radius:0;z-index:1001;opacity:0;transition:opacity .2s;font-family:Inter,Arial,sans-serif}
+.skill-toast.show{opacity:1}
+</style>
+<script>
+(function(){
+  var BASE='/guide/universal/skills/';
+  var ov=document.getElementById('skill-modal'), pre=document.getElementById('skill-text'),
+      titleEl=document.getElementById('skill-modal-title'), dl=document.getElementById('skill-dl'),
+      copyBtn=document.getElementById('skill-copy'), closeBtn=document.getElementById('skill-close'),
+      toast=document.createElement('div');
+  toast.className='skill-toast'; document.body.appendChild(toast);
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(function(){toast.classList.remove('show')},2200);}
+  function open(btn){
+    var slug=btn.getAttribute('data-skill'), title=btn.getAttribute('data-title');
+    titleEl.textContent=title+' - skill.md';
+    dl.setAttribute('href', BASE+slug+'.md'); dl.setAttribute('download', slug+'.md');
+    pre.textContent='Loading...'; ov.classList.add('open');
+    fetch(BASE+slug+'.md').then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function(t){ pre.textContent=t; })
+      .catch(function(){ pre.textContent='Could not load the file. Use the Download button, or try again.'; });
+  }
+  function close(){ ov.classList.remove('open'); }
+  document.querySelectorAll('.skill-btn').forEach(function(b){ b.addEventListener('click', function(){ open(b); }); });
+  closeBtn.addEventListener('click', close);
+  ov.addEventListener('click', function(e){ if(e.target===ov) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  copyBtn.addEventListener('click', function(){
+    var t=pre.textContent;
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
+      try{document.execCommand('copy'); say('Copied skill.md');}catch(err){say('Copy failed, select and copy manually');} ta.remove(); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(function(){say('Copied skill.md');}).catch(fallback); }
+    else { fallback(); }
+  });
+})();
+</script>
+<style>
+.explainer{background:#f3ecdf;border-left:3px solid var(--terra);padding:26px 30px;margin:0 0 52px}
+.explainer h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:26px;line-height:1.15;margin:0 0 12px}
+.explainer h3 em{color:var(--terra);font-style:normal}
+.explainer h4{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:19px;margin:24px 0 8px}
+.explainer p{font-size:16px;line-height:1.65;margin:0 0 10px;color:var(--ink)}
+.explainer ul,.explainer ol{margin:0 0 10px;padding-left:22px}
+.explainer li{font-size:15.5px;line-height:1.6;margin-bottom:7px;color:var(--ink)}
+@media(max-width:640px){.explainer{padding:20px 18px}.explainer h3{font-size:22px}}
+</style>
+<style>
+.nav-toggle{display:none;flex:0 0 auto;width:44px;height:40px;padding:0;background:none;border:1px solid rgba(251,247,238,.42);color:inherit;position:relative;cursor:pointer;border-radius:0;-webkit-tap-highlight-color:transparent}
+.nav-toggle span{position:absolute;left:11px;right:11px;height:2px;background:currentColor;transition:transform .18s ease,opacity .18s ease}
+.nav-toggle span:nth-child(1){top:13px}
+.nav-toggle span:nth-child(2){top:19px}
+.nav-toggle span:nth-child(3){top:25px}
+.nav-toggle:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.top.open .nav-toggle span:nth-child(1),.toolbar.open .nav-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.top.open .nav-toggle span:nth-child(2),.toolbar.open .nav-toggle span:nth-child(2){opacity:0}
+.top.open .nav-toggle span:nth-child(3),.toolbar.open .nav-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:900px){
+ .has-js .top .nav-toggle{display:block}
+ .has-js .top .bar nav{display:none}
+ .has-js .top.open .bar nav{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:#000;border-top:1px solid #424856;border-bottom:1px solid #424856;padding:18px 24px 22px;gap:16px;font-size:14px;letter-spacing:.08em;z-index:12;box-shadow:0 20px 34px rgba(0,0,0,.38)}
+ .has-js .top.open .bar nav a{padding:4px 0}
+}
+@media(max-width:620px){
+ .has-js .toolbar .nav-toggle{display:block}
+ .has-js .toolbar .bar nav{display:none}
+ .has-js .toolbar.open .bar nav{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:#000;border-top:1px solid #404452;border-bottom:1px solid #404452;padding:18px 24px 22px;gap:16px;z-index:12;box-shadow:0 20px 34px rgba(0,0,0,.38)}
+ .has-js .toolbar.open .bar nav a,.has-js .toolbar.open .bar nav button{font-size:14px}
+ .has-js .toolbar.open .bar nav button{padding:9px 14px}
+}
+@media(max-width:420px){
+ .nav-toggle{width:42px;height:38px}
+ .has-js .top.open .bar nav,.has-js .toolbar.open .bar nav{padding:16px 18px 20px}
+}
+@media print{.nav-toggle{display:none!important}}
+</style>
+<script>
+(function(){
+ var h=document.querySelector('header.top,header.toolbar');
+ if(!h) return;
+ var btn=h.querySelector('.nav-toggle'), nav=h.querySelector('.bar nav');
+ if(!btn||!nav) return;
+ function set(open){
+  h.classList.toggle('open',open);
+  btn.setAttribute('aria-expanded',open?'true':'false');
+  btn.setAttribute('aria-label',open?'Close menu':'Open menu');
+ }
+ btn.addEventListener('click',function(e){e.stopPropagation();set(!h.classList.contains('open'));});
+ nav.addEventListener('click',function(e){if(e.target.closest('a,button'))set(false);});
+ document.addEventListener('click',function(e){if(!h.contains(e.target))set(false);});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){set(false);btn.focus();}});
+ window.addEventListener('resize',function(){if(btn.offsetParent===null)set(false);});
+})();
+</script>
+<style>
+h1,h2,.wordmark{overflow-wrap:break-word}
+</style>
+<style>
+/* touch targets: keep every real control at or above 44x44 on touch-sized screens */
+.nav-toggle{width:44px;height:44px}
+.nav-toggle span:nth-child(1){top:15px}
+.nav-toggle span:nth-child(2){top:21px}
+.nav-toggle span:nth-child(3){top:27px}
+@media(max-width:900px){
+ .has-js .top.open .bar nav a,.has-js .toolbar.open .bar nav a,.has-js .toolbar.open .bar nav button{display:flex;align-items:center;min-height:44px;padding:10px 0}
+ .skill-btn{min-height:44px;padding:11px 16px;font-size:12px}
+ .ap-rate{min-width:44px;min-height:44px}
+ .brand,.brand-mini{padding-top:7px;padding-bottom:7px}
+ .hero-bottom a,.bottom a,.cover-bottom a{display:inline-flex;align-items:center;min-height:44px}
+ .editor summary,.book summary{display:flex;align-items:center;min-height:44px;padding:9px 0}
+ .checks input{width:22px;height:22px}
+}
+@media(max-width:420px){
+ .has-js .top.open .bar nav a,.has-js .toolbar.open .bar nav a,.has-js .toolbar.open .bar nav button{min-height:46px}
+}
+</style>
+<style>
+.explainer .harness-list{list-style:none;padding:0;margin:0 0 14px}
+.explainer .harness-list li{font-size:15.5px;line-height:1.6;margin-bottom:13px;padding-left:0;color:var(--ink)}
+.explainer .harness-list a{color:var(--terra);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(164,100,71,.4)}
+.explainer .harness-list a:hover{border-bottom-color:var(--terra)}
+.explainer .harness-list a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.explainer .harness-list .h-what{color:#6d6157}
+</style>
+<style>
+.ways{margin:0 0 42px;max-width:760px}
+.ways h3{font-family:Fraunces,Georgia,serif;font-weight:400;font-style:normal;font-size:26px;line-height:1.15;margin:0 0 12px}
+.ways > p{font-size:16.5px;line-height:1.65;margin:0 0 22px;color:var(--ink)}
+.ways ul{list-style:none;padding:0;margin:0}
+.ways li{font-size:15.5px;line-height:1.65;margin-bottom:17px;padding-left:18px;border-left:2px solid #e0d5c2;color:var(--ink)}
+.ways li:last-child{margin-bottom:0}
+.ways .w-label{display:block;font-weight:600;color:var(--terra);margin-bottom:4px;font-size:16px}
+.ways a{color:var(--terra);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(164,100,71,.4)}
+.ways a:hover{border-bottom-color:var(--terra)}
+.ways a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media(max-width:640px){.ways h3{font-size:22px}.ways > p{font-size:16px}.ways li{font-size:15px}}
+</style>
+<style>
+.support{background:#2b221a;color:#e8e1d5;border-top:1px solid rgba(217,164,65,.28);padding:24px 64px;font-size:13.5px;line-height:1.65;display:flex;gap:14px 30px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;max-width:1080px;margin:0 auto}
+.support p{margin:0;max-width:64ch}
+.support strong{color:#f4ead9;font-weight:600}
+.support a{color:#e8c87a;text-decoration:none;border-bottom:1px solid rgba(232,200,122,.45);white-space:nowrap;font-weight:600}
+.support a:hover{border-bottom-color:#e8c87a}
+.support a:focus-visible{outline:3px solid #e8c87a;outline-offset:3px}
+@media(max-width:860px){.support{padding:20px 28px;font-size:13px}}
+@media print{.support{background:#fbf7ee;color:#4c362d;border-top:1px solid #4c362d}.support strong{color:#4c362d}.support a{color:#4c362d;border-bottom-color:#4c362d}}
+</style><div class="meta-modal-overlay" id="meta-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="meta-title"><div class="meta-modal"><div class="meta-modal-head"><h3 id="meta-title">Bonus Extras</h3><button class="meta-close" id="meta-close" aria-label="Close">&times;</button></div><div class="meta-modal-body"><pre id="meta-prompt-text"># Bonus Extras - Meta-Prompt
+## The extras that did not belong inside a chapter
+
+You are a thoughtful, non-judgemental guide for a young person aged 13 to 23, or for the adult helping them, who has reached the bonus extras of the eight essentials guide. This page has no teaching of its own. It offers a discount, two doors and one unfinished thing, and your job is to help them decide what is genuinely worth their time and money.
+
+---
+
+## Learning Objectives
+
+By the end of this conversation, the learner should be able to:
+
+1. Say whether they want to keep going under their own steam or with paid help
+2. Tell the difference between a tool that costs money once and a subscription that keeps costing
+3. Understand what running a model locally means, and when it is the better choice
+4. Decide honestly whether any of this is for them, and be comfortable saying no
+
+---
+
+## Core Principles
+
+- Nobody has to buy anything. The guide is complete on its own and always will be
+- Prefer the free, offline, local option when the person is willing to set it up. It teaches more
+- Be clear about money: state the one-time price, and do not present a discount as a reason to buy something they had already decided against
+- Never pressure. If they are unsure, suggest they come back in a month
+- If they are under 18 and considering the paid programme, they should involve a parent or guardian
+
+---
+
+## Adaptive Learning Protocol
+
+### Phase 1: Work out what they actually want
+
+- &quot;What made you open this page: the discount, the programme, or the free tool?&quot;
+- &quot;Do you want to learn to build things yourself, or would you rather someone guided you?&quot;
+- &quot;Have you got a computer that could run a model locally, and someone who could help you set it up?&quot;
+
+### Phase 2: Look at the honest trade-offs
+
+- Paid programme: guided, structured, a live Q&amp;A, one-time cost, nothing to install
+- Free local studio: no cost, no account, teaches real skills, but you install it yourself and it needs decent hardware
+- Neither: perfectly reasonable. The guide already covers the ground
+
+### Phase 3: Decide, or decide to wait
+
+Ask what they will do next, and accept &quot;nothing for now&quot; as a complete answer.
+</pre></div><div class="meta-modal-foot"><button class="copy-prompt-btn" id="meta-copy">Copy Prompt</button><button class="download-prompt-btn" id="meta-download" data-file="bonus-extras-meta-prompt.md">Download .md</button><div class="meta-how">How to use this prompt: click Copy Prompt, then paste it as your first message in a new chat with your agent. It will guide you through exploring, learning and running activities for this page.</div></div></div></div>
+<style>
+
+.chapter-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;background:#5b4237;padding:26px 24px;border-bottom:1px solid rgba(217,164,65,.22)}
+.chapter-btn{font-family:'Inter',Arial,sans-serif;font-size:.95rem;font-weight:600;padding:.95rem 1.7rem;border-radius:0;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid rgba(251,247,238,.3);background:transparent;color:#fbf7ee;text-decoration:none}
+.chapter-btn:hover{border-color:#fbf7ee;background:rgba(251,247,238,.06)}
+.chapter-btn.tip-btn{background:#a46447;color:#fbf7ee;border-color:#a46447}
+.chapter-btn.tip-btn:hover{background:#8c5540;border-color:#8c5540;transform:translateY(-2px);box-shadow:0 10px 26px rgba(164,100,71,.28)}
+.meta-modal-overlay{position:fixed;inset:0;background:rgba(28,18,13,.62);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px}
+.meta-modal-overlay.open{display:flex}
+.meta-modal{background:#fbf7ee;color:#4c362d;max-width:700px;width:100%;max-height:85vh;border-radius:0;box-shadow:0 24px 64px rgba(0,0,0,.45);display:flex;flex-direction:column;overflow:hidden;font-family:Inter,Arial,sans-serif}
+.meta-modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 22px;border-bottom:1px solid #e2d7c6}
+.meta-modal-head h3{font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:19px;margin:0;line-height:1.25}
+.meta-close{border:0;background:none;font-size:26px;line-height:1;cursor:pointer;color:#a46447;padding:0 4px}
+.meta-modal-body{overflow:auto;padding:18px 22px;flex:1}
+.meta-modal-body pre{white-space:pre-wrap;font-family:ui-monospace,Consolas,Menlo,monospace;font-size:12.5px;line-height:1.55;margin:0;color:#3c2f27;background:#f4ecdd;border:1px solid #e2d7c6;border-radius:0;padding:14px}
+.meta-modal-foot{padding:14px 22px;border-top:1px solid #e2d7c6;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.meta-modal-foot button{border:0;border-radius:0;padding:10px 16px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:Inter,Arial,sans-serif}
+.copy-prompt-btn{background:#a46447;color:#fbf7ee}
+.copy-prompt-btn:hover{background:#8c5540}
+.download-prompt-btn{background:#e8e1d5;color:#4c362d}
+.download-prompt-btn:hover{background:#ddd3c2}
+.meta-how{font-size:12px;color:#796b63;line-height:1.5;flex-basis:100%}
+.meta-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#4c362d;color:#fbf7ee;padding:10px 18px;border-radius:0;font-size:13px;z-index:1001;opacity:0;transition:opacity .2s;font-family:Inter,Arial,sans-serif}
+.meta-toast.show{opacity:1}
+@media(max-width:860px){.chapter-actions{padding:22px 18px;gap:11px}.chapter-btn{padding:.8rem 1.25rem;font-size:.88rem}}
+@media print{.chapter-actions{display:none!important}}
+</style>
+<script>
+(function(){
+  function toast(m){var t=document.getElementById('meta-toast');if(!t){t=document.createElement('div');t.id='meta-toast';t.className='meta-toast';document.body.appendChild(t);}t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show')},2200);}
+  function fallback(txt){var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('Copied to clipboard')}catch(e){toast('Copy failed: select and copy manually')}ta.remove();}
+  var btn=document.querySelector('.meta-prompt-btn'),ov=document.getElementById('meta-modal-overlay'),cl=document.getElementById('meta-close'),cp=document.getElementById('meta-copy'),dl=document.getElementById('meta-download'),box=document.getElementById('meta-prompt-text');
+  function open(){if(ov)ov.classList.add('open');document.body.style.overflow='hidden';}
+  function closeFn(){if(ov)ov.classList.remove('open');document.body.style.overflow='';}
+  if(btn)btn.addEventListener('click',function(e){e.preventDefault();open();});
+  if(cl)cl.addEventListener('click',closeFn);
+  if(ov)ov.addEventListener('click',function(e){if(e.target===ov)closeFn();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeFn();});
+  if(cp)cp.addEventListener('click',function(){var txt=box?box.textContent:'';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){toast('Meta Prompt copied to clipboard')}).catch(function(){fallback(txt);});}else{fallback(txt);}});
+  if(dl)dl.addEventListener('click',function(){var txt=box?box.textContent:'';var blob=new Blob([txt],{type:'text/markdown'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=dl.getAttribute('data-file')||'meta-prompt.md';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);toast('Downloading meta-prompt.md');});
+  var sh=document.querySelector('.share-btn');
+  if(sh)sh.addEventListener('click',function(){var title=(document.title||'').replace(/\s*\|.*$/,'').trim()||'onetoeight';var text='Check out "'+title+'" from onetoeight';var url=location.href;
+    if(navigator.share){navigator.share({title:title,text:text,url:url}).catch(function(){});}
+    else{window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text),'_blank','noopener');}});
+  var cpy=document.querySelector('.copy-text-btn');
+  if(cpy)cpy.addEventListener('click',function(){var art=document.querySelector('article.book')||document.querySelector('main');var txt=art?art.innerText:'';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){toast('Page text copied to clipboard')}).catch(function(){fallback(txt);});}else{fallback(txt);}});
+})();
+</script>
+<style>
+.hero-main{display:flex;align-items:flex-start;justify-content:space-between;gap:48px}
+.hero-main>div:first-child{flex:0 1 auto;min-width:0}
+.hero-mark{flex:0 0 auto;align-self:flex-start;line-height:0}
+.hero-mark svg{display:block;height:clamp(180px,26vw,300px);width:auto}
+.cover-mark{display:flex;align-items:flex-start;justify-content:flex-end;align-self:flex-start;line-height:0}
+.cover-mark svg{display:block;height:clamp(180px,25vw,300px);width:auto}
+@media(max-width:900px){.hero-main{flex-direction:column;align-items:flex-start;gap:24px}.hero-mark svg{height:150px}}
+@media(max-width:860px){.cover-mark svg{height:150px}}
+@media print{.hero-mark,.cover-mark{display:none}}
+</style>
+<style>
+.chapter-btn.agent-btn{border-color:rgba(232,200,122,.55);color:#e8c87a}
+.chapter-btn.agent-btn:hover{border-color:#e8c87a;background:rgba(232,200,122,.08)}
+</style>
+<style>
+.foot-legal{display:inline-flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+</style>
+<style>
+/* wordmark matches onetoeight.org: Fraunces 600, tight tracking */
+.brand,.brand-mini{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-weight:600;letter-spacing:-.02em}
+</style>
+<style>
+.code-btn{font-family:'Inter',Arial,sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;padding:9px 14px;border:1.5px solid var(--terra);background:transparent;color:var(--terra);cursor:pointer;border-radius:0;transition:background .2s,color .2s}
+.code-btn:hover{background:var(--terra);color:var(--paper)}
+.res-link{color:var(--terra);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(164,100,71,.4)}
+.res-link:hover{border-bottom-color:var(--terra)}
+</style>
+<script>
+(function(){
+  function toast(m){var t=document.getElementById('meta-toast');if(!t){t=document.createElement('div');t.id='meta-toast';t.className='meta-toast';document.body.appendChild(t);}t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show')},2200);}
+  document.querySelectorAll('.code-btn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var code=b.getAttribute('data-code')||'';
+      function ok(){toast('Code copied: '+code);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(code).then(ok).catch(function(){fb();});}else{fb();}
+      function fb(){var ta=document.createElement('textarea');ta.value=code;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok();}catch(e){toast('Copy failed. The code is '+code);}ta.remove();}
+    });
+  });
+})();
+</script>
+</body>
+</html>
