@@ -65,11 +65,11 @@ main{max-width:1080px;margin:36px auto 0;box-shadow:0 30px 70px #0005}
 </style>
 <script>document.documentElement.classList.add("has-js")</script></head>
 <body>
-<header class="top"><div class="bar"><a class="brand" href="/guide/universal/index.html">one<span>to</span>eight. / Universal edition<svg class="brand-mark" viewBox="0 0 200 400" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#CEB59E" stroke-width="20" d="M100,25 L100,360"/><path stroke="#CEB59E" stroke-width="20" d="M66,58 L100,15"/><path stroke="#A46447" stroke-width="20" d="M36,120 C55,116 76,119 100,119 C126,119 147,116 164,120"/><path stroke="#A46447" stroke-width="19" d="M100,118 C140,118 166,155 160,190 C155,222 130,245 100,245 C70,245 45,222 40,190 C34,155 60,118 100,118"/><path stroke="#A46447" stroke-width="19" d="M100,245 C136,245 156,280 150,315 C145,345 124,360 100,360 C76,360 55,345 50,315 C44,280 65,245 100,245"/></g></svg></a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button><nav id="site-nav"><a href="/guide/universal/index.html">Guide</a><a href="/guide/universal/reading-resources.html">Reading &amp; Resources</a><a href="#" class="on">Activities</a></nav></div></header>
+<header class="top"><div class="bar"><a class="brand" href="/guide/universal/index.html">one<span>to</span>eight. / Universal edition</a><button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button><nav id="site-nav"><a href="/guide/universal/index.html">Guide</a><a href="/guide/universal/reading-resources.html">Reading &amp; Resources</a><a href="#" class="on">Activities</a></nav></div></header>
 <main>
 <section class="hero">
  <div class="hero-top"><span class="eyebrow">The eight essentials</span><span class="eyebrow">Activities<br>Universal edition</span></div>
- <div><p class="eyebrow">Do, don't just read</p><h1>Things to<br><em>do.</em></h1><p class="hero-lead">Hands-on activities for each of the eight essentials. Pick one and actually do it this week.</p></div>
+ <div class="hero-main"><div><p class="eyebrow">Do, don't just read</p><h1>Things to<br><em>do.</em></h1><p class="hero-lead">Hands-on activities for each of the eight essentials. Pick one and actually do it this week.</p></div><div class="hero-mark"><svg viewBox="0 0 200 400" aria-hidden="true" focusable="false"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#CEB59E" stroke-width="7" d="M100,25 L100,360"/><path stroke="#CEB59E" stroke-width="7" d="M66,58 L100,15"/><path stroke="#E8C87A" stroke-width="7" d="M36,120 C55,116 76,119 100,119 C126,119 147,116 164,120"/><path stroke="#E8C87A" stroke-width="6" d="M100,118 C140,118 166,155 160,190 C155,222 130,245 100,245 C70,245 45,222 40,190 C34,155 60,118 100,118"/><path stroke="#E8C87A" stroke-width="6" d="M100,245 C136,245 156,280 150,315 C145,345 124,360 100,360 C76,360 55,345 50,315 C44,280 65,245 100,245"/></g></svg></div></div>
  <div class="hero-bottom"><span>onetoeight. / Universal edition</span><a style="color:var(--gold);text-decoration:none" href="/guide/universal/index.html">Back to the guide</a></div>
 </section><div class="chapter-actions"><button type="button" class="chapter-btn meta-prompt-btn">Meta Prompt</button><button type="button" class="chapter-btn share-btn">Share</button><button type="button" class="chapter-btn copy-text-btn">Copy Text</button><a class="chapter-btn tip-btn" href="https://donate.stripe.com/cNibJ20kK5HY2hf7oUaEE0t" target="_blank" rel="noopener noreferrer">Tip Me</a><a class="chapter-btn notebooklm-btn" href="#" target="_blank" rel="noopener noreferrer">NotebookLM</a></div>
 <section class="section">
@@ -477,7 +477,7 @@ Once they have tried something, ask:
 End with one activity they will do again, chosen by them.
 </pre></div><div class="meta-modal-foot"><button class="copy-prompt-btn" id="meta-copy">Copy Prompt</button><button class="download-prompt-btn" id="meta-download" data-file="activities-meta-prompt.md">Download .md</button><div class="meta-how">How to use this prompt: click Copy Prompt, then paste it as your first message in a new chat with your agent. It will guide you through exploring, learning and running activities for this page.</div></div></div></div>
 <style>
-.brand-mark{display:inline-block;vertical-align:-.22em;height:1.35em;width:auto;margin-left:8px}
+
 .chapter-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;background:#5b4237;padding:26px 24px;border-bottom:1px solid rgba(217,164,65,.22)}
 .chapter-btn{font-family:'Inter',Arial,sans-serif;font-size:.95rem;font-weight:600;padding:.95rem 1.7rem;border-radius:0;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem;border:1.5px solid rgba(251,247,238,.3);background:transparent;color:#fbf7ee;text-decoration:none}
 .chapter-btn:hover{border-color:#fbf7ee;background:rgba(251,247,238,.06)}
@@ -524,5 +524,16 @@ End with one activity they will do again, chosen by them.
   if(cpy)cpy.addEventListener('click',function(){var art=document.querySelector('article.book')||document.querySelector('main');var txt=art?art.innerText:'';if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){toast('Page text copied to clipboard')}).catch(function(){fallback(txt);});}else{fallback(txt);}});
 })();
 </script>
+<style>
+.hero-main{display:flex;align-items:flex-start;justify-content:space-between;gap:48px}
+.hero-main>div:first-child{flex:0 1 auto;min-width:0}
+.hero-mark{flex:0 0 auto;align-self:flex-start;line-height:0}
+.hero-mark svg{display:block;height:clamp(180px,26vw,300px);width:auto}
+.cover-mark{display:flex;align-items:flex-start;justify-content:flex-end;align-self:flex-start;line-height:0}
+.cover-mark svg{display:block;height:clamp(180px,25vw,300px);width:auto}
+@media(max-width:900px){.hero-main{flex-direction:column;align-items:flex-start;gap:24px}.hero-mark svg{height:150px}}
+@media(max-width:860px){.cover-mark svg{height:150px}}
+@media print{.hero-mark,.cover-mark{display:none}}
+</style>
 </body>
 </html>
