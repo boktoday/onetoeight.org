@@ -546,19 +546,9 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
           <li><span class="check">&#10003;</span> Lifetime updates</li>
         </ul>
         <div class="cta-row reveal" id="guide-access">
-          <button type="button" class="btn btn-primary" id="guide-access-btn" onclick="showGuideForm()">Get the Free Guide</button>
+          <a class="btn btn-primary" id="guide-access-btn" href="/guide/universal/">Get the Free Guide</a>
         </div>
-        <div class="guide-access" id="guide-form" hidden>
-          <p class="guide-access-lede">Enter your first name and email to get instant access. No charge, no card, no spam.</p>
-          <form class="guide-form" id="guide-form-el" onsubmit="return requestGuide(event)" aria-label="Get the free guide">
-            <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
-            <input type="email" name="email" placeholder="Email address" required autocomplete="email">
-            <button type="submit" id="guide-form-btn">Get Access</button>
-          </form>
-          <div class="guide-success" id="guide-success">You're in! Your free guide is ready. <a href="/guide/universal/" class="guide-open">Open the Universal Guide &rarr;</a></div>
-          <div class="guide-error" id="guide-error">Something went wrong. Please try again.</div>
-          <p class="guide-note">We will never share your email. Unsubscribe anytime.</p>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -717,44 +707,8 @@ function submitSignup(e) {
 }
 
 /* ---- Free guide access (More than a guide section) ---- */
-function showGuideForm() {
-  var btn = document.getElementById('guide-access-btn');
-  var form = document.getElementById('guide-form');
-  if (btn) btn.style.display = 'none';
-  if (form) form.hidden = false;
-}
-function requestGuide(e) {
-  e.preventDefault();
-  var form = document.getElementById('guide-form-el');
-  var btn = document.getElementById('guide-form-btn');
-  var success = document.getElementById('guide-success');
-  var error = document.getElementById('guide-error');
-  var firstName = form.querySelector('input[name="first_name"]').value;
-  var email = form.querySelector('input[name="email"]').value;
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  error.classList.remove('show');
-  fetch('https://cloud.activepieces.com/api/v1/webhooks/9FKYYbfxndzwgQgRo7lrU', {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: firstName, email: email, source: 'onetoeight free guide access' })
-  })
-  .then(function(resp) {
-    if (resp.ok || resp.status === 200 || resp.status === 201 || resp.status === 204) {
-      form.style.display = 'none'; success.classList.add('show');
-    } else { throw new Error('HTTP ' + resp.status); }
-  })
-  .catch(function() {
-    fetch('https://cloud.activepieces.com/api/v1/webhooks/9FKYYbfxndzwgQgRo7lrU', {
-      method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: firstName, email: email, source: 'onetoeight free guide access' })
-    }).then(function() {
-      form.style.display = 'none'; success.classList.add('show');
-    }).catch(function() {
-      btn.disabled = false; btn.textContent = 'Get Access'; error.classList.add('show');
-    });
-  });
-  return false;
-}
+
+
 
 /* ---- Nav scrolled state (IntersectionObserver sentinel, no scroll listener) ---- */
 var navSentinel = document.createElement('div');
