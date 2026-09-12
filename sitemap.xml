@@ -1,23 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://onetoeight.org/</loc>
+    <loc>https://www.onetoeight.org/</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://onetoeight.org/parents/fear</loc>
+    <loc>https://www.onetoeight.org/parents/fear</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://onetoeight.org/parents/hope</loc>
+    <loc>https://www.onetoeight.org/parents/hope</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://onetoeight.org/parents/bridge</loc>
+    <loc>https://www.onetoeight.org/parents/bridge</loc>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-one-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-two-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-three-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-four-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-five-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-six-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-seven-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-eight-universal</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/activities</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/discussion-questions</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/reading-resources</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/bonus-extras</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/changelog</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-one-universal-id</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.onetoeight.org/guide/universal/essential-one-universal"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.onetoeight.org/guide/universal/essential-one-universal-id"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.onetoeight.org/guide/universal/essential-one-universal-tl"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.onetoeight.org/guide/universal/essential-one-universal-vi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.onetoeight.org/guide/universal/essential-one-universal"/>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-one-universal-tl</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.onetoeight.org/guide/universal/essential-one-universal"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.onetoeight.org/guide/universal/essential-one-universal-id"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.onetoeight.org/guide/universal/essential-one-universal-tl"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.onetoeight.org/guide/universal/essential-one-universal-vi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.onetoeight.org/guide/universal/essential-one-universal"/>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.onetoeight.org/guide/universal/essential-one-universal-vi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.onetoeight.org/guide/universal/essential-one-universal"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://www.onetoeight.org/guide/universal/essential-one-universal-id"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://www.onetoeight.org/guide/universal/essential-one-universal-tl"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://www.onetoeight.org/guide/universal/essential-one-universal-vi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.onetoeight.org/guide/universal/essential-one-universal"/>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

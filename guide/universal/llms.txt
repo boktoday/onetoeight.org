@@ -2,32 +2,45 @@
 
 > A free, practical guide for young people aged 13 to 23, building eight foundations that hold.
 
-The Universal edition is a secular guide, written for every background, belief and tradition. Every page carries spoken-word audio, and the guide includes discussion questions and activities for youth groups, schools and community settings. Free to read and adapt.
+The Universal edition is a secular guide, written for every background, belief and tradition. Every chapter carries spoken-word audio, and the guide includes activities, discussion questions and reading lists for youth groups, schools and community settings. Free to read and adapt.
+
+## Start here
+
+- [Introduction and contents](https://www.onetoeight.org/guide/universal): Start here. What the eight essentials are, and why roots matter.
 
 ## The eight essentials
 
-- [The ability to sit in silence](https://onetoeight.org/guide/universal/essential-one-universal.html): Make room to notice before adding more input.
-- [Your body is a home](https://onetoeight.org/guide/universal/essential-two-universal.html): Care for the body you actually have.
-- [Useful skills for real life](https://onetoeight.org/guide/universal/essential-three-universal.html): Feed yourself, fix safely, make things and understand money.
-- [Digital self-defence](https://onetoeight.org/guide/universal/essential-four-universal.html): Protect your attention, privacy, accounts and identity.
-- [Real community](https://onetoeight.org/guide/universal/essential-five-universal.html): Build belonging without turning friendship into a score.
-- [Knowledge you can carry](https://onetoeight.org/guide/universal/essential-six-universal.html): Use the internet without outsourcing your mind.
-- [Make room for the outside](https://onetoeight.org/guide/universal/essential-seven-universal.html): Go gently, notice more and adapt nature to your life.
-- [Test what you believe](https://onetoeight.org/guide/universal/essential-eight-universal.html): Examine convictions and stay open to evidence.
+- [The ability to sit in silence](https://www.onetoeight.org/guide/universal/essential-one-universal): Make room to notice before adding more input.
+- [Your body is a home](https://www.onetoeight.org/guide/universal/essential-two-universal): Care for the body you actually have.
+- [Useful skills for real life](https://www.onetoeight.org/guide/universal/essential-three-universal): Feed yourself, fix safely, make things and understand money.
+- [Digital self-defence](https://www.onetoeight.org/guide/universal/essential-four-universal): Protect your attention, privacy, accounts and identity.
+- [Real community](https://www.onetoeight.org/guide/universal/essential-five-universal): Build belonging without turning friendship into a score.
+- [Knowledge you can carry](https://www.onetoeight.org/guide/universal/essential-six-universal): Use the internet without outsourcing your mind.
+- [Make room for the outside](https://www.onetoeight.org/guide/universal/essential-seven-universal): Go gently, notice more and adapt nature to your life.
+- [Test what you believe](https://www.onetoeight.org/guide/universal/essential-eight-universal): Examine convictions and stay open to evidence.
 
 ## More in the guide
 
-- [Reading & Resources](https://onetoeight.org/guide/universal/reading-resources.html): Well-chosen next steps, one starting resource for each essential, plus twenty books and the world's scriptures. Scan or tap to open each link.
-- [Activities](https://onetoeight.org/guide/universal/activities.html): Hands-on things to try, one category for each essential. Pick one and do it this week.
-- [Discussion questions](https://onetoeight.org/guide/universal/discussion-questions.html): Ready-to-run conversations for youth groups, schools and community settings.
+- [Activities](https://www.onetoeight.org/guide/universal/activities): 72 hands-on things to try, one category for each essential, each with a printable how-to and an agent-ready skill file.
+- [Discussion questions](https://www.onetoeight.org/guide/universal/discussion-questions): Ready-to-run conversations for youth groups, schools and community settings.
+- [Reading & Resources](https://www.onetoeight.org/guide/universal/reading-resources): One trusted starting resource for each essential, plus twenty recommended books and the world's scriptures.
+- [Extras](https://www.onetoeight.org/guide/universal/bonus-extras): 10% off the Afterschool Agent, and the onetoeight Local Studio for offline AI.
+- [Changelog](https://www.onetoeight.org/guide/universal/changelog): What changed in this edition, and why.
 
-## Optional
+## Translated editions
 
-- [Start here](https://onetoeight.org/guide/universal/index.html): the introduction, why roots matter, and the full contents.
-- [Essential One in Indonesian](https://onetoeight.org/guide/universal/essential-one-universal-id.html), [Tagalog](https://onetoeight.org/guide/universal/essential-one-universal-tl.html) and [Vietnamese](https://onetoeight.org/guide/universal/essential-one-universal-vi.html): translated editions of the first essential.
+Essential One is available in three South-East Asian languages: [Indonesian](https://www.onetoeight.org/guide/universal/essential-one-universal-id), [Tagalog](https://www.onetoeight.org/guide/universal/essential-one-universal-tl), [Vietnamese](https://www.onetoeight.org/guide/universal/essential-one-universal-vi).
 
 ## Notes
 
-- Free to read and share. No account required once you have the link.
-- The guide is written for ages 13 to 23 and avoids fear-based framing.
-- Each essential page ends with practical "do this this week" challenges.
+- Free to read, share and adapt. No account, no paywall, no email gate.
+- Written for ages 13 to 23. It avoids fear-based framing and makes no clinical claims.
+- Every chapter ends with practical "do this this week" challenges.
+- The pages are public and indexed by search engines, so they can be found and linked directly.
+
+## About onetoeight
+
+- Publisher: onetoeight, founded by Brendan O'Keefe.
+- Contact: go@getonetoeight.org
+- A Christian edition of the same eight essentials exists separately, for faith communities.
+- There is a paid, on-demand programme for facilitators and families: the Afterschool Agent, at https://www.onetoeight.org/afterschool-agent
