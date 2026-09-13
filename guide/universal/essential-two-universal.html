@@ -215,6 +215,10 @@ text-transform:uppercase;font-weight:600;padding:4px 8px;border-radius:6px;trans
 @media (max-width:800px){.plate{margin:32px -42px 6px}.plate figcaption,.plate-text{padding-left:42px;padding-right:42px}}
 @media (max-width:540px){.plate{margin:26px -25px 6px}.plate figcaption,.plate-text{padding-left:25px;padding-right:25px}}
 @media print{.plate{margin:6mm 0}.plate-text{font-size:9pt}.plate figcaption,.plate-text{padding-left:0;padding-right:0}}
+
+/* On a light sheet the dark-sheet caption colours are illegible (1.5:1). */
+.sheet:not(.dark-sheet) .plate figcaption,.sheet:not(.dark-sheet) .plate-text{color:var(--muted)}
+.sheet:not(.dark-sheet) .plate-text h4{color:var(--ink)}
 </style><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
