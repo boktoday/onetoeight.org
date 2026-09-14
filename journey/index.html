@@ -845,6 +845,16 @@ function restoreCollapsed(){
   wasOpen = null;
 }
 
+/* The content file must be found whether the page is served at /journey/,
+   at /journey (Vercel strips the trailing slash with a 308), or at
+   /journey/index.html. A plain relative fetch breaks in the second case. */
+function jsonUrl(){
+  let p = location.pathname;
+  if (/\/index\.html$/.test(p)) p = p.replace(/\/index\.html$/, '/');
+  if (!p.endsWith('/')) p += '/';
+  return p + 'journey.json';
+}
+
 /* ---------- boot ---------- */
 (async function boot(){
   try {
@@ -857,10 +867,13 @@ function restoreCollapsed(){
   if (!S.events) S.events = [];          // records saved before the timeline existed
   if (S.lastSeen) $('#how').open = false; // they have been here before, so tuck the explainer away
   try {
-    const r = await fetch('journey.json', { cache: 'no-cache' });
+    const r = await fetch(jsonUrl(), { cache: 'no-cache' });
+    if (!r.ok) throw new Error('the content file returned HTTP ' + r.status);
     J = await r.json();
   } catch (e){
-    document.body.innerHTML = '<div class="wrap"><p style="padding:40px 0">Could not load journey.json.</p></div>';
+    document.body.innerHTML = '<div class="wrap"><p style="padding:40px 0;color:#e8c1b0">' +
+      'The journey could not load its content (' + String(e && e.message || e) +
+      '). Please refresh, and tell us if it keeps happening.</p></div>';
     return;
   }
   askPersistence();
