@@ -82,6 +82,12 @@ h1{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:clamp(30px,7.4vw
 .how-body li:last-child{margin-bottom:0}
 .how-body li:before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;background:var(--sage)}
 .how-body strong{color:var(--sheet);font-weight:600}
+.how-name{margin:2px 0 0;padding-top:16px;border-top:1px solid rgba(232,225,213,.18)}
+.how-name label{display:block;font-size:13px;font-weight:600;color:var(--sheet);margin:0 0 8px}
+.how-name input{width:100%;font:inherit;font-size:15px;color:var(--ink);background:#fff;
+  border:1px solid var(--sage);border-radius:0;padding:11px 12px;min-height:44px}
+.how-name input:focus{outline:2px solid var(--terra);outline-offset:1px}
+.how-note{display:block;font-size:12.5px;color:#9b9184;margin-top:8px;line-height:1.5}
 
 .progressline{font-size:14px;color:#cbc4b7;margin:0 0 20px;padding-bottom:18px;
   border-bottom:1px solid rgba(232,225,213,.12)}
@@ -194,6 +200,11 @@ h2{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:clamp(25px,5.6vw
 [hidden]{display:none !important}
 /* ---------- your record ---------- */
 .rec-intro{color:#cbc4b7;font-size:16px;margin:0 0 20px;max-width:56ch}
+.rec-name{margin:-8px 0 22px}
+.rec-name button{font:inherit;font-size:12.5px;font-weight:600;color:var(--gold);background:none;
+  border:0;border-radius:0;padding:6px 0;margin:0;min-height:0;cursor:pointer;
+  text-decoration:underline;text-underline-offset:2px}
+.rec-name button:hover{color:#f4efdf}
 .shape{background:var(--sheet);color:var(--ink);padding:22px;margin:0 0 24px}
 .shape p{margin:0 0 10px;font-size:16px;line-height:1.6}
 .shape p:last-child{margin-bottom:0}
@@ -258,6 +269,7 @@ details.words > .body{padding:18px 22px 20px}
   .how-body li{color:#333}
   .how-body li:before{background:#000}
   .how-body strong{color:#000}
+  .how-name{display:none}
   .shape,details.words{border:1px solid #bbb;background:#fff}
   details.mo > summary{color:#000;border-bottom-color:#ccc}
   .ddate{color:#555}
@@ -293,6 +305,11 @@ details.words > .body{padding:18px 22px 20px}
           <li>Clearing your browsing data, or moving to a new phone, will lose it. Save your record at the foot of this page if you want a copy you can keep or bring with you.</li>
           <li>Private browsing will not keep it.</li>
         </ul>
+        <p class="how-name">
+          <label for="f-name">If you like, what should we call you?</label>
+          <input id="f-name" type="text" maxlength="40" autocomplete="off" placeholder="First name">
+          <span class="how-note">Entirely optional. Only you will see it, and it never leaves this device.</span>
+        </p>
       </div>
     </details>
 
@@ -355,7 +372,8 @@ details.words > .body{padding:18px 22px 20px}
   <main id="record" hidden>
     <a class="back" href="#" id="rec-back">&larr; All eight</a>
     <h1 style="margin-top:18px">Your record</h1>
-    <p class="rec-intro">What you have done, and what you noticed. Nothing here is a score. There is no streak, no percentage and nothing to keep up.</p>
+    <p class="rec-intro" id="rec-intro">What you have done, and what you noticed. Nothing here is a score. There is no streak, no percentage and nothing to keep up.</p>
+    <p class="rec-name" id="rec-name" hidden><button type="button" id="btn-change-name">Not your name? Change it</button></p>
 
     <div id="shape" class="shape"></div>
 
@@ -386,7 +404,11 @@ const DB_NAME = 'onetoeight-journey', STORE = 'kv', KEY = 'state';
 let J = null, S = null, db = null;
 
 const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s == null ? '' : s);
+/* Every call site is inside an innerHTML string, including two that put text
+   inside a <textarea> and one inside a value="..." attribute, so this must
+   escape properly or a reader typing "5 < 10" or "</textarea>" breaks the page. */
+const ESC_MAP = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, c => ESC_MAP[c]);
 
 function toast(msg){
   const t = $('#toast'); t.textContent = msg; t.classList.add('on');
@@ -494,7 +516,7 @@ function renderHome(){
     const e = J.essentials.find(x => x.slug === S.lastEssential);
     if (e){
       w.hidden = false;
-      w.innerHTML = '<strong>Welcome back.</strong> You were in Essential ' + esc(e.word) + ': ' + esc(e.title) +
+      w.innerHTML = '<strong>Welcome back' + (S.name ? ', ' + esc(S.name) : '') + '.</strong> You were in Essential ' + esc(e.word) + ': ' + esc(e.title) +
         '. <a href="#' + e.slug + '">Pick it up</a>';
     }
   }
@@ -662,6 +684,11 @@ function daySummary(items){
 }
 
 function renderRecord(){
+  $('#rec-intro').innerHTML = (S.name ? esc(S.name) + ', this is ' : 'This is ') +
+    'what you have done and what you noticed. Nothing here is a score. ' +
+    'There is no streak, no percentage and nothing to keep up.';
+  $('#rec-name').hidden = !S.name;
+
   const started = new Date(S.startedAt);
   const spent = [];
   J.essentials.forEach(e => { const st = stateOf(e.slug); if (st === 'on' || st === 'done') spent.push(e.word); });
@@ -918,6 +945,28 @@ function jsonUrl(){
     'Saved. Open the file from your Files or Downloads app to add the days.'));
 
   window.addEventListener('hashchange', route);
+
+  /* the first name is optional and stays on the device */
+  const nameInput = $('#f-name');
+  if (nameInput){
+    nameInput.value = S.name || '';
+    nameInput.addEventListener('input', () => {
+      const v = nameInput.value.trim().slice(0, 40);
+      if (v) S.name = v; else delete S.name;
+      save();
+    });
+  }
+  $('#btn-change-name').addEventListener('click', () => {
+    location.hash = '';
+    setTimeout(() => {
+      const open = $('#how');
+      open.open = true;
+      open.scrollIntoView({ block: 'center' });
+      const f = $('#f-name');
+      f.focus(); f.select();
+    }, 140);
+  });
+
   route();
 })();
 </script>
