@@ -1,0 +1,569 @@
+{
+ "format": "onetoeight.journey",
+ "version": 1,
+ "generated": "from the guide HTML, 13 September 2026",
+ "note": "Generated from guide/universal. Do not hand-edit; re-run the generator.",
+ "guideBase": "https://www.onetoeight.org/guide/universal/",
+ "essentials": [
+  {
+   "num": 1,
+   "word": "One",
+   "title": "The ability to sit in silence",
+   "slug": "one",
+   "url": "https://www.onetoeight.org/guide/universal/essential-one-universal",
+   "intro": "This chapter is about where your attention goes, and how to get some of it back.",
+   "bullets": [
+    "An endless feed has no final page. Apps make continuing easy, so stopping has to be a choice you make on purpose.",
+    "Willpower alone is a frustrating plan. Change the set-up instead of lecturing yourself.",
+    "A pause is a skill, and one minute is enough to start. Your mind will wander. Returning is part of the practice.",
+    "The aim isn\u2019t using your phone less. It\u2019s being the one who decides."
+   ],
+   "commit": "one quiet minute a day for a week, and one small change to your surroundings.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Try the quiet minute",
+     "body": "Notice what happens. Change your position, focus or surroundings if you need to."
+    },
+    {
+     "n": 2,
+     "title": "Repeat at a useful moment",
+     "body": "Attach the pause to something you already do. Notice whether that makes it easier to remember."
+    },
+    {
+     "n": 3,
+     "title": "Notice an automatic reach",
+     "body": "Before opening an app, ask what you want from it. Then decide whether to continue."
+    },
+    {
+     "n": 4,
+     "title": "Remove one interruption",
+     "body": "Change a notification or autoplay setting. Keep the functions and contact you need."
+    },
+    {
+     "n": 5,
+     "title": "Try quiet in company",
+     "body": "Spend a brief, comfortable pause beside someone you trust, with their agreement. Or repeat your own practice if you prefer."
+    },
+    {
+     "n": 6,
+     "title": "Choose an ordinary gap",
+     "body": "Try a minute without adding content while waiting somewhere safe. Notice the place you\u2019re in."
+    },
+    {
+     "n": 7,
+     "title": "Look back",
+     "body": "What helped? What irritated you? What would you repeat? Decide on one small practice for next week."
+    }
+   ],
+   "prompts": [
+    "When does your phone help you feel connected? When does it leave you feeling further away?",
+    "What did you notice in a quiet minute that you hadn\u2019t noticed beforehand?",
+    "What makes a pause difficult for you: your surroundings, your responsibilities, your thoughts or something else?",
+    "Which feels more useful right now: less input, more support from someone, or both?",
+    "Where could a small pause help you make a choice this week?"
+   ],
+   "lines": [
+    "My moment:",
+    "My practice:",
+    "My adjustment:"
+   ],
+   "inShort": "A quiet pause gives you a chance to notice what\u2019s happening before adding more input. Start small, adapt it to your life and don\u2019t force yourself through distress. The useful skill is noticing and choosing, not sitting perfectly still.",
+   "tool": {
+    "kind": "timer",
+    "label": "The quiet minute",
+    "blurb": "A minute, a gentle start and end, and no score afterwards."
+   }
+  },
+  {
+   "num": 2,
+   "word": "Two",
+   "title": "Your body is a home",
+   "slug": "two",
+   "url": "https://www.onetoeight.org/guide/universal/essential-two-universal",
+   "intro": "This chapter is about maintaining the body you actually have, rather than chasing a version of it.",
+   "bullets": [
+    "Your body is already doing a lot. It adapts quietly for a long time before anything complains.",
+    "Small care beats grand promises. One meal, one rest window, one walk all count.",
+    "Boundaries are body care. You get to decide what comes through the door.",
+    "The question isn\u2019t how to make your body look different. It\u2019s what would help it feel more supported this week."
+   ],
+   "commit": "one small care change a day for seven days, and one practical thing you ask someone else for.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Prepare one easy option",
+     "body": "Put together a meal, snack or drink you can manage on a busy day."
+    },
+    {
+     "n": 2,
+     "title": "Move for a few minutes",
+     "body": "Walk, stretch, dance, wheel or do a gentle version of something you enjoy."
+    },
+    {
+     "n": 3,
+     "title": "Protect a rest window",
+     "body": "Give yourself a realistic chance to wind down, without demanding perfect sleep."
+    },
+    {
+     "n": 4,
+     "title": "Change one notification",
+     "body": "Keep what you need and remove one unnecessary interruption."
+    },
+    {
+     "n": 5,
+     "title": "Ask for practical help",
+     "body": "Tell someone exactly what would make care easier this week."
+    },
+    {
+     "n": 6,
+     "title": "Notice without judging",
+     "body": "Record one body signal: energy, tension, hunger, comfort, pain or mood."
+    },
+    {
+     "n": 7,
+     "title": "Review the result",
+     "body": "Did the adjustment help, do nothing, or make things harder? Keep, change or drop it."
+    }
+   ],
+   "prompts": [
+    "What does your body make possible that you are grateful for, even if your relationship with it is complicated?",
+    "Which area needs support first: food, movement, rest, boundaries or professional help?",
+    "What health advice has made you feel judged or left out? What would make it more useful?",
+    "Who could help make one part of care easier, safer or more accessible?",
+    "What is one adjustment you can try for seven days without turning it into a punishment?"
+   ],
+   "lines": [
+    "My body needs:",
+    "One kind adjustment:",
+    "Support I could ask for:"
+   ],
+   "inShort": "Your body is a home, not a project for strangers to grade. Give it regular care where you can, protect it from avoidable strain, respect its limits and ask for support. Start with one kind adjustment.",
+   "tool": {
+    "kind": "audit",
+    "label": "One kind adjustment",
+    "blurb": "Choose one area of care and one change to keep for seven days."
+   }
+  },
+  {
+   "num": 3,
+   "word": "Three",
+   "title": "Useful skills for real life",
+   "slug": "three",
+   "url": "https://www.onetoeight.org/guide/universal/essential-three-universal",
+   "intro": "This chapter is about the difference between knowing about something and being able to do it.",
+   "bullets": [
+    "You can search for almost anything. That is not the same as being able to do it.",
+    "Capability gives you options. A cooked meal, a repaired button and a bank statement you have actually read are all freedom.",
+    "Fix safely. Knowing which jobs need a professional is a skill in itself.",
+    "Useful skills don\u2019t get likes, and they don\u2019t need them."
+   ],
+   "commit": "one useful thing a day for a week, across food, repairs, making and money.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Feed",
+     "body": "Make one meal or prepare one easy option for later."
+    },
+    {
+     "n": 2,
+     "title": "Fix",
+     "body": "Repair a button, tighten something safe or identify the right professional for a problem."
+    },
+    {
+     "n": 3,
+     "title": "Make",
+     "body": "Create a small physical thing or finish a useful task with your hands."
+    },
+    {
+     "n": 4,
+     "title": "Finance",
+     "body": "Read one statement, contract or bill. Write down the total and the date."
+    },
+    {
+     "n": 5,
+     "title": "Share",
+     "body": "Ask someone what they know and offer one skill you have."
+    },
+    {
+     "n": 6,
+     "title": "Teach",
+     "body": "Explain a task while doing it. Notice what you had assumed was obvious."
+    },
+    {
+     "n": 7,
+     "title": "Review",
+     "body": "What felt useful? What needs safety training, money or more support?"
+    }
+   ],
+   "prompts": [
+    "Which useful skill would make your next month easier: feeding yourself, fixing, making, finance or asking for support?",
+    "What did someone teach you that you now rely on?",
+    "Where are you tempted to improvise when qualified help would be safer?",
+    "What money decision would be clearer if you knew the total cost?",
+    "What could you make, mend or learn with another person this week?"
+   ],
+   "lines": [
+    "My useful skill:",
+    "My first small task:",
+    "Support or safety I need:"
+   ],
+   "inShort": "Useful skills give you options. Learn to feed yourself, fix safely, make things, understand money and share what you know. Start small, use help and remember that capability is for resilience and service, not visibility.",
+   "tool": {
+    "kind": "checklist",
+    "label": "Capability checklist",
+    "blurb": "Feed, fix, make, money. Mark what you can already do."
+   }
+  },
+  {
+   "num": 4,
+   "word": "Four",
+   "title": "Digital self-defence",
+   "slug": "four",
+   "url": "https://www.onetoeight.org/guide/universal/essential-four-universal",
+   "intro": "This chapter is about protecting your accounts, your privacy and your attention without treating every screen as the enemy.",
+   "bullets": [
+    "The safest first move isn\u2019t deciding faster. It is creating a pause.",
+    "A message can be engineered to make you rush. Check unexpected requests through a separate channel.",
+    "Seeing is not the same as knowing. A face or a voice on a screen is no longer proof of who is behind it.",
+    "Privacy isn\u2019t hiding. It is room to think, change and have relationships without everything becoming a performance."
+   ],
+   "commit": "one safeguard a day for a week, and one personal rule you write down.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Check one privacy setting",
+     "body": "Review an app\u2019s location, camera, microphone or contact access."
+    },
+    {
+     "n": 2,
+     "title": "Secure your email",
+     "body": "Use a unique password and multi-factor authentication if available."
+    },
+    {
+     "n": 3,
+     "title": "Verify a message",
+     "body": "Practise checking an unexpected request through a separate channel."
+    },
+    {
+     "n": 4,
+     "title": "Update and back up",
+     "body": "Install pending updates and copy one important file somewhere safe."
+    },
+    {
+     "n": 5,
+     "title": "Curate your feed",
+     "body": "Mute one account or topic that repeatedly harms your attention or mood."
+    },
+    {
+     "n": 6,
+     "title": "Tell someone the plan",
+     "body": "Share one scam signal or security habit with a friend or family member."
+    },
+    {
+     "n": 7,
+     "title": "Write your rule",
+     "body": "\u201cI do not transfer money from an urgent message without calling back\u201d is a good start."
+    }
+   ],
+   "prompts": [
+    "What kind of digital request makes you rush: money, messages, account warnings or something else?",
+    "Which account would cause the most trouble if you lost access? How could you protect it first?",
+    "What information about you is public that you would rather keep limited?",
+    "Which setting, update, backup or conversation would make your digital life safer this week?",
+    "How could you help someone report a scam without making them feel stupid?"
+   ],
+   "lines": [
+    "My verification rule:",
+    "My first safeguard:",
+    "Someone I can ask for help:"
+   ],
+   "inShort": "Digital self-defence is practical literacy. Share less where you can, protect important accounts, verify urgent requests, care for your attention and ask for help quickly when something goes wrong.",
+   "tool": {
+    "kind": "rule",
+    "label": "Your own rule",
+    "blurb": "Write the rule you will follow when a message arrives in a hurry."
+   }
+  },
+  {
+   "num": 5,
+   "word": "Five",
+   "title": "Real community",
+   "slug": "five",
+   "url": "https://www.onetoeight.org/guide/universal/essential-five-universal",
+   "intro": "This chapter is about building relationships that hold, rather than collecting an audience.",
+   "bullets": [
+    "Being seen is not being known. Hearts and kind comments are not the same as someone you could call at two in the morning.",
+    "Belonging is built in small repetitions: showing up, paying attention, give and take, and safety.",
+    "Digital connection can be real. A friend on the other side of the country is still a friend.",
+    "More people is not always the answer. Better fit and clearer support can matter more."
+   ],
+   "commit": "one small act of connection a day for a week, and one clear thing you ask someone for.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Send a specific invitation",
+     "body": "Suggest a time and activity to someone you would like to know better."
+    },
+    {
+     "n": 2,
+     "title": "Follow up",
+     "body": "Ask about something someone told you last week and listen to the answer."
+    },
+    {
+     "n": 3,
+     "title": "Return somewhere",
+     "body": "Attend the same club, group, class, server or community space again."
+    },
+    {
+     "n": 4,
+     "title": "Offer practical help",
+     "body": "Do one useful thing without taking over or expecting a reward."
+    },
+    {
+     "n": 5,
+     "title": "Ask clearly",
+     "body": "Tell a trusted person one small way they could support you."
+    },
+    {
+     "n": 6,
+     "title": "Include gently",
+     "body": "Offer someone on the edge a low-pressure invitation and respect their answer."
+    },
+    {
+     "n": 7,
+     "title": "Review the fit",
+     "body": "Which connection left you more yourself? Which boundary needs strengthening?"
+    }
+   ],
+   "prompts": [
+    "Where do you feel most able to be yourself, online or offline?",
+    "Who could you contact if you needed emotional, practical or professional support?",
+    "What makes it easier or harder for you to initiate a friendship?",
+    "Where might you need a stronger boundary rather than a larger social circle?",
+    "Who is on the edge of a group you belong to, and what low-pressure invitation could you offer?"
+   ],
+   "lines": [
+    "Someone I want to contact:",
+    "One invitation or check-in:",
+    "A boundary I need:"
+   ],
+   "inShort": "Community grows through repeated presence, attention, reciprocity, safety and repair. Build relationships where people can be known without being trapped, supported without being rescued and included without being managed.",
+   "tool": {
+    "kind": "map",
+    "label": "Support map",
+    "blurb": "Name the people you would actually call, and for what."
+   }
+  },
+  {
+   "num": 6,
+   "word": "Six",
+   "title": "Knowledge you can carry",
+   "slug": "six",
+   "url": "https://www.onetoeight.org/guide/universal/essential-six-universal",
+   "intro": "This chapter is about owning what you know, rather than renting it from a search bar.",
+   "bullets": [
+    "Search gives you a result. Learning gives you a framework.",
+    "Own the things you would miss most: people, places, practical references and the files that matter.",
+    "Memory likes being invited back. Looking something up once is not the same as carrying it.",
+    "Make room for the difficult bit. That is where the learning actually happens."
+   ],
+   "commit": "carry one useful thing further over a week, and keep one offline copy where you can find it.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Choose the knowledge",
+     "body": "Pick a route, recipe, passage, formula, skill or question you genuinely value."
+    },
+    {
+     "n": 2,
+     "title": "Find a good source",
+     "body": "Use a book, teacher, official guide, trusted person or reliable course."
+    },
+    {
+     "n": 3,
+     "title": "Write it by hand",
+     "body": "Make a short summary or set of steps in your own words."
+    },
+    {
+     "n": 4,
+     "title": "Put the source away",
+     "body": "Try to retrieve or explain the idea without looking."
+    },
+    {
+     "n": 5,
+     "title": "Use it",
+     "body": "Cook, calculate, navigate, teach, make or solve something with it."
+    },
+    {
+     "n": 6,
+     "title": "Correct it",
+     "body": "Check where your memory or understanding was incomplete."
+    },
+    {
+     "n": 7,
+     "title": "Store the backup",
+     "body": "Keep a useful paper or offline copy where you can find it later."
+    }
+   ],
+   "prompts": [
+    "What do you know well enough to explain without a search?",
+    "Which piece of knowledge would be useful if your phone or internet stopped working for a day?",
+    "Where do you tend to accept the first answer you find? What would a better check look like?",
+    "What would you like to memorise, practise or understand more deeply?",
+    "Which person in your life carries knowledge you would like to learn?"
+   ],
+   "lines": [
+    "Knowledge I want to own:",
+    "My source and practice:",
+    "Where I will keep the backup:"
+   ],
+   "inShort": "Use the internet as a tool, not a substitute for understanding. Practise recalling, applying and checking what matters. Carry useful knowledge in your head, hands, relationships and offline resources.",
+   "tool": {
+    "kind": "carry",
+    "label": "One thing you carry",
+    "blurb": "Choose one useful thing and write it in your own words."
+   }
+  },
+  {
+   "num": 7,
+   "word": "Seven",
+   "title": "Make room for the outside",
+   "slug": "seven",
+   "url": "https://www.onetoeight.org/guide/universal/essential-seven-universal",
+   "intro": "This chapter is about getting outside regularly, without turning it into another performance.",
+   "bullets": [
+    "You can spend a whole day inside and still feel you have been everywhere.",
+    "Attention changes when the world is not performing. Outside, nothing is engineered to keep you scrolling.",
+    "Small and regular beats heroic and rare. Ten minutes counts.",
+    "Nature is not equally available to everyone. Work with the barriers rather than blaming yourself."
+   ],
+   "commit": "notice one thing outside each day for a week, and find one rhythm that fits your actual life.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Look at the sky",
+     "body": "Notice light, cloud or weather without opening an app first."
+    },
+    {
+     "n": 2,
+     "title": "Take a short outside pause",
+     "body": "Stand, sit or roll somewhere safe for five to ten minutes."
+    },
+    {
+     "n": 3,
+     "title": "Walk a familiar route differently",
+     "body": "Notice one tree, building, sound or patch of ground."
+    },
+    {
+     "n": 4,
+     "title": "Share the outside",
+     "body": "Invite someone for a walk or sit together outdoors."
+    },
+    {
+     "n": 5,
+     "title": "Care for a living thing",
+     "body": "Water, plant, observe or learn about something nearby."
+    },
+    {
+     "n": 6,
+     "title": "Take a longer visit",
+     "body": "Spend as long as is safe and comfortable in a natural setting."
+    },
+    {
+     "n": 7,
+     "title": "Review honestly",
+     "body": "What helped? What barrier needs a better adaptation?"
+    }
+   ],
+   "prompts": [
+    "Where can you safely and realistically spend a few minutes outside or near nature?",
+    "What barriers make outdoor time difficult for you?",
+    "Which adaptation would make a nature pause more comfortable or accessible?",
+    "What do you notice outdoors that you rarely notice on a screen?",
+    "Who could you invite to share an outside moment without making it a performance?"
+   ],
+   "lines": [
+    "My place:",
+    "My cue and adaptation:",
+    "One thing I will notice:"
+   ],
+   "inShort": "Nature is not a luxury or a personality. Regular contact with the outside can support attention, movement, rhythm and connection. Start nearby, adapt it to your life and notice without needing to optimise.",
+   "tool": {
+    "kind": "log",
+    "label": "Noticing log",
+    "blurb": "One line a day about something you noticed outside."
+   }
+  },
+  {
+   "num": 8,
+   "word": "Eight",
+   "title": "Test what you believe",
+   "slug": "eight",
+   "url": "https://www.onetoeight.org/guide/universal/essential-eight-universal",
+   "intro": "This chapter is about working out which of your beliefs would actually carry weight.",
+   "bullets": [
+    "Some beliefs sound good in calm weather. Pressure reveals the structure.",
+    "Decorative beliefs look fine until they cost you something. Load-bearing ones shape what you do.",
+    "Knowing about something is not the same as living it. A theory is not yet a way of life.",
+    "Examining a belief honestly is not the same as abandoning it. \u201cI do not know yet\u201d can be an honest and responsible answer."
+   ],
+   "commit": "take one conviction through a week of honest questions, and write down what changed.",
+   "steps": [
+    {
+     "n": 1,
+     "title": "Name a conviction",
+     "body": "Write one value, belief or commitment you want to examine."
+    },
+    {
+     "n": 2,
+     "title": "Find its source",
+     "body": "Family, culture, faith, philosophy, experience, evidence or something else?"
+    },
+    {
+     "n": 3,
+     "title": "Find a challenge",
+     "body": "Read or listen to a thoughtful alternative without treating disagreement as an attack."
+    },
+    {
+     "n": 4,
+     "title": "Test a small action",
+     "body": "Let the conviction guide one ordinary choice."
+    },
+    {
+     "n": 5,
+     "title": "Notice the result",
+     "body": "Did the action help, harm, clarify or complicate things?"
+    },
+    {
+     "n": 6,
+     "title": "Talk safely",
+     "body": "Discuss the question with someone thoughtful, trustworthy and non-coercive."
+    },
+    {
+     "n": 7,
+     "title": "Write what changed",
+     "body": "Keep the belief, revise it, pause it or identify what you still need to learn."
+    }
+   ],
+   "prompts": [
+    "Which belief or value has shaped your choices most?",
+    "Where did it come from, and have you examined that source?",
+    "When has a difficult experience changed what you think is true or important?",
+    "What would make your conviction more honest, more useful or more compassionate?",
+    "Who can challenge you without trying to control you?"
+   ],
+   "lines": [
+    "My conviction or question:",
+    "What I want to examine:",
+    "My safe next conversation or action:"
+   ],
+   "inShort": "Convictions become trustworthy when they are examined, lived, tested and held with humility. Keep what proves useful and true, revise what needs revision and leave room for the person you are still becoming.",
+   "tool": {
+    "kind": "conviction",
+    "label": "Conviction tester",
+    "blurb": "Take one belief through its questions and write what changed."
+   }
+  }
+ ]
+}
