@@ -8,20 +8,20 @@ onetoeight exists for a screen-born generation: the most connected and the most 
 
 The Universal edition is secular, written for every background, belief and tradition, and free to read and adapt. Every page carries spoken-word audio. The guide pages are public and indexed, so they can be found and linked directly.
 
-- [Introduction and contents](https://www.onetoeight.org/guide/universal): Start here. What the eight essentials are, and why roots matter.
-- [The ability to sit in silence](https://www.onetoeight.org/guide/universal/essential-one-universal): Make room to notice before adding more input.
-- [Your body is a home](https://www.onetoeight.org/guide/universal/essential-two-universal): Care for the body you actually have.
-- [Useful skills for real life](https://www.onetoeight.org/guide/universal/essential-three-universal): Feed yourself, fix safely, make things and understand money.
-- [Digital self-defence](https://www.onetoeight.org/guide/universal/essential-four-universal): Protect your attention, privacy, accounts and identity.
-- [Real community](https://www.onetoeight.org/guide/universal/essential-five-universal): Build belonging without turning friendship into a score.
-- [Knowledge you can carry](https://www.onetoeight.org/guide/universal/essential-six-universal): Use the internet without outsourcing your mind.
-- [Make room for the outside](https://www.onetoeight.org/guide/universal/essential-seven-universal): Go gently, notice more and adapt nature to your life.
-- [Test what you believe](https://www.onetoeight.org/guide/universal/essential-eight-universal): Examine convictions and stay open to evidence.
-- [Reading & Resources](https://www.onetoeight.org/guide/universal/reading-resources): Free, well-chosen next steps, one for each essential. Scan or tap to open each link.
-- [Activities](https://www.onetoeight.org/guide/universal/activities): Hands-on things to try, one category for each essential. Pick one and do it this week.
-    - [Bonus extras](https://www.onetoeight.org/guide/universal/bonus-extras): A discount code for the Afterschool Agent, the paid programme, and the free local studio.
-- [Discussion questions](https://www.onetoeight.org/guide/universal/discussion-questions): Ready-to-run conversations for youth groups, schools and community settings.
-- [Changelog](https://www.onetoeight.org/guide/universal/changelog): What changed in this edition, and why.
+- [Introduction and contents](https://www.onetoeight.guide/en/u): Start here. What the eight essentials are, and why roots matter.
+- [The ability to sit in silence](https://www.onetoeight.guide/en/u/essential-one-universal): Make room to notice before adding more input.
+- [Your body is a home](https://www.onetoeight.guide/en/u/essential-two-universal): Care for the body you actually have.
+- [Useful skills for real life](https://www.onetoeight.guide/en/u/essential-three-universal): Feed yourself, fix safely, make things and understand money.
+- [Digital self-defence](https://www.onetoeight.guide/en/u/essential-four-universal): Protect your attention, privacy, accounts and identity.
+- [Real community](https://www.onetoeight.guide/en/u/essential-five-universal): Build belonging without turning friendship into a score.
+- [Knowledge you can carry](https://www.onetoeight.guide/en/u/essential-six-universal): Use the internet without outsourcing your mind.
+- [Make room for the outside](https://www.onetoeight.guide/en/u/essential-seven-universal): Go gently, notice more and adapt nature to your life.
+- [Test what you believe](https://www.onetoeight.guide/en/u/essential-eight-universal): Examine convictions and stay open to evidence.
+- [Reading & Resources](https://www.onetoeight.guide/en/u/reading-resources): Free, well-chosen next steps, one for each essential. Scan or tap to open each link.
+- [Activities](https://www.onetoeight.guide/en/u/activities): Hands-on things to try, one category for each essential. Pick one and do it this week.
+    - [Bonus extras](https://www.onetoeight.guide/en/u/bonus-extras): A discount code for the Afterschool Agent, the paid programme, and the free local studio.
+- [Discussion questions](https://www.onetoeight.guide/en/u/discussion-questions): Ready-to-run conversations for youth groups, schools and community settings.
+- [Changelog](https://www.onetoeight.guide/en/u/changelog): What changed in this edition, and why.
 
 ## Site
 
@@ -39,7 +39,7 @@ The Universal edition is secular, written for every background, belief and tradi
 - [Early access](https://www.onetoeight.org/earlyaccess/index.html)
 - [Legal](https://www.onetoeight.org/legal.html)
 - [Scripture library](https://www.onetoeight.org/scripture/index.html)
-- Translations of Essential One: [Indonesian](https://www.onetoeight.org/guide/universal/essential-one-universal-id), [Tagalog](https://www.onetoeight.org/guide/universal/essential-one-universal-tl), [Vietnamese](https://www.onetoeight.org/guide/universal/essential-one-universal-vi)
+- Translations of Essential One: [Indonesian](https://www.onetoeight.guide/id/u/essential-one), [Tagalog](https://www.onetoeight.guide/tl/u/essential-one), [Vietnamese](https://www.onetoeight.guide/vi/u/essential-one)
 
 ## Contact
 
