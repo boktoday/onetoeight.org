@@ -1,11 +1,26 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/guide/universal",
+      "destination": "https://www.onetoeight.guide/en/u/",
+      "permanent": true
+    },
+    {
+      "source": "/guide/universal/:path*",
+      "destination": "https://www.onetoeight.guide/en/u/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     }
   ]
