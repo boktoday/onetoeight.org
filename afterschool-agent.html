@@ -168,9 +168,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);-
 
 /* Hamburger */
 
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px 10px;background:transparent;border:1px solid rgba(217,164,65,.25);border-radius:8px;z-index:101}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px 10px;background:transparent;border:1px solid rgba(217,164,65,.25);border-radius:0;z-index:101}
 
-.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:2px;transition:all .3s}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:0;transition:all .3s}
 
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 
@@ -320,7 +320,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);-
 
 .voice-wave{display:flex;align-items:center;gap:2px;height:20px;flex:1}
 
-.voice-wave span{width:3px;border-radius:2px;background:rgba(255,255,255,.4)}
+.voice-wave span{width:3px;border-radius:0;background:rgba(255,255,255,.4)}
 
 .voice-wave span:nth-child(1){height:8px}
 
@@ -389,7 +389,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);-
 
 .hero-logo-svg{width:min(400px,90%);max-width:100%;height:auto;display:block;margin:0 auto}
 
-.eyebrow{font-family:var(--disp);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;display:inline-block;border:1px solid rgba(217,164,65,.28);padding:.4rem 1.1rem;border-radius:100px}
+.eyebrow{font-family:var(--disp);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;display:inline-block;border:1px solid rgba(217,164,65,.28);padding:.4rem 1.1rem;border-radius:0}
 
 .hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--dawn);margin-bottom:1.5rem}
 
@@ -405,7 +405,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(14px);-
 
 .hero-underline{position:relative;display:inline-block}
 
-.hero-underline::after{content:'';position:absolute;left:-2%;right:-2%;bottom:.08em;height:.12em;background:linear-gradient(90deg,transparent 0%,var(--terra) 15%,var(--gold) 50%,var(--terra) 85%,transparent 100%);border-radius:1px;transform:scaleX(0);transform-origin:left;animation:underline-draw 1.2s cubic-bezier(.22,.61,.36,1) .6s forwards}
+.hero-underline::after{content:'';position:absolute;left:-2%;right:-2%;bottom:.08em;height:.12em;background:linear-gradient(90deg,transparent 0%,var(--terra) 15%,var(--gold) 50%,var(--terra) 85%,transparent 100%);border-radius:0;transform:scaleX(0);transform-origin:left;animation:underline-draw 1.2s cubic-bezier(.22,.61,.36,1) .6s forwards}
 
 @keyframes underline-draw{to{transform:scaleX(1)}}
 
@@ -788,7 +788,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
 .cream .essential-activity strong{color:var(--terra)}
 
-.essential-card .personalise-badge{display:inline-block;font-family:var(--disp);font-size:.55rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);background:rgba(125,138,110,.1);padding:.2rem .5rem;border-radius:100px;margin-top:.7rem}
+.essential-card .personalise-badge{display:inline-block;font-family:var(--disp);font-size:.55rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);background:rgba(125,138,110,.1);padding:.2rem .5rem;border-radius:0;margin-top:.7rem}
 
 .cream .personalise-badge{color:var(--sage-deep);background:rgba(125,138,110,.08)}
 
@@ -840,7 +840,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
 .modal-close:hover{opacity:1}
 
-.modal-badge{font-family:var(--disp);font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-deep);margin-bottom:1rem;display:inline-block;background:rgba(13,18,32,.08);padding:.35rem .9rem;border-radius:100px}
+.modal-badge{font-family:var(--disp);font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra-deep);margin-bottom:1rem;display:inline-block;background:rgba(13,18,32,.08);padding:.35rem .9rem;border-radius:0}
 
 .modal-title{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;line-height:1.15;margin-bottom:.6rem;color:var(--night)}
 
@@ -852,7 +852,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
 .modal-form-row.single{flex-direction:column}
 
-.modal-form-row input{flex:1;background:rgba(255,255,255,.5);border:1.5px solid rgba(13,18,32,.15);border-radius:12px;padding:.85rem 1rem;font-size:.95rem;font-family:var(--body);color:var(--night);outline:none;transition:border-color .2s,background .2s}
+.modal-form-row input{flex:1;background:rgba(255,255,255,.5);border:1.5px solid rgba(13,18,32,.15);border-radius:0;padding:.85rem 1rem;font-size:.95rem;font-family:var(--body);color:var(--night);outline:none;transition:border-color .2s,background .2s}
 
 .modal-form-row input:focus{border-color:var(--terra);background:rgba(255,255,255,.8)}
 
@@ -866,7 +866,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
 .modal-note{font-size:.78rem;color:rgba(13,18,32,.55);margin-top:.9rem;line-height:1.5;text-align:center}
 
-.modal-success{display:none;background:rgba(255,255,255,.4);border:1.5px solid var(--sage);border-radius:12px;padding:1.2rem 1.5rem;text-align:center}
+.modal-success{display:none;background:rgba(255,255,255,.4);border:1.5px solid var(--sage);border-radius:0;padding:1.2rem 1.5rem;text-align:center}
 
 .modal-success.show{display:block}
 
@@ -1057,7 +1057,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
       <!-- brand logos below chat -->
 
-      <div style="display:flex;align-items:center;gap:.7rem;padding:.3rem .8rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:100px;backdrop-filter:blur(8px)">
+      <div style="display:flex;align-items:center;gap:.7rem;padding:.3rem .8rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:0;backdrop-filter:blur(8px)">
 
         <span style="font-family:var(--disp);font-size:.55rem;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase">Powered by</span>
 
@@ -1103,7 +1103,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
       <div class="kicker" style="margin-bottom:.8rem">Listen — 60‑Second Explainer</div>
 
-      <div class="audio-brand" data-src="explainer.mp3" style="display:inline-block;background:linear-gradient(135deg,rgba(217,164,65,.06) 0%,rgba(13,18,32,.6) 100%);border:1px solid rgba(217,164,65,.15);border-radius:20px;padding:1.5rem 2rem;max-width:480px;width:100%;position:relative;overflow:hidden">
+      <div class="audio-brand" data-src="explainer.mp3" style="display:inline-block;background:linear-gradient(135deg,rgba(217,164,65,.06) 0%,rgba(13,18,32,.6) 100%);border:1px solid rgba(217,164,65,.15);border-radius:0;padding:1.5rem 2rem;max-width:480px;width:100%;position:relative;overflow:hidden">
 
         <!-- glow -->
 
@@ -1135,9 +1135,9 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
           <div style="flex:1;min-width:0">
 
-            <div style="position:relative;height:4px;background:rgba(217,164,65,.1);border-radius:4px;cursor:pointer" onclick="seekAudio(event,this)">
+            <div style="position:relative;height:4px;background:rgba(217,164,65,.1);border-radius:0;cursor:pointer" onclick="seekAudio(event,this)">
 
-              <div class="progress-fill" style="width:0%;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));border-radius:4px;transition:width .15s linear"></div>
+              <div class="progress-fill" style="width:0%;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));border-radius:0;transition:width .15s linear"></div>
 
             </div>
 
@@ -1224,7 +1224,7 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
     <!-- secular callout -->
 
-    <div class="reveal" style="margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(125,138,110,.08);border-left:3px solid var(--sage);border-radius:0 12px 12px 0;max-width:780px">
+    <div class="reveal" style="margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(125,138,110,.08);border-left:3px solid var(--sage);border-radius:0;max-width:780px">
 
       <p style="font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--dawn);line-height:1.6">
 
@@ -1903,13 +1903,13 @@ footer{padding:3rem 1.5rem 2rem;text-align:center;border-top:1px solid rgba(217,
 
     <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;max-width:500px;margin:0 auto">
 
-      <span class="pricing-badge" style="background:rgba(217,164,65,.1);border:1px solid rgba(217,164,65,.15);border-radius:100px;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--gold-soft)">Custom Skills</span>
+      <span class="pricing-badge" style="background:rgba(217,164,65,.1);border:1px solid rgba(217,164,65,.15);border-radius:0;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--gold-soft)">Custom Skills</span>
 
-      <span class="pricing-badge" style="background:rgba(125,138,110,.1);border:1px solid rgba(125,138,110,.15);border-radius:100px;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--sage)">Tool Integration</span>
+      <span class="pricing-badge" style="background:rgba(125,138,110,.1);border:1px solid rgba(125,138,110,.15);border-radius:0;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--sage)">Tool Integration</span>
 
-      <span class="pricing-badge" style="background:rgba(79,111,158,.1);border:1px solid rgba(79,111,158,.15);border-radius:100px;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--blue)">Multi-Agent</span>
+      <span class="pricing-badge" style="background:rgba(79,111,158,.1);border:1px solid rgba(79,111,158,.15);border-radius:0;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--blue)">Multi-Agent</span>
 
-      <span class="pricing-badge" style="background:rgba(194,96,62,.1);border:1px solid rgba(194,96,62,.15);border-radius:100px;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--terra)">Local Deploy</span>
+      <span class="pricing-badge" style="background:rgba(194,96,62,.1);border:1px solid rgba(194,96,62,.15);border-radius:0;padding:.4rem 1rem;font-family:var(--disp);font-size:.72rem;color:var(--terra)">Local Deploy</span>
 
     </div>
 
