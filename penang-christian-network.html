@@ -57,7 +57,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .hero h1{font-size:clamp(1.9rem,4.6vw,3.4rem);font-weight:500;line-height:1.16;letter-spacing:-.015em;max-width:24ch;margin:1.2rem 0 1.4rem;color:var(--dawn)}
 .hero h1 em{font-style:italic;color:var(--gold-soft)}
 .hero .lede{font-size:clamp(1rem,1.6vw,1.15rem);color:rgba(246,239,227,.78);max-width:62ch;line-height:1.7;font-weight:500}
-.bell{display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;font-family:var(--disp);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:rgba(255,255,255,.05);border:1px solid rgba(217,164,65,.35);border-radius:999px;padding:.55rem 1.2rem}
+.bell{display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;font-family:var(--disp);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);background:rgba(255,255,255,.05);border:1px solid rgba(217,164,65,.35);border-radius:0;padding:.55rem 1.2rem}
 .bell .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:ring 1.6s ease-in-out infinite}
 @keyframes ring{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
 .scrollcue{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--disp);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,239,227,.5);display:flex;flex-direction:column;align-items:center;gap:.5rem}
@@ -83,26 +83,26 @@ section{position:relative}
 
 /* Stat tiles */
 .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.2rem;margin-top:1rem}
-.stat{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.5rem 1.4rem;text-align:center;transition:transform .3s}
+.stat{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:0;padding:1.5rem 1.4rem;text-align:center;transition:transform .3s}
 .stat:hover{transform:translateY(-3px)}
 .stat .sn{font-family:var(--disp);font-weight:700;font-size:2.2rem;color:var(--gold-soft);line-height:1}
 .stat .sl{font-size:.72rem;color:rgba(246,239,227,.55);margin-top:.5rem;text-transform:uppercase;letter-spacing:.08em;font-family:var(--disp);font-weight:600}
 
 /* Spotlight (top pick) */
 .spotlight{background:var(--dawn);padding:6.5rem 0}
-.spot-card{background:var(--paper);border:1px solid rgba(217,164,65,.35);border-radius:16px;padding:2rem 2.2rem;position:relative;overflow:hidden}
+.spot-card{background:var(--paper);border:1px solid rgba(217,164,65,.35);border-radius:0;padding:2rem 2.2rem;position:relative;overflow:hidden}
 .spot-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--gold),var(--amber))}
 .spot-card .sname{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);margin-bottom:.3rem}
 .spot-card .sniche{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.4rem}
 .spot-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-bottom:1.4rem}
 @media(max-width:600px){.spot-stats{grid-template-columns:repeat(2,1fr)}}
-.spot-stat{background:rgba(35,42,61,.05);border-radius:10px;padding:.9rem 1rem;text-align:center}
+.spot-stat{background:rgba(35,42,61,.05);border-radius:0;padding:.9rem 1rem;text-align:center}
 .spot-stat .sn{font-family:var(--disp);font-weight:700;font-size:1.3rem;color:var(--terra-deep);line-height:1}
 .spot-stat .sl{font-size:.65rem;color:var(--ink-soft);margin-top:.3rem;text-transform:uppercase;letter-spacing:.08em;font-family:var(--disp);font-weight:600}
 
 /* Prospect table */
 .prospects{background:var(--dawn2);padding:6.5rem 0}
-.ptable{width:100%;border-collapse:collapse;background:var(--paper);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px -18px rgba(35,42,61,.25)}
+.ptable{width:100%;border-collapse:collapse;background:var(--paper);border-radius:0;overflow:hidden;box-shadow:0 10px 30px -18px rgba(35,42,61,.25)}
 .ptable th{font-family:var(--disp);font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dawn);background:var(--night3);text-align:left;padding:1rem 1.2rem}
 .ptable td{padding:1rem 1.2rem;font-size:.86rem;color:var(--ink-soft);border-bottom:1px solid rgba(35,42,61,.08);vertical-align:top;line-height:1.55}
 .ptable tr:last-child td{border-bottom:none}
@@ -118,7 +118,7 @@ section{position:relative}
 .ptable .psite a{color:var(--blue)}
 .ptable .prating{font-family:var(--disp);font-size:.82rem;font-weight:600;color:var(--ink)}
 .ptable .previews{font-size:.7rem;color:var(--ink-soft)}
-.fit{display:inline-block;font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:.25rem .65rem;white-space:nowrap}
+.fit{display:inline-block;font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:0;padding:.25rem .65rem;white-space:nowrap}
 .fit.vh{background:rgba(125,138,110,.2);color:var(--sage-deep)}
 .fit.h{background:rgba(217,164,65,.22);color:var(--amber-deep)}
 .fit.m{background:rgba(79,111,158,.16);color:var(--blue)}
@@ -128,7 +128,7 @@ section{position:relative}
 @media(max-width:760px){
   .ptable thead{display:none}
   .ptable,.ptable tbody,.ptable tr,.ptable td{display:block;width:100%}
-  .ptable tr{margin-bottom:1rem;border:1px solid rgba(35,42,61,.1);border-radius:12px;overflow:hidden}
+  .ptable tr{margin-bottom:1rem;border:1px solid rgba(35,42,61,.1);border-radius:0;overflow:hidden}
   .ptable td{border-bottom:1px dashed rgba(35,42,61,.1);padding:.8rem 1.2rem}
   .ptable td:last-child{border-bottom:none}
   .ptable td::before{content:attr(data-label);display:block;font-family:var(--disp);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem}
@@ -136,7 +136,7 @@ section{position:relative}
 
 /* Section headers for each category */
 .cat-head{font-family:var(--serif);font-size:1.6rem;font-weight:600;margin:3rem 0 1.2rem;color:var(--ink);display:flex;align-items:center;gap:.8rem;padding-top:1.5rem;border-top:1px solid rgba(35,42,61,.1)}
-.cat-head .cn{font-family:var(--disp);font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);background:rgba(194,96,62,.1);border-radius:999px;padding:.3rem .8rem}
+.cat-head .cn{font-family:var(--disp);font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);background:rgba(194,96,62,.1);border-radius:0;padding:.3rem .8rem}
 .cat-head .ct{font-family:var(--disp);font-weight:600;font-size:.78rem;color:var(--ink-soft)}
 
 /* Footer */
@@ -146,7 +146,7 @@ footer .fbrand em{font-style:italic;font-weight:300;color:var(--gold-soft)}
 footer p{font-size:.85rem;max-width:52ch;margin:.8rem auto 0}
 footer a{color:var(--gold-soft)}
 
-.honest{margin-top:2rem;background:var(--paper);border:1px solid rgba(35,42,61,.1);border-left:4px solid var(--sage);border-radius:12px;padding:1.4rem 1.7rem;font-size:.88rem;color:var(--ink-soft);line-height:1.65}
+.honest{margin-top:2rem;background:var(--paper);border:1px solid rgba(35,42,61,.1);border-left:4px solid var(--sage);border-radius:0;padding:1.4rem 1.7rem;font-size:.88rem;color:var(--ink-soft);line-height:1.65}
 .honest b{color:var(--ink)}
 
 </style>
@@ -214,9 +214,9 @@ footer a{color:var(--gold-soft)}
 <div class="spot-stat"><div class="sn">—</div><div class="sl">Has website</div></div>
 </div>
 <div style="display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.2rem">
-<div style="background:rgba(125,138,110,.1);border:1px solid rgba(125,138,110,.3);border-radius:10px;padding:.8rem 1rem"><span style="font-family:var(--disp);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-deep);display:block;margin-bottom:.3rem">Phone</span><a href="tel:+6016-4035588" style="font-family:var(--disp);font-size:.92rem;font-weight:600;color:var(--terra-deep);text-decoration:none">+60 16-403 5588</a></div>
+<div style="background:rgba(125,138,110,.1);border:1px solid rgba(125,138,110,.3);border-radius:0;padding:.8rem 1rem"><span style="font-family:var(--disp);font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-deep);display:block;margin-bottom:.3rem">Phone</span><a href="tel:+6016-4035588" style="font-family:var(--disp);font-size:.92rem;font-weight:600;color:var(--terra-deep);text-decoration:none">+60 16-403 5588</a></div>
 </div>
-<div style="background:rgba(35,42,61,.04);border-radius:10px;padding:.8rem 1rem;font-size:.85rem;color:var(--ink-soft)"><b style="color:var(--ink)">Type:</b> Catholic church, Basilica, Church, Religious destination, Religious institution</div>
+<div style="background:rgba(35,42,61,.04);border-radius:0;padding:.8rem 1rem;font-size:.85rem;color:var(--ink-soft)"><b style="color:var(--ink)">Type:</b> Catholic church, Basilica, Church, Religious destination, Religious institution</div>
 </div>
 </div>
 </section>
