@@ -88,7 +88,7 @@ section{position:relative}
 
 /* ---------- offering cards ---------- */
 .offer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
-.offer{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.8rem 1.6rem;transition:border-color .3s,transform .3s}
+.offer{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:0;padding:1.8rem 1.6rem;transition:border-color .3s,transform .3s}
 .offer:hover{border-color:rgba(217,164,65,.45);transform:translateY(-5px)}
 .offer .ot{font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.5rem}
 .offer h3{font-size:1.15rem;font-weight:600;color:var(--dawn);margin-bottom:.4rem}
@@ -101,7 +101,7 @@ section{position:relative}
 
 /* ---------- stat tiles ---------- */
 .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
-.stat{background:var(--paper);border:1px solid rgba(35,42,61,.09);border-radius:14px;padding:1.5rem 1.3rem;text-align:center;transition:transform .3s}
+.stat{background:var(--paper);border:1px solid rgba(35,42,61,.09);border-radius:0;padding:1.5rem 1.3rem;text-align:center;transition:transform .3s}
 .stat:hover{transform:translateY(-4px)}
 .stat .sn{font-family:var(--disp);font-weight:700;font-size:2rem;color:var(--terra-deep);line-height:1}
 .stat .sl{font-size:.72rem;color:var(--ink-soft);margin-top:.45rem;text-transform:uppercase;letter-spacing:.08em;font-family:var(--disp);font-weight:600}
@@ -119,14 +119,14 @@ section{position:relative}
 
 /* ---------- phase card grid ---------- */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.8rem;margin-top:1rem}
-.pcard{background:rgba(194,96,62,.06);border:1px solid rgba(194,96,62,.18);border-radius:10px;padding:1rem 1.2rem}
+.pcard{background:rgba(194,96,62,.06);border:1px solid rgba(194,96,62,.18);border-radius:0;padding:1rem 1.2rem}
 .pcard .ptag{font-family:var(--disp);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-deep)}
 .pcard p{font-size:.82rem;color:var(--ink-soft);line-height:1.55;margin-top:.2rem}
 
 /* ---------- role definition ---------- */
 .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
 @media(max-width:800px){.role-grid{grid-template-columns:1fr}}
-.role-card{background:var(--paper);border:1px solid rgba(35,42,61,.08);border-radius:14px;padding:1.6rem 1.5rem}
+.role-card{background:var(--paper);border:1px solid rgba(35,42,61,.08);border-radius:0;padding:1.6rem 1.5rem}
 .role-card.routine{background:var(--night);color:var(--dawn);border-color:rgba(255,255,255,.09)}
 .role-card.routine .rd{font-family:var(--disp);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:.5rem}
 .role-card.routine h3{color:var(--dawn)}
@@ -142,7 +142,7 @@ section{position:relative}
 
 /* ---------- tool cards ---------- */
 .tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
-.tool{background:var(--paper);border:1px solid rgba(35,42,61,.08);border-radius:14px;padding:1.4rem 1.4rem;transition:transform .35s,box-shadow .35s,border-color .35s;position:relative}
+.tool{background:var(--paper);border:1px solid rgba(35,42,61,.08);border-radius:0;padding:1.4rem 1.4rem;transition:transform .35s,box-shadow .35s,border-color .35s;position:relative}
 .tool:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(35,42,61,.28);border-color:rgba(194,96,62,.35)}
 .tool .to{font-family:var(--disp);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:.3rem}
 .tool h3{font-size:1.05rem;font-weight:600;margin-bottom:.3rem}
@@ -152,7 +152,7 @@ section{position:relative}
 .tool .tuse{display:inline-block;margin-top:.6rem;font-family:var(--disp);font-size:.65rem;font-weight:600;letter-spacing:.08em;color:var(--sage-deep)}
 
 /* ---------- honest disclosure ---------- */
-.honest{margin-top:2.5rem;background:var(--paper);border:1px solid rgba(35,42,61,.1);border-left:4px solid var(--sage);border-radius:12px;padding:1.4rem 1.7rem;font-size:.88rem;color:var(--ink-soft);line-height:1.65}
+.honest{margin-top:2.5rem;background:var(--paper);border:1px solid rgba(35,42,61,.1);border-left:4px solid var(--sage);border-radius:0;padding:1.4rem 1.7rem;font-size:.88rem;color:var(--ink-soft);line-height:1.65}
 .honest b{color:var(--ink)}
 
 /* ---------- footer ---------- */
