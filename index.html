@@ -345,6 +345,14 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
   /* Phone: footer becomes a single column. */
   .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
+
+/* --- Get the Agent CTA (added Sep 2026) --- */
+.nav-cta-agent{background:transparent;color:var(--terra,#a46447)!important;border:1.5px solid var(--terra,#a46447);padding:.6rem 1.3rem;border-radius:0;font-weight:600!important;font-size:.9rem;transition:background .25s,color .25s;display:inline-flex;align-items:center;gap:.5rem}
+.nav-cta-agent:hover{background:var(--terra,#a46447);color:var(--paper,#f4ede2)!important}
+.btn-agent{background:transparent;color:var(--terra,#a46447);border-color:var(--terra,#a46447)}
+.btn-agent:hover{background:var(--terra-deep,#824b32);border-color:var(--terra-deep,#824b32);color:var(--paper,#f4ede2)}
+.cta-agent{background:transparent;color:var(--terra,#a46447);border:1.5px solid var(--terra,#a46447);padding:.9rem 2rem;border-radius:0;font-size:.95rem;font-weight:600;cursor:pointer;transition:all .25s;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+.cta-agent:hover{background:var(--terra,#a46447);color:#E8E1D5}
 </style>
 </head>
 <body>
@@ -358,7 +366,7 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
       <a href="#essentials">The Eight</a>
       <a href="#guide">The Guide</a><a href="https://gladtobe.here.now/features/">What You Get</a>
       <a href="#workshops">Weekly Meetup</a>
-      <a href="#guide" class="nav-cta">Get the Guide</a>
+      <a href="#guide" class="nav-cta">Get the Guide</a> <a href="/agent" class="nav-cta-agent">Get the Agent</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
@@ -391,7 +399,7 @@ footer { background: var(--umber); color: rgba(239,231,218,.5); padding: 5rem 0 
         <h1 class="reveal">You were handed a phone<br>before you were handed <em>roots.</em></h1>
         <p class="hero-sub reveal">If you&#8217;ve ever felt like you&#8217;re the most connected generation in history &mdash; and somehow the loneliest &mdash; this page is for you. Not a lecture. Not a &ldquo;you should delete all your apps&rdquo; guilt trip. Just eight things nobody told you that you actually need.</p>
         <div class="hero-ctas reveal">
-          <a href="#guide" class="btn btn-primary">Get the Guide</a>
+          <a href="#guide" class="btn btn-primary">Get the Guide</a> <a href="/agent" class="btn btn-agent">Get the Agent</a>
           <a href="#workshops" class="btn btn-secondary">Weekly Meetup</a>
         </div>
         <!-- Audio player commented out for now. Restore by deleting this comment marker. -->
