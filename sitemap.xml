@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.onetoeight.org/agent</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.onetoeight.org/parents/fear</loc>
     <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
