@@ -28,6 +28,7 @@ The Universal edition is secular, written for every background, belief and tradi
 - [Home](https://www.onetoeight.org/): One to eight: eight essentials for a screen-born generation.
 - [About](https://www.onetoeight.org/about.html): Who onetoeight is for and why it exists.
 - [For young people](https://www.onetoeight.org/young-people.html): A short starting point written directly to the reader.
+- [The agent](https://www.onetoeight.org/agent): The OneToEight Agent, a personal AI assistant installed on your own machine that walks you through the eight essentials, one small thing a day. Stay human. Use AI constructively.
 - [Afterschool Agent and weekly meetup](https://www.onetoeight.org/afterschool-agent.html): On-demand training plus a live Q&A every Tuesday at 5pm. $44.88 one-time, lifetime access. No subscription.
 - [For parents: fear](https://www.onetoeight.org/parents/fear.html): What fear does to a young person, and what helps.
 - [For parents: hope](https://www.onetoeight.org/parents/hope.html): Building hope that survives a bad week.
