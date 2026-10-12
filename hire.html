@@ -163,6 +163,9 @@ footer a{color:var(--muted)}
 .h-hero .chapter-btn,.h-sec .chapter-btn{border:2px solid currentColor;padding:.85rem 1.5rem;display:inline-block;text-decoration:none;background:transparent;cursor:pointer;font-family:inherit;font-size:.95rem}
 .h-hero .chapter-btn:hover,.h-sec .chapter-btn:hover{background:#2c2118;color:#f6efe3}
 .h-max{max-width:62rem;margin:0 auto}
+.h-hero{padding-left:clamp(1.25rem,6vw,4rem);padding-right:clamp(1.25rem,6vw,4rem)}
+.h-sec{padding-left:clamp(1.25rem,6vw,4rem);padding-right:clamp(1.25rem,6vw,4rem)}
+@media(min-width:901px){.hire-m{display:none}}
 @media(max-width:960px){.h-g3{grid-template-columns:1fr}}
 @media(max-width:860px){.h-g2,.h-cgrid{grid-template-columns:1fr}}
 </style></head>
@@ -176,6 +179,7 @@ footer a{color:var(--muted)}
       <a href="https://www.onetoeight.org/#guide">The Guide</a>
       <a href="https://gladtobe.here.now/features/">What You Get</a>
       <a href="https://www.onetoeight.org/#workshops">Weekly Meetup</a>
+      <a href="/hire" class="hire-m">Hire me</a>
       <a href="https://www.onetoeight.org/#guide" class="nav-cta">Get the Guide</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
